@@ -463,6 +463,7 @@
 "ie" = (
 /obj/machinery/oven,
 /obj/effect/turf_decal/tile/dark_green/diagonal_edge,
+/obj/structure/sign/clock/directional/west,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "io" = (
@@ -2012,7 +2013,12 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/dark_green/diagonal_edge,
 /obj/machinery/holopad,
-/obj/structure/sign/clock/directional/east,
+/obj/machinery/requests_console/directional/west{
+	department = "Kitchen";
+	departmentType = 2;
+	name = "Kitchen Requests Console";
+	pixel_x = 30
+	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "ID" = (
@@ -2072,6 +2078,10 @@
 "JZ" = (
 /turf/open/floor/engine/hull,
 /area/space)
+"Kf" = (
+/obj/structure/sign/poster/random/directional/east,
+/turf/open/floor/grass,
+/area/station/hallway/secondary/service)
 "KB" = (
 /obj/effect/turf_decal/tile/dark_green/diagonal_edge,
 /obj/structure/sink/kitchen/directional/south,
@@ -2370,13 +2380,11 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/service)
 "Qb" = (
-/obj/machinery/deepfryer,
-/obj/machinery/requests_console/directional/west{
-	department = "Kitchen";
-	departmentType = 2;
-	name = "Kitchen Requests Console"
-	},
 /obj/effect/turf_decal/tile/dark_green/diagonal_edge,
+/obj/machinery/processor{
+	pixel_y = 12
+	},
+/obj/structure/table,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "Qk" = (
@@ -2758,7 +2766,6 @@
 	},
 /area/station/service/bar)
 "Ym" = (
-/obj/machinery/processor,
 /obj/effect/turf_decal/tile/dark_green/diagonal_edge,
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/button/door/directional/north{
@@ -2767,6 +2774,10 @@
 	pixel_x = -25;
 	req_access = list("kitchen")
 	},
+/obj/machinery/processor{
+	pixel_y = 12
+	},
+/obj/machinery/deepfryer,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "Yv" = (
@@ -31002,7 +31013,7 @@ hT
 hT
 US
 hT
-hT
+Kf
 hT
 od
 hT
@@ -33328,7 +33339,7 @@ fv
 pc
 hT
 hT
-hT
+Kf
 hT
 hT
 hT
