@@ -57,6 +57,7 @@ GLOBAL_LIST_INIT(trash_loot, list(//junk: useless, very easy to get, or ghetto c
 
 		/obj/item/reagent_containers/pill/maintenance/achievement = 1,
 		/obj/item/toy/eightball = 1,
+		/obj/effect/spawner/random/entertainment/magazine = 1, // ORBSTATION
 		) = 8,
 
 	list(//tier 1 stock parts

@@ -139,23 +139,23 @@
 /obj/structure/sign/poster/quirk/crew
 	poster_item_desc = "A poster made with love, everyone will enjoy seeing it."
 
-/obj/structure/sign/poster/quirk/crew/helper
-	name = "Help Others"
-	desc = "This familiar poster asks you to help others. \
+/obj/structure/sign/poster/quirk/crew/hang
+	name = "Hang In There"
+	desc = "A poster with a cat hanging on a branch. Just hang in there. \
 	When people read this poster they'll feel better!"
-	icon_state = "help_others"
+	icon_state = "hang_in_there"
 
-/obj/structure/sign/poster/quirk/crew/ian
-	name = "Ian"
-	desc = "This famliar poster shows Ian the corgi. \
+/obj/structure/sign/poster/quirk/crew/renault
+	name = "Captain's Pet"
+	desc = "A poster depicting the Captains beloved Renault. He's ok. \
 	When people read this poster they'll feel better!"
-	icon_state = "ian"
+	icon_state = "renault"
 
-/obj/structure/sign/poster/quirk/crew/ntlogo
-	name = "Nanotrasen logo"
-	desc = "This familar poster shows the Nanotrasen logo. \
+/obj/structure/sign/poster/quirk/crew/bike
+	name = "Someday..."
+	desc = "A poster depicting a bike. Someday it WILL be yours! \
 	When people read this poster they'll feel better!"
-	icon_state = "ntlogo"
+	icon_state = "bike"
 
 /obj/item/poster/quirk/cargo_logo
 	poster_type = /obj/structure/sign/poster/quirk/cargo_logo

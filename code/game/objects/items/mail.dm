@@ -26,6 +26,7 @@
 		/obj/effect/spawner/random/food_or_drink/donkpockets_single = 5,
 		/obj/effect/spawner/random/entertainment/toy = 3,
 		/obj/effect/spawner/random/entertainment/coin = 2,
+		/obj/effect/spawner/random/entertainment/magazine = 1,
 	)
 	// Overlays (pure fluff)
 	/// Does the letter have the postmark overlay?

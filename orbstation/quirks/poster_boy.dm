@@ -22,7 +22,7 @@
 	var/department = posterboy.assigned_role.paycheck_department
 	if(department == ACCOUNT_CIV)
 		for(var/i in 1 to 2)
-			new /obj/item/poster/quirk/random(src)
+			new /obj/item/poster/quirk/crew/random/(src)
 		return
 	for(var/potential_poster in subtypesof(/obj/item/poster/quirk))
 		var/obj/item/poster/quirk/new_dept_poster = new potential_poster()
