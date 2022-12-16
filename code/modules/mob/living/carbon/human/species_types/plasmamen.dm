@@ -2,7 +2,6 @@
 	name = "\improper Plasmaman"
 	plural_form = "Plasmamen"
 	id = SPECIES_PLASMAMAN
-	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
 	species_traits = list(NOBLOOD, NOTRANSSTING, HAS_BONE, NOAPPENDIX)
@@ -22,7 +21,7 @@
 	burnmod = 1.5
 	heatmod = 1.5
 	brutemod = 1.5
-	payday_modifier = 1.0
+	payday_modifier = 0.75
 	breathid = "plas"
 	disliked_food = FRUIT | CLOTH
 	liked_food = VEGETABLES

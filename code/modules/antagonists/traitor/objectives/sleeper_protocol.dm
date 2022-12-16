@@ -145,7 +145,7 @@
 	. = ..()
 	if(!.)
 		return
-	//target.gain_trauma(new /datum/brain_trauma/mild/phobia/conspiracies(), TRAUMA_RESILIENCE_LOBOTOMY)
+	//target.gain_trauma(new /datum/brain_trauma/mild/phobia/conspiracies(), TRAUMA_RESILIENCE_LOBOTOMY) ORBSTATION: Don't want this
 
 /datum/traitor_objective/sleeper_protocol/everybody //Much harder for non-med and non-robo
 

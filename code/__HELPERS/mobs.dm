@@ -194,7 +194,15 @@ GLOBAL_LIST_INIT(skin_tones, sort_list(list(
 	"arab",
 	"indian",
 	"african1",
-	"african2"
+	"african2",
+	// Orb additions go here
+	"amberbrown",
+	"sable",
+	"coolblack",
+	"coolbrown",
+	"almondskin",
+	"hickorybrown",
+	"ruddybrown",
 	)))
 
 GLOBAL_LIST_INIT(skin_tone_names, list(
@@ -210,6 +218,14 @@ GLOBAL_LIST_INIT(skin_tone_names, list(
 	"indian" = "Brown",
 	"latino" = "Light beige",
 	"mediterranean" = "Olive",
+	// Orb additions go here
+	"amberbrown" = "Amber Brown",
+	"sable" = "Sable",
+	"coolblack" = "Cool black",
+	"coolbrown" = "Cool brown",
+	"almondskin" = "Almond skin",
+	"hickorybrown" = "Hickory brown",
+	"ruddybrown" = "Ruddy brown",
 ))
 
 /// An assoc list of species IDs to type paths

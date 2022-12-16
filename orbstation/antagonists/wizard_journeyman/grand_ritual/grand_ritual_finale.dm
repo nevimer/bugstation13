@@ -181,7 +181,7 @@
 	id = /obj/item/card/id/advanced/gold
 	id_trim = /datum/id_trim/job/captain
 	uniform = /obj/item/clothing/under/rank/captain/parade
-	belt = /obj/item/modular_computer/tablet/pda/heads/captain
+	belt = /obj/item/modular_computer/pda/heads/captain
 	ears = /obj/item/radio/headset/heads/captain/alt
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/color/captain
@@ -269,7 +269,7 @@
 		options["The Jester"] ="chaos"
 		clown_mask.icon_state = options[pick(clown_mask.clownmask_designs)]
 		victim.update_worn_mask()
-		clown_mask.update_action_buttons()
+		clown_mask.update_item_action_buttons()
 
 	equip_to_slot_then_hands(victim, ITEM_SLOT_LPOCKET, pocket_L)
 	equip_to_slot_then_hands(victim, ITEM_SLOT_RPOCKET, pocket_R)

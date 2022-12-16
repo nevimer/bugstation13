@@ -1,6 +1,6 @@
 /datum/quirk/door_closer
 	name = "Compulsive Door Closer"
-	desc = "There is something that troubles you about walking through airlocks and doors. You absolutely must close them behind you."
+	desc = "There is something that troubles you about walking through airlocks and doors. You absolutely must close them behind you. You can however, close your eyes to push through this."
 	icon = "door-closed"
 	value = 3
 	mob_trait = TRAIT_DOOR_CLOSER
@@ -12,15 +12,17 @@
 /datum/quirk/door_closer/add()
 	. = ..()
 	quirk_holder.AddElement(/datum/element/door_closer_quirk)
+	quirk_holder.allow_eye_control(name)
 
 /datum/quirk/door_closer/remove()
 	. = ..()
 	quirk_holder.RemoveElement(/datum/element/door_closer_quirk)
+	quirk_holder.remove_eye_control(name)
 
 /// element that is attached to people with the trait door closer that checks if the mob has left a tile with a door on it so that it can close it
 /datum/element/door_closer_quirk
 	/// list of doors that should not be closed automatically, blast doors, shutters, and firelocks mostly
-	var/static/list/secure_doors = list(/obj/machinery/door/poddoor, /obj/machinery/door/firedoor)
+	var/static/list/secure_doors = list(/obj/machinery/door/poddoor, /obj/machinery/door/firedoor, /obj/machinery/door/window)
 
 /datum/element/door_closer_quirk/Attach(datum/target)
 	. = ..()
@@ -41,6 +43,8 @@
 	if(leaver.stat != CONSCIOUS)
 		return
 	if(HAS_TRAIT(leaver, TRAIT_HANDS_BLOCKED))
+		return
+	if(HAS_TRAIT(leaver, TRAIT_BLIND))
 		return
 	for(var/obj/machinery/door/to_close in old_turf.contents)
 		if(is_type_in_typecache(to_close, secure_doors))

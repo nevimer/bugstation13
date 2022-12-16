@@ -2,7 +2,6 @@
 	name = "\improper Ratfolk"
 	plural_form = "Ratfolk"
 	id = SPECIES_RATFOLK
-	say_mod = "squeaks"
 	species_traits = list(EYECOLOR, HAIR, HAS_BONE, HAS_FLESH, LIPS, MUTCOLORS)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -14,6 +13,7 @@
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	species_language_holder = /datum/language_holder/ratfolk
+	mutanttongue = /obj/item/organ/internal/tongue/ratfolk
 
 	//meat = /obj/item/food/meat/slab/human/mutant/rat
 	//skinned_type = /obj/item/stack/sheet/animalhide/rat
@@ -118,3 +118,8 @@
 
 /mob/living/carbon/human/species/ratfolk
 	race = /datum/species/ratfolk
+
+/obj/item/organ/internal/tongue/ratfolk
+	name = "ratfolk-tongue"
+	desc = "If you look closely, you can see a fine layer of cheese dust. Or is that... brass?"
+	say_mod = "squeaks"

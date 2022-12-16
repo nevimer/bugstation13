@@ -19,7 +19,7 @@
 		The ritual process will take longer each time it is completed."
 	check_flags = AB_CHECK_CONSCIOUS | AB_CHECK_HANDS_BLOCKED
 	background_icon_state = "bg_spell"
-	icon_icon = 'icons/mob/actions/actions_cult.dmi'
+	button_icon = 'icons/mob/actions/actions_cult.dmi'
 	button_icon_state = "draw"
 	/// Path to area we want to draw in next
 	var/area/target_area
@@ -33,40 +33,36 @@
 	var/datum/weakref/rune
 
 	/// A blacklist of turfs we cannot scribe on.
-	var/static/list/blacklisted_rune_turfs = typecacheof(list(/turf/open/space, /turf/open/openspace, /turf/open/lava, /turf/open/chasm))
+	var/static/list/blacklisted_rune_turfs = typecacheof(list(/turf/closed/indestructible, /turf/open/indestructible, /turf/open/space, /turf/open/openspace, /turf/open/lava, /turf/open/chasm))
 	/**
 	 * Areas where you can place a rune
 	 * To be honest if maintenance subtypes didn't exist I could probably have got away with just a blaclist, c'est la vie
 	 */
-	var/static/list/area_whitelist = typecacheof(list( \
-		/area/station/commons, \
-		/area/station/maintenance/tram,\
-		/area/station/maintenance/disposal, \
-		/area/station/maintenance/radshelter,\
-		/area/station/command,\
-		/area/station/service,\
-		/area/station/engineering,\
-		/area/station/construction, \
-		/area/station/medical, \
-		/area/station/security, \
-		/area/station/cargo, \
-		/area/station/science, ))
-	/// Areas where you can't be tasked to draw a rune, either because they're too mean or too small
-	var/static/list/area_blacklist = typecacheof(list( \
-		/area/station/command/heads_quarters/captain/private,
-		/area/station/service/library/private, \
-		/area/station/service/library/printer, \
-		/area/station/engineering/supermatter,\
-		/area/station/engineering/transit_tube,\
-		/area/station/medical/patients_rooms, \
-		/area/station/medical/surgery, \
-		/area/station/medical/cryo, \
-		/area/station/medical/break_room, \
-		/area/station/security/prison/safe, \
-		/area/station/science/ordnance/burnchamber, \
-		/area/station/science/ordnance/freezerchamber, \
-		/area/station/science/ordnance/bomb, \
-		/area/station/science/server, ))
+	var/static/list/area_whitelist = typecacheof(list(
+		/area/station/commons,
+		/area/station/maintenance/tram,
+		/area/station/maintenance/disposal,
+		/area/station/maintenance/radshelter,
+		/area/station/command,
+		/area/station/service,
+		/area/station/engineering,
+		/area/station/construction,
+		/area/station/medical,
+		/area/station/security,
+		/area/station/cargo,
+		/area/station/science,
+	))
+	/// Areas where you can't be tasked to draw a rune, usually because they're too mean
+	var/static/list/area_blacklist = typecacheof(list(
+		/area/station/cargo/warehouse, // This SHOULD be fine except SOMEBODY gave this area to a kilo structure which is IN SPACE
+		/area/station/engineering/supermatter,
+		/area/station/engineering/transit_tube,
+		/area/station/security/prison/safe,
+		/area/station/science/ordnance/burnchamber,
+		/area/station/science/ordnance/freezerchamber,
+		/area/station/science/ordnance/bomb,
+		/area/station/science/server,
+	))
 
 /datum/action/grand_ritual/IsAvailable(feedback)
 	. = ..()
@@ -104,7 +100,7 @@
 	RegisterSignal(owner, list(
 			COMSIG_MOB_ENTER_JAUNT,
 			COMSIG_MOB_AFTER_EXIT_JAUNT,
-		), PROC_REF(update_icon_on_signal))
+		), PROC_REF(update_status_on_signal))
 
 /datum/action/grand_ritual/Remove(mob/remove_from)
 	. = ..()
@@ -141,9 +137,10 @@
 
 	var/turf/target_turf = get_turf(owner)
 	for (var/turf/nearby_turf as anything in RANGE_TURFS(1, target_turf))
-		if (!isopenturf(nearby_turf) || is_type_in_typecache(nearby_turf, blacklisted_rune_turfs))
-			owner.balloon_alert(owner, "invalid placement for rune!")
-			return
+		if (!is_type_in_typecache(nearby_turf, blacklisted_rune_turfs))
+			continue
+		owner.balloon_alert(owner, "invalid placement for rune!")
+		return
 
 	if (locate(/obj/effect/grand_rune) in range(3, target_turf))
 		owner.balloon_alert(owner, "to close to another rune!")
@@ -166,6 +163,11 @@
 		qdel(draw_effect)
 		new /obj/effect/temp_visual/failed_draw(target_turf)
 		return
+
+	for (var/turf/closed/wall/wall in RANGE_TURFS(1, target_turf))
+		playsound(wall, 'sound/magic/blind.ogg', 100, TRUE)
+		new /obj/effect/decal/cleanable/ash(wall)
+		wall.dismantle_wall(devastated = TRUE)
 
 	target_turf.balloon_alert(owner, "rune created")
 	var/obj/effect/grand_rune/new_rune = create_appropriate_rune(target_turf)

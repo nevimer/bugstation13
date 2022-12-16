@@ -44,16 +44,6 @@
 /datum/grand_side_effect/spell/proc/cleanup_spell(datum/spell)
 	qdel(spell)
 
-/// Explode nearby lights and electrify people
-/datum/grand_side_effect/spell/overload_lights
-	abstract = FALSE
-	spell_path = /datum/action/cooldown/spell/aoe/overload_lights
-
-/// Makes nearby objects more bloodthirsty
-/datum/grand_side_effect/spell/haunt_objects
-	abstract = FALSE
-	spell_path = /datum/action/cooldown/spell/aoe/haunt_object
-
 /// Casts dimensional instability on the area
 /datum/grand_side_effect/spell/scramble_turfs
 	abstract = FALSE

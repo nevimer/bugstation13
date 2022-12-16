@@ -120,20 +120,8 @@
 	item_path = /obj/item/gun/magic/staff/door
 	category = DIPLOMA_SPELL_DEFENSIVE
 
-/datum/diploma_spell/item/teleport
-	name = "Staff of Teleportation"
-	desc = "A staff which sends its victims somewhere else, notably this is usually somewhere that you aren't. Useful for getting some private time."
-	item_path = /obj/item/gun/magic/staff/teleport
-	category = DIPLOMA_SPELL_DEFENSIVE
-
 /datum/diploma_spell/abyssal_gaze
 	name = "Abyssal Gaze"
 	desc = "A simple curse which blinds and chills its victim for a short duration."
 	spell_type = /datum/action/cooldown/spell/pointed/abyssal_gaze/greater
-	category = DIPLOMA_SPELL_DEFENSIVE
-
-/datum/diploma_spell/overload_lights
-	name = "Power Surge"
-	desc = "Overload nearby lightbulbs with power, causing them to zap people nearby."
-	spell_type = /datum/action/cooldown/spell/aoe/overload_lights
 	category = DIPLOMA_SPELL_DEFENSIVE

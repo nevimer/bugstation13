@@ -40,7 +40,7 @@
 /datum/action/conceal_organ
 	name = "Toggle organ display"
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
-	icon_icon = 'orbstation/icons/mob/species/organ_buttons.dmi'
+	button_icon = 'orbstation/icons/mob/species/organ_buttons.dmi'
 	/// Icon state to use when organ is hidden
 	var/icon_state_hidden = ""
 	/// A nice name for the organ in question
@@ -52,7 +52,7 @@
 	. = ..()
 	if (!owner)
 		return
-	RegisterSignals(owner, list(COMSIG_MOB_EQUIPPED_ITEM, COMSIG_MOB_UNEQUIPPED_ITEM), PROC_REF(update_icon_on_signal))
+	RegisterSignals(owner, list(COMSIG_MOB_EQUIPPED_ITEM, COMSIG_MOB_UNEQUIPPED_ITEM), PROC_REF(update_status_on_signal))
 	RegisterSignal(owner, COMSIG_SPECIES_GAIN, PROC_REF(update_display))
 
 /datum/action/conceal_organ/Remove(mob/remove_from)
@@ -128,7 +128,7 @@
 		button_icon_state = initial(button_icon_state)
 		name = "Conceal [organ_name]"
 		desc = "Tuck your [organ_name] into a bulky suit in order to hide it."
-	UpdateButtons()
+	build_all_button_icons()
 
 /// Shows/Hides tail
 /datum/action/conceal_organ/tail

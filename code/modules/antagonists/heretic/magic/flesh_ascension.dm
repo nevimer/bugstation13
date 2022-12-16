@@ -2,8 +2,9 @@
 	name = "Shed form"
 	desc = "Shed your fragile form, become one with the arms, become one with the emperor. \
 		Causes heavy amounts of brain damage and sanity loss to nearby mortals."
-	background_icon_state = "bg_ecult"
-	icon_icon = 'icons/mob/actions/actions_ecult.dmi'
+	background_icon_state = "bg_heretic"
+	overlay_icon_state = "bg_heretic_border"
+	button_icon = 'icons/mob/actions/actions_ecult.dmi'
 	button_icon_state = "worm_ascend"
 
 	school = SCHOOL_FORBIDDEN
@@ -27,7 +28,7 @@
 
 		// 25% chance to cause a trauma
 		if(prob(25))
-			var/datum/brain_trauma/trauma = pick(subtypesof(BRAIN_TRAUMA_MILD) + subtypesof(BRAIN_TRAUMA_SEVERE))
+			var/datum/brain_trauma/trauma = pick(GLOB.orb_mysterious_brain_traumas) // ORBSTATION: pick from our list instead
 			nearby_human.gain_trauma(trauma, TRAUMA_RESILIENCE_LOBOTOMY)
 		// And a negative moodlet
 		nearby_human.add_mood_event("gates_of_mansus", /datum/mood_event/gates_of_mansus)
@@ -46,8 +47,9 @@
 /datum/action/cooldown/spell/worm_contract
 	name = "Force Contract"
 	desc = "Forces your body to contract onto a single tile."
-	background_icon_state = "bg_ecult"
-	icon_icon = 'icons/mob/actions/actions_ecult.dmi'
+	background_icon_state = "bg_heretic"
+	overlay_icon_state = "bg_heretic_border"
+	button_icon = 'icons/mob/actions/actions_ecult.dmi'
 	button_icon_state = "worm_contract"
 
 	school = SCHOOL_FORBIDDEN

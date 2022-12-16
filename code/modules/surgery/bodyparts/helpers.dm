@@ -189,3 +189,18 @@
 			. = "#fff4e6"
 		if("orange")
 			. = "#ffc905"
+		// Orb additions go here
+		if("amberbrown")
+			. = "#5b381f"
+		if("sable")
+			. = "#3D241B"
+		if("coolblack")
+			. = "#362429"
+		if("coolbrown")
+			. = "#765043"
+		if("almondskin")
+			. = "#9E6844"
+		if("hickorybrown")
+			. = "#9C674E"
+		if("ruddybrown")
+			. = "#8A5142"

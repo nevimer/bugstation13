@@ -4,13 +4,13 @@
 /datum/action/cooldown/spell/aoe_staggered/tentacle_burst
 	name = "Tentacle Burst"
 	desc = "Conjure a wave of tentacles from the ground to grapple your foes."
-	background_icon_state = "bg_ecult"
-	icon_icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
+	background_icon_state = "bg_demon"
+	button_icon = 'icons/mob/simple/lavaland/lavaland_monsters.dmi'
 	button_icon_state = "goliath"
 	sound = 'sound/magic/demon_attack1.ogg'
 	aoe_radius = 5
-	cooldown_time = 1 MINUTES
-	cooldown_reduction_per_rank = 10 SECONDS
+	cooldown_time = 30 SECONDS
+	cooldown_reduction_per_rank = 5 SECONDS
 
 /datum/action/cooldown/spell/aoe_staggered/tentacle_burst/get_things_to_cast_on(atom/center)
 	var/list/things = list()

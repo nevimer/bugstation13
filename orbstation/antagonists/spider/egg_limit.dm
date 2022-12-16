@@ -21,12 +21,12 @@
 	. = ..()
 	eggs_count--
 	announce_remaining()
-	UpdateButtons()
+	build_all_button_icons()
 
 /datum/action/innate/spider/lay_eggs/proc/announce_remaining()
 	owner.balloon_alert(owner, "[eggs_count] eggs remaining")
 
-/datum/action/innate/spider/lay_eggs/UpdateButtons(status_only, force)
+/datum/action/innate/spider/lay_eggs/update_button_status(status_only, force)
 	. = ..()
 	update_desc()
 

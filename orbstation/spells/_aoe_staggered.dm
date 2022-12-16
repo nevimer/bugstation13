@@ -7,7 +7,7 @@
  */
 /datum/action/cooldown/spell/aoe_staggered
 	/// Period to wait between each 'wave'
-	var/stagger_period = 0.5 SECONDS
+	var/stagger_period = 0.2 SECONDS
 	/// The radius of the aoe.
 	var/aoe_radius = 7
 

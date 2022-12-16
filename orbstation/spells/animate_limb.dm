@@ -10,8 +10,8 @@
 	sound = 'sound/magic/disintegrate.ogg'
 
 	school = SCHOOL_EVOCATION
-	cooldown_time = 1 MINUTES
-	cooldown_reduction_per_rank = 10 SECONDS
+	cooldown_time = 30 SECONDS
+	cooldown_reduction_per_rank = 6 SECONDS
 	hand_path = /obj/item/melee/touch_attack/animate_limb
 
 /datum/action/cooldown/spell/touch/animate_limb/cast_on_hand_hit(obj/item/melee/touch_attack/hand, atom/victim, mob/living/carbon/caster)

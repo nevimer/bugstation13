@@ -5,10 +5,6 @@
 	boozepwr = 15
 	quality = DRINK_NICE
 	taste_description = "mischief"
-	glass_icon_path = 'orbstation/icons/obj/drinks.dmi'
-	glass_icon_state = "goblin_juice"
-	glass_name = "Goblin Juice"
-	glass_desc = "A multicolored concoction of unknown origin. It sparks and fizzles unnervingly."
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	overdose_threshold = 80 // causes greenification
 	var/minor_overdose = 20 // causes jitters
@@ -38,6 +34,13 @@
 
 	if (M.has_reagent(/datum/reagent/consumable/ethanol/goblin_juice, minor_overdose) && DT_PROB(10, delta_time))
 		M.set_jitter_if_lower(3 SECONDS * REM * delta_time)
-    
+
 	..()
 	. = TRUE
+
+/datum/glass_style/drinking_glass/goblin_juice
+	required_drink_type = /datum/reagent/consumable/ethanol/goblin_juice
+	name = "Goblin Juice"
+	desc = "A multicolored concoction of unknown origin. It sparks and fizzles unnervingly."
+	icon = 'orbstation/icons/obj/drinks.dmi'
+	icon_state = "goblin_juice"

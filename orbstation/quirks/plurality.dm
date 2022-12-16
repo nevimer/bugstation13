@@ -254,7 +254,7 @@
 // as it would be redundant. This means that if their face is covered (such as by a gas mask) the system name on the chip will be visible.
 /mob/living/carbon/human/get_id_name(if_no_id = "Unknown", check_plurality = FALSE, append_system_name = FALSE)
 	var/obj/item/storage/wallet/wallet = wear_id
-	var/obj/item/modular_computer/tablet/pda/pda = wear_id
+	var/obj/item/modular_computer/pda/pda = wear_id
 	var/obj/item/card/id/id = wear_id
 	var/name_to_return = if_no_id
 	if(istype(wallet))

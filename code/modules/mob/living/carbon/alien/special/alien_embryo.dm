@@ -27,8 +27,9 @@
 
 /obj/item/organ/internal/body_egg/alien_embryo/on_life(delta_time, times_fired)
 	. = ..()
-	if(!owner) // ORBSTATION: once the organ is expelled, it no longer has an owner, so we need to do this to prevent potential runtime errors
+	if(QDELETED(src) || QDELETED(owner))
 		return
+
 	switch(stage)
 		if(3, 4)
 			if(DT_PROB(1, delta_time))
@@ -60,12 +61,16 @@
 /obj/item/organ/internal/body_egg/alien_embryo/proc/advance_embryo_stage()
 	if(stage >= 6)
 		return
-	if(++stage < 6)
+	stage++
+	if(stage < 6)
 		INVOKE_ASYNC(src, PROC_REF(RefreshInfectionImage))
 		var/slowdown = 1
 		if(ishuman(owner))
 			var/mob/living/carbon/human/baby_momma = owner
 			slowdown = baby_momma.reagents.has_reagent(/datum/reagent/medicine/spaceacillin) ? 2 : 1 // spaceacillin doubles the time it takes to grow
+			if(owner.has_status_effect(/datum/status_effect/nest_sustenance))
+				slowdown *= 0.80 //egg gestates 20% faster if you're trapped in a nest
+
 		addtimer(CALLBACK(src, PROC_REF(advance_embryo_stage)), growth_time*slowdown)
 
 /obj/item/organ/internal/body_egg/alien_embryo/egg_process()
@@ -134,6 +139,8 @@
 	if(owner.blood_volume)
 		owner.spray_blood(owner.dir, WOUND_SEVERITY_LOSS)
 	chest_part.dismember(BRUTE)
+	owner.log_message("had an alien larva within them escape (without being gibbed).", LOG_ATTACK, log_globally = FALSE)
+
 	qdel(src)
 
 

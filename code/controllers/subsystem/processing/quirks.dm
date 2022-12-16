@@ -21,6 +21,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
 		list("Farsighted", "Illiterate"), //ORBSTATION
 		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION
+		list("Blind", "Compulsive Door Closer"), //ORBSTATION
 		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),
 		list("Ageusia", "Vegetarian", "Deviant Tastes", "Gamer"),

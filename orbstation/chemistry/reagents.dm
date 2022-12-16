@@ -15,12 +15,16 @@
 	description = "Rats can't get enough of the stuff!"
 	color = "#FFC814" // rgb: 225, 200, 20
 	taste_description = "cheese"
-	glass_icon_state = "glass_yellow"
-	glass_name = "glass of cheese sauce"
-	glass_desc = "Rats can't get enough of the stuff!"
 	ph = 6.7 // the same as milk
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+
+/datum/glass_style/drinking_glass/cheese
+	required_drink_type = /datum/reagent/consumable/cheese
+	name = "glass of cheese sauce"
+	desc = "Rats can't get enough of the stuff!"
+	icon = 'icons/obj/drinks/drinks.dmi'
+	icon_state = "glass_yellow"
 
 /obj/item/food/cheese
 	/// Amount of cheese reagent that will be added to a person after eating the food.

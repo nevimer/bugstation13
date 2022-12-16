@@ -4,7 +4,7 @@
 	desc = "Endure a horrific transformation into a creature of darkness for a time to use their unnatural abilities. \
 		Once you've made your choice, it cannot be changed."
 
-	background_icon_state = "bg_ecult"
+	background_icon_state = "bg_demon"
 	button_icon_state = "soultap"
 
 	sound = 'sound/magic/demon_consume.ogg'

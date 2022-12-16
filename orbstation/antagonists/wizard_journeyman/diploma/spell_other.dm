@@ -104,13 +104,6 @@
 	spell_type = /datum/action/cooldown/spell/summonitem
 	category = DIPLOMA_SPELL_OTHER
 
-/datum/diploma_spell/haunt_objects
-	name = "Call Poltergeists"
-	desc = "Summons depraved spirits to possess nearby objects, causing them to attack the living. \
-		As you are the living, make sure that you have an exit strategy."
-	spell_type = /datum/action/cooldown/spell/aoe/haunt_object
-	category = DIPLOMA_SPELL_OTHER
-
 /datum/diploma_spell/clown_gear
 	name = "Endless Clown Tools"
 	desc = "Reach your hand into the clown dimension and pull out some kind of prank-related item. \
@@ -123,5 +116,12 @@
 	desc = "Everything you need in order to summon your own eldritch familiar, except for a \
 		3x3 area of floorspace and a spirit to twist to your will."
 	item_path = /obj/item/demonology_for_dummies
+	category = DIPLOMA_SPELL_OTHER
+	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/item/apprentice
+	name = "Apprentice Contract"
+	desc = "Summon a Wizard's Apprentice to help you out. They aren't YOUR apprentice, but they owe you one."
+	item_path = /obj/item/antag_spawner/contract
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_RARE

@@ -94,12 +94,12 @@
 
 /datum/round_event/wizard/indoor_weather/animal/get_item()
 	var/static/list/possible_paths = list(
-		/mob/living/simple_animal/pet/dog/corgi/puppy = 5,
+		/mob/living/basic/pet/dog/corgi/puppy = 5,
 		/mob/living/simple_animal/pet/cat/kitten = 5,
 		/mob/living/simple_animal/hostile/retaliate/frog = 5,
-		/mob/living/simple_animal/axolotl = 1,
-		/mob/living/simple_animal/pet/dog/corgi/puppy/void = 1,
-		/mob/living/simple_animal/pet/dog/corgi/puppy/slime = 1,
+		/mob/living/basic/axolotl = 1,
+		/mob/living/basic/pet/dog/corgi/puppy/void = 1,
+		/mob/living/basic/pet/dog/corgi/puppy/slime = 1,
 	)
 
 	var/mob_path = pick_weight(possible_paths)
