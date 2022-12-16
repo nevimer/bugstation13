@@ -51,6 +51,16 @@
 /obj/effect/landmark/navigate_destination/kitchen,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
+"av" = (
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
+/obj/structure/chair/sofa/corp/corner{
+	pixel_x = -2;
+	pixel_y = 1
+	},
+/obj/effect/spawner/random/entertainment/gambling,
+/turf/open/floor/carpet/donk,
+/area/station/hallway/secondary/service)
 "aw" = (
 /turf/closed/wall,
 /area/station/service/chapel/funeral)
@@ -1006,20 +1016,17 @@
 /area/station/maintenance/radshelter/civil)
 "hq" = (
 /obj/structure/table,
-/obj/item/paper/guides/jobs/hydroponics,
-/obj/item/reagent_containers/spray/plantbgone{
-	pixel_x = 8;
-	pixel_y = 8
-	},
+/obj/item/hand_labeler,
+/obj/item/stack/package_wrap,
+/obj/item/stack/package_wrap,
 /turf/open/floor/iron/terracotta/small,
 /area/station/service/hydroponics)
 "hr" = (
 /obj/structure/chair/sofa/corp/left{
+	dir = 8;
 	pixel_x = -2;
-	pixel_y = 2
+	pixel_y = 1
 	},
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
 /turf/open/floor/carpet/donk,
 /area/station/hallway/secondary/service)
 "ht" = (
@@ -1083,6 +1090,9 @@
 "hT" = (
 /turf/open/floor/grass,
 /area/station/hallway/primary/central)
+"hU" = (
+/turf/open/space/basic,
+/area/station/hallway/secondary/service)
 "hX" = (
 /obj/effect/decal/cleanable/ants,
 /turf/open/floor/grass,
@@ -1202,6 +1212,9 @@
 /obj/effect/turf_decal/tile/dark_green/full,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
+"iI" = (
+/turf/open/floor/carpet/donk,
+/area/station/hallway/secondary/service)
 "iK" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -1331,6 +1344,10 @@
 /obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /turf/open/floor/catwalk_floor,
 /area/station/hallway/primary/central)
+"jX" = (
+/obj/structure/flora/bush/flowers_pp/style_random,
+/turf/open/floor/grass,
+/area/station/service/hydroponics)
 "jZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/siding/dark_green{
@@ -2642,6 +2659,10 @@
 /obj/machinery/duct,
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
+"tj" = (
+/obj/item/bouquet/sunflower,
+/turf/open/floor/glass,
+/area/station/hallway/secondary/service)
 "tk" = (
 /obj/effect/turf_decal/trimline/dark_blue/filled/warning{
 	dir = 4
@@ -3426,11 +3447,11 @@
 /turf/open/floor/carpet,
 /area/station/service/chapel)
 "yK" = (
-/obj/machinery/computer/chef_order{
-	dir = 4
-	},
 /obj/structure/sign/painting/library{
 	pixel_x = -32
+	},
+/obj/machinery/computer/order_console/cook{
+	dir = 4
 	},
 /turf/open/floor/carpet/green,
 /area/station/hallway/secondary/service)
@@ -3707,6 +3728,7 @@
 /area/station/hallway/primary/central)
 "AT" = (
 /obj/structure/window/paperframe,
+/obj/effect/turf_decal/tile/dark_green/full,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen)
 "AW" = (
@@ -4873,6 +4895,11 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
+/obj/item/paper/guides/jobs/hydroponics,
+/obj/item/reagent_containers/spray/plantbgone{
+	pixel_x = 6;
+	pixel_y = 6
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/station/service/hydroponics)
 "Jg" = (
@@ -5131,6 +5158,15 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/chapel,
 /area/station/service/chapel)
+"La" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/chair/sofa/corp/corner{
+	dir = 4;
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/turf/open/floor/carpet/donk,
+/area/station/hallway/secondary/service)
 "Lc" = (
 /obj/machinery/duct,
 /obj/machinery/light/small/directional/north,
@@ -5793,10 +5829,10 @@
 /area/station/commons/toilet/auxiliary)
 "PJ" = (
 /obj/structure/chair/sofa/corp/right{
+	dir = 4;
 	pixel_x = 2;
-	pixel_y = 2
+	pixel_y = 1
 	},
-/obj/machinery/airalarm/directional/north,
 /turf/open/floor/carpet/donk,
 /area/station/hallway/secondary/service)
 "PO" = (
@@ -6596,6 +6632,10 @@
 /obj/structure/flora/grass/jungle/a/style_random,
 /turf/open/floor/iron/textured_large,
 /area/station/commons/toilet/auxiliary)
+"Wu" = (
+/obj/item/toy/plush/beeplushie,
+/turf/open/floor/glass,
+/area/station/hallway/secondary/service)
 "Wv" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/siding/wood{
@@ -37336,7 +37376,7 @@ Zt
 hT
 Hc
 GV
-HM
+jX
 GV
 HM
 GV
@@ -38109,7 +38149,7 @@ Hc
 wq
 HM
 GV
-HM
+HA
 GV
 hK
 XG
@@ -39133,7 +39173,7 @@ dt
 dt
 Zt
 hT
-Hc
+DF
 DF
 pW
 DF
@@ -39389,9 +39429,9 @@ dt
 dt
 dt
 Zt
-hT
 yu
 DF
+La
 PJ
 qO
 Lp
@@ -39647,9 +39687,9 @@ dt
 dt
 Zt
 hT
-hT
 DF
 fO
+iI
 Au
 db
 PY
@@ -39903,10 +39943,10 @@ dt
 dt
 dt
 Zt
-hT
 hX
 pW
 Bv
+iI
 ld
 Dd
 eC
@@ -40161,9 +40201,9 @@ dt
 dt
 Zt
 hT
-hT
 DF
 sv
+iI
 ho
 Ic
 Vr
@@ -40418,8 +40458,8 @@ dt
 dt
 Zt
 hT
-hT
 DF
+av
 hr
 js
 yk
@@ -40674,8 +40714,8 @@ dt
 dt
 dt
 Zt
-hT
 yu
+DF
 DF
 pW
 DF
@@ -104669,10 +104709,10 @@ NJ
 NJ
 wQ
 vH
-gX
 tI
 IL
 Nf
+IL
 IL
 IL
 Nf
@@ -104680,7 +104720,7 @@ IC
 vH
 vH
 vH
-ZE
+vH
 vH
 JW
 vM
@@ -104926,9 +104966,9 @@ NJ
 NJ
 wQ
 vH
-vH
 BA
 DF
+JK
 JK
 JK
 dY
@@ -105183,10 +105223,10 @@ NJ
 NJ
 wQ
 vH
-vH
 BA
 iK
 wR
+DF
 DF
 wR
 aG
@@ -105440,11 +105480,11 @@ NJ
 NJ
 wQ
 vH
-vH
 BA
 iK
 DF
-DF
+Wu
+tj
 DF
 aG
 Dk
@@ -105697,10 +105737,10 @@ NJ
 NJ
 wQ
 vH
-vH
 BA
 iK
 wR
+DF
 DF
 wR
 aG
@@ -105954,9 +105994,9 @@ NJ
 NJ
 wQ
 vH
-vH
 oG
 DF
+oD
 oD
 oD
 oD
@@ -106211,10 +106251,10 @@ NJ
 NJ
 wQ
 vH
-vH
 tg
 FK
 hk
+hU
 hk
 hk
 hk
