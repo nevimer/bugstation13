@@ -275,6 +275,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/red,
 /area/station/service/theater)
+"bF" = (
+/obj/machinery/button/tram{
+	id = "fore_boat_dock";
+	lift_id = "tram_boat"
+	},
+/turf/closed/wall/mineral/wood,
+/area/station/hallway/primary/central)
 "bH" = (
 /obj/effect/turf_decal/siding/dark_green{
 	dir = 1
@@ -591,6 +598,12 @@
 	},
 /turf/open/floor/stone,
 /area/station/commons/lounge)
+"di" = (
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
+	},
+/turf/open/floor/wood/large,
+/area/station/hallway/primary/central)
 "dj" = (
 /turf/open/floor/plating,
 /area/station/hallway/primary/central)
@@ -1015,6 +1028,10 @@
 /obj/machinery/smartfridge,
 /turf/open/floor/iron/terracotta/small,
 /area/station/service/hydroponics)
+"fF" = (
+/obj/effect/spawner/random/maintenance,
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "fH" = (
 /obj/machinery/holopad,
 /turf/open/floor/wood/large,
@@ -1588,6 +1605,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/terracotta/small,
 /area/station/hallway/primary/central)
+"iU" = (
+/obj/machinery/button/tram{
+	id = "aft_boat_dock";
+	lift_id = "tram_boat"
+	},
+/turf/closed/wall/mineral/wood,
+/area/station/hallway/primary/central)
 "iY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
@@ -1970,6 +1994,15 @@
 	},
 /turf/open/floor/bronze,
 /area/station/service/library)
+"lq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood/large,
+/area/station/hallway/primary/central)
 "lr" = (
 /turf/closed/wall/r_wall,
 /area/station/commons/toilet/auxiliary)
@@ -3333,6 +3366,14 @@
 	},
 /turf/open/floor/carpet/donk,
 /area/station/hallway/secondary/service)
+"sw" = (
+/obj/effect/landmark/tram{
+	name = "Fore Boat Dock";
+	specific_lift_id = "tram_boat";
+	destination_id = "fore_boat_dock"
+	},
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "sx" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/highsecurity{
@@ -4748,6 +4789,10 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/bronze,
 /area/station/service/library)
+"zS" = (
+/obj/structure/flora/bush/large/style_random,
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "zW" = (
 /obj/effect/turf_decal/tile/dark_green/full,
 /obj/structure/closet/secure_closet/hydroponics,
@@ -5438,6 +5483,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/bronze,
 /area/station/service/library)
+"DA" = (
+/obj/effect/turf_decal/siding/wood/end,
+/turf/open/floor/wood/large,
+/area/station/hallway/primary/central)
 "DB" = (
 /obj/machinery/light/warm/directional/south,
 /turf/open/misc/ashplanet/wateryrock/biodome,
@@ -5846,6 +5895,21 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet/royalblack,
 /area/station/service/library)
+"FD" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "titanium"
+	},
+/obj/machinery/computer/tram_controls{
+	specific_lift_id = "tram_boat";
+	icon_screen = null
+	},
+/obj/effect/landmark/tram{
+	name = "Aft Boat Dock";
+	specific_lift_id = "tram_boat";
+	destination_id = "aft_boat_dock"
+	},
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "FE" = (
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/bronze,
@@ -6907,6 +6971,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/auxiliary)
+"Ld" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/flora/rock/pile/jungle/style_random,
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "Le" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -7142,6 +7213,7 @@
 /obj/effect/spawner/random/trash/soap{
 	spawn_scatter_radius = 1
 	},
+/obj/structure/mirror/directional/west,
 /turf/open/floor/iron/freezer,
 /area/station/command/heads_quarters/captain/private)
 "Mj" = (
@@ -8206,6 +8278,16 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/terracotta/small,
 /area/station/hallway/primary/central)
+"RT" = (
+/obj/structure/industrial_lift/tram{
+	icon_state = "titanium"
+	},
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/landmark/lift_id{
+	specific_lift_id = "tram_boat"
+	},
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "RU" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /turf/open/floor/iron/white/smooth_large,
@@ -8312,6 +8394,16 @@
 /obj/structure/cable,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/auxiliary)
+"Sz" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/structure/industrial_lift/tram{
+	icon_state = "titanium"
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/water/jungle/biodome,
+/area/station/hallway/primary/central)
 "SA" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
@@ -48454,7 +48546,7 @@ NR
 NR
 NR
 NR
-iv
+zS
 Ab
 Ab
 Ab
@@ -49225,7 +49317,7 @@ ic
 jG
 Oa
 NR
-iv
+fF
 Ab
 Rp
 hD
@@ -50004,7 +50096,7 @@ iv
 iv
 IY
 iv
-iv
+oH
 iv
 IY
 iv
@@ -50232,18 +50324,7 @@ pc
 pc
 pc
 Tg
-oH
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-oH
+sw
 iv
 iv
 iv
@@ -50265,7 +50346,18 @@ iv
 iv
 iv
 iv
-CH
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+RT
+FD
+Sz
 pc
 pc
 pc
@@ -50488,28 +50580,9 @@ yl
 pc
 pc
 pc
-Tg
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-oH
-iv
-IY
-iv
-iv
-IY
-iv
-iv
-IY
-iv
-IY
-iv
-iv
-iv
+di
+lq
+DA
 iv
 iv
 iv
@@ -50522,7 +50595,26 @@ iv
 oH
 iv
 iv
-CH
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+iv
+oH
+di
+lq
+DA
 pc
 pc
 pc
@@ -50745,24 +50837,8 @@ CH
 pc
 pc
 pc
-Tg
-iv
-iv
-iv
-oH
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-iv
-oH
+Ld
+bF
 iv
 iv
 oH
@@ -50770,6 +50846,22 @@ iv
 iv
 iv
 iv
+iv
+IY
+iv
+iv
+IY
+iv
+iv
+IY
+oH
+IY
+iv
+oH
+iv
+iv
+iv
+oH
 iv
 iv
 iv
@@ -50778,7 +50870,7 @@ iv
 iv
 iv
 IY
-iv
+iU
 Zh
 pc
 pc
@@ -51010,7 +51102,7 @@ iv
 iv
 iv
 iv
-iv
+ui
 oH
 iv
 iv
@@ -51019,14 +51111,14 @@ iv
 iv
 iv
 iv
+ui
 iv
 iv
 iv
 iv
 iv
 iv
-iv
-iv
+ui
 iv
 iv
 iv
