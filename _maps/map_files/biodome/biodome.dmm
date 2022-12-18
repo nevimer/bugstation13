@@ -30,15 +30,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/grass,
 /area/station/hallway/primary/central)
-"ai" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/camera/directional/south{
-	c_tag = "Command - Bridge Aft"
-	},
-/turf/open/floor/iron,
-/area/station/command/bridge)
 "ak" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
@@ -3313,6 +3304,9 @@
 /area/station/hallway/primary/central)
 "tB" = (
 /obj/machinery/computer/cargo/request,
+/obj/machinery/camera/directional/north{
+	c_tag = "Command - Bridge Fore"
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "tC" = (
@@ -4611,7 +4605,7 @@
 /area/station/service/library)
 "Bo" = (
 /turf/open/floor/iron/dark,
-/area/station/hallway/primary/central)
+/area/station/command/bridge)
 "Bp" = (
 /obj/machinery/light/warm/directional/west,
 /turf/open/floor/carpet/lone/star,
@@ -5497,6 +5491,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "Gi" = (
@@ -6401,6 +6396,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/yellow/anticorner,
+/obj/machinery/camera/directional/south{
+	c_tag = "Command - Bridge Aft"
+	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
 "Lk" = (
@@ -6467,7 +6465,7 @@
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
-/area/station/hallway/primary/central)
+/area/station/command/bridge)
 "LB" = (
 /obj/structure/chair/stool/directional/north,
 /turf/open/floor/wood/large,
@@ -6914,12 +6912,6 @@
 /obj/item/bouquet/rose,
 /turf/open/floor/stone,
 /area/station/commons/lounge)
-"NR" = (
-/obj/machinery/camera/directional/north{
-	c_tag = "Command - Bridge Fore"
-	},
-/turf/open/floor/iron,
-/area/station/command/bridge)
 "NS" = (
 /obj/structure/window/paperframe,
 /turf/open/floor/stone,
@@ -7306,8 +7298,9 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
 /turf/open/floor/iron/dark,
-/area/station/hallway/primary/central)
+/area/station/command/bridge)
 "Qk" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/grass,
@@ -7791,6 +7784,7 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "Tf" = (
@@ -8109,6 +8103,7 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "Vd" = (
@@ -114271,7 +114266,7 @@ vH
 vH
 vH
 ku
-NR
+UG
 mV
 AB
 ku
@@ -114285,7 +114280,7 @@ ku
 ku
 mV
 MG
-ai
+Om
 rt
 YU
 JJ
@@ -115041,9 +115036,9 @@ vH
 vH
 vH
 vH
-Qn
+ku
 Ly
-Qn
+ku
 vH
 vH
 vH
@@ -115298,9 +115293,9 @@ vH
 vH
 vH
 vH
-Qn
+ku
 Bo
-Qn
+ku
 vH
 vH
 vH
@@ -115555,9 +115550,9 @@ vH
 vH
 vH
 vH
-Qn
+ku
 Bo
-Qn
+ku
 vH
 vH
 vH
@@ -115812,9 +115807,9 @@ vH
 vH
 vH
 KI
-Qn
+ku
 Bo
-Qn
+ku
 vH
 vH
 vH
@@ -116069,9 +116064,9 @@ wQ
 wQ
 Zt
 Zt
-Qn
+ku
 Qg
-Qn
+ku
 Qn
 Qn
 wQ
