@@ -191,18 +191,20 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	report += printplayer(owner)
 	report += "<br><B>Grand Rituals completed:</B> [ritual.times_completed]<br>"
 
-	var/objectives_complete = TRUE
+	//var/objectives_complete = TRUE
 	if(objectives.len)
 		report += printobjectives(objectives)
-		for(var/datum/objective/objective in objectives)
-			if(!objective.check_completion())
-				objectives_complete = FALSE
-				break
+		//for(var/datum/objective/objective in objectives)
+		//	if(!objective.check_completion())
+		//		objectives_complete = FALSE
+		//		break
 
+	/** I'm leaving this here instead of deleting it because I will want to restore it when PRing to TG
 	if(objectives.len == 0 || objectives_complete)
 		report += "<br><span class='greentext big'>The [name] was successful!</span>"
 	else
 		report += "<br><span class='redtext big'>The [name] has failed!</span>"
+	 */
 
 	report += "<br><B>Spells chosen:</B> "
 	for (var/spell in learned_spells)

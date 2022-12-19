@@ -181,17 +181,18 @@
 	if(S.check_completion())
 		parts += "<span class='redtext big'>The [name] has succeeded! Station space has been reclaimed by the space carp!</span>"
 	parts += printplayer(owner)
-	var/objectives_complete = TRUE
+	//var/objectives_complete = TRUE ORBSTATION: We don't want to report success or failure
 	if(objectives.len)
 		parts += printobjectives(objectives)
-		for(var/datum/objective/objective in objectives)
-			if(!objective.check_completion())
-				objectives_complete = FALSE
-				break
-	if(objectives_complete)
-		parts += "<span class='greentext big'>The [name] was successful!</span>"
-	else
-		parts += "<span class='redtext big'>The [name] has failed!</span>"
+		//for(var/datum/objective/objective in objectives)
+		//	if(!objective.check_completion())
+		//		objectives_complete = FALSE
+		//		break
+
+	//if(objectives_complete)
+	//	parts += "<span class='greentext big'>The [name] was successful!</span>"
+	//else
+	//	parts += "<span class='redtext big'>The [name] has failed!</span>"
 	if(carp.len)
 		parts += "<span class='header'>The [name] was assisted by:</span>"
 		parts += printplayerlist(carp)

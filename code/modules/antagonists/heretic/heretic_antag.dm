@@ -431,7 +431,7 @@
 /datum/antagonist/heretic/roundend_report()
 	var/list/parts = list()
 
-	var/succeeded = TRUE
+	//var/succeeded = TRUE
 
 	parts += printplayer(owner)
 	parts += "<b>Sacrifices Made:</b> [total_sacrifices]"
@@ -440,20 +440,20 @@
 		var/count = 1
 		for(var/datum/objective/objective as anything in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_greentext("Success!")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_redtext("Fail.")]"
-				succeeded = FALSE
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
+				//succeeded = FALSE
 			count++
 
 	if(ascended)
-		parts += span_greentext(span_big("THE HERETIC ASCENDED!"))
+		parts += span_hypnophrase(span_big("THE HERETIC ASCENDED!"))
 
-	else
-		if(succeeded)
-			parts += span_greentext("The heretic was successful, but did not ascend!")
-		else
-			parts += span_redtext("The heretic has failed.")
+	//else  ORBSTATION: We don't want to report success or failure
+	//	if(succeeded)
+	//		parts += span_greentext("The heretic was successful, but did not ascend!")
+	//	else
+	//		parts += span_redtext("The heretic has failed.")
 
 	parts += "<b>Knowledge Researched:</b> "
 

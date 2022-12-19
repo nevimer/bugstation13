@@ -61,4 +61,3 @@
 
 /datum/preference/choiced/pod_blood/apply_to_human(mob/living/carbon/human/target, value)
 	target.dna.features["pod_blood"] = value
-

@@ -251,9 +251,9 @@
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] [span_greentext("Success!")]"
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text]"
 			else
-				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text] [span_redtext("Fail.")]"
+				objectives_text += "<br><B>Objective #[count]</B>: [objective.explanation_text]"
 				traitor_won = FALSE
 
 			//ORBSTATION EDIT: see the original objectives
@@ -263,7 +263,7 @@
 
 			count++
 		if(uplink_handler.final_objective)
-			objectives_text += "<br>[span_greentext("[traitor_won ? "Additionally" : "However"], the final objective \"[uplink_handler.final_objective]\" was completed!")]"
+			objectives_text += "<br><B>["[traitor_won ? "Additionally" : "However"], the final objective \"[uplink_handler.final_objective]\" was completed!"]</B>"
 			traitor_won = TRUE
 
 	result += "<br>[owner.name] <B>[traitor_flavor["roundend_report"]]</B>"
@@ -274,8 +274,6 @@
 			var/static/icon/badass = icon('icons/ui_icons/antags/badass.dmi', "badass")
 			uplink_text += "<BIG>[icon2html(badass, world)]</BIG>"
 		result += uplink_text
-
-	result += "<br>[owner.name] earned <B>[DISPLAY_PROGRESSION(uplink_handler.progression_points)]</B> reputation points.<br>"
 
 	result += objectives_text
 
@@ -296,14 +294,14 @@
 		result += completed_objectives_text
 
 		result += "<br><B>Total:</B> [total_completed] objectives, [DISPLAY_PROGRESSION(total_earned_prog)] reputation, [total_earned_tc] TC"
-		result += "<br>The traitor had a total of [uplink_handler.progression_points] Reputation and [uplink_handler.telecrystals] Unused Telecrystals."
-	var/special_role_text = lowertext(name)
+		result += "The traitor had a total of [DISPLAY_PROGRESSION(uplink_handler.progression_points)] Reputation and [uplink_handler.telecrystals] Unused Telecrystals."
+	//var/special_role_text = lowertext(name)
 
-	if(traitor_won)
-		result += span_greentext("The [special_role_text] was successful!")
-	else
-		result += span_redtext("The [special_role_text] has failed!")
-		SEND_SOUND(owner.current, 'sound/ambience/ambifailure.ogg')
+	//if(traitor_won) ORBSTATION: Don't display success or failure
+	//	result += span_greentext("The [special_role_text] was successful!")
+	//else
+	//	result += span_redtext("The [special_role_text] has failed!")
+	//	SEND_SOUND(owner.current, 'sound/ambience/ambifailure.ogg')
 
 	return result.Join("<br>")
 

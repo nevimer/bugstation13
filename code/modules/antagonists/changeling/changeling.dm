@@ -142,6 +142,7 @@
 	RegisterSignal(living_mob, COMSIG_MOB_LOGIN, PROC_REF(on_login))
 	RegisterSignal(living_mob, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	RegisterSignal(living_mob, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(on_fullhealed))
+	RegisterSignal(living_mob, COMSIG_MOB_GET_STATUS_TAB_ITEMS, PROC_REF(get_status_tab_item))
 	RegisterSignals(living_mob, list(COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON), PROC_REF(on_click_sting))
 
 	if(living_mob.hud_used)
@@ -199,7 +200,7 @@
 /datum/antagonist/changeling/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/living_mob = mob_override || owner.current
 	handle_clown_mutation(living_mob, removing = FALSE)
-	UnregisterSignal(living_mob, list(COMSIG_MOB_LOGIN, COMSIG_LIVING_LIFE, COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON))
+	UnregisterSignal(living_mob, list(COMSIG_MOB_LOGIN, COMSIG_LIVING_LIFE, COMSIG_LIVING_POST_FULLY_HEAL, COMSIG_MOB_GET_STATUS_TAB_ITEMS, COMSIG_MOB_MIDDLECLICKON, COMSIG_MOB_ALTCLICKON))
 
 	if(living_mob.hud_used)
 		var/datum/hud/hud_used = living_mob.hud_used
@@ -304,6 +305,11 @@
 	INVOKE_ASYNC(chosen_sting, TYPE_PROC_REF(/datum/action/changeling/sting, try_to_sting), ling, clicked)
 
 	return COMSIG_MOB_CANCEL_CLICKON
+
+/datum/antagonist/changeling/proc/get_status_tab_item(mob/living/source, list/items)
+	SIGNAL_HANDLER
+	items += "Chemical Storage: [chem_charges]/[total_chem_storage]"
+	items += "Absorbed DNA: [absorbed_count]"
 
 /*
  * Adjust the chem charges of the ling by [amount]
@@ -935,9 +941,9 @@
 /datum/antagonist/changeling/roundend_report()
 	var/list/parts = list()
 
-	var/changeling_win = TRUE
-	if(!owner.current)
-		changeling_win = FALSE
+	//var/changeling_win = TRUE ORBSTATION: We don't want to report success or failure
+	//if(!owner.current)
+	//	changeling_win = FALSE
 
 	parts += printplayer(owner)
 	parts += "<b>Genomes Extracted:</b> [absorbed_count]<br>"
@@ -946,16 +952,16 @@
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_greentext("Success!</b>")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_redtext("Fail.")]"
-				changeling_win = FALSE
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
+				//changeling_win = FALSE
 			count++
 
-	if(changeling_win)
-		parts += span_greentext("The changeling was successful!")
-	else
-		parts += span_redtext("The changeling has failed.")
+	//if(changeling_win)
+	//	parts += span_greentext("The changeling was successful!")
+	//else
+	//	parts += span_redtext("The changeling has failed.")
 
 	return parts.Join("<br>")
 

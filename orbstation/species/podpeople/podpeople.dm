@@ -74,3 +74,16 @@
 	H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, BODYTYPE_ORGANIC)
 	H.adjustToxLoss(-0.5 * delta_time)
 	H.adjustOxyLoss(-0.5 * delta_time)
+
+// Roundstart podpeople just choose their hair colour
+/obj/item/organ/external/pod_hair
+	color_source = ORGAN_COLOR_HAIR
+	apply_color_to_layer = FALSE
+
+/obj/item/organ/external/pod_hair/override_color(draw_color)
+	var/mob/living/carbon/human/human_owner = owner
+	return human_owner.hair_color
+
+/obj/item/organ/external/pod_hair/get_overlay_color(draw_layer)
+	var/mob/living/carbon/human/human_owner = owner
+	return human_owner.hair_color

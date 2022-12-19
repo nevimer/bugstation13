@@ -355,19 +355,19 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	parts += printplayer(owner)
 
 	var/count = 1
-	var/wizardwin = 1
+	//var/wizardwin = 1
 	for(var/datum/objective/objective in objectives)
 		if(objective.check_completion())
-			parts += "<B>Objective #[count]</B>: [objective.explanation_text] [span_greentext("Success!")]"
+			parts += "<B>Objective #[count]</B>: [objective.explanation_text]"
 		else
-			parts += "<B>Objective #[count]</B>: [objective.explanation_text] [span_redtext("Fail.")]"
-			wizardwin = 0
+			parts += "<B>Objective #[count]</B>: [objective.explanation_text]"
+			//wizardwin = 0
 		count++
 
-	if(wizardwin)
-		parts += span_greentext("The wizard was successful!")
-	else
-		parts += span_redtext("The wizard has failed!")
+	//if(wizardwin) ORBSTATION: Don't display success or failure
+	//	parts += span_greentext("The wizard was successful!")
+	//else
+	//	parts += span_redtext("The wizard has failed!")
 
 	var/list/purchases = list()
 	for(var/list/log as anything in GLOB.wizard_spellbook_purchases_by_key[owner.key])

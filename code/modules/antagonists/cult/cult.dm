@@ -451,21 +451,24 @@
 	var/list/parts = list()
 	var/victory = check_cult_victory()
 
-	if(victory == CULT_NARSIE_KILLED) // Epic failure, you summoned your god and then someone killed it.
-		parts += "<span class='redtext big'>Nar'sie has been killed! The cult will haunt the universe no longer!</span>"
-	else if(victory)
-		parts += "<span class='greentext big'>The cult has succeeded! Nar'Sie has snuffed out another torch in the void!</span>"
-	else
-		parts += "<span class='redtext big'>The staff managed to stop the cult! Dark words and heresy are no match for Nanotrasen's finest!</span>"
+	if (victory == CULT_NARSIE_KILLED) // ORBSTATION: I feel like you gotta still mention this
+		parts += span_big("Nar'sie has been killed! How did you manage that?")
+
+	//if(victory == CULT_NARSIE_KILLED) ORBSTATION: Don't report success or failure
+	//	parts += "<span class='redtext big'>Nar'sie has been killed! The cult will haunt the universe no longer!</span>"
+	//else if(victory)
+	//	parts += "<span class='greentext big'>The cult has succeeded! Nar'Sie has snuffed out another torch in the void!</span>"
+	//else
+	//	parts += "<span class='redtext big'>The staff managed to stop the cult! Dark words and heresy are no match for Nanotrasen's finest!</span>"
 
 	if(objectives.len)
 		parts += "<b>The cultists' objectives were:</b>"
 		var/count = 1
 		for(var/datum/objective/objective in objectives)
 			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_greentext("Success!")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
 			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] [span_redtext("Fail.")]"
+				parts += "<b>Objective #[count]</b>: [objective.explanation_text]"
 			count++
 
 	if(members.len)
