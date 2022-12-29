@@ -342,8 +342,6 @@
 	sent_mob.adjust_dizzy(10 SECONDS)
 	sent_mob.set_eye_blur_if_lower(100 SECONDS)
 
-	to_chat(sent_mob, span_hypnophrase("Your mind is a blur... you have no memory of the moments before your kidnapping or the identity of your assailant."))
-
 	new /obj/effect/pod_landingzone(pick(possible_turfs), return_pod)
 
 

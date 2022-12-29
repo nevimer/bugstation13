@@ -82,3 +82,18 @@
 
 /datum/armor/cowboy_fancy
 	bio = 95
+
+/obj/item/clothing/shoes/cowboy/lizard
+	name = "lizard skin boots"
+	desc = "You can hear a faint hissing from inside the boots; you hope it is just a mournful ghost."
+	icon_state = "lizardboots_green"
+	armor_type = /datum/armor/cowboy_lizard
+
+/datum/armor/cowboy_lizard
+	bio = 90
+	fire = 40
+
+/obj/item/clothing/shoes/cowboy/lizard/masterwork
+	name = "\improper Hugs-The-Feet lizard skin boots"
+	desc = "A pair of masterfully crafted lizard skin boots. Finally a good application for the station's most bothersome inhabitants."
+	icon_state = "lizardboots_blue"

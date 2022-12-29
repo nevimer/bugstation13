@@ -107,6 +107,18 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
+"at" = (
+/obj/machinery/button/flasher{
+	id = "cockpit_flasher";
+	pixel_x = 6;
+	pixel_y = -24
+	},
+/obj/structure/table/wood/poker,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/cup/glass/bottle/whiskey,
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
 "au" = (
 /obj/machinery/computer/communications{
 	dir = 8
@@ -200,6 +212,17 @@
 	},
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
+"aN" = (
+/obj/structure/chair/stool/bar/directional/north{
+	can_buckle = 1;
+	name = "buckleable bar stool"
+	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
 "aO" = (
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 9
@@ -222,6 +245,17 @@
 /obj/structure/table/wood/shuttle_bar{
 	boot_dir = 8
 	},
+/obj/effect/turf_decal/tile/bar,
+/obj/effect/turf_decal/tile/bar{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/shuttle/escape)
+"aS" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/table,
+/obj/item/storage/box/drinkingglasses,
+/obj/item/reagent_containers/cup/glass/bottle/lizardwine,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -592,35 +626,12 @@
 	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
-"fr" = (
-)
-"xs" = (
-/obj/structure/chair/stool/bar/directional/north{
-	can_buckle = 1;
-	name = "buckleable bar stool"
-	},
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/shuttle/escape)
 "EL" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
 /obj/machinery/status_display/evac/directional/south,
-/turf/open/floor/iron,
-/area/shuttle/escape)
-"UI" = (
-/obj/structure/extinguisher_cabinet/directional/east,
-/obj/structure/table,
-/obj/item/storage/box/drinkingglasses,
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
 /turf/open/floor/iron,
 /area/shuttle/escape)
 
@@ -748,6 +759,7 @@ bE
 ac
 ah
 an
+at
 ab
 aD
 aE
@@ -766,7 +778,6 @@ bv
 by
 bC
 bE
-fr
 "}
 (7,1,1) = {"
 ac
@@ -807,7 +818,7 @@ aR
 aR
 aR
 bd
-xs
+aN
 aE
 bn
 bi
@@ -849,7 +860,7 @@ ab
 aG
 bW
 bI
-UI
+aS
 ad
 aY
 aj

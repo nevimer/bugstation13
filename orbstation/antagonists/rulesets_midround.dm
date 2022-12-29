@@ -59,6 +59,14 @@
 	required_candidates = 1
 	weight = 5
 	cost = 12
+	enemy_roles = list(
+		JOB_CAPTAIN,
+		JOB_DETECTIVE,
+		JOB_HEAD_OF_SECURITY,
+		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
+		JOB_CHAPLAIN,
+	)
 
 /datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/ready(forced = FALSE)
 	if (!check_candidates())
@@ -94,12 +102,6 @@
 		JOB_AI,
 		JOB_CYBORG,
 		ROLE_POSITRONIC_BRAIN,
-	)
-	enemy_roles = list(
-		JOB_HEAD_OF_SECURITY,
-		JOB_DETECTIVE,
-		JOB_WARDEN,
-		JOB_SECURITY_OFFICER,
 	)
 	requirements = list(10,101,50,40,35,20,20,15,10,10)
 	required_enemies = list(1,1,1,1,1,1,1,1,1,1) // the game is supposed to make one of your sac targets a security member

@@ -38,6 +38,15 @@
 	fire = 70
 	acid = 100
 
+/datum/armor/door_window
+	melee = 20
+	bullet = 50
+	laser = 50
+	energy = 50
+	bomb = 10
+	fire = 70
+	acid = 100
+
 /obj/machinery/door/window/Initialize(mapload, set_dir, unres_sides)
 	. = ..()
 	flags_1 &= ~PREVENT_CLICK_UNDER_1

@@ -221,7 +221,6 @@
 		/obj/item/clothing/under/suit/tuxedo = 1,
 		/obj/item/clothing/head/costume/weddingveil = 1,
 		/obj/item/storage/belt/cummerbund = 1,
-		/obj/item/clothing/suit/hooded/wintercoat/cosmic = 1, //ORBSTATION
 		/obj/item/clothing/suit/costume/drfreeze_coat = 1,
 		/obj/item/clothing/under/costume/drfreeze = 1,
 		/obj/item/clothing/head/costume/drfreezehat = 1,

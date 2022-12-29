@@ -18,10 +18,4 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/latejoin/heretic_smuggler
-	enemy_roles = list(
-		JOB_HEAD_OF_SECURITY,
-		JOB_DETECTIVE,
-		JOB_WARDEN,
-		JOB_SECURITY_OFFICER,
-	)
 	required_enemies = list(1,1,1,1,1,1,1,1,1,1) // the game is supposed to make one of your sac targets a security member

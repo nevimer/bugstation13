@@ -41,3 +41,18 @@
 /obj/item/book/granter/action/spell/blind/wgw/recoil(mob/living/user)
 	to_chat(user, span_notice("[length(remarks) ? pick(remarks) : "You keep reading..."]"))
 	return ..()
+
+/obj/item/tailclub
+	desc = "Also known as the Thagomiser."
+
+/obj/item/melee/chainofcommand/tailwhip
+	name = "scaled tail whip"
+	desc = "Simulates for the victim the experience of standing next to an excited Tiziran, but with none of the enjoyment."
+
+/obj/item/melee/chainofcommand/tailwhip/kitty
+	name = "cat tail whip"
+	desc = "Simulates for the victim the experience of standing next to an excited Felinid, but with none of the enjoyment."
+
+/obj/item/clothing/head/costume/lizard
+	name = "reptilian cloche"
+	desc = "A rather tasteless hat made out of synthesised scales."
