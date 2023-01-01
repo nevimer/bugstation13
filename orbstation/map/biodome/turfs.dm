@@ -12,3 +12,8 @@
 /turf/open/misc/ashplanet/wateryrock/biodome
 	name="Biodome Lake Rocks"
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+
+/turf/open/lava/plasma/biodome
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	baseturfs = /turf/open/lava/plasma/biodome
+
