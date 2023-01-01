@@ -383,6 +383,9 @@
 /obj/machinery/computer/atmos_control/nocontrol/incinerator{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible{
+	dir = 6
+	},
 /turf/open/floor/iron/dark/textured,
 /area/station/maintenance/disposal/incinerator)
 "aoF" = (
@@ -1625,7 +1628,7 @@
 /turf/open/floor/engine/air,
 /area/station/engineering/atmos)
 "bpW" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer4{
 	dir = 1
 	},
 /turf/open/floor/engine,
@@ -3927,7 +3930,7 @@
 "drk" = (
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/smart/simple/violet/visible{
-	dir = 8
+	dir = 6
 	},
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/atmos/mix)
@@ -8261,7 +8264,9 @@
 /area/station/security/execution/education)
 "hdf" = (
 /obj/machinery/igniter/incinerator_atmos,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4{
+	dir = 10
+	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "hdt" = (
@@ -10526,7 +10531,6 @@
 /obj/machinery/power/turbine/inlet_compressor{
 	dir = 4
 	},
-/obj/structure/cable,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "jeS" = (
@@ -11351,6 +11355,13 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/station/command/bridge)
+"jSc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/smart/simple/violet/visible{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured,
+/area/station/engineering/atmos/mix)
 "jSd" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/disposalpipe/segment{
@@ -13160,7 +13171,9 @@
 "lqF" = (
 /obj/machinery/air_sensor/incinerator_tank,
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4{
+	dir = 5
+	},
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "lqP" = (
@@ -13218,6 +13231,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/bronze,
 /area/station/service/library)
+"ltP" = (
+/obj/machinery/atmospherics/pipe/smart/simple/brown/hidden,
+/turf/closed/wall/r_wall,
+/area/station/maintenance/disposal/incinerator)
 "ltW" = (
 /obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
@@ -14421,13 +14438,6 @@
 /obj/structure/bookcase/random/nonfiction,
 /turf/open/floor/bronze,
 /area/station/service/library)
-"mpT" = (
-/obj/machinery/atmospherics/pipe/smart/simple/violet/visible{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/dark/textured,
-/area/station/engineering/atmos/mix)
 "mqy" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/dark_green,
@@ -16687,6 +16697,13 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/ce)
+"oeT" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/disposal/incinerator)
 "oeZ" = (
 /obj/effect/turf_decal/tile/red/diagonal_edge,
 /obj/structure/cable,
@@ -17234,6 +17251,12 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/wood,
 /area/station/commons/storage/primary)
+"oCr" = (
+/obj/machinery/atmospherics/pipe/smart/simple/violet/visible{
+	dir = 6
+	},
+/turf/closed/wall/r_wall,
+/area/station/engineering/atmos/mix)
 "oCD" = (
 /obj/structure/cable/layer3,
 /obj/effect/turf_decal/tile/dark/diagonal_centre,
@@ -18772,8 +18795,8 @@
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "pWk" = (
@@ -26820,7 +26843,7 @@
 /obj/machinery/door/airlock/public/glass/incinerator/atmos_interior,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "wOk" = (
@@ -27995,6 +28018,13 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/wood/large,
 /area/station/commons/storage/tools)
+"xMf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/smart/simple/violet/visible{
+	dir = 9
+	},
+/turf/open/floor/iron/dark/textured,
+/area/station/engineering/atmos/mix)
 "xMx" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -28174,7 +28204,7 @@
 /obj/machinery/door/airlock/public/glass/incinerator/atmos_exterior,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/atmos,
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4,
 /turf/open/floor/engine,
 /area/station/maintenance/disposal/incinerator)
 "xTI" = (
@@ -28481,7 +28511,10 @@
 /area/station/command/teleporter)
 "ygC" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible/layer2,
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "ygR" = (
@@ -122855,8 +122888,8 @@ lqT
 nTS
 nEu
 nEu
+nEu
 evL
-jsO
 loT
 fPg
 fOi
@@ -123112,8 +123145,8 @@ tVJ
 xDf
 xDf
 dpn
-mpT
 dpn
+jSc
 lqq
 pjI
 nUq
@@ -123369,8 +123402,8 @@ lyp
 ndi
 ndi
 evL
-mpT
 dpn
+jSc
 lqq
 dBH
 xJx
@@ -123627,7 +123660,7 @@ jsO
 jsO
 wPq
 drk
-dpn
+xMf
 kYJ
 jVz
 jVz
@@ -124665,8 +124698,8 @@ aQj
 jBH
 mdW
 aou
-nec
-nec
+ltP
+oeT
 nec
 nec
 nec
@@ -125163,7 +125196,7 @@ fJC
 fJC
 fJC
 gRq
-gRq
+oCr
 gRq
 gRq
 gRq
