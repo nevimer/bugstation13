@@ -21,11 +21,11 @@
 
 /datum/outfit/oldsec
 	name = "Ancient Security"
+	id = /obj/item/card/id/away/old/sec
 	uniform = /obj/item/clothing/under/rank/security/officer
 	shoes = /obj/item/clothing/shoes/jackboots
-	id = /obj/item/card/id/away/old/sec
-	r_pocket = /obj/item/restraints/handcuffs
 	l_pocket = /obj/item/assembly/flash/handheld
+	r_pocket = /obj/item/restraints/handcuffs
 
 /obj/effect/mob_spawn/ghost_role/human/oldeng
 	name = "old cryogenics pod"
@@ -48,10 +48,10 @@
 
 /datum/outfit/oldeng
 	name = "Ancient Engineer"
-	uniform = /obj/item/clothing/under/rank/engineering/engineer
-	shoes = /obj/item/clothing/shoes/workboots
 	id = /obj/item/card/id/away/old/eng
+	uniform = /obj/item/clothing/under/rank/engineering/engineer
 	gloves = /obj/item/clothing/gloves/color/fyellow/old
+	shoes = /obj/item/clothing/shoes/workboots
 	l_pocket = /obj/item/tank/internals/emergency_oxygen
 
 /datum/outfit/oldeng/mod
@@ -82,9 +82,9 @@
 
 /datum/outfit/oldsci
 	name = "Ancient Scientist"
+	id = /obj/item/card/id/away/old/sci
 	uniform = /obj/item/clothing/under/rank/rnd/scientist
 	shoes = /obj/item/clothing/shoes/laceup
-	id = /obj/item/card/id/away/old/sci
 	l_pocket = /obj/item/stack/medical/bruise_pack
 
 ///asteroid comms agent
@@ -188,16 +188,17 @@
 		if(battlecruiser_team.nuke)
 			var/obj/machinery/nuclearbomb/nuke = battlecruiser_team.nuke
 			antag_memory += "<B>[nuke] Code</B>: [nuke.r_code]<br>"
-			owner.add_memory(MEMORY_NUKECODE, list(DETAIL_NUKE_CODE = nuke.r_code, DETAIL_PROTAGONIST = owner.current), story_value = STORY_VALUE_AMAZING, memory_flags = MEMORY_FLAG_NOLOCATION | MEMORY_FLAG_NOMOOD | MEMORY_FLAG_NOPERSISTENCE)
+			owner.add_memory(/datum/memory/key/nuke_code, nuclear_code = nuke.r_code)
 			to_chat(owner, "The nuclear authorization code is: <B>[nuke.r_code]</B>")
 	return ..()
 
 /datum/outfit/syndicate_empty/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
+	belt = /obj/item/storage/belt/military/assault
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol/clandestine
 	r_pocket = /obj/item/knife/combat/survival
+
 	box = /obj/item/storage/box/survival/syndie
-	belt = /obj/item/storage/belt/military/assault
 
 /obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
@@ -211,13 +212,13 @@
 /datum/outfit/syndicate_empty/battlecruiser/assault
 	name = "Syndicate Battlecruiser Assault Operative"
 	uniform = /obj/item/clothing/under/syndicate/combat
-	l_pocket = /obj/item/uplink/nuclear
-	r_pocket = /obj/item/modular_computer/pda/nukeops
-	belt = /obj/item/storage/belt/military
 	suit = /obj/item/clothing/suit/armor/vest
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/clandestine
 	back = /obj/item/storage/backpack
+	belt = /obj/item/storage/belt/military
 	mask = /obj/item/clothing/mask/gas/syndicate
+	l_pocket = /obj/item/uplink/nuclear
+	r_pocket = /obj/item/modular_computer/pda/nukeops
 
 /obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/captain
 	name = "Syndicate Battlecruiser Captain"
@@ -232,28 +233,14 @@
 
 /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	name = "Syndicate Battlecruiser Captain"
-	l_pocket = /obj/item/melee/energy/sword/saber/red
-	r_pocket = /obj/item/melee/baton/telescopic
+	id = /obj/item/card/id/advanced/black/syndicate_command/captain_id
+	id_trim = /datum/id_trim/battlecruiser/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	suit_store = /obj/item/gun/ballistic/revolver/mateba
 	back = /obj/item/storage/backpack/satchel/leather
-	head = /obj/item/clothing/head/hats/hos/syndicate
-	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	ears = /obj/item/radio/headset/syndicate/alt/leader
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	id = /obj/item/card/id/advanced/black/syndicate_command/captain_id
-	id_trim = /datum/id_trim/battlecruiser/captain
-
-// ORBSTATION: lowpop version of the assault operative, which spawns without an uplink
-/obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/assault/lowpop
-	flavour_text = "Your job is to follow your captain's orders, keep intruders out of the ship, and assault Space Station 13. There is an on-board armory and an assault ship to attack the station with."
-	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault/lowpop
-	uses = 1
-
-/datum/outfit/syndicate_empty/battlecruiser/assault/lowpop
-	l_pocket = null // no uplink
-	belt = null // there's other belts on the ship already
-	mask = null // there's masks in the suit storage units
-
-/obj/effect/mob_spawn/ghost_role/human/syndicate/battlecruiser/captain/lowpop
-	flavour_text = "Your job is to oversee your crew, defend the ship, and destroy Space Station 13. There is an on-board armory and an assault ship to attack the station with."
+	head = /obj/item/clothing/head/hats/hos/syndicate
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+	l_pocket = /obj/item/melee/energy/sword/saber/red
+	r_pocket = /obj/item/melee/baton/telescopic

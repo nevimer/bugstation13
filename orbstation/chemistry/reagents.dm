@@ -30,7 +30,7 @@
 	/// Amount of cheese reagent that will be added to a person after eating the food.
 	var/cheesiness = 3
 
-/obj/item/food/cheese/MakeEdible()
+/obj/item/food/cheese/make_edible()
 	..()
 	if(cheesiness)
 		var/datum/component/edible/e = GetComponent(/datum/component/edible)

@@ -1,3 +1,3 @@
 /datum/species/jelly
-	species_traits = list(MUTCOLORS, EYECOLOR, NOBLOOD, HAIR)
+	species_traits = list(MUTCOLORS, EYECOLOR, HAIR)
 	hair_alpha = 200

@@ -61,8 +61,6 @@
 			Best prices this side of the galaxy! All deliveries are guaranteed to be 99% anomaly-free."
 	cost = CARGO_CRATE_VALUE * 20 // Best prices this side of the galaxy.
 	crate_name = "variety pizza crate"
-	infinite_pizza_chance = 2
-	bomb_pizza_chance = 6
 
 /// copies previously made lists of pizza for use in a list of pizzas to eventually fill the pizza crate
 /datum/supply_pack/organic/pizza/medley/fill(obj/structure/closet/crate/new_crate)

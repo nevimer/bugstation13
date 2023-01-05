@@ -41,7 +41,7 @@
 		/obj/item/food/yakiimo,
 		/obj/item/food/omelette,
 		/obj/item/food/cubancarp,
-		/obj/item/food/fishtaco,
+		/obj/item/food/taco/fish,
 		/obj/item/food/spicyfiletsushiroll,
 		/obj/item/food/lasagna,
 		/obj/item/food/full_english,

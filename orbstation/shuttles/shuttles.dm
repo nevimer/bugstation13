@@ -26,3 +26,9 @@
 	credit_cost = CARGO_CRATE_VALUE * 5
 	emag_only = TRUE
 	admin_notes = "this things tiny as fuck"
+
+// Other shuttles
+
+/datum/map_template/shuttle/pirate/zetan
+	suffix = "zetan"
+	name = "pirate ship (ZETAWEST ENFORCERS)"

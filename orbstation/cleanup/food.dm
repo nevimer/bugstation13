@@ -15,3 +15,7 @@
 /obj/item/reagent_containers/cup/glass/bottle/lizardwine/Initialize(mapload, vol)
 	. = ..()
 	return INITIALIZE_HINT_QDEL
+
+// Removed chick-a-file joke
+/obj/item/food/burger/chicken
+	tastes = list("bun" = 2, "chicken" = 4)
