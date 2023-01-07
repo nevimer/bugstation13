@@ -16,11 +16,11 @@
 	greyscale_config = null
 	greyscale_colors = null
 
-/obj/item/encryptionkey/uncommon
-	name = "\improper Galactic Uncommon translation key"
-	desc = "An encryption key that automatically translates uncommon heard through the radio into common. The signal's a bit indistinct."
+/obj/item/encryptionkey/human
+	name = "\improper Human translation key"
+	desc = "An encryption key that automatically translates Sol Standard heard through the radio into common. The signal's very persistent."
 	icon_state = "translation_cypherkey"
-	translated_language = /datum/language/uncommon
+	translated_language = /datum/language/solcom
 	greyscale_config = null
 	greyscale_colors = null
 
@@ -54,11 +54,11 @@
 	cost = PAYCHECK_CREW * 16 //expensive because Common is already widely spoken - less demand
 	contains = list(/obj/item/encryptionkey/common)
 
-/datum/supply_pack/goody/uncommon_encryption_key
-	name = "Galactic Uncommon radio encryption key"
-	desc = "A hi-tech radio encryption key that allows the wearer to understand galactic uncommon when the radio is worn."
+/datum/supply_pack/goody/human_encryption_key
+	name = "Sol Standard radio encryption key"
+	desc = "A hi-tech radio encryption key that allows the wearer to understand Sol Standard when the radio is worn."
 	cost = PAYCHECK_CREW * 12
-	contains = list(/obj/item/encryptionkey/uncommon)
+	contains = list(/obj/item/encryptionkey/human)
 
 /datum/supply_pack/goody/slime_encryption_key
 	name = "Slime radio encryption key"
@@ -87,10 +87,10 @@
 		/obj/item/encryptionkey/ethereal = 3,
 		/obj/item/encryptionkey/felinid = 3,
 		/obj/item/encryptionkey/ratfolk = 3,
+		/obj/item/encryptionkey/human = 3,
 		/obj/item/encryptionkey/plasmaman = 2,
 		/obj/item/encryptionkey/slime = 2,
 		/obj/item/encryptionkey/pod = 2,
-		/obj/item/encryptionkey/uncommon = 2,
 		/obj/item/encryptionkey/common = 1,
 	)
 

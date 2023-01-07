@@ -9,9 +9,3 @@
 	icon = 'orbstation/icons/misc/language.dmi'
 	icon_state = "rat"
 	default_priority = 90
-
-/datum/language_holder/ratfolk
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-								/datum/language/ratvaric = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/ratvaric = list(LANGUAGE_ATOM))
