@@ -19,6 +19,15 @@ SUBSYSTEM_DEF(statpanels)
 	///how many full runs this subsystem has completed. used for variable rate refreshes.
 	var/num_fires = 0
 
+/datum/controller/subsystem/statpanels/proc/get_round_time()
+	if (SSticker.round_start_time == 0)
+		return "Not Started"
+	var/current_time = world.time - SSticker.round_start_time
+	var/current_time_to_text = gameTimestamp("hh:mm:ss", current_time)
+	if (current_time < MIDNIGHT_ROLLOVER)
+		return current_time_to_text
+	return "[round((current_time)/MIDNIGHT_ROLLOVER)]:[current_time_to_text]"
+
 /datum/controller/subsystem/statpanels/fire(resumed = FALSE)
 	if (!resumed)
 		num_fires++
@@ -28,7 +37,7 @@ SUBSYSTEM_DEF(statpanels)
 			cached ? "Next Map: [cached.map_name]" : null,
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Round Time: [ROUND_TIME]",
+			"Round Time: [get_round_time()]",
 			"Station Time: [station_time_timestamp()]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)

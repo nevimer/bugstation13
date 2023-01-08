@@ -13,6 +13,7 @@
 	icon_living = "amoung"
 	icon_dead = "amoung_dead"
 	speed = 1
+	basic_mob_flags = UNDENSIFY_ON_DEATH
 	response_help_continuous = "bumps"
 	response_help_simple = "bump"
 	response_disarm_continuous = "pushes aside"
@@ -34,6 +35,10 @@
 	held_items = list(null, null)
 	greyscale_colors = "#ffffff"
 	ai_controller = /datum/ai_controller/basic_controller/amoung
+	// They're wearing space suits
+	unsuitable_atmos_damage = 0
+	unsuitable_cold_damage = 0
+	unsuitable_heat_damage = 0
 	/// List of possible amongus colours.
 	var/static/list/amoung_colors = list(
 		"red" = "#ff0033",
@@ -92,8 +97,12 @@
 	mob_type = /mob/living/basic/amoung/pequeno
 
 // amoung... surgeon??
-// doesn't actually inherit from amoung because amoungs are not hostile and lack code for attacking people
 // Can probably be replaced when I do my future 'among us content expansion', if that ever happens
+
+/mob/living/simple_animal/hostile/cat_butcherer/Initialize(mapload)
+	. = ..()
+	new /mob/living/basic/amoung/surgeon(loc)
+	return INITIALIZE_HINT_QDEL
 
 /mob/living/basic/amoung/surgeon
 	name = "suspicious surgeon"
@@ -122,6 +131,9 @@
 	faction = list("hostile")
 	status_flags = CANPUSH
 	ai_controller = /datum/ai_controller/basic_controller/amoung/hostile
+
+/mob/living/basic/amoung/surgeon/random_colour()
+	set_greyscale(colors=list(amoung_colors["white"]))
 
 // Shock twist!
 /mob/living/basic/amoung/surgeon/death(gibbed)
@@ -153,6 +165,7 @@
 	idle_behavior = /datum/idle_behavior/idle_random_walk
 	planning_subtrees = list(
 		/datum/ai_planning_subtree/simple_find_target,
+		/datum/ai_planning_subtree/attack_obstacle_in_path/carp, // Can't be bothered to change the subtype, it has the right cooldown
 		/datum/ai_planning_subtree/basic_melee_attack_subtree/amoung/surgeon
 	)
 
