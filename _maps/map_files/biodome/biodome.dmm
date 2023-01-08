@@ -93,6 +93,11 @@
 	},
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
+"adN" = (
+/obj/structure/flora/bush/leafy,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/grass,
+/area/station/maintenance/aft/upper)
 "aeo" = (
 /obj/item/radio/intercom/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -1563,6 +1568,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/iron/white/side{
 	dir = 4
 	},
@@ -2326,6 +2334,7 @@
 	c_tag = "Medbay -Chief Medical Officer's Office";
 	network = list("ss13","medbay")
 	},
+/obj/structure/disposalpipe/trunk,
 /turf/open/floor/iron/white/side,
 /area/station/command/heads_quarters/cmo)
 "bWg" = (
@@ -2645,6 +2654,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/cmo)
 "ckd" = (
@@ -5716,6 +5728,9 @@
 /area/station/service/library)
 "eOj" = (
 /obj/effect/turf_decal/tile/dark_blue/full,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/iron/white/small,
 /area/station/command/heads_quarters/cmo)
 "eOq" = (
@@ -8470,6 +8485,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/processing)
+"hbg" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/iron/white,
+/area/station/medical/medbay/central)
 "hbq" = (
 /obj/structure/sink/directional/west,
 /obj/structure/mirror/directional/east,
@@ -13727,6 +13749,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/bronze,
 /area/station/service/library)
+"lwF" = (
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/iron/white/small,
+/area/station/command/heads_quarters/cmo)
 "lwH" = (
 /obj/machinery/shower/directional/east,
 /turf/open/floor/iron/dark,
@@ -14141,12 +14169,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /turf/open/floor/plating/airless,
 /area/lavaland/surface)
-"lJQ" = (
-/obj/effect/mapping_helpers/airlock/access/all/service/janitor,
-/obj/machinery/door/airlock,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/station/maintenance/aft/upper)
 "lJT" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -22880,6 +22902,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "sJN" = (
@@ -25662,6 +25687,15 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
+"vhi" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/station/medical/medbay/central)
 "vhV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/carpet,
@@ -25885,6 +25919,9 @@
 "vtp" = (
 /obj/machinery/holopad,
 /obj/effect/turf_decal/tile/dark_blue/full,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/iron/white/small,
 /area/station/command/heads_quarters/cmo)
 "vtC" = (
@@ -119218,10 +119255,10 @@ woD
 woD
 woD
 jUz
-sJE
-sJE
-sJE
-sJE
+hbg
+hbg
+hbg
+hbg
 sJE
 woD
 woD
@@ -119479,7 +119516,7 @@ iAA
 iQS
 woD
 woD
-sJE
+vhi
 woD
 woD
 vxC
@@ -120249,7 +120286,7 @@ xnW
 mpc
 eyw
 iLN
-wus
+lwF
 vtp
 nAN
 kSQ
@@ -124370,8 +124407,8 @@ neH
 dST
 tIM
 jWu
-aNq
-lJQ
+nGY
+wum
 xsO
 fJC
 fJC
@@ -124627,7 +124664,7 @@ neH
 dST
 awH
 hIZ
-hIZ
+qOJ
 vxC
 xsO
 fJC
@@ -124883,8 +124920,8 @@ swn
 neH
 dST
 kJH
-lld
-awH
+adN
+cVU
 vxC
 xsO
 fJC
