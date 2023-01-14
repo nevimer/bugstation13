@@ -17,3 +17,7 @@
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	baseturfs = /turf/open/lava/plasma/biodome
 
+
+/turf/open/floor/fake_snow/safe
+	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
+	slowdown = 0
