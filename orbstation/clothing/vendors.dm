@@ -21,6 +21,15 @@
 	orb_premium = list(
 		/obj/item/clothing/suit/hooded/wintercoat/cosmic = 1,
 	)
+	orb_product_categories = list(
+		list(
+			"name" = "Entertainers",
+			"products" = list(
+				/obj/item/clothing/under/rank/civilian/clown/jester/alt = 1,
+				/obj/item/clothing/head/costume/jester/alt = 1,
+			),
+		),
+	)
 
 /obj/machinery/vending/wardrobe/sec_wardrobe
 	orb_products = list(

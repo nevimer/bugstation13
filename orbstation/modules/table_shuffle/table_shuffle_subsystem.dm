@@ -415,8 +415,9 @@ SUBSYSTEM_DEF(table_shuffle)
 				item.forceMove(O)
 				item_log[ITEMLOG_DESTINATION_STRUCTURE]=O
 				item = log_decay(opt,item,item_log) // may return null
-				item?.pixel_x = 0
-				item?.pixel_y = 0
+				if(isobj(item))
+					item.pixel_x = 0
+					item.pixel_y = 0
 				return
 			// otherwise fall through
 		if(2)

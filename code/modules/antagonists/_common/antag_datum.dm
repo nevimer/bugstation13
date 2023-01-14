@@ -275,11 +275,11 @@ GLOBAL_LIST_EMPTY(antagonists)
 
 	report += printplayer(owner)
 
-	/** ORBSTATION: We don't want to report success or failure
-	var/objectives_complete = TRUE
+	// ORBSTATION: We don't want to report success or failure
+	//var/objectives_complete = TRUE
 	if(objectives.len)
 		report += printobjectives(objectives)
-		for(var/datum/objective/objective in objectives)
+	/*	for(var/datum/objective/objective in objectives)
 			if(!objective.check_completion())
 				objectives_complete = FALSE
 				break

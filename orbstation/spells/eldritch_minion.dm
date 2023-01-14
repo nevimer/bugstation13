@@ -73,7 +73,7 @@
 	name = "demonology rune"
 	desc = "A flowing circle of shapes and runes is etched into the floor, filled with a thick black tar-like fluid."
 	icon = 'icons/effects/96x96.dmi'
-	icon_state = "eldritch_rune1"
+	icon_state = "transmutation_rune"
 	pixel_x = -32
 	pixel_y = -32
 	anchored = TRUE
