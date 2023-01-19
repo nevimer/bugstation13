@@ -12,7 +12,7 @@
 		/obj/item/slimepotion/genderchange = 999,
 		/obj/item/slimepotion/transference = 999,
 		/obj/item/storage/backpack/holding = 999,
-		/obj/item/clothing/gloves/color/chief_engineer = 999,
+		/obj/item/clothing/gloves/chief_engineer = 999,
 		/obj/item/debug/omnitool = 999,
 		/obj/item/construction/rcd/combat/admin = 999,
 		/obj/item/construction/rld/debug = 999,

@@ -44,7 +44,7 @@
 		return
 	if(HAS_TRAIT(leaver, TRAIT_HANDS_BLOCKED))
 		return
-	if(HAS_TRAIT(leaver, TRAIT_BLIND))
+	if(leaver.is_blind())
 		return
 	for(var/obj/machinery/door/to_close in old_turf.contents)
 		if(is_type_in_typecache(to_close, secure_doors))

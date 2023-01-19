@@ -28,7 +28,7 @@
 	if(!isliving(owner))
 		return
 	var/mob/living/eye_controller = owner
-	if(HAS_TRAIT_FROM(owner, TRAIT_BLIND, SHUT_EYES_CLOSED))
+	if(eye_controller.is_blind_from(SHUT_EYES_CLOSED))
 		eye_controller.cure_blind(SHUT_EYES_CLOSED)
 	else
 		eye_controller.become_blind(SHUT_EYES_CLOSED)

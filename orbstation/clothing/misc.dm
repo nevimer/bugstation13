@@ -6,7 +6,7 @@
 	custom_materials = null
 	icon_state = "boggle"
 
-	vision_correction = TRUE
-	
-	
+	clothing_traits = list(TRAIT_NEARSIGHTED_CORRECTED,TRAIT_FARSIGHTED_CORRECTED)
+
+
 

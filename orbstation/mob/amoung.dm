@@ -13,7 +13,6 @@
 	icon_living = "amoung"
 	icon_dead = "amoung_dead"
 	speed = 1
-	basic_mob_flags = UNDENSIFY_ON_DEATH
 	response_help_continuous = "bumps"
 	response_help_simple = "bump"
 	response_disarm_continuous = "pushes aside"
