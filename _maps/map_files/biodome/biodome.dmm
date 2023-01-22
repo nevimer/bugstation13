@@ -136,6 +136,12 @@
 "acX" = (
 /turf/open/floor/iron,
 /area/station/science/genetics)
+"adk" = (
+/obj/effect/turf_decal/loading_area/white{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central/fore)
 "adE" = (
 /obj/structure/table/wood/poker,
 /mob/living/basic/cockroach,
@@ -922,6 +928,9 @@
 /area/station/engineering/storage)
 "avI" = (
 /obj/machinery/lapvend,
+/obj/effect/turf_decal/tile/purple/anticorner{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "avL" = (
@@ -4881,6 +4890,7 @@
 	name = "Medbay Lift Control Panel";
 	preset_destination_names = list("2"="Lower Medbay","3"="Upper Medbay")
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "cAZ" = (
@@ -7030,6 +7040,9 @@
 	pixel_y = 7
 	},
 /obj/item/pen,
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "dNn" = (
@@ -12223,8 +12236,8 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/firedoor/heavy,
 /obj/effect/turf_decal/tile/purple/full,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "gEi" = (
@@ -14000,6 +14013,12 @@
 /obj/structure/cable,
 /turf/open/floor/carpet/lone/star,
 /area/station/service/chapel)
+"hEt" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central/fore)
 "hEE" = (
 /obj/effect/turf_decal/siding/wideplating/terracotta{
 	dir = 8
@@ -14614,11 +14633,11 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/machinery/door/firedoor/heavy,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/purple/full,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "hWV" = (
@@ -15589,6 +15608,11 @@
 "iAO" = (
 /turf/open/floor/iron/vaporwave,
 /area/station/science/lab)
+"iAY" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/loading_area/white,
+/turf/open/floor/iron/dark,
+/area/station/science/research)
 "iBf" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -19527,6 +19551,7 @@
 	dir = 1
 	},
 /obj/machinery/door/window/left/directional/north,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "kJH" = (
@@ -20124,6 +20149,7 @@
 /obj/effect/turf_decal/loading_area/red{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
 "kYa" = (
@@ -21687,6 +21713,12 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet,
 /area/station/service/theater)
+"lMO" = (
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central/fore)
 "lMR" = (
 /obj/machinery/photocopier{
 	pixel_y = 3
@@ -22082,6 +22114,7 @@
 	id = "cargowarehouse";
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "lWH" = (
@@ -25418,6 +25451,11 @@
 /obj/effect/landmark/carpspawn,
 /turf/open/space/basic,
 /area/space)
+"nLU" = (
+/obj/machinery/door/window/left/directional/east,
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/station/science/research)
 "nMg" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -25637,6 +25675,12 @@
 /obj/machinery/atmospherics/pipe/multiz/scrubbers/visible/layer2,
 /turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/engineering/atmos)
+"nSZ" = (
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central/fore)
 "nTd" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -25716,6 +25760,13 @@
 	},
 /turf/open/floor/grass,
 /area/station/service/kitchen/diner)
+"nUO" = (
+/obj/structure/industrial_lift/public,
+/obj/effect/landmark/lift_id{
+	specific_lift_id = "science_lift"
+	},
+/turf/open/openspace,
+/area/station/science/research)
 "nVa" = (
 /obj/effect/spawner/random/trash/box,
 /turf/open/floor/plating,
@@ -29804,6 +29855,12 @@
 	},
 /turf/open/floor/iron/terracotta,
 /area/station/service/chapel)
+"qjE" = (
+/obj/effect/turf_decal/tile/purple/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central/fore)
 "qjF" = (
 /obj/item/rcl/pre_loaded,
 /obj/item/stack/pipe_cleaner_coil/random,
@@ -33260,6 +33317,9 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/hallway/primary/aft)
+"rWl" = (
+/turf/open/floor/plating,
+/area/station/science/research)
 "rWm" = (
 /obj/machinery/holopad,
 /obj/effect/decal/cleanable/dirt,
@@ -35809,6 +35869,7 @@
 /obj/effect/turf_decal/loading_area/red{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
 "tnj" = (
@@ -36603,6 +36664,9 @@
 /obj/effect/mapping_helpers/burnt_floor,
 /turf/open/floor/plating,
 /area/station/science/breakroom)
+"tKO" = (
+/turf/closed/wall/r_wall,
+/area/space)
 "tLb" = (
 /obj/structure/flora/rock/style_random,
 /turf/open/floor/grass,
@@ -36644,6 +36708,15 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/cryo)
+"tMz" = (
+/obj/machinery/elevator_control_panel/directional/south{
+	preset_destination_names = list("2"="Lower Research","3"="Upper Research");
+	name = "Science Elevator Control Panel";
+	linked_elevator_id = "science_lift"
+	},
+/obj/effect/turf_decal/loading_area/white,
+/turf/open/floor/iron/dark,
+/area/station/science/research)
 "tMG" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
@@ -36736,6 +36809,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"tOV" = (
+/obj/machinery/light/directional/south,
+/turf/open/space/basic,
+/area/space)
 "tPg" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -36811,17 +36888,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/engineering/atmos/storage/gas)
-"tQD" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/research{
-	name = "Robotics Lab"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/science/robotics,
-/obj/machinery/door/firedoor,
-/turf/open/floor/iron/white/smooth_edge{
-	dir = 4
-	},
-/area/station/science/robotics/lab)
 "tQF" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -38487,6 +38553,7 @@
 "uTS" = (
 /obj/effect/landmark/start/research_director,
 /obj/structure/chair/office,
+/obj/machinery/light/directional/south,
 /turf/open/floor/iron/white,
 /area/station/command/heads_quarters/rd)
 "uTW" = (
@@ -39240,6 +39307,9 @@
 /area/station/hallway/primary/aft)
 "vpl" = (
 /obj/machinery/vending/modularpc,
+/obj/effect/turf_decal/tile/purple/anticorner{
+	dir = 4
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "vpm" = (
@@ -40401,6 +40471,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
+"vUU" = (
+/obj/structure/industrial_lift/public,
+/turf/open/openspace,
+/area/station/science/research)
 "vVu" = (
 /obj/structure/table,
 /obj/machinery/camera/directional/south{
@@ -43795,6 +43869,9 @@
 /area/station/security/checkpoint/engineering)
 "xIJ" = (
 /obj/machinery/light/floor,
+/obj/effect/turf_decal/loading_area/white{
+	dir = 8
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/fore)
 "xIL" = (
@@ -44015,6 +44092,7 @@
 	},
 /obj/machinery/door/window/right/directional/south,
 /obj/effect/turf_decal/loading_area/red,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "xMM" = (
@@ -44039,6 +44117,7 @@
 /obj/machinery/door/window/right/directional/north{
 	name = "Medbay Elevator"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/station/medical/medbay/central)
 "xNs" = (
@@ -44665,6 +44744,7 @@
 	},
 /obj/machinery/door/window/left/directional/south,
 /obj/effect/turf_decal/loading_area/red,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "yeD" = (
@@ -44704,6 +44784,7 @@
 /obj/machinery/door/window/left/directional/north{
 	name = "Medbay Elevator"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/station/medical/medbay/central)
 "yfs" = (
@@ -75895,11 +75976,11 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+tKO
+tKO
+tKO
+tKO
 cCZ
 cCZ
 cCZ
@@ -76152,11 +76233,11 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+rWl
+rWl
+iAY
+tKO
 cCZ
 cCZ
 cCZ
@@ -76409,13 +76490,13 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+rWl
+rWl
+tMz
+tKO
+tKO
+tKO
 cCZ
 cCZ
 cCZ
@@ -76666,13 +76747,13 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+czJ
+czJ
+nLU
+czJ
+aVA
+tKO
 cCZ
 cCZ
 cCZ
@@ -76923,13 +77004,13 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+aVA
+aVA
+aVA
+aVA
+aVA
+tKO
 cCZ
 cCZ
 cCZ
@@ -77180,13 +77261,13 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+aVA
+aVA
+aVA
+aVA
+aVA
+tKO
 cCZ
 cCZ
 cCZ
@@ -77437,13 +77518,13 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
-cCZ
+tKO
+tKO
+tKO
+tKO
+tKO
+tKO
+tKO
 cCZ
 cCZ
 cCZ
@@ -78216,7 +78297,7 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
+tOV
 cCZ
 cCZ
 cCZ
@@ -140658,9 +140739,9 @@ hHc
 hHc
 hHc
 hHc
-hHc
-hHc
-hHc
+jpl
+jpl
+jpl
 jpl
 jpl
 jpl
@@ -140915,10 +140996,10 @@ hHc
 hHc
 hHc
 hHc
-hHc
-hHc
-hHc
 jpl
+cLA
+cLA
+cLA
 cLA
 cLA
 jpl
@@ -141172,10 +141253,10 @@ hHc
 hHc
 hHc
 hHc
-hHc
-hHc
-hHc
 jpl
+cLA
+cLA
+cLA
 cLA
 cLA
 vIL
@@ -141429,12 +141510,12 @@ hHc
 hHc
 hHc
 hHc
-hHc
-hHc
-hHc
 jpl
 cLA
-cLA
+dJN
+dJN
+dJN
+dJN
 czJ
 czJ
 czJ
@@ -141687,11 +141768,11 @@ hHc
 hHc
 hHc
 jpl
-jpl
-jpl
-jpl
 cLA
-cLA
+dJN
+vUU
+vUU
+iAY
 czJ
 faz
 cWS
@@ -141945,10 +142026,10 @@ hHc
 hHc
 jpl
 cLA
-cLA
-cLA
-cLA
-cLA
+dJN
+nUO
+vUU
+tMz
 czJ
 kPB
 wLa
@@ -142203,9 +142284,9 @@ hHc
 jpl
 cLA
 dJN
-dJN
-dJN
-dJN
+czJ
+czJ
+nLU
 czJ
 czJ
 czJ
@@ -144021,7 +144102,7 @@ xDw
 icQ
 chi
 chi
-tQD
+aMm
 aMm
 chi
 eeK
@@ -145566,7 +145647,7 @@ dhb
 lig
 xsi
 eZX
-jzd
+nSZ
 jzd
 sro
 jzd
@@ -145823,7 +145904,7 @@ lex
 rSO
 akW
 nff
-jzd
+nSZ
 jzd
 sro
 jzd
@@ -146080,7 +146161,7 @@ lSi
 lSi
 lSi
 lSi
-jzd
+nSZ
 jzd
 sro
 jzd
@@ -146334,10 +146415,10 @@ klV
 mpX
 qpK
 avI
-jzd
-jzd
-jzd
-jzd
+lMO
+lMO
+lMO
+hEt
 jzd
 sro
 jzd
@@ -146590,7 +146671,7 @@ ssV
 big
 iAO
 qpK
-jzd
+nSZ
 jzd
 nKM
 ryM
@@ -146847,7 +146928,7 @@ llH
 cSk
 mKo
 fzQ
-jzd
+nSZ
 jzd
 oBm
 pmH
@@ -147104,7 +147185,7 @@ duh
 hHD
 uGP
 qpK
-jzd
+nSZ
 jzd
 nyC
 fxn
@@ -147362,10 +147443,10 @@ olO
 mdx
 qpK
 vpl
-jzd
-jzd
-jzd
-jzd
+qjE
+qjE
+qjE
+qjE
 jzd
 sro
 pEk
@@ -153287,9 +153368,9 @@ iHx
 eyB
 pGm
 faE
-jzd
+adk
 xIJ
-jzd
+adk
 pGm
 qfh
 jzd
