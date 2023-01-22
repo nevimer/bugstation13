@@ -10113,6 +10113,10 @@
 /obj/item/pen{
 	pixel_x = -6
 	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "rnd";
+	name = "Research Lab Shutters"
+	},
 /turf/open/floor/iron,
 /area/station/science/lab)
 "fAb" = (
@@ -14352,13 +14356,7 @@
 /obj/structure/table,
 /obj/item/pai_card,
 /obj/machinery/button/door/directional/south{
-	id = "Sciencelockdown";
-	name = "Science Lockdown Toggle";
-	pixel_x = -6;
-	req_access = list("research")
-	},
-/obj/machinery/button/door/directional/south{
-	id = "rndlab1";
+	id = "rnd2";
 	name = "Research Lab Shutter Control";
 	pixel_x = 6;
 	req_access = list("research")
@@ -14379,6 +14377,12 @@
 	},
 /obj/effect/turf_decal/tile/purple/anticorner,
 /obj/machinery/light_switch/directional/east,
+/obj/machinery/button/door/directional/south{
+	id = "Biohazard";
+	name = "Biohazard Shutter Control";
+	pixel_x = -6;
+	req_access = list("research")
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/rd)
 "hUs" = (
