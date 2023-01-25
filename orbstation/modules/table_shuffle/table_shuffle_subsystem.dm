@@ -338,7 +338,7 @@ SUBSYSTEM_DEF(table_shuffle)
 	// The process above created the list but also jostled things, so this is a separate logic check
 	if(opt & (SHUFFLE_FROM_TABLES|SHUFFLE_FROM_RACKS))
 		while(candidate_items.len && prob(move_prob))
-			var/obj/item/item = pick(candidate_items)
+			var/obj/item/item = pick_n_take(candidate_items)
 			move_prob -= prob_sub
 			var/list/item_log
 			if(!(item in all_item_logs))
@@ -401,7 +401,7 @@ SUBSYSTEM_DEF(table_shuffle)
 				item_log[ITEMLOG_CURRENT_ITEM] = result
 				return result
 
-	return result // should not reach here
+	CRASH("Table shuffle system has had an invalid result: [result]")
 
 
 /**

@@ -69,7 +69,7 @@
 /// condiment/shuffle_decay(): detect if we are salt/pepper and if so, lose some
 /obj/item/reagent_containers/condiment/shuffle_decay()
 	if(reagents?.total_volume && amount_per_transfer_from_this == 1) // should just be salt/pepper, not milk/flour etc
-		var/removal_pct = 20. / rand(1,20)
+		var/removal_pct = rand(1,20) / 100
 		reagents.remove_any(removal_pct * reagents.total_volume)
 		return removal_pct * 100
 	return 0

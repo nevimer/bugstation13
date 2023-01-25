@@ -510,6 +510,7 @@
 
 	new_profile.age = target.age
 	new_profile.physique = target.physique
+	new_profile.height = target.get_mob_height() //ORBSTATION EDIT
 
 	// Grab the target's quirks.
 	for(var/datum/quirk/target_quirk as anything in target.quirks)
@@ -633,9 +634,7 @@
 
 	add_new_profile(owner.current)
 
-
-/// Generate objectives for our changeling.
-/datum/antagonist/changeling/proc/forge_objectives()
+/datum/antagonist/changeling/forge_objectives()
 	//OBJECTIVES - random traitor objectives. Unique objectives "steal brain" and "identity theft".
 	//No escape alone because changelings aren't suited for it and it'd probably just lead to rampant robusting
 	//If it seems like they'd be able to do it in play, add a 10% chance to have to escape alone
@@ -750,6 +749,8 @@
 	user.physique = chosen_profile.physique
 	user.grad_style = LAZYLISTDUPLICATE(chosen_profile.grad_style)
 	user.grad_color = LAZYLISTDUPLICATE(chosen_profile.grad_color)
+
+	user.set_mob_height(chosen_profile.height) //ORBSTATION EDIT
 
 	chosen_dna.transfer_identity(user, TRUE)
 
