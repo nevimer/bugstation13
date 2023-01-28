@@ -1090,3 +1090,10 @@
 	nutriment_factor = 1.5 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 	default_container = /obj/item/reagent_containers/condiment/creamer
+
+/datum/reagent/consumable/mintextract
+	name = "Mint Extract"
+	description = "Useful for dealing with undesirable customers."
+	color = "#CF3600" // rgb: 207, 54, 0
+	taste_description = "mint"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED

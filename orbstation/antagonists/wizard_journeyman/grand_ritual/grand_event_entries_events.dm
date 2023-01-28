@@ -74,12 +74,6 @@
 	event_control_path = /datum/round_event_control/portal_storm_carp
 	wizard_message = "You create a gateway to the carp migration stream!"
 
-/datum/grand_event/event/carp_rift
-	min_escalation = 5
-	max_escalation = 7
-	event_control_path = /datum/round_event_control/carp_rift
-	wizard_message = "You create a gateway to the carp migration stream!"
-
 /datum/grand_event/event/communications_blackout
 	min_escalation = 0
 	max_escalation = 3

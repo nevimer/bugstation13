@@ -1,20 +1,24 @@
+/datum/bodypart_overlay/mutant
+	/// Is this bodypart concealed by clothing?
+	var/concealed = FALSE
+
 // Moths and Tail-owners can choose whether to show or hide their visible external organs.
 /obj/item/organ/external/tail
-	/// By default tails are hidden by oversuits
-	var/concealed = TRUE
 	actions_types = list(/datum/action/conceal_organ/tail)
 
-/obj/item/organ/external/tail/can_draw_on_bodypart(mob/living/carbon/human/human)
+/datum/bodypart_overlay/mutant/tail
+	/// By default tails are hidden by oversuits
+	concealed = TRUE
+
+/datum/bodypart_overlay/mutant/tail/can_draw_on_bodypart(mob/living/carbon/human/human)
 	if (!concealed)
 		return TRUE
 	return ..()
 
 /obj/item/organ/external/wings/moth
-	/// By default wings AREN'T hidden by oversuits
-	var/concealed = FALSE
 	actions_types = list(/datum/action/conceal_organ/wings)
 
-/obj/item/organ/external/wings/moth/can_draw_on_bodypart(mob/living/carbon/human/human)
+/datum/bodypart_overlay/mutant/wings/moth/can_draw_on_bodypart(mob/living/carbon/human/human)
 	if (!concealed)
 		return ..()
 	if (!human.wear_suit)
@@ -24,11 +28,9 @@
 	return FALSE
 
 /obj/item/organ/external/antennae
-	/// By default antennae AREN'T hidden by hats
-	var/concealed = FALSE
 	actions_types = list(/datum/action/conceal_organ/antennae)
 
-/obj/item/organ/external/antennae/can_draw_on_bodypart(mob/living/carbon/human/human)
+/datum/bodypart_overlay/mutant/antennae/can_draw_on_bodypart(mob/living/carbon/human/human)
 	if (!concealed)
 		return ..()
 	if (human.head?.flags_inv & HIDEHAIR)
@@ -141,11 +143,11 @@
 
 /datum/action/conceal_organ/tail/toggle_concealement()
 	var/obj/item/organ/external/tail/tail = get_organ()
-	tail.concealed = !tail.concealed
+	tail.bodypart_overlay.concealed = !tail.bodypart_overlay.concealed
 
 /datum/action/conceal_organ/tail/is_concealed()
 	var/obj/item/organ/external/tail/tail = get_organ()
-	return tail.concealed
+	return tail.bodypart_overlay.concealed
 
 /// Shows/Hides wings
 /datum/action/conceal_organ/wings
@@ -158,11 +160,11 @@
 
 /datum/action/conceal_organ/wings/toggle_concealement()
 	var/obj/item/organ/external/wings/moth/wings = get_organ()
-	wings.concealed = !wings.concealed
+	wings.bodypart_overlay.concealed = !wings.bodypart_overlay.concealed
 
 /datum/action/conceal_organ/wings/is_concealed()
 	var/obj/item/organ/external/wings/moth/wings = get_organ()
-	return wings.concealed
+	return wings.bodypart_overlay.concealed
 
 /// Shows/Hides wings
 /datum/action/conceal_organ/antennae
@@ -175,11 +177,11 @@
 
 /datum/action/conceal_organ/antennae/toggle_concealement()
 	var/obj/item/organ/external/antennae/antennae = get_organ()
-	antennae.concealed = !antennae.concealed
+	antennae.bodypart_overlay.concealed = !antennae.bodypart_overlay.concealed
 
 /datum/action/conceal_organ/antennae/is_concealed()
 	var/obj/item/organ/external/antennae/antennae = get_organ()
-	return antennae.concealed
+	return antennae.bodypart_overlay.concealed
 
 /// Returns true if your hair is hidden
 /datum/action/conceal_organ/antennae/is_covered(feedback)

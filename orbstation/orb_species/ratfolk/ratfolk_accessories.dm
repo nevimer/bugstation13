@@ -16,13 +16,13 @@
 /datum/sprite_accessory/rat_snouts/possum
 	name = "Possum (white)"
 	icon_state = "possum"
-	color_src = null
+	color_src = NONE
 
 // TAILS
 
 /datum/sprite_accessory/tails/rat
 	icon = 'orbstation/icons/mob/species/ratfolk/bodyparts.dmi'
-	color_src = null
+	color_src = NONE
 
 /datum/sprite_accessory/tails/rat/high
 	name = "High"

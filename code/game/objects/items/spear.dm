@@ -228,3 +228,28 @@
 	throwforce = 22	//Better to throw
 	force_unwielded = 10
 	force_wielded = 18
+
+/*
+ * Naginata
+ */
+/obj/item/spear/naginata //Black market item.
+	icon_state = "naginata0"
+	base_icon_state = "naginata0"
+	icon_prefix = "naginata"
+	name = "naginata"
+	desc = "Cheap imitation of an old Earth weapon. No good for throwing, but its fine balance allows for excellent defense, especially against thrown objects."
+	throwforce = 4 // bad aerodynamics
+	throw_speed = 2
+	armour_penetration = 10
+	force_unwielded = 8
+	force_wielded = 21 // slight improvement over most other spears
+	custom_materials = list(/datum/material/iron=1700)
+	block_chance = 0
+
+/obj/item/spear/naginata/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(HAS_TRAIT(src, TRAIT_WIELDED))
+		if(attack_type == MELEE_ATTACK)
+			final_block_chance = 25 // actually designed as a melee weapon
+		if(attack_type == THROWN_PROJECTILE_ATTACK)
+			final_block_chance = 35 //don't have to worry as much about hatchets
+	return ..()

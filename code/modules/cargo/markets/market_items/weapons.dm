@@ -63,3 +63,13 @@
 	price_max = CARGO_CRATE_VALUE * 2
 	stock_max = 2
 	availability_prob = 50
+
+/datum/market_item/weapon/naginata
+	name = "Naginata"
+	desc = "Authentic recreation of an old Earth weapon."
+	item = /obj/item/spear/naginata
+
+	price_min = CARGO_CRATE_VALUE * 1.5
+	price_max = CARGO_CRATE_VALUE * 2.5
+	stock_max = 3
+	availability_prob = 40

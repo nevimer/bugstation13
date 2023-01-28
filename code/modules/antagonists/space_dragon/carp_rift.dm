@@ -110,13 +110,16 @@
 
 /obj/structure/carp_rift/examine(mob/user)
 	. = ..()
-	if(time_charged < max_charge)
-		. += span_notice("It seems to be [(time_charged / max_charge) * 100]% charged.")
-	else
-		. += span_warning("This one is fully charged. In this state, it is poised to transport a much larger amount of carp than normal.")
 
+	. += show_charge_level()
 	if(isobserver(user))
 		. += span_notice("It has [carp_stored] carp available to spawn as.")
+
+/// ORBSTATION: return a string describing the charge level, extended in minor rift
+/obj/structure/carp_rift/proc/show_charge_level()
+	if(time_charged < max_charge)
+		return span_notice("It seems to be [(time_charged / max_charge) * 100]% charged.")
+	return span_warning("This one is fully charged. In this state, it is poised to transport a much larger amount of carp than normal.")
 
 /obj/structure/carp_rift/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	playsound(src, 'sound/magic/lightningshock.ogg', 50, TRUE)
@@ -240,16 +243,20 @@
 		ckey_list += user.ckey
 	newcarp.key = user.key
 	newcarp.set_name()
-	var/datum/antagonist/space_carp/carp_antag = new(src)
-	newcarp.mind.add_antag_datum(carp_antag)
-	dragon.carp += newcarp.mind
-	to_chat(newcarp, span_boldwarning("You have arrived in order to assist the space dragon with securing the rifts. Do not jeopardize the mission, and protect the rifts at all costs!"))
+	on_spawned(newcarp)
+	dragon?.carp += newcarp.mind
 	carp_stored--
 	if(carp_stored <= 0 && charge_state < CHARGE_COMPLETED)
 		icon_state = "carp_rift"
 		set_light_color(LIGHT_COLOR_BLUE)
 		update_light()
 	return TRUE
+
+/// ORBSTATION: Hook in behaviour after cap is created
+/obj/structure/carp_rift/proc/on_spawned(mob/living/newcarp)
+	to_chat(newcarp, span_boldwarning("You have arrived in order to assist the space dragon with securing the rifts. Do not jeopardize the mission, and protect the rifts at all costs!"))
+	var/datum/antagonist/space_carp/carp_antag = new(src)
+	newcarp.mind.add_antag_datum(carp_antag)
 
 #undef CHARGE_ONGOING
 #undef CHARGE_FINALWARNING

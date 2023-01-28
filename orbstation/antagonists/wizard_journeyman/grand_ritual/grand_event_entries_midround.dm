@@ -4,6 +4,13 @@
  * but should obey rules such as "minimum player count" and "requires a security officer".
  */
 
+/datum/grand_event/midround/carp_rift
+	min_escalation = 5
+	max_escalation = 7
+	dynamic_ruleset = new /datum/dynamic_ruleset/midround/from_ghosts/carp_rift()
+	wizard_message = "You create a gateway to the carp migration stream!"
+	once_only = FALSE
+
 /datum/grand_event/midround/dragon
 	dynamic_ruleset = new /datum/dynamic_ruleset/midround/from_ghosts/space_dragon()
 	wizard_message = "You create a gateway to the carp migration stream!"

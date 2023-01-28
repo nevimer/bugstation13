@@ -304,7 +304,7 @@
 		/datum/reagent/consumable/nutriment/vitamin = 1)
 
 	suppressive_reagents = list(
-		/datum/reagent/toxin/minttoxin = -3,
+		/datum/reagent/consumable/mintextract = -3,
 		/datum/reagent/consumable/frostoil = -2,
 		/datum/reagent/consumable/ice = -1)
 

@@ -635,7 +635,7 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	if(dna.features["rat_ears"])
 		dna.features["rat_ears"] = GLOB.rat_ears_list[deconstruct_block(get_uni_feature_block(features, DNA_RAT_EARS_BLOCK), GLOB.rat_ears_list.len)]
 
-	for(var/obj/item/organ/external/external_organ as anything in external_organs)
+	for(var/obj/item/organ/external/external_organ in internal_organs)
 		external_organ.mutate_feature(features, src)
 
 	if(icon_update)

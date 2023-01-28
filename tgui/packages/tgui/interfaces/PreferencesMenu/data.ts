@@ -161,6 +161,9 @@ export type PreferencesMenuData = {
     }
   >;
   job_preferences: Record<string, JobPriority>;
+  biggest_head: Record<string, JobPriority>;
+  department_counts: Record<string, number>;
+  department_high: Record<string, number>;
 
   keybindings: Record<string, string[]>;
   overflow_role: string;

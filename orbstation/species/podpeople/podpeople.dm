@@ -76,14 +76,9 @@
 	H.adjustOxyLoss(-0.5 * delta_time)
 
 // Roundstart podpeople just choose their hair colour
-/obj/item/organ/external/pod_hair
+/datum/bodypart_overlay/mutant/pod_hair
 	color_source = ORGAN_COLOR_HAIR
-	apply_color_to_layer = FALSE
 
-/obj/item/organ/external/pod_hair/override_color(draw_color)
-	var/mob/living/carbon/human/human_owner = owner
-	return human_owner.hair_color
 
-/obj/item/organ/external/pod_hair/get_overlay_color(draw_layer)
-	var/mob/living/carbon/human/human_owner = owner
-	return human_owner.hair_color
+/datum/bodypart_overlay/mutant/pod_hair/color_image(image/overlay, draw_layer)
+	overlay.color = sprite_datum.color_src ? draw_color : null
