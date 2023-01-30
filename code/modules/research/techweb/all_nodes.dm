@@ -251,6 +251,7 @@
 		"wirebrush",
 		"wirecutters",
 		"wrench",
+		"pickaxe",
 	)
 
 /datum/techweb_node/basic_medical
@@ -1101,6 +1102,7 @@
 		"mech_honker",
 		"mech_mousetrap_mortar",
 		"mech_punching_face",
+		"clown_firing_pin",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -1378,6 +1380,7 @@
 		"rangemod",
 		"superresonator",
 		"triggermod",
+		"mining_scanner",
 	)//e a r l y    g a  m e)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -1445,6 +1448,7 @@
 		"mechanicalpinches",
 		"rangedanalyzer",
 		"searingtool",
+		"adv_fire_extinguisher",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	discount_experiments = list(/datum/experiment/scanning/random/material/hard/one = 5000)

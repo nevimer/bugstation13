@@ -140,7 +140,7 @@
 	name = "Medical Meson Gar Glasses"
 	tool_behaviors = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	result = /obj/item/clothing/glasses/hud/health/meson
-	reqs = list(/obj/item/clothing/glasses/material/mining/gar = 1,
+	reqs = list(/obj/item/clothing/glasses/meson/gar = 1,
 				/obj/item/clothing/glasses/hud/health = 1,
 				/obj/item/stack/cable_coil = 5)
 	time = 2 SECONDS
