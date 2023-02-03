@@ -3,8 +3,8 @@
 /obj/item/poster/quirk
 	name = "placeholder quirk poster"
 	desc = "Uh oh! You shouldn't have this!"
-	icon = 'icons/obj/poster.dmi'
 	icon_state = "rolled_poster_legit"
+	/// People from the selected department will gain a mood buff. If no department is specified applies to the entire crew.
 	var/quirk_poster_department = NONE
 
 /obj/item/poster/quirk/Initialize(mapload, obj/structure/sign/poster/new_poster_structure)
@@ -18,18 +18,13 @@
 
 /// You can use any spraypaint can on a quirk poster to turn it into a contraband poster from the traitor objective
 /obj/item/poster/quirk/attackby(obj/item/postertool, mob/user, params)
-	if(!is_special_character(user))
-		return ..()
-	if(!HAS_TRAIT(user, TRAIT_POSTERBOY))
-		return ..()
-	if(!istype(postertool, /obj/item/toy/crayon))
+	if(!is_special_character(user) || !HAS_TRAIT(user, TRAIT_POSTERBOY) || !istype(postertool, /obj/item/toy/crayon))
 		return ..()
 	balloon_alert(user, "converting poster...")
 	if(!do_after(user, 5 SECONDS, user))
 		balloon_alert(user, "interrupted!")
 		return
 	var/obj/item/poster/traitor/quirkspawn = new(get_turf(src))
-	moveToNullspace()
 	user.put_in_hands(quirkspawn)
 	to_chat(user, span_notice("You have converted one of your posters!"))
 	qdel(src)
@@ -37,11 +32,7 @@
 /// Screentip for the above
 
 /obj/item/poster/quirk/add_context(atom/source, list/context, obj/item/held_item, mob/user)
-	if(!is_special_character(user))
-		return NONE
-	if(!HAS_TRAIT(user, TRAIT_POSTERBOY))
-		return NONE
-	if(!istype(held_item, /obj/item/toy/crayon))
+	if(!is_special_character(user) || !HAS_TRAIT(user, TRAIT_POSTERBOY) || !istype(held_item, /obj/item/toy/crayon))
 		return NONE
 	context[SCREENTIP_CONTEXT_LMB] = "Turn into Demoralizing Poster"
 	return CONTEXTUAL_SCREENTIP_SET
@@ -49,7 +40,6 @@
 /obj/structure/sign/poster/quirk
 	name = "quirk poster"
 	desc = "A large piece of homemade space-resistant printed paper."
-	icon = 'orbstation/icons/obj/quirk_posters.dmi'
 	poster_item_name = "homemade poster"
 	poster_item_desc = "A poster made with love, some people will enjoy seeing it."
 	poster_item_icon_state = "rolled_legit"
@@ -57,7 +47,7 @@
 	var/datum/proximity_monitor/advanced/quirk_posters/mood_buff
 
 /obj/structure/sign/poster/quirk/on_placed_poster(mob/user)
-	mood_buff = new(src, 7, TRUE, quirk_poster_department)
+	mood_buff = new(_host = src, range = 7, _ignore_if_not_on_turf = TRUE, department = quirk_poster_department)
 	return ..()
 
 /obj/structure/sign/poster/quirk/attackby(obj/item/I, mob/user, params)
@@ -70,12 +60,10 @@
 	return ..()
 
 /obj/structure/sign/poster/quirk/apply_holiday()
-	var/obj/structure/sign/poster/traitor/holi_data = /obj/structure/sign/poster/quirk/festive
-	name = initial(holi_data.name)
-	desc = initial(holi_data.desc)
-	icon_state = initial(holi_data.icon_state)
-
-/// Code that actually makes the posters unique and worth existing, edited from evil posters
+	var/obj/structure/sign/poster/traitor/holiday_data = /obj/structure/sign/poster/quirk/festive
+	name = initial(holiday_data.name)
+	desc = initial(holiday_data.desc)
+	icon_state = initial(holiday_data.icon_state)
 
 /*
  * Applies a department-based mood if you can see the parent.
@@ -83,6 +71,7 @@
  * - Applies a mood buff to people who are in visible range of the item.
  */
 /datum/proximity_monitor/advanced/quirk_posters
+	/// Defines the specific department that the poster will apply its mood buff to, if the poster has a quirk_poster_department.
 	var/department
 
 /datum/proximity_monitor/advanced/quirk_posters/New(atom/_host, range, _ignore_if_not_on_turf = TRUE, department)
@@ -91,9 +80,7 @@
 	RegisterSignal(host, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine))
 
 /datum/proximity_monitor/advanced/quirk_posters/field_turf_crossed(atom/movable/crossed, turf/location)
-	if (!isliving(crossed))
-		return
-	if (!can_see(crossed, host, current_range))
+	if (!isliving(crossed) || !can_see(crossed, host, current_range))
 		return
 	on_seen(crossed)
 
@@ -103,13 +90,7 @@
 		on_seen(examiner)
 
 /datum/proximity_monitor/advanced/quirk_posters/proc/on_seen(mob/living/viewer)
-	if (!viewer.mind)
-		return
-	if (!viewer.mob_mood)
-		return
-	if (viewer.stat != CONSCIOUS)
-		return
-	if(viewer.is_blind())
+	if (!viewer.mind || !viewer.mob_mood || (viewer.stat != CONSCIOUS) || viewer.is_blind())
 		return
 	if(!viewer.can_read(host, READING_CHECK_LIGHT, TRUE))
 		return
@@ -127,7 +108,8 @@
 	category = POSTER_MOOD_CAT
 
 
-/// All new poster items are below, starting with the two random posters types
+// random posters
+
 /obj/item/poster/quirk/random
 	poster_type = /obj/structure/sign/poster/quirk/random
 
@@ -141,6 +123,8 @@
 /obj/structure/sign/poster/quirk/crew/random
 	never_random = TRUE
 	random_basetype = /obj/structure/sign/poster/quirk/crew
+
+// actual poster items
 
 /obj/structure/sign/poster/quirk/festive
 	name = "Together For The Holidays."

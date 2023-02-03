@@ -20,7 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/static/list/quirk_blacklist = list(
 		list("Tongue Tied", "Artificial Voice Box"), //ORBSTATION
 		list("Farsighted", "Illiterate"), //ORBSTATION
-		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis"), //ORBSTATION
+		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis", "Bioscrambler Victim"), //ORBSTATION
 		list("Blind", "Compulsive Door Closer"), //ORBSTATION
 		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),

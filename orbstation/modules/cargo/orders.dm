@@ -70,13 +70,17 @@
 	var/list/used_pizzas = list()
 	/// loops twice, picking 2 from each, making sure that 2 lizard, 2 moth, and 2 non specialized pizzas are generated
 	for(var/i in 1 to 2)
-		used_pizzas += pick_n_take(medley_flat)
-		used_pizzas += pick_n_take(medley_moth)
-		used_pizzas += pick_n_take(medley_human)
+		used_pizzas += pick_weight(medley_flat)
+		used_pizzas += pick_weight(medley_moth)
+		used_pizzas += pick_weight(medley_human)
+		medley_flat -= used_pizzas
+		medley_human -= used_pizzas
+		medley_moth -= used_pizzas
 	var/list/remaining_pizzas = medley_flat + medley_moth + medley_human
 	/// fills the used_ pizzas list with 4 more pizzas for a total of 10
 	for(var/i in 1 to 4)
-		used_pizzas += pick_n_take(remaining_pizzas)
+		used_pizzas += pick_weight(remaining_pizzas)
+		remaining_pizzas -= used_pizzas
 	/// same pizza code as in upstream
 	for(var/i in 1 to 10)
 		if(add_anomalous(new_crate))

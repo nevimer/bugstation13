@@ -42,6 +42,12 @@
 	mob_trait = TRAIT_XCARD_EYE_TRAUMA
 	//no need for examine text - if someone tries using an eyesnatch device on someone that isn't their target I don't know what to tell them
 
+/datum/quirk/xcard/paradox_clone
+	name = "X-CARD: Paradox Clone"
+	desc = "A paradox clone of your character will never appear."
+	mob_trait = TRAIT_XCARD_PARADOX_CLONE
+	//this SHOULDN'T appear on examine - other players should not know that you can't have an evil twin.
+
 /*
 /datum/quirk/xcard/uncyborgable
 	name = "Cyborg Incompatibility"

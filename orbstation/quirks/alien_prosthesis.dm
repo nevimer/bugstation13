@@ -14,9 +14,9 @@
 		/datum/species/fly,
 		/datum/species/jelly,
 		/datum/species/jelly/slime,
-		/datum/species/mush,
-		/datum/species/plasmaman,
 		/datum/species/pod,
+		/datum/species/ratfolk,
+		/datum/species/shadow,
 	)
 
 /datum/quirk/alien_prosthesis/add_unique()
@@ -42,8 +42,6 @@
 /datum/quirk/alien_prosthesis/proc/fill_bodypart_list(slot)
 	var/list/bodypart_list = list()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-
-	//stack_trace("[species_whitelist.len]")
 
 	for(var/datum/species/part_species as anything in species_whitelist)
 		if(human_holder.dna?.species == part_species) //don't use parts from your selected species!

@@ -1,7 +1,8 @@
 //Surgery to change your height. Yes, this is silly.
 
-/datum/surgery/height_manipulation
+/datum/surgery/advanced/height_manipulation
 	name = "Height manipulation"
+	desc = "An ill-advised cosmetic procedure that lengthens or shortens the spine, allowing the patient's height to be changed."
 	surgery_flags = SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_REQUIRES_REAL_LIMB
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(

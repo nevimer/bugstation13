@@ -1,9 +1,16 @@
+import { useBackend } from '../backend';
 import { Window } from '../layouts';
 import { Section, Stack } from '../components';
 
-export const AntagInfoRiftCarp = () => {
+type Info = {
+  destination: string;
+};
+
+export const AntagInfoRiftCarp = (props, context) => {
+  const { data } = useBackend<Info>(context);
+  const { destination } = data;
   return (
-    <Window width={400} height={300} theme="wizard">
+    <Window width={400} height={380} theme="wizard">
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item textAlign="center" fontSize="20px">
@@ -21,6 +28,11 @@ export const AntagInfoRiftCarp = () => {
                   it is the duty of every carp to ensure that it is not
                   destroyed so that more carp can continue their voyage, and
                   that they have a clear path to their destination.
+                </Stack.Item>
+                <Stack.Item>
+                  You feel instinctually that you and your kin urgently need to
+                  head to {destination}. Follow your siblings if you get lost,
+                  they know the way.
                 </Stack.Item>
                 <Stack.Item>
                   Space Carp are somewhat intelligent animals and are sometimes

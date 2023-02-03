@@ -152,8 +152,9 @@
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_LIGHT
 	antag_flag = ROLE_SENTIENCE
 	required_candidates = 1
-	weight = 5
+	weight = 3
 	cost = 12
+	repeatable = FALSE
 	/// Rift we made
 	var/obj/structure/carp_rift/minor/rift
 	/// List of all the places carp can spawn
@@ -172,7 +173,8 @@
 	var/turf/landing_area = pick(spawn_points)
 	rift = new (landing_area)
 	notify_ghosts("A carp rift has opened!", source=rift, action=NOTIFY_ORBIT, header="Carp Rift Opened")
-	priority_announce("A large organic energy flux has been recorded on the station outskirts, please stand by.", "Lifesign Alert")
+	var/area/target_area = get_area_name(rift.team.destination.resolve())
+	priority_announce("A large organic energy flux has been recorded on the station outskirts, coordinates marked on GPS. Staff stationed in [target_area] please stand by.", "Lifesign Alert")
 
 	var/mob/living/basic/carp/mega/big_boy = new(landing_area)
 	big_boy.key = applicant.key

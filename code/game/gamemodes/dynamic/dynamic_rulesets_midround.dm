@@ -909,6 +909,8 @@
 			continue
 		if(!(player.mind.assigned_role.job_flags & JOB_CREW_MEMBER))
 			continue
+		if(HAS_TRAIT(player, TRAIT_XCARD_PARADOX_CLONE)) //ORBSTATION ADDITION
+			continue
 		possible_targets += player
 
 	if(possible_targets.len)
