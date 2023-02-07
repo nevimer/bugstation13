@@ -46,8 +46,7 @@
 	name = "Assassinate %TARGET% the %JOB TITLE%, and plant a calling card"
 	description = "Kill your target and plant a calling card in the pockets of your victim. If your calling card gets destroyed before you are able to plant it, this objective will fail."
 
-	var/obj/item/card
-	var/card_type = /obj/item/paper/calling_card // the object that will be spawned by the calling card button
+	var/obj/item/paper/calling_card/card // the object that will be spawned by the calling card button
 
 /datum/traitor_objective/assassinate/calling_card/heads_of_staff
 	progression_reward = 16 MINUTES
@@ -85,7 +84,7 @@
 		if("summon_card")
 			if(card)
 				return
-			card = new card_type(user.drop_location())
+			card = new(user.drop_location())
 			user.put_in_hands(card)
 			card.balloon_alert(user, "the card materializes in your hand")
 			RegisterSignal(card, COMSIG_ITEM_EQUIPPED, PROC_REF(on_card_planted))

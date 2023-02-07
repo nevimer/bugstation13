@@ -1,23 +1,27 @@
 /obj/machinery/vending/sandboxvend
 	name = "SandboxVend"
 	desc = "Free tools to help you sandbox. Use at your own discretion, and try not to ruin the station for others."
-	icon_state = "MagiVend"
-	panel_type = "panel4"
+	icon = 'orbstation/icons/obj/sbvend.dmi'
+	icon_state = "sbv"
+	panel_type = "sbvpanel"
 	product_slogans = "Video games!;Find your true love here!;Slap it up!;It's all free!;Trans your gender!;Yayayayayay!"
 	vend_reply = "Wahoo! Yay! Woohoo! Yahoo! Wow! Yippee! Yayayayayay!"
 	max_integrity = 999999
 	integrity_failure = 0.01
 	tiltable = FALSE // i love you
+	use_power = NO_POWER_USE
+	idle_power_usage = 0
 	product_categories = list(
 		list(
 			"name" = "Essentials",
 			"icon" = "star",
 			"products" = list(
+				/obj/item/scrying = 999,
 				/obj/item/card/id/advanced/gold/captains_spare = 999,
 				/obj/item/storage/backpack/holding = 999,
 				/obj/item/storage/box/material = 999,
+				/obj/item/storage/box/other_material = 999,
 				/obj/item/stock_parts/cell/infinite = 999,
-				/obj/item/clothing/glasses/debug = 999,
 				/obj/item/toy/balloon/corgi = 999,
 				/obj/item/storage/box/hug/plushes = 999,
 				/obj/item/choice_beacon/music = 999,
@@ -43,7 +47,7 @@
 				/obj/item/airlock_painter/decal/debug = 999,
 				/obj/item/toy/crayon/spraycan/infinite = 999,
 				/obj/item/soap/omega = 999,
-				/obj/item/healthanalyzer/advanced = 999,
+				/obj/item/healthanalyzer/advanced/free = 999,
 				/obj/item/reagent_containers/hypospray/cmo = 999,
 				/obj/item/gun/magic/wand/resurrection/debug = 999,
 			),
@@ -53,13 +57,14 @@
 			"name" = "Equipment",
 			"icon" = "briefcase",
 			"products" = list(
+				/obj/item/clothing/glasses/debug = 999,
 				/obj/item/clothing/gloves/chief_engineer = 999,
 				/obj/item/storage/belt/medical/ert = 999,
 				/obj/item/storage/belt/utility/full/powertools = 999,
 				/obj/item/clothing/shoes/magboots/advance = 999,
 				/obj/item/radio/headset/headset_cent/commander = 999,
 				/obj/item/storage/belt/military = 999,
-				/obj/item/clothing/suit/armor/reactive = 999,
+				/obj/item/reactive_armour_shell = 999,
 				/obj/item/assembly/signaler/anomaly/pyro = 999,
 				/obj/item/assembly/signaler/anomaly/grav = 999,
 				/obj/item/assembly/signaler/anomaly/flux = 999,
@@ -68,21 +73,6 @@
 				/obj/item/assembly/signaler/anomaly/bioscrambler = 999,
 				/obj/item/assembly/signaler/anomaly/hallucination = 999,
 				/obj/item/assembly/signaler/anomaly/dimensional = 999,
-			),
-		),
-
-		list(
-			"name" = "Potions",
-			"icon" = "flask",
-			"products" = list(
-				/obj/item/reagent_containers/cup/bottle/potion/flight = 999,
-				/obj/item/slimepotion/genderchange = 999,
-				/obj/item/slimepotion/transference = 999,
-				/obj/item/slimepotion/slime/sentience = 999,
-				/obj/item/slimepotion/slime/renaming = 999,
-				/obj/item/slimepotion/peacepotion = 999,
-				/obj/item/slimepotion/spaceproof = 999,
-				/obj/item/slimepotion/fireproof = 999,
 			),
 		),
 
@@ -105,6 +95,47 @@
 				/obj/item/organ/internal/heart/gland/ventcrawling = 999,
 			),
 		),
+
+		list(
+			"name" = "Mutations",
+			"icon" = "podcast",
+			"products" = list(
+				/obj/item/dnainjector/reset_genome = 999,
+				/obj/item/dnainjector/antenna = 999,
+				/obj/item/dnainjector/antiglow = 999,
+				/obj/item/dnainjector/chameleonmut = 999,
+				/obj/item/dnainjector/clumsymut = 999,
+				/obj/item/dnainjector/cryokinesis = 999,
+				/obj/item/dnainjector/dwarf = 999,
+				/obj/item/dnainjector/geladikinesis = 999,
+				/obj/item/dnainjector/gigantism = 999,
+				/obj/item/dnainjector/glow = 999,
+				/obj/item/dnainjector/insulated = 999,
+				/obj/item/dnainjector/mindread = 999,
+				/obj/item/dnainjector/olfaction = 999,
+				/obj/item/dnainjector/pressuremut = 999,
+				/obj/item/dnainjector/telemut = 999,
+				/obj/item/dnainjector/firemut = 999,
+				/obj/item/dnainjector/wackymut = 999,
+				/obj/item/dnainjector/webbing = 999,
+				/obj/item/dnainjector/xraymut = 999,
+			),
+		),
+
+		list(
+			"name" = "Potions",
+			"icon" = "flask",
+			"products" = list(
+				/obj/item/reagent_containers/cup/bottle/potion/flight = 999,
+				/obj/item/slimepotion/genderchange = 999,
+				/obj/item/slimepotion/transference = 999,
+				/obj/item/slimepotion/slime/sentience = 999,
+				/obj/item/slimepotion/slime/renaming = 999,
+				/obj/item/slimepotion/peacepotion = 999,
+				/obj/item/slimepotion/spaceproof = 999,
+				/obj/item/slimepotion/fireproof = 999,
+			),
+		),
 	)
 
 	contraband = list(
@@ -117,6 +148,9 @@
 		/obj/item/implanter/storage = 99,
 		/obj/item/implanter/radio/syndicate = 99,
 		/obj/item/implanter/sad_trombone = 99,
+		/obj/item/dnainjector/hulkmut = 99,	   		// i *could* remove these two for being too destructive
+		/obj/item/dnainjector/lasereyesmut = 99, 	// but also, it's just sandbox, so
+		/obj/item/stack/sheet/hauntium/fifty = 99,
 		/obj/item/suspiciousphone = 99,
 		/obj/item/guardiancreator/tech/choose/traitor = 99,
 	)
@@ -124,20 +158,13 @@
 	refill_canister = /obj/item/vending_refill/clothing // wont populate categories without this
 	default_price = 0
 	extra_price = 0
-	payment_department = NO_FREEBIES
+	payment_department = NO_FREEBIES // yes freebies bitch
 	light_mask = "magivend-light-mask"
 	light_color = LIGHT_COLOR_PURPLE
 
-// if this stuff should be moved to different files, Sorry
+//price overrides
 /obj/item/toy/crayon/spraycan/infinite
 	custom_price = 0
 
-/obj/item/holosign_creator/atmos/super
-	name = "super ATMOS holofan projector"
-	desc = "A holographic projector that creates holographic barriers that prevent changes in atmosphere conditions. This one can support up to 99 barriers at once."
-	max_signs = 99
-
-/obj/item/construction/plumbing/debug
-	name = "Debug Plumbing Constructor"
-	matter = INFINITY
-	max_matter = INFINITY
+/obj/item/healthanalyzer/advanced/free //just in case it's actually sold anywhere real
+	custom_price = 0

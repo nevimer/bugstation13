@@ -11,12 +11,9 @@
 
 /datum/traitor_objective/ultimate
 	abstract_type = /datum/traitor_objective/ultimate
-	// to get a final objective, you must have 900 total reputation points,
-	// and have completed objectives worth a cumulative total of 400 reputation points
-	// basically, you need to do high-risk high-reward objectives like assassination and sabotage
-	progression_minimum = 90 MINUTES
+	progression_minimum = 120 MINUTES
 
-	var/progression_points_in_objectives = 40 MINUTES
+	var/progression_points_in_objectives = 20 MINUTES
 
 /// Determines if this final objective can be taken. Should be put into every final objective's generate function.
 /datum/traitor_objective/ultimate/can_generate_objective(generating_for, list/possible_duplicates)

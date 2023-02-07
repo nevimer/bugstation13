@@ -53,7 +53,7 @@
 		H.set_nutrition(NUTRITION_LEVEL_ALMOST_FULL)
 
 	if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
-		H.take_overall_damage(1 * delta_time, 0)
+		H.take_overall_damage(brute = 1 * delta_time, required_bodytype = BODYTYPE_ORGANIC)
 	..()
 
 /datum/species/pod/proc/handle_light_healing(mob/living/carbon/human/H, delta_time)

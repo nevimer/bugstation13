@@ -109,7 +109,8 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define BIO_FLESH (1<<1)
 /// standard humanoids, can suffer all wounds, needs mangled bone and flesh to dismember. conveniently, what you get when you combine BIO_BONE and BIO_FLESH
 #define BIO_FLESH_BONE (BIO_BONE | BIO_FLESH)
-
+/// ORB: used by jelly people, can't be wounded but can be dismembered
+#define BIO_SLIME (1<<2)
 
 // ~wound flag defines
 /// If this wound requires having the BIO_FLESH biological_state on the limb

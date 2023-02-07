@@ -47,6 +47,9 @@
 		if(LOOC_CHANNEL) //ORBSTATION
 			client.looc(entry)
 			return TRUE
+		if(ADMIN_CHANNEL)
+			client.cmd_admin_say(entry)
+			return TRUE
 	return FALSE
 
 /**

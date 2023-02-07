@@ -844,12 +844,12 @@
 	// If we have a certain amount of ghosts, we'll add some more !!fun!! options to the list
 	var/num_ghosts = length(GLOB.current_observers_list) + length(GLOB.dead_player_list)
 
-	if(EMERGENCY_IDLE_OR_RECALLED) // ORBSTATION: only create new antags if the emergency shuttle hasn't been called
+	if(EMERGENCY_IDLE_OR_RECALLED) // ORB: only if shuttle isn't coming, this change needs to go upstream
 		// Pirates require empty space for the ship, and ghosts for the pirates obviously
-		if(SSmapping.empty_space && (num_ghosts >= MIN_GHOSTS_FOR_PIRATES))
+		if(!SSmapping.is_planetary() && (num_ghosts >= MIN_GHOSTS_FOR_PIRATES))
 			hack_options += HACK_PIRATE
 		// Fugitives require empty space for the hunter's ship, and ghosts for both fugitives and hunters (Please no waldo)
-		if(SSmapping.empty_space && (num_ghosts >= MIN_GHOSTS_FOR_FUGITIVES))
+		if(!SSmapping.is_planetary() && (num_ghosts >= MIN_GHOSTS_FOR_FUGITIVES))
 			hack_options += HACK_FUGITIVES
 		// If less than a certain percent of the population is ghosts, consider sleeper agents
 		if(num_ghosts < (length(GLOB.clients) * MAX_PERCENT_GHOSTS_FOR_SLEEPER))
