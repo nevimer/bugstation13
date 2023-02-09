@@ -55,7 +55,7 @@
 
 /// Lizards are cold blooded and do not stabilize body temperature naturally
 /datum/species/lizard/body_temperature_core(mob/living/carbon/human/humi, delta_time, times_fired)
-	return
+	..() //ORBSTATION - lizards can stabilize body temperature now
 
 /datum/species/lizard/random_name(gender,unique,lastname)
 	if(unique)
@@ -109,14 +109,14 @@
 /datum/species/lizard/create_pref_temperature_perks()
 	var/list/to_add = list()
 
-	to_add += list(list(
+	/*to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
 		SPECIES_PERK_NAME = "Cold-blooded",
 		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
 			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
 			they are as cold or as warm as the environment around them is. Stay warm!",
-	))
+	))*/ //ORBSTATION REMOVAL: this perk no longer applies
 
 	return to_add
 

@@ -5,6 +5,7 @@
 		LIPS,
 		HAIR
 	)
+	coldmod = 1 //no more increased cold damage
 
 /datum/species/lizard/randomize_features(mob/living/carbon/human/human_mob)
 	..()
