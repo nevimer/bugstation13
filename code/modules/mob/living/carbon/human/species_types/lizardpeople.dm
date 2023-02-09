@@ -109,14 +109,13 @@
 /datum/species/lizard/create_pref_temperature_perks()
 	var/list/to_add = list()
 
-	/*to_add += list(list(
-		SPECIES_PERK_TYPE = SPECIES_NEUTRAL_PERK,
+	to_add += list(list(
+		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
-		SPECIES_PERK_NAME = "Cold-blooded",
-		SPECIES_PERK_DESC = "Lizardpeople have higher tolerance for hot temperatures, but lower \
-			tolerance for cold temperatures. Additionally, they cannot self-regulate their body temperature - \
-			they are as cold or as warm as the environment around them is. Stay warm!",
-	))*/ //ORBSTATION REMOVAL: this perk no longer applies
+		SPECIES_PERK_NAME = "Temperature Tolerance",
+		SPECIES_PERK_DESC = "Tizirans are resilient to hotter temperatures. In addition, they are \
+		comfortable in a wider range of temperature than most species.",
+	)) //ORBSTATION - perk edited to reflect changes
 
 	return to_add
 
