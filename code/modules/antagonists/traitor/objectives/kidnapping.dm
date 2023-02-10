@@ -182,7 +182,7 @@
 	var/datum/mind/target_mind = pick(possible_targets)
 	victim = target_mind.current
 	AddComponent(/datum/component/traitor_objective_register, victim, fail_signals = list(COMSIG_PARENT_QDELETING))
-	var/list/whitelisted_areas = typecacheof(list(
+	var/list/whitelisted_areas = typecacheof(list( // ORB: more easily understandable list of areas
 		/area/station/commons,
 		/area/station/maintenance/tram,
 		/area/station/maintenance/disposal,

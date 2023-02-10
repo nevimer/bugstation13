@@ -334,7 +334,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 			if(CONSCIOUS)
 				if(HAS_TRAIT(src, TRAIT_DUMB))
-					msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
+					msg += "[t_He] [p_do()]n't seem to be paying attention.\n"
 		if(getorgan(/obj/item/organ/internal/brain))
 			if(ai_controller?.ai_status == AI_STATUS_ON)
 				if(!dna.species.ai_controlled_species)

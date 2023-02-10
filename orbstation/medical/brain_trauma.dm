@@ -11,6 +11,7 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 		/datum/brain_trauma/special/death_whispers,
 		/datum/brain_trauma/special/existential_crisis,
 		/datum/brain_trauma/special/tenacity,
+		/datum/brain_trauma/special/psychotic_brawling,
 		/datum/brain_trauma/severe/hypnotic_trigger/random,
 ))
 
@@ -44,3 +45,19 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 /// have to override this bc split personality has its own on this
 /datum/brain_trauma/severe/split_personality/on_life(delta_time, times_fired)
 	return
+
+// Display something else on medical scan
+/datum/brain_trauma/special/imaginary_friend
+	scan_desc = "active imagination"
+
+/datum/brain_trauma/mild/dumbness
+	name = "Distractible"
+	desc = "Patient has difficulty focusing, and may walk into objects."
+	scan_desc = "easily distracted"
+	gain_text = span_warning("You can't seem to concentrate.")
+	lose_text = span_notice("You feel focused.")
+
+/datum/brain_trauma/special/psychotic_brawling
+	name = "Chaotic Brawler"
+	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
+	scan_desc = "unpredictable reactions"
