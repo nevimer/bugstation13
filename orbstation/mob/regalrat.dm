@@ -131,14 +131,12 @@
 	icon_state_living = "regalrat"
 	icon_state_dead = "regalrat_dead"
 
-/*
 /// Old sprite
 /datum/rat_fashion/classic
 	name = "retro rat"
 	allow_random = FALSE
 	icon_state_living = "classic"
 	icon_state_dead = "classic_dead"
-	*/
 
 /// Floating rat?
 /datum/rat_fashion/supernatural
