@@ -109,13 +109,13 @@
 /datum/species/lizard/create_pref_temperature_perks()
 	var/list/to_add = list()
 
-	/*to_add += list(list(
+	to_add += list(list(
 		SPECIES_PERK_TYPE = SPECIES_POSITIVE_PERK,
 		SPECIES_PERK_ICON = "thermometer-empty",
 		SPECIES_PERK_NAME = "Temperature Tolerance",
 		SPECIES_PERK_DESC = "Tizirans are resilient to hotter temperatures. In addition, they are \
 		comfortable in a wider range of temperature than most species.",
-	))*/ //ORBSTATION REMOVAL - this perk no longer exists
+	))
 
 	return to_add
 

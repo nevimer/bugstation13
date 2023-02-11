@@ -15,6 +15,9 @@
 	human_mob.hairstyle = "Bald"
 	human_mob.facial_hair_color = "#F0E0C0" // for the colored snout option
 
+/datum/species/lizard/create_pref_temperature_perks()
+	return list()
+
 /datum/species/lizard/ashwalker
 	heatmod = 0.5
 	bodytemp_heat_damage_limit = (BODYTEMP_HEAT_DAMAGE_LIMIT + 50)
