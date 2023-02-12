@@ -2,7 +2,7 @@
 /obj/item/buster_sword
 	name = "colossal sword"
 	desc = "Too big, too thick, too heavy, and too rough. This is more like a raw hunk of iron. Couldn't possibly be lifted by anyone."
-	icon = 'orbstation/icons/obj/weapons.dmi'
+	icon = 'orbstation/icons/obj/weapons/weapons.dmi'
 	icon_state = "buster_sword"
 	w_class = WEIGHT_CLASS_HUGE
 	drag_slowdown = 2
@@ -54,7 +54,7 @@
 /obj/item/buster_sword_core
 	name = "hyperdense core"
 	desc = "An ancient-looking assemblage of some extremely dense alloy. There's an inscription across the edge."
-	icon = 'orbstation/icons/obj/weapons.dmi'
+	icon = 'orbstation/icons/obj/weapons/weapons.dmi'
 	icon_state = "buster_sword_unassembled"
 	w_class = WEIGHT_CLASS_HUGE
 	force = 5

@@ -91,9 +91,9 @@
 /obj/item/gun/zetan_revolver
 	name = "Pearlescent Revolver Z"
 	desc = "The most sophisticated weapon you've ever seen. This revolver's trigger can only be pulled by those with the chunkiest fingers. Will never miss."
-	icon = 'orbstation/icons/obj/weapons.dmi'
-	lefthand_file = 'orbstation/icons/mob/left_inhand.dmi'
-	righthand_file = 'orbstation/icons/mob/right_inhand.dmi'
+	icon = 'orbstation/icons/obj/weapons/weapons.dmi'
+	lefthand_file = 'orbstation/icons/obj/weapons/inhand_left.dmi'
+	righthand_file = 'orbstation/icons/obj/weapons/inhand_right.dmi'
 	icon_state = "zetan_revolver"
 	inhand_icon_state = "zetan_revolver"
 	throwforce = 10
