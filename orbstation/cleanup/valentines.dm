@@ -8,6 +8,7 @@
 	max_occurrences = 0
 
 /datum/round_event_control/valentines/can_spawn_event(players_amt)
+	. = ..()
 	return FALSE
 
 // Don't do anything if we somehow run this event
