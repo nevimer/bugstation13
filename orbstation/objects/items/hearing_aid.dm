@@ -61,11 +61,10 @@
 	if (user.sound_environment_override == SOUND_ENVIRONMENT_SEWER_PIPE)
 		user.sound_environment_override = SOUND_ENVIRONMENT_NONE
 
-/obj/item/radio/headset/update_desc(updates)
+/obj/item/radio/headset/examine(mob/user)
 	. = ..()
-	if (!hearing_aid)
-		return
-	desc += "<br>It has a hearing aid attached."
+	if (hearing_aid)
+		. += "It has a hearing aid attached."
 
 /mob/living/carbon/can_hear()
 	. = ..()
