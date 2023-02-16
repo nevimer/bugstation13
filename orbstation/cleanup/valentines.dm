@@ -7,7 +7,7 @@
 	weight = 0
 	max_occurrences = 0
 
-/datum/round_event_control/valentines/can_spawn_event(players_amt)
+/datum/round_event_control/valentines/can_spawn_event(players_amt, allow_magic = FALSE)
 	. = ..()
 	return FALSE
 
