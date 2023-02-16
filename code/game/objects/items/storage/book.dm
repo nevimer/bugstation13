@@ -122,7 +122,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 	if(!ishuman(L))
 		return
 	var/mob/living/carbon/human/H = L
-
 	for(var/obj/item/bodypart/bodypart as anything in H.bodyparts)
 		if(!IS_ORGANIC_LIMB(bodypart))
 			balloon_alert(user, "can't heal metal!")
