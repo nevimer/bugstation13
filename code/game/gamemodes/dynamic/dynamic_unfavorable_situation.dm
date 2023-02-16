@@ -11,43 +11,8 @@
 	var/static/list/unfavorable_random_events = list()
 	if (!length(unfavorable_random_events))
 		unfavorable_random_events = generate_unfavourable_events()
-	var/list/possible_heavies = list()
-
-	// ORBSTATION: when calculating if a ruleset is acceptable, we will pretend the threat level is 30 higher than the actual threat level
-	var/pretend_threat_level = min(threat_level + 30, 100)
-
-	if(EMERGENCY_IDLE_OR_RECALLED) // ORBSTATION: only run a heavy ruleset if the emergency shuttle hasn't been called
-		// Ignored factors: threat cost, minimum round time
-		log_dynamic("Attempting to spawn a heavy ruleset with the threat level of [pretend_threat_level].")
-		for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
-			if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
-				continue
-
-			if (ruleset.weight == 0)
-				continue
-
-			if (ruleset.cost > max_threat_level)
-				continue
-
-			if (!ruleset.acceptable(GLOB.alive_player_list.len, pretend_threat_level))
-				continue
-
-			if (ruleset.minimum_round_time > world.time - SSticker.round_start_time)
-				continue
-
-			if(istype(ruleset, /datum/dynamic_ruleset/midround/from_ghosts) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
-				continue
-
-			ruleset.trim_candidates()
-
-			ruleset.load_templates()
-
-			if (!ruleset.ready())
-				continue
-
-			possible_heavies[ruleset] = ruleset.get_weight()
-
-	if (possible_heavies.len == 0)
+	var/list/possible_heavies = generate_unfavourable_heavy_rulesets()
+	if (!length(possible_heavies))
 		var/datum/round_event_control/round_event_control_type = pick(unfavorable_random_events)
 		var/delay = rand(20 SECONDS, 1 MINUTES)
 
@@ -59,6 +24,41 @@
 		var/datum/dynamic_ruleset/midround/heavy_ruleset = pick_weight(possible_heavies)
 		log_dynamic_and_announce("An unfavorable situation was requested, spawning [initial(heavy_ruleset.name)]")
 		picking_specific_rule(heavy_ruleset, forced = TRUE, ignore_cost = TRUE)
+
+/datum/game_mode/dynamic/proc/generate_unfavourable_heavy_rulesets()
+	if (EMERGENCY_PAST_POINT_OF_NO_RETURN)
+		return list()
+
+	// ORBSTATION: Treat threat level as if it is 30 higher, up to 100
+	var/pretend_threat_level = min(threat_level + 30, 100)
+	var/list/possible_heavies = list()
+	for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
+		if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
+			continue
+
+		if (ruleset.weight == 0)
+			continue
+
+		if (ruleset.cost > max_threat_level)
+			continue
+
+		if (!ruleset.acceptable(GLOB.alive_player_list.len, pretend_threat_level))
+			continue
+
+		if (ruleset.minimum_round_time > world.time - SSticker.round_start_time)
+			continue
+
+		if(istype(ruleset, /datum/dynamic_ruleset/midround/from_ghosts) && !(GLOB.ghost_role_flags & GHOSTROLE_MIDROUND_EVENT))
+			continue
+
+		ruleset.trim_candidates()
+
+		ruleset.load_templates()
+		if (!ruleset.ready())
+			continue
+
+		possible_heavies[ruleset] = ruleset.get_weight()
+	return possible_heavies
 
 /// Filter the below list by which events can actually run on this map
 /datum/game_mode/dynamic/proc/generate_unfavourable_events()
