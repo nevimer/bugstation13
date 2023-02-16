@@ -141,6 +141,16 @@
 				C.Paralyze(40)
 				C.adjust_fire_stacks(5)
 				C.ignite_mob()
+	// BEGIN ORBSTATION EDIT
+	if(created_volume >= 50)
+		var/turf/T = get_turf(holder.my_atom)
+		var/effective_size = round(created_volume/20)
+		for(var/mob/living/carbon/C in get_hearers_in_view(effective_size,T))
+			if(HAS_TRAIT(C, TRAIT_DAMNED) && !IS_CULTIST(C))
+				to_chat(C, span_userdanger("The divine explosion sears you!"))
+				C.adjust_fire_stacks(5)
+				C.ignite_mob()
+	// END ORBSTATION EDIT
 	..()
 
 /datum/chemical_reaction/gunpowder
