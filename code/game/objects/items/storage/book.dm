@@ -123,14 +123,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "burning",
 		return
 	var/mob/living/carbon/human/H = L
 
-	// BEGIN ORBSTATION EDIT
-	if(HAS_TRAIT(H, TRAIT_DAMNED))
-		H.visible_message(span_warning("[user] blinds [H] with the power of [deity_name]!"))
-		H.adjustFireLoss(5)
-		H.adjust_temp_blindness(5 SECONDS)
-		return FALSE
-	// END ORBSTATION EDIT
-
 	for(var/obj/item/bodypart/bodypart as anything in H.bodyparts)
 		if(!IS_ORGANIC_LIMB(bodypart))
 			balloon_alert(user, "can't heal metal!")

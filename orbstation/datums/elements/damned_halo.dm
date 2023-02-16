@@ -46,3 +46,22 @@
 		human_parent.update_body()
 	else
 		target.cut_overlay(HALO_LAYER)
+
+/// Status effect that temporarily gives a mob a damned halo.
+/datum/status_effect/temporary_damned_halo
+	id = "temporary_damned_halo"
+	status_type = STATUS_EFFECT_REFRESH
+	alert_type = null
+	duration = 8 SECONDS
+
+/datum/status_effect/temporary_damned_halo/on_apply()
+	if(!HAS_TRAIT(owner, TRAIT_DAMNED_HALO))
+		owner.AddElement(/datum/element/damned_halo)
+		playsound(owner, 'sound/magic/magic_block_holy.ogg', 50, TRUE)
+		owner.visible_message(span_bolddanger("A cursed halo reveals itself over [owner]!"))
+	return ..()
+
+/datum/status_effect/temporary_damned_halo/on_remove()
+	if(HAS_TRAIT(owner, TRAIT_DAMNED_HALO))
+		owner.RemoveElement(/datum/element/damned_halo)
+	return ..()

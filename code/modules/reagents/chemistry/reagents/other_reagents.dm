@@ -323,13 +323,6 @@
 	if(!data)
 		data = list("misc" = 0)
 
-	// BEGIN ORBSTATION EDIT
-	if(HAS_TRAIT(affected_mob, TRAIT_DAMNED))
-		affected_mob.set_confusion_if_lower(3 SECONDS)
-		affected_mob.adjustFireLoss(0.25*delta_time, 0)
-		affected_mob.adjustToxLoss(0.25*delta_time, 0)
-	// END ORBSTATION EDIT
-
 	data["misc"] += delta_time SECONDS * REM
 	affected_mob.adjust_jitter_up_to(4 SECONDS * delta_time, 20 SECONDS)
 	if(IS_CULTIST(affected_mob))
