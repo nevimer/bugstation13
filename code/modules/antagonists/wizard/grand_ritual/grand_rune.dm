@@ -1,8 +1,5 @@
 /// Number of times you need to cast on the rune to complete it
 #define GRAND_RUNE_INVOKES_TO_COMPLETE 3
-/// Returns true if you're a wizard or a journeyman
-/// You will probably never have both of these at the same time but if a big wizard wants to finish the rune of a small one who am I to say they can't?
-#define IS_WIZARD_OR_JOURNEYMAN(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/wizard_journeyman || mob?.mind?.has_antag_datum(/datum/antagonist/wizard)))
 /// Base time to take to invoke one stage of the rune. This is done three times to complete the rune.
 #define BASE_INVOKE_TIME 7 SECONDS
 /// Time to add on to each step every time a previous rune is completed.
@@ -16,8 +13,8 @@
 /obj/effect/grand_rune
 	name = "grand rune"
 	desc = "A flowing circle of shapes and runes is etched into the floor, the lines twist and move before your eyes."
-	icon = 'orbstation/icons/effects/rune.dmi'
-	icon_state = "rune"
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "wizard_rune"
 	pixel_x = -28
 	pixel_y = -33
 	anchored = TRUE
@@ -36,53 +33,36 @@
 	var/spell_colour = "#de3aff48"
 	/// Magic words you say to invoke the ritual
 	var/list/magic_words = list()
-	/**
-	 * Possible things you can yell when invoking the rune. Wizards are silly, so... so are these.
-	 * It was actually really hard to think of any three-part incantations which weren't dumb jokes.
-	 * Please do contribute more if you think of some.
-	 */
+	/// Things you might yell when invoking a rune
 	var/static/list/possible_magic_words = list(
-		list("Abra...", "Cadabra...", "Alakazam!"),
-		list("Bibbity!", "Bobbity!", "Boo!"),
-		list("I wish I may...", "I wish I might...", "Have this wish I wish tonight!"),
-		list("Micrato", "Raepij", "Sathonich!"),
-		list("Sim!", "Sala!", "Bim!"),
-		list("Hocus Pocus!", "Flim Flam!", "Wabbajack!"),
-		list("Esaelp!", "Ouy Knaht!", "Em Esucxe!!"),
-		list("Quas!", "Wex!", "Exort!"),
-		list("Ten!", "Chi!", "Jin!"),
-		list("Fus", "Roh", "Dah!!"),
-		list("Y-abbaa", "Dab'Bah", "Doom!!"),
-		list("Azarath!", "Metrion!", "Zinthos!!"),
-		list("Noctu!", "Orfei!", "Aude! Fraetor!"),
-		list("Klaatu!", "Barada!", "Nikto!!"),
-		list("Drivaron Ple'ez!", "Shabadoobie!", "Henshin!!"),
-		list("Bish", "Bash", "Bosh!"),
-		list("Halev Li'af!", "Epizadh!", "Free!!"),
 		list("*scream", "*scream", "*scream"),
-		list("One and a...", "Two and a...", "One Two Three Four!!"),
-		list("Up Up Down Down...", "Left Right Left Right...", "A B Start!!"),
+		list("Abra...", "Cadabra...", "Alakazam!"),
+		list("Azarath!", "Metrion!", "Zinthos!!"),
+		list("Bibbity!", "Bobbity!", "Boo!"),
+		list("Bish", "Bash", "Bosh!"),
+		list("Eenie... ", "Meenie... ", "Minie'Mo!!"),
+		list("Esaelp!", "Ouy Knaht!", "Em Esucxe!!"),
+		list("Fus", "Roh", "Dah!!"),
+		list("git checkout origin master", "git reset --hard HEAD~2", "git push origin master --force!!"),
+		list("Hocus Pocus!", "Flim Flam!", "Wabbajack!"),
+		list("I wish I may...", "I wish I might...", "Have this wish I wish tonight!"),
+		list("Klaatu!", "Barada!", "Nikto!!"),
 		list("Let expanse contract!", "Let eon become instant!", "Throw wide the gates!!"),
-		list("The arcane is mine to command!", "Yawn wide, ever-hungering void!", "Behold, a sorcerer of eld!!"),
+		list("Levios!", "Graviole!", "Explomb!!"),
+		list("Micrato", "Raepij", "Sathonich!"),
+		list("Noctu!", "Orfei!", "Aude! Fraetor!"),
+		list("Quas!", "Wex!", "Exort!"),
+		list("Sim!", "Sala!", "Bim!"),
 		list("Seven shadows cast, seven fates foretold!", "Let their words echo in your empty soul!", "Ruination is come!!"),
 		list("Swiftcast! Hastega! Abjurer's Ward II! Extend IV! Tenser's Advanced Enhancement! Protection from Good! Enhance Effect III! Arcane Re...",
 			"...inforcement IV! Turn Vermin X! Protection from Evil II! Mage's Shield! Venerious's Mediocre Enhancement II! Expand Power! Banish Hu...",
 			"...nger II! Protection from Neutral! Surecastaga! Refresh! Refresh II! Sharpcast X! Aetherial Manipulation! Ley Line Absorption! Invoke Grand Ritual!!"),
-		list("git checkout origin master", "git reset --hard HEAD~2", "git push origin master --force!!"),
-		list("T'yu! T'mei!", "T'yu! T'mei! T'yu! T'mei!", "O'dere! O'dere O'dere!!"),
-		list("Snap! Click! Clank! Whirr! Whizz! Wham! Boom!", "Crack! Thoom! Snap! Bam! Bim! Bang! Zoom!", "Nearsoon, Firebloom, Crimson FOOM!!"),
-		list("Eenie, meenie... ", "Miney... ", "Mo!!"),
-		list("Levios!", "Graviole!", "Explomb!!"),
-		list("Cuh'men Cee Im!", "Cuh'men Mee Im!", "E'shur Bes Fren!"),
-		list("He he!", "Ha ha!", "BOBO!!"),
-		list("Ora!", "Dora!", "Mudah!!"),
-		list("...", "...... heh.", "*snap"),
+		list("Ten!", "Chi!", "Jin!"),
 		list("Ultimate School of Magic!", "Ultimate Ritual!", "Macrocosm!!"),
-		list("Planetary Revolution!", "Ten Evil Stars!", "Hell and Heaven Meltdown!!"),
-		list("Nake...", "Snake...", "Cobura, Cobura!"),
+		list("Y-abbaa", "Dab'Bah", "Doom!!"),
 	)
 
-// Prepare magic words and hide from silicons
+/// Prepare magic words and hide from silicons
 /obj/effect/grand_rune/Initialize(mapload, potency = 0)
 	. = ..()
 	src.potency = potency
@@ -90,7 +70,7 @@
 	magic_words = pick(possible_magic_words)
 	var/image/silicon_image = image(icon = 'icons/effects/eldritch.dmi', icon_state = null, loc = src)
 	silicon_image.override = TRUE
-	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/silicons, "heretic_rune", silicon_image)
+	add_alt_appearance(/datum/atom_hud/alternate_appearance/basic/silicons, "wizard_rune", silicon_image)
 	announce_rune()
 
 /// I cast Summon Security
@@ -106,9 +86,9 @@
 /obj/effect/grand_rune/examine(mob/user)
 	. = ..()
 	if (times_invoked >= GRAND_RUNE_INVOKES_TO_COMPLETE)
-		. += span_notice("It's power seems to have been expended.")
+		. += span_notice("Its power seems to have been expended.")
 		return
-	if(!IS_WIZARD_OR_JOURNEYMAN(user))
+	if(!IS_WIZARD(user))
 		return
 	. += span_notice("Invoke this rune [GRAND_RUNE_INVOKES_TO_COMPLETE - times_invoked] more times to complete the ritual.")
 
@@ -116,7 +96,7 @@
 	. = ..()
 	if(!.)
 		return
-	if(!IS_WIZARD_OR_JOURNEYMAN(user))
+	if(!IS_WIZARD(user))
 		return FALSE
 	if(is_in_use)
 		return FALSE
@@ -145,12 +125,12 @@
 	remove_channel_effect(user)
 
 	for(var/obj/machinery/light/light in orange(4, src.loc))
-		light.flicker() // ooOOOOoooOOoooOOo
+		light.flicker()
 
-	if (times_invoked >= GRAND_RUNE_INVOKES_TO_COMPLETE)
+	if(times_invoked >= GRAND_RUNE_INVOKES_TO_COMPLETE)
 		on_invocation_complete(user)
 		return
-	flick("flash", src)
+	flick("wizard_rune_flash", src)
 	playsound(src,'sound/magic/staff_animation.ogg', 75, TRUE)
 	INVOKE_ASYNC(src, PROC_REF(invoke_rune), user)
 
@@ -185,21 +165,31 @@
 /// Triggers some form of event somewhere on the station
 /obj/effect/grand_rune/proc/summon_round_event(mob/living/user)
 	var/list/possible_events = list()
-	for (var/event_path as anything in subtypesof(/datum/grand_event))
-		var/datum/grand_event/event = new event_path()
-		if (!event.is_valid_event(potency))
-			continue
-		possible_events += event
 
-	var/datum/grand_event/final_event = pick(possible_events)
-	final_event.trigger_event(user)
+	var/player_count = get_active_player_count(alive_check = TRUE, afk_check = TRUE, human_check = TRUE)
+	for(var/datum/round_event_control/possible_event as anything in SSevents.control)
+		if (!possible_event.can_spawn_event(player_count, allow_magic = TRUE))
+			continue
+		if (possible_event.min_wizard_trigger_potency > potency)
+			continue
+		if (possible_event.max_wizard_trigger_potency < potency)
+			continue
+		possible_events += possible_event
+
+	if (!length(possible_events))
+		visible_message(span_notice("[src] makes a sad whizzing noise."))
+		return
+
+	var/datum/round_event_control/final_event = pick (possible_events)
+	final_event.runEvent()
+	to_chat(user, span_notice("Your released magic afflicts the crew: [final_event.name]!"))
 
 /// Applies some local side effects to the area
 /obj/effect/grand_rune/proc/trigger_side_effects(mob/living/user)
 	if (potency == 0) // Not on the first one
 		return
 	var/list/possible_effects = list()
-	for (var/effect_path as anything in subtypesof(/datum/grand_side_effect))
+	for (var/effect_path in subtypesof(/datum/grand_side_effect))
 		var/datum/grand_side_effect/effect = new effect_path()
 		if (!effect.can_trigger(loc))
 			continue
@@ -211,7 +201,6 @@
 /**
  * Invoking the ritual spawns up to three reality tears based on potency.
  * Each of these has a 50% chance to spawn already expended.
- * I think this is fun flavour (the wizard is breaking local reality), and adds cross-antagonist interactivity.
  */
 /obj/effect/grand_rune/proc/tear_reality()
 	var/max_tears = 0
@@ -246,7 +235,6 @@
 		created++
 
 #undef GRAND_RUNE_INVOKES_TO_COMPLETE
-#undef IS_WIZARD_OR_JOURNEYMAN
 
 #undef BASE_INVOKE_TIME
 #undef ADD_INVOKE_TIME
@@ -294,7 +282,7 @@
 /obj/effect/grand_rune/finale/proc/select_finale(mob/living/user)
 	var/list/options = list()
 	var/list/picks_to_instances = list()
-	for (var/typepath as anything in subtypesof(/datum/grand_finale))
+	for (var/typepath in subtypesof(/datum/grand_finale))
 		var/datum/grand_finale/finale_type = new typepath()
 		var/datum/radial_menu_choice/choice = finale_type.get_radial_choice()
 		if (!choice)
@@ -305,7 +293,7 @@
 	var/datum/radial_menu_choice/choice_none = new()
 	choice_none.name = PICK_NOTHING
 	choice_none.image = image(icon = 'icons/mob/actions/actions_cult.dmi', icon_state = "draw")
-	choice_none.info = "The ultimate prank! They will never expect you to continue to do \
+	choice_none.info = "The ultimate use of your gathered power! They will never expect you to continue to do \
 		exactly the same kind of thing you've been doing this whole time!"
 	options += list("[choice_none.name]" = choice_none)
 
@@ -335,9 +323,9 @@
  */
 /obj/effect/decal/cleanable/grand_remains
 	name = "circle of ash"
-	desc = "Looks like someone's been drawing shapes with ash on the ground."
-	icon = 'orbstation/icons/effects/rune.dmi'
-	icon_state = "burned"
+	desc = "Looks like someone's been drawing weird shapes with ash on the ground."
+	icon = 'icons/effects/96x96.dmi'
+	icon_state = "wizard_rune_burned"
 	pixel_x = -28
 	pixel_y = -34
 	anchored = TRUE

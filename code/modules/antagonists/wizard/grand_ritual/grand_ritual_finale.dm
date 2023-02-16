@@ -1,3 +1,7 @@
+#define DOOM_SINGULARITY "singularity"
+#define DOOM_TESLA "tesla"
+#define DOOM_METEORS "meteors"
+
 /**
  * A big final event to run when you complete seven rituals
  */
@@ -59,7 +63,7 @@
 	wizard_murder.explanation_text = "Kill [wizard.current.name], the one who did this."
 	antag_datum.objectives += wizard_murder
 
-	to_chat(aggrieved_crewmate.current, span_warning("No! This... isn't right!"))
+	to_chat(aggrieved_crewmate.current, span_warning("No! This isn't right!"))
 	aggrieved_crewmate.announce_objectives()
 
 /**
@@ -78,7 +82,7 @@
 /// Become the official Captain of the station
 /datum/grand_finale/usurp
 	name = "Usurpation"
-	desc = "The ultimate prank! Rewrite time such that you have been Captain of this station the whole time."
+	desc = "The ultimate use of your gathered power! Rewrite time such that you have been Captain of this station the whole time."
 	icon = 'icons/obj/card.dmi'
 	icon_state = "card_gold"
 
@@ -86,29 +90,27 @@
 	message_admins("[key_name(invoker)] has replaced the Captain")
 	var/list/former_captains = list()
 	var/list/other_crew = list()
-	for (var/mob/living/carbon/human/crewmate in GLOB.mob_list)
-		if(!crewmate.mind)
-			continue
-		if (crewmate == invoker)
-			continue
-		var/job_title = crewmate.mind.assigned_role.title
-		if (job_title == JOB_CAPTAIN)
-			former_captains += crewmate
-			demote_to_assistant(crewmate)
-			continue
-		if (crewmate.stat != DEAD)
-			other_crew += crewmate
-
 	SEND_SOUND(world, sound('sound/magic/timeparadox2.ogg'))
-	for(var/mob/living/victim as anything in GLOB.player_list)
-		victim.Unconscious(3 SECONDS)
-		to_chat(victim, span_notice("The world spins and dissolves. Your past flashes before your eyes, backwards.\n\
+
+	for (var/mob/living/carbon/human/crewmate as anything in GLOB.human_list)
+		if (!crewmate.mind)
+			continue
+		crewmate.Unconscious(3 SECONDS) // Everyone falls unconscious but not everyone gets told about a new captain
+		if (crewmate == invoker || IS_HUMAN_INVADER(crewmate))
+			continue
+		to_chat(crewmate, span_notice("The world spins and dissolves. Your past flashes before your eyes, backwards.\n\
 			Life strolls back into the ocean and shrinks into nothingness, planets explode into storms of solar dust, \
 			the stars rush back to greet each other at the beginning of things and then... you snap back to the present. \n\
 			Everything is just as it was and always has been. \n\n\
 			A stray thought sticks in the forefront of your mind. \n\
 			[span_hypnophrase("I'm so glad that [invoker.real_name] is our legally appointed Captain!")] \n\
 			Is... that right?"))
+		if (is_captain_job(crewmate.mind.assigned_role))
+			former_captains += crewmate
+			demote_to_assistant(crewmate)
+			continue
+		if (crewmate.stat != DEAD)
+			other_crew += crewmate
 
 	dress_candidate(invoker)
 	GLOB.manifest.modify(invoker.real_name, JOB_CAPTAIN, JOB_CAPTAIN)
@@ -139,9 +141,7 @@
 	var/list/valid_turfs = list()
 	// Used to be into prison but that felt a bit too mean
 	for (var/turf/exile_turf as anything in get_area_turfs(/area/station/maintenance, subtypes = TRUE))
-		if (isspaceturf(exile_turf))
-			continue
-		if (exile_turf.is_blocked_turf())
+		if (isspaceturf(exile_turf) || exile_turf.is_blocked_turf())
 			continue
 		valid_turfs += exile_turf
 	do_teleport(former_captain, pick(valid_turfs), no_effects = TRUE)
@@ -190,20 +190,24 @@
 	backpack_contents = list(
 		/obj/item/melee/baton/telescopic = 1,
 		/obj/item/station_charter = 1,
-		)
+	)
 	box = null
 
 /// Dress the crew as magical clowns
 /datum/grand_finale/clown
 	name = "Jubilation"
-	desc = "The ultimate prank! Rewrite time so that everyone went to clown college! Now they'll prank each other for you!"
+	desc = "The ultimate use of your gathered power! Rewrite time so that everyone went to clown college! Now they'll prank each other for you!"
 	icon = 'icons/obj/clothing/masks.dmi'
 	icon_state = "clown"
 	glow_colour = "#ffff0048"
 
 /datum/grand_finale/clown/trigger(mob/living/carbon/human/invoker)
-	for(var/mob/living/victim as anything in GLOB.player_list)
+	for(var/mob/living/carbon/human/victim as anything in GLOB.human_list)
 		victim.Unconscious(3 SECONDS)
+		if (!victim.mind || IS_HUMAN_INVADER(victim) || victim == invoker)
+			continue
+		if (HAS_TRAIT(victim, TRAIT_CLOWN_ENJOYER))
+			victim.add_mood_event("clown_world", /datum/mood_event/clown_world)
 		to_chat(victim, span_notice("The world spins and dissolves. Your past flashes before your eyes, backwards.\n\
 			Life strolls back into the ocean and shrinks into nothingness, planets explode into storms of solar dust, \
 			the stars rush back to greet each other at the beginning of things and then... you snap back to the present. \n\
@@ -211,18 +215,12 @@
 			A stray thought sticks in the forefront of your mind. \n\
 			[span_hypnophrase("I'm so glad that I work at Clown Research Station [station_name()]!")] \n\
 			Is... that right?"))
-		if (ismonkey(victim))
-			continue
-		if (victim == invoker)
-			continue
-		var/job_title = victim.mind.assigned_role.title
-		if (HAS_TRAIT(victim, TRAIT_CLOWN_ENJOYER))
-			victim.add_mood_event("clown_world", /datum/mood_event/clown_world)
-		if (job_title == JOB_CLOWN)
-			var/datum/action/cooldown/spell/clown_pockets/new_spell = new(victim)
+		if (is_clown_job(victim.mind.assigned_role))
+			var/datum/action/cooldown/spell/conjure_item/clown_pockets/new_spell = new(victim)
 			new_spell.Grant(victim)
 			continue
-		dress_as_magic_clown(victim)
+		if (!ismonkey(victim)) // Monkeys cannot yet wear clothes
+			dress_as_magic_clown(victim)
 		if (prob(15))
 			create_vendetta(victim.mind, invoker.mind)
 
@@ -261,12 +259,7 @@
 
 	var/obj/item/clothing/mask/gas/clown_hat/clown_mask = victim.get_item_by_slot(ITEM_SLOT_MASK)
 	if (clown_mask)
-		var/list/options = list()
-		options["True Form"] = "clown"
-		options["Sexy Clown"] = "sexyclown"
-		options["The Madman"] = "joker"
-		options["The Rainbow Color"] ="rainbow"
-		options["The Jester"] ="chaos"
+		var/list/options = GLOB.clown_mask_options
 		clown_mask.icon_state = options[pick(clown_mask.clownmask_designs)]
 		victim.update_worn_mask()
 		clown_mask.update_item_action_buttons()
@@ -280,7 +273,7 @@
 /// Give everyone magic items
 /datum/grand_finale/magic
 	name = "Evolution"
-	desc = "The ultimate prank! Give the crew their own magic, they'll surely realise that right and wrong have no meaning when you hold ultimate power!"
+	desc = "The ultimate use of your gathered power! Give the crew their own magic, they'll surely realise that right and wrong have no meaning when you hold ultimate power!"
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll"
 
@@ -291,31 +284,34 @@
 /// Open all of the doors
 /datum/grand_finale/all_access
 	name = "Connection"
-	desc = "The ultimate prank! Unlock every single door that they have! Nobody will be able to keep you out now, or anyone else for that matter!"
+	desc = "The ultimate use of your gathered power! Unlock every single door that they have! Nobody will be able to keep you out now, or anyone else for that matter!"
 	icon = 'icons/mob/actions/actions_spells.dmi'
 	icon_state = "knock"
 
 /datum/grand_finale/all_access/trigger(mob/living/carbon/human/invoker)
 	message_admins("[key_name(invoker)] removed all door access requirements")
-	for(var/obj/machinery/door/target_door in GLOB.machines)
+	for(var/obj/machinery/door/target_door as anything in GLOB.airlocks)
 		if(is_station_level(target_door.z))
 			target_door.unlock()
 			target_door.req_access = list()
+			target_door.req_one_access = list()
 			INVOKE_ASYNC(target_door, TYPE_PROC_REF(/obj/machinery/door/airlock, open))
+			CHECK_TICK
 	priority_announce("AULIE OXIN FIERA!!", null, 'sound/magic/knock.ogg', sender_override = "[invoker.real_name]")
 
 /// Completely transform the station
 /datum/grand_finale/midas
 	name = "Transformation"
-	desc = "The ultimate prank! Turn their precious station into something much MORE precious, materially speaking!"
+	desc = "The ultimate use of your gathered power! Turn their precious station into something much MORE precious, materially speaking!"
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "sheet-gold_2"
 	glow_colour = "#dbdd4c48"
 	var/static/list/permitted_transforms = list( // Non-dangerous only
 		/datum/dimension_theme/gold,
 		/datum/dimension_theme/meat,
-		/datum/dimension_theme/glass,
-		/datum/dimension_theme/disco)
+		/datum/dimension_theme/pizza,
+		/datum/dimension_theme/natural,
+	)
 	var/datum/dimension_theme/chosen_theme
 
 // I sure hope this doesn't have performance implications
@@ -348,6 +344,7 @@
 		if (!chosen_theme.can_convert(transform_turf))
 			continue
 		chosen_theme.apply_theme(transform_turf)
+		CHECK_TICK
 
 /// Kill yourself and probably a bunch of other people
 /datum/grand_finale/armageddon
@@ -371,51 +368,40 @@
 		"Tremble before my glory!",
 		"Pick a god and pray!",
 		"It's no use!",
-		"Chaos... Control!!",
-		"Destruction of nature, gather in flame!",
 		"If the gods wanted you to live, they would not have created me!",
 		"God stays in heaven out of fear of what I have created!",
-		"Scurry and scatter!",
-		"The hearts of men are black with corruption and must needs be cleansed!",
-		"Death, and death alone!",
 		"Ruination is come!",
-		"Raise your swords against the coming night!",
-		"Your journey ends here!",
-		"The gods will not be watching.",
-		"There is time enough for regret in the flames of hell.",
-		"And now the scales will tip!",
-		"Even the strongest of shields cannot defend the weakest of wills!",
-		"You shall rue the day you raised your eyes to the heavens.",
-		"Denizens of the abyss! From ink of blackest night, I summon you! Darkness to me!",
-		"Your very soul shall not escape my wrath!",
 		"All of creation, bend to my will!",
-		"From broken skies fall tears of flame!",
-		"My life's work! My masterpiece!",
-		"Rejoice and partake of my gift!",
-		"Leave naught but ash in your wake!",
-		"Let seep sorrow into your hearts!")
+	)
 
 /datum/grand_finale/armageddon/trigger(mob/living/carbon/human/invoker)
-	priority_announce(pick(possible_last_words), null, 'sound/magic/voidblink.ogg', sender_override = "[invoker.real_name]")
+	death_yell()
 	var/turf/current_location = get_turf(invoker)
 	invoker.gib()
-	var/doom = rand(1, 4)
-	switch(doom)
-		if (1)
+
+	var/static/list/doom_options = list()
+	if (!length(doom_options))
+		doom_options = list(DOOM_SINGULARITY, DOOM_TESLA)
+		if (!SSmapping.config.planetary)
+			doom_options += DOOM_METEORS
+
+	switch(pick(doom_options))
+		if (DOOM_SINGULARITY)
 			var/obj/singularity/singulo = new(current_location)
 			singulo.energy = 300
-		if (2)
+		if (DOOM_TESLA)
 			var/obj/energy_ball/tesla = new (current_location)
 			tesla.energy = 200
-		if (3)
-			/**
-			 * Note: this is very cool and also automatically ends the round with a cutscene after about three minutes.
-			 * This follows the at least 3 minutes of warning they have had about it happening.
-			 * Should be a rare event, so I guess we will see how much people hate it.
-			 */
-			new /obj/narsie(current_location)
-		if (4)
+		if (DOOM_METEORS)
 			var/datum/dynamic_ruleset/roundstart/meteor/meteors = new()
 			meteors.meteordelay = 0
 			var/datum/game_mode/dynamic/mode = SSticker.mode
-			mode.execute_roundstart_rule(meteors) // Meteors will continue until crew leaves.
+			mode.execute_roundstart_rule(meteors) // Meteors will continue until morale is crushed.
+			priority_announce("Meteors have been detected on collision course with the station.", "Meteor Alert", ANNOUNCER_METEORS)
+
+/datum/grand_finale/armageddon/proc/death_yell(mob/living/carbon/human/invoker)
+	priority_announce(pick(possible_last_words), null, 'sound/magic/voidblink.ogg', sender_override = "[invoker.real_name]")
+
+#undef DOOM_SINGULARITY
+#undef DOOM_TESLA
+#undef DOOM_METEORS
