@@ -103,6 +103,7 @@ INITIALIZE_IMMEDIATE(/mob/living/carbon/human/dummy)
 	target.dna.features["rat_snout"] = "Round"
 	target.dna.features["rat_tail"] = "High"
 	target.dna.features["rat_ears"] = "Round"
+	target.dna.features["moth_color"] = "#ffd98c"
 
 /// Provides a dummy that is consistently bald, white, naked, etc.
 /mob/living/carbon/human/dummy/consistent

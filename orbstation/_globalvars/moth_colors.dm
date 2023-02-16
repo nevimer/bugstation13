@@ -1,0 +1,18 @@
+GLOBAL_LIST_INIT(color_list_moth, list(
+	"Hawk" = "#ffd98c",
+	"Luna" = "#caffbb",
+	"Grey" = "#979ca2",
+	"Atlas" = "#f97b28",
+	"Pine" = "#ddb08b",
+	"Leaf" = "#7e9758",
+	"Lappet" = "#fffd54",
+	"White Witch" = "#fdfde5",
+	"Death's Head" = "#756363",
+	"Spongy" = "#e9b869",
+	"Ornate" = "#d95b54",
+	"Polyphemus" = "#b57c4f",
+	"Clearwing" = "#cdffff",
+	"Rosy" = "#fccbfd",
+	"Oleander" = "#b5a3e0",
+	"Peppered" = "#706e65",
+))

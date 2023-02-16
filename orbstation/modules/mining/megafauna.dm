@@ -34,8 +34,7 @@
 	damage_coeff = original_damage_coeff.Copy()
 	FindTarget(list(future_corpse))
 
-/mob/living/simple_animal/hostile/megafauna/update_desc(updates)
+/mob/living/simple_animal/hostile/megafauna/examine(mob/user)
 	. = ..()
-	if (!dormant)
-		return
-	desc += "<BR>[span_warning("It seems to be dormant, but could be awakened by clicking on it.")]"
+	if (dormant)
+		. += span_warning("It seems to be dormant, but could be awakened by clicking on it.")

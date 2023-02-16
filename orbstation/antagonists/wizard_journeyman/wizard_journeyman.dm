@@ -19,7 +19,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	/// Gear to apply
 	var/outfit_type = /datum/outfit/journeyman_wizard
 	/// This mob's Grand Ritual ability
-	var/datum/action/grand_ritual/ritual = new
+	var/datum/action/cooldown/grand_ritual/ritual = new
 	/// List of names of spells for the round end report
 	var/list/learned_spells = list()
 
@@ -35,7 +35,6 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	var/mob/living/current = owner.current
 	ritual.Grant(current)
 	current.faction |= ROLE_WIZARD
-	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
 
 /datum/antagonist/wizard_journeyman/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -56,6 +55,8 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 
 /// On application, teleport to lair and set up
 /datum/antagonist/wizard_journeyman/on_gain()
+	ritual = new(owner.current)
+	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
 	send_to_lair()
 	equip_wizard()
 	if (give_objectives)

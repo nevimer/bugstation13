@@ -45,11 +45,10 @@
 		return
 	. += mutable_appearance('orbstation/icons/obj/accessibility.dmi', "glove_wires")
 
-/obj/item/clothing/gloves/update_desc(updates)
+/obj/item/clothing/gloves/examine(mob/user)
 	. = ..()
-	if (!clothing_traits || !(TRAIT_CAN_SIGN_ON_COMMS in clothing_traits))
-		return
-	desc += "<br>They have a sign language interpreting assembly attached."
+	if (clothing_traits && (TRAIT_CAN_SIGN_ON_COMMS in clothing_traits))
+		. += "<br>They have a sign language interpreting assembly attached."
 
 // Replace the existing crafting recipe because it's redundant
 /datum/crafting_recipe/radiogloves

@@ -70,10 +70,10 @@
 	examine_limb_id = SPECIES_PODPERSON
 
 //Sprouts heal rapidly while standing in light
-/datum/species/pod/sprout/handle_light_healing(mob/living/carbon/human/H, delta_time)
-	H.heal_overall_damage(0.5 * delta_time, 0.5 * delta_time, BODYTYPE_ORGANIC)
-	H.adjustToxLoss(-0.5 * delta_time)
-	H.adjustOxyLoss(-0.5 * delta_time)
+/datum/species/pod/sprout/handle_light_healing(mob/living/carbon/human/pod, delta_time)
+	pod.heal_overall_damage(brute = 0.5 * delta_time, burn = 0.5 * delta_time, required_bodytype = BODYTYPE_ORGANIC)
+	pod.adjustToxLoss(-0.5 * delta_time)
+	pod.adjustOxyLoss(-0.5 * delta_time)
 
 // Roundstart podpeople just choose their hair colour
 /datum/bodypart_overlay/mutant/pod_hair

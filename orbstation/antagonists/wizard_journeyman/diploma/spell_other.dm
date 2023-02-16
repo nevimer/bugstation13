@@ -108,7 +108,7 @@
 	name = "Endless Clown Tools"
 	desc = "Reach your hand into the clown dimension and pull out some kind of prank-related item. \
 		Great for parties, dubiously useful in a life or death situation."
-	spell_type = /datum/action/cooldown/spell/clown_pockets
+	spell_type = /datum/action/cooldown/spell/conjure_item/clown_pockets
 	category = DIPLOMA_SPELL_OTHER
 
 /datum/diploma_spell/item/eldritch_minion
