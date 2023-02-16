@@ -45,6 +45,7 @@
 
 /datum/action/hide_halo
 	name = "Conceal unholy halo"
+	desc = "Channel your energy to conceal your unholy halo. Be warned: this will burn you."
 	check_flags = AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_CONSCIOUS
 	button_icon = 'orbstation/icons/effects/damned_halo_action.dmi'
 	button_icon_state = "no_halo"
@@ -83,9 +84,9 @@
 		name = "Reveal unholy halo"
 		desc = "Makes your unholy halo visible once more, allowing everyone to know that you are cursed by the gods."
 	else
-		button_icon_state = "no_halo"
-		name = "Conceal unholy halo"
-		desc = "Channel your energy to conceal your unholy halo. Be warned: this will burn you."
+		button_icon_state = initial(button_icon_state)
+		name = initial(name)
+		desc = initial(desc)
 	build_all_button_icons()
 
 // "Holy weapon" element. Gives the attached item a chance to strike a victim with lightning if they have the "Damned" trait.
