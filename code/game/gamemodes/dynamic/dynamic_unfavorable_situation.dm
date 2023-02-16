@@ -11,11 +11,32 @@
 	var/static/list/unfavorable_random_events = list()
 	if (!length(unfavorable_random_events))
 		unfavorable_random_events = generate_unfavourable_events()
+	var/list/possible_heavies = generate_unfavourable_heavy_rulesets()
+	if (!length(possible_heavies))
+		var/datum/round_event_control/round_event_control_type = pick(unfavorable_random_events)
+		var/delay = rand(20 SECONDS, 1 MINUTES)
+
+		log_dynamic_and_announce("An unfavorable situation was requested, but no heavy rulesets could be drafted. Spawning [initial(round_event_control_type.name)] in [DisplayTimeText(delay)] instead.")
+
+		var/datum/round_event_control/round_event_control = new round_event_control_type
+		addtimer(CALLBACK(round_event_control, TYPE_PROC_REF(/datum/round_event_control, runEvent)), delay)
+	else
+		var/datum/dynamic_ruleset/midround/heavy_ruleset = pick_weight(possible_heavies)
+		log_dynamic_and_announce("An unfavorable situation was requested, spawning [initial(heavy_ruleset.name)]")
+		picking_specific_rule(heavy_ruleset, forced = TRUE, ignore_cost = TRUE)
+
+/// Return a valid heavy dynamic ruleset, or an empty list if there's no time to run any rulesets
+/datum/game_mode/dynamic/proc/generate_unfavourable_heavy_rulesets()
+	if (EMERGENCY_PAST_POINT_OF_NO_RETURN)
+		return list()
+
 	var/list/possible_heavies = list()
+	for (var/datum/dynamic_ruleset/midround/ruleset as anything in midround_rules)
+		if (ruleset.midround_ruleset_style != MIDROUND_RULESET_STYLE_HEAVY)
+			continue
 
-	// ORBSTATION: when calculating if a ruleset is acceptable, we will pretend the threat level is 30 higher than the actual threat level
+	// ORBSTATION: Treat threat level as if it is 30 higher, up to 100
 	var/pretend_threat_level = min(threat_level + 30, 100)
-
 	if(EMERGENCY_IDLE_OR_RECALLED) // ORBSTATION: only run a heavy ruleset if the emergency shuttle hasn't been called
 		// Ignored factors: threat cost, minimum round time
 		log_dynamic("Attempting to spawn a heavy ruleset with the threat level of [pretend_threat_level].")
@@ -40,25 +61,8 @@
 
 			ruleset.trim_candidates()
 
-			ruleset.load_templates()
-
-			if (!ruleset.ready())
-				continue
-
-			possible_heavies[ruleset] = ruleset.get_weight()
-
-	if (possible_heavies.len == 0)
-		var/datum/round_event_control/round_event_control_type = pick(unfavorable_random_events)
-		var/delay = rand(20 SECONDS, 1 MINUTES)
-
-		log_dynamic_and_announce("An unfavorable situation was requested, but no heavy rulesets could be drafted. Spawning [initial(round_event_control_type.name)] in [DisplayTimeText(delay)] instead.")
-
-		var/datum/round_event_control/round_event_control = new round_event_control_type
-		addtimer(CALLBACK(round_event_control, TYPE_PROC_REF(/datum/round_event_control, runEvent)), delay)
-	else
-		var/datum/dynamic_ruleset/midround/heavy_ruleset = pick_weight(possible_heavies)
-		log_dynamic_and_announce("An unfavorable situation was requested, spawning [initial(heavy_ruleset.name)]")
-		picking_specific_rule(heavy_ruleset, forced = TRUE, ignore_cost = TRUE)
+		possible_heavies[ruleset] = ruleset.get_weight()
+	return possible_heavies
 
 /// Filter the below list by which events can actually run on this map
 /datum/game_mode/dynamic/proc/generate_unfavourable_events()
