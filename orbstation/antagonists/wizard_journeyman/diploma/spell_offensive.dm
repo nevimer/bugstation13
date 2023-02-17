@@ -129,6 +129,6 @@
 
 /datum/diploma_spell/sanguine_strike
 	name = "Sanguine Strike"
-	desc = "Enchants an item you are holding to deal more damage on its next strike, as well as healing you!"
+	desc = "Enchants an item you are holding to deal more damage on its next strike, as well as healing you and restoring your blood!"
 	spell_type = /datum/action/cooldown/spell/sanguine_strike
 	category = DIPLOMA_SPELL_OFFENSIVE
