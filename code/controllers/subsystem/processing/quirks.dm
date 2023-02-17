@@ -23,6 +23,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		list("Prosthetic Limb", "Quadruple Amputee", "Alien Prosthesis", "Bioscrambler Victim"), //ORBSTATION
 		list("Blind", "Compulsive Door Closer"), //ORBSTATION
 		list("Blind", "Nearsighted", "Farsighted"), //ORBSTATION: added "Farsighted" to this list
+		list("Damned", "Spiritual"), // ORBSTATION
 		list("Jolly", "Depression", "Apathetic", "Hypersensitive"),
 		list("Ageusia", "Vegetarian", "Deviant Tastes", "Gamer"),
 		list("Ananas Affinity", "Ananas Aversion", "Gamer"),
