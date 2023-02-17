@@ -126,3 +126,11 @@
 	spell_type = /datum/action/cooldown/spell/touch/animate_limb
 	category = DIPLOMA_SPELL_OFFENSIVE
 	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/item/blasting_rod
+	name = "Rod of Blasting"
+	desc = "A wand so modern that most full wizard refuse to countenance its use. \
+		Accelerates conjured chunks of metal at high speeds towards your target, filling them with magical wounds."
+	item_path = /obj/item/gun/blasting_rod
+	category = DIPLOMA_SPELL_OFFENSIVE
+	weight = DIPLOMA_SPELL_RARE
