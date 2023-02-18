@@ -21,6 +21,10 @@
 #define TRAIT_DOOR_CLOSER "compulsive_door_closer"
 // Makes supplypods drop food relevant to your tastes
 #define TRAIT_NTGRUB_SUB "food_delivery_subscriber"
+// Makes you vulnerable to holy weapons and holy books.
+#define TRAIT_DAMNED "damned"
+// Used by the "Damned" quirk and the "damned halo" element.
+#define TRAIT_DAMNED_HALO "damned_halo"
 //Trait sources
 // Special trait source for illiteracy granted by farsightedness
 #define FARSIGHT_TRAIT "farsighted_trait"
