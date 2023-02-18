@@ -103,6 +103,7 @@ GLOBAL_LIST_INIT(mystery_box_shoes, list(
 ))
 
 /obj/structure/mystery_box
+	/// By default will make mystery boxes permanent, but when set to true will add the temporary atom element the next time it is opened and closed.
 	var/temporary_box = FALSE
 
 /obj/structure/mystery_box/close_box()
