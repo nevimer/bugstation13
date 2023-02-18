@@ -3,21 +3,21 @@
 
 /datum/smite/deadchatpossession/effect(client/user, mob/living/target)
 	target.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
-		"spin" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "spin"),
-		"flip" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "flip"),
+		"clap" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "clap"),
 		"cry" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "cry"),
+		"flip" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "flip"),
 		"laugh" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "laugh"),
 		"scream" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "scream"),
+		"spin" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "spin"),
 		"swear" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "swear"),
-		"clap" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "clap"),
-		"fall" = CALLBACK(target, TYPE_PROC_REF(/mob/living, Knockdown), 1 SECONDS),
 		"drop" = CALLBACK(target, TYPE_PROC_REF(/mob, drop_all_held_items)),
+		"fall" = CALLBACK(target, TYPE_PROC_REF(/mob/living, Knockdown), 1 SECONDS),
+		"stand" = CALLBACK(target, TYPE_PROC_REF(/mob/living, resist_buckle)),
 		"throw" = CALLBACK(target, TYPE_PROC_REF(/mob, throw_item), get_edge_target_turf(target, pick(GLOB.alldirs))),
 		"shove" = CALLBACK(src, PROC_REF(ghost_shove), target),
 		"sit" = CALLBACK(src, PROC_REF(ghost_sit), target),
-		"stand" = CALLBACK(target, TYPE_PROC_REF(/mob/living, resist_buckle)),
-		"walk" = CALLBACK(src, PROC_REF(ghost_speed), target, MOVE_INTENT_WALK),
 		"run" = CALLBACK(src, PROC_REF(ghost_speed), target, MOVE_INTENT_RUN),
+		"walk" = CALLBACK(src, PROC_REF(ghost_speed), target, MOVE_INTENT_WALK),
 		), 7 SECONDS)
 
 	to_chat(target, span_revenwarning("You feel a ghastly presence!!!"))
