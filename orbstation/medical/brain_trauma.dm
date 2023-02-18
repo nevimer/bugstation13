@@ -39,7 +39,12 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 		owner.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
 			"spin" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "spin"),
 			"flip" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "flip"),
-			), 7 SECONDS)
+			"cry" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "cry"),
+			"clap" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "clap"),
+			"laugh" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "laugh"),
+			"scream" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "scream"),
+			"swear" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "swear"),
+			), 10 SECONDS)
 
 /datum/brain_trauma/severe/split_personality/proc/on_stat_change(mob/living/owner, new_stat, old_stat)
 	SIGNAL_HANDLER
