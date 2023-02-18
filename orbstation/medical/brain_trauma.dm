@@ -34,13 +34,29 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 
 /// if someone wants to juice this up more than this thats fine but just moving all around is probably decent enough
 /datum/brain_trauma/severe/split_personality/on_gain()
-	owner.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
-		"spin" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "spin"),
-		"flip" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "flip"),
-		), 7 SECONDS)
+	RegisterSignal(owner, COMSIG_MOB_STATCHANGE, PROC_REF(on_stat_change))
+	if(owner.stat != DEAD)
+		owner.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
+			"spin" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "spin"),
+			"flip" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "flip"),
+			), 7 SECONDS)
+
+/datum/brain_trauma/severe/split_personality/proc/on_stat_change(mob/living/owner, new_stat, old_stat)
+	SIGNAL_HANDLER
+	if(new_stat == old_stat)
+		return
+	if(new_stat == DEAD)
+		qdel(owner.GetComponent(/datum/component/deadchat_control/cardinal_movement))
+		return
+	if(old_stat == DEAD)
+		owner.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
+			"spin" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "spin"),
+			"flip" = CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "flip"),
+			), 7 SECONDS)
 
 /datum/brain_trauma/severe/split_personality/on_lose()
 	qdel(owner.GetComponent(/datum/component/deadchat_control/cardinal_movement))
+	UnregisterSignal(owner, COMSIG_MOB_STATCHANGE)
 
 /// have to override this bc split personality has its own on this
 /datum/brain_trauma/severe/split_personality/on_life(delta_time, times_fired)
