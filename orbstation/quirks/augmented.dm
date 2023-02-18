@@ -9,8 +9,12 @@
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/arm/left/robot/)
 	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/arm/right/robot/)
-	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/left/robot/)
-	human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/right/robot/)
+	if(human_holder.dna.species.bodytype & BODYTYPE_DIGITIGRADE)
+		human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/left/robot/digitigrade)
+		human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/right/robot/digitigrade)
+	else
+		human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/left/robot/)
+		human_holder.del_and_replace_bodypart(new /obj/item/bodypart/leg/right/robot/)
 
 /datum/quirk/augmented/post_add()
 	to_chat(quirk_holder, span_boldannounce("All your limbs have been replaced with cybernetic parts. They are roughly analogous to organic limbs. However, \
