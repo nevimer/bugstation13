@@ -9991,6 +9991,7 @@
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch"
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "eiv" = (
@@ -16560,6 +16561,12 @@
 	},
 /turf/open/floor/holofloor/dark,
 /area/station/science/cytology)
+"gVx" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/port/central)
 "gVA" = (
 /obj/structure/table,
 /obj/item/clothing/gloves/color/fyellow,
@@ -19954,6 +19961,7 @@
 /area/station/command/bridge)
 "ivB" = (
 /obj/structure/sign/warning/gas_mask/directional/south,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "ivJ" = (
@@ -30124,6 +30132,14 @@
 "mGl" = (
 /turf/open/floor/circuit/green,
 /area/station/engineering/storage/tech)
+"mGs" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Maintenance Hatch"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/turf/open/floor/plating,
+/area/station/maintenance/port/central)
 "mGu" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable,
@@ -32459,6 +32475,7 @@
 /obj/machinery/door/airlock/maintenance,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/floor/iron,
 /area/station/maintenance/port/greater)
 "nFB" = (
@@ -47619,6 +47636,7 @@
 "tXs" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "tXQ" = (
@@ -51859,6 +51877,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/floor/plating,
 /area/station/service/hydroponics/garden)
 "vUK" = (
@@ -52811,7 +52830,7 @@
 	shuttle_id = "whiteship_home";
 	width = 35
 	},
-/turf/open/space/openspace,
+/turf/open/space/basic,
 /area/space)
 "wnH" = (
 /obj/machinery/door/airlock/bronze,
@@ -73719,8 +73738,8 @@ hNy
 hNy
 hNy
 hNy
-rRv
-rRv
+hNy
+hNy
 rRv
 rRv
 rRv
@@ -73976,7 +73995,7 @@ hNy
 hNy
 hNy
 hNy
-rRv
+hNy
 pKF
 pKF
 pKF
@@ -74222,18 +74241,18 @@ hNy
 hNy
 rRv
 rRv
-rRv
-rRv
-rRv
+hNy
+hNy
+hNy
 pKF
 jmc
 pKF
-rRv
-rRv
-rRv
 hNy
 hNy
-rRv
+hNy
+hNy
+hNy
+hNy
 pKF
 cJU
 qjl
@@ -74478,19 +74497,19 @@ cCZ
 rRv
 rRv
 rRv
-rRv
-rRv
-rRv
-rRv
+hNy
+hNy
+hNy
+hNy
 pKF
 cJU
 pKF
-rRv
-rRv
-rRv
-rRv
-rRv
-rRv
+hNy
+hNy
+hNy
+hNy
+hNy
+hNy
 pKF
 aoY
 cJU
@@ -74735,7 +74754,7 @@ rRv
 rRv
 rRv
 rRv
-rRv
+hNy
 pKF
 pKF
 pKF
@@ -74991,14 +75010,14 @@ hNy
 hNy
 hNy
 hNy
-rRv
-rRv
+hNy
+hNy
 pKF
-cJU
-eio
-cJU
-cJU
-cJU
+ugH
+mGs
+ugH
+ugH
+gVx
 cJU
 cJU
 cJU
@@ -75249,7 +75268,7 @@ hNy
 hNy
 hNy
 hNy
-rRv
+hNy
 pKF
 ivB
 pSz
@@ -75506,9 +75525,9 @@ hNy
 hNy
 hNy
 hNy
-rRv
+hNy
 pKF
-cJU
+ugH
 pSz
 rzW
 gQd
@@ -75762,10 +75781,10 @@ cCZ
 rRv
 hNy
 hNy
-rRv
-rRv
+hNy
+hNy
 pKF
-cJU
+ugH
 pSz
 nxV
 xlg
@@ -76019,10 +76038,10 @@ cCZ
 rRv
 rRv
 rRv
-rRv
+hNy
 pKF
 pKF
-cJU
+ugH
 pSz
 uxR
 lVd
@@ -76276,10 +76295,10 @@ rRv
 rRv
 rRv
 rRv
-rRv
+hNy
 pKF
 rZH
-cJU
+ugH
 pSz
 qlz
 dey
@@ -76536,7 +76555,7 @@ sIn
 rRv
 pKF
 qlm
-cJU
+ugH
 pSz
 mbi
 dey
@@ -76793,7 +76812,7 @@ rRv
 rRv
 pKF
 smL
-cJU
+ugH
 pSz
 jGV
 sAe
@@ -77050,7 +77069,7 @@ rRv
 rRv
 pKF
 smL
-cJU
+ugH
 pSz
 cIG
 kCt
@@ -77307,7 +77326,7 @@ rRv
 hNy
 pKF
 pKF
-cJU
+ugH
 pSz
 dXe
 dpG
@@ -77564,7 +77583,7 @@ rRv
 hNy
 hNy
 pKF
-cJU
+ugH
 pSz
 jQc
 haU
@@ -77821,7 +77840,7 @@ hNy
 hNy
 hNy
 pKF
-cJU
+ugH
 pSz
 hvX
 ssh
@@ -78078,7 +78097,7 @@ hNy
 hNy
 hNy
 pKF
-cJU
+ugH
 pSz
 pzL
 bjW
@@ -78335,7 +78354,7 @@ hNy
 hNy
 hNy
 pKF
-cJU
+ugH
 pSz
 vUI
 pSz
@@ -78592,7 +78611,7 @@ rRv
 rRv
 hNy
 pKF
-cJU
+ugH
 pKF
 sUT
 cJU
@@ -78849,7 +78868,7 @@ hNy
 hNy
 hNy
 pKF
-cJU
+ugH
 pKF
 sUT
 cJU
@@ -79106,8 +79125,8 @@ hNy
 hNy
 hNy
 pKF
-cJU
-cJU
+ugH
+ugH
 sUT
 cJU
 cJU
@@ -133352,7 +133371,7 @@ fDn
 gUy
 gUy
 gUy
-hHc
+cCZ
 hHc
 hHc
 hHc
@@ -133866,7 +133885,7 @@ fDn
 trC
 xQr
 trC
-hHc
+cCZ
 hHc
 hHc
 hHc
