@@ -127,6 +127,14 @@
 	category = DIPLOMA_SPELL_OFFENSIVE
 	weight = DIPLOMA_SPELL_RARE
 
+/datum/diploma_spell/item/blasting_rod
+	name = "Rod of Blasting"
+	desc = "A wand so modern that most full wizard refuse to countenance its use. \
+		Accelerates conjured chunks of metal at high speeds towards your target, filling them with magical wounds."
+	item_path = /obj/item/gun/blasting_rod
+	category = DIPLOMA_SPELL_OFFENSIVE
+	weight = DIPLOMA_SPELL_RARE
+
 /datum/diploma_spell/sanguine_strike
 	name = "Sanguine Strike"
 	desc = "Enchants an item you are holding to deal more damage on its next strike, as well as healing you and restoring your blood!"
