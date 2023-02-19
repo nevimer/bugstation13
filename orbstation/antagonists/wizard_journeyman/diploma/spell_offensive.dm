@@ -134,3 +134,9 @@
 	item_path = /obj/item/gun/blasting_rod
 	category = DIPLOMA_SPELL_OFFENSIVE
 	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/sanguine_strike
+	name = "Sanguine Strike"
+	desc = "Enchants an item you are holding to deal more damage on its next strike, as well as healing you and restoring your blood!"
+	spell_type = /datum/action/cooldown/spell/sanguine_strike
+	category = DIPLOMA_SPELL_OFFENSIVE
