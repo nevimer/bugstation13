@@ -41,7 +41,7 @@
 		if (ckey in rounds_since_ckey_was_antagonist)
 			new_rounds_since_antagonist_count[ckey] = min(8, rounds_since_ckey_was_antagonist[ckey] + 1)
 			continue
-		new_rounds_since_antagonist_count[ckey] = 1 // Start new players low
+		new_rounds_since_antagonist_count[ckey] = 2 // They just finished their first one
 
 	for (var/ckey in rounds_since_ckey_was_antagonist) // Don't forget people who weren't here
 		if (ckey in new_rounds_since_antagonist_count)
