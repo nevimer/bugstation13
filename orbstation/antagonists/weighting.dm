@@ -64,7 +64,7 @@
 		weighted_candidates[candidate] = ROUND_UP(rounds_since_last / ROUNDS_PER_WEIGHT) // Increase weight by 1 every 2 rounds
 	return weighted_candidates
 
-#define TIME_UNTIL_SURE 20 MINUTES
+#define TIME_UNTIL_SURE 25 MINUTES
 
 // Mark some antagonists as being things we care about for weight calculation
 /datum/antagonist
