@@ -85,11 +85,15 @@
 
 /obj/item/implant/holo_pad_projector
 	name = "holographic bounty pad projector implant"
+	icon = 'icons/mob/actions/actions_items.dmi'
+	icon_state = "bci_wireless"
 	implant_color = "r"
 	/// Weak reference to if the pad has been activated by this implant or not
 	var/datum/weakref/active_pad
 	/// Area where the implant will activate
 	var/delivery_site
+	///The item that the blood brother has to steal
+	var/brother_bounty
 
 /obj/item/implant/holo_pad_projector/activate()
 	. = ..()
