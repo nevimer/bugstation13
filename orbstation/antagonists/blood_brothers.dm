@@ -1,12 +1,17 @@
-/// todo attach to blood brothers, whitelist areas for projector, code projector to mark sent items as completed, code projector to summon crate
+/// todo code projector to mark sent items as completed, code projector to summon crate, hard stealk objectives do not work right now
 
 /// equipping blood brothers
 
 /datum/antagonist/brother/on_gain()
 	. = ..()
+	var/datum/objective/steal/owned/brothers/light_steal = locate() in objectives
+	if(!light_steal)
+		return
 	var/obj/item/implant/holo_pad_projector/bb_implant = new(owner.current)
+	bb_implant.brother_bounty = light_steal.steal_target
 	bb_implant.delivery_site = team.delivery_site
 	bb_implant.implant(owner.current, silent = TRUE)
+
 
 /// changes to objectives
 
