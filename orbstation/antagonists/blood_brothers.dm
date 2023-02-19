@@ -104,23 +104,65 @@
 	if(!istype(get_area(src), delivery_site))
 		imp_in.balloon_alert(imp_in, "incorrect area!")
 		return
-	syndie_pad = new(get_turf(src))
+	var/turf/our_turf = get_turf(src)
+	if(our_turf.is_blocked_turf(exclude_mobs = TRUE))
+		imp_in.balloon_alert(imp_in, "blocked!")
+		return
+	syndie_pad = new(our_turf)
+	syndie_pad.brother_bounty = brother_bounty
 	active_pad = WEAKREF(syndie_pad)
 
+/// syndicate holo bounty pad capable of sending items to the syndicate in exchange for some gear.
 /obj/effect/holo_pad
 	name = "Syndicate Bounty Pad"
 	desc = "A console used to complete illegal bounties for the Syndicate."
-	alpha = 100
+	alpha = 150
 	icon = 'icons/obj/telescience.dmi'
-	icon_state = "lpad-idle-off"
-	///This is the icon_state that this telepad uses when it's not in use.
-	var/idle_state = "lpad-idle-off"
-	///This is the icon_state that this telepad uses when it's warming up for goods teleportation.
-	var/warmup_state = "lpad-idle"
-	///This is the icon_state to flick when the goods are being sent off by the telepad.
-	var/sending_state = "lpad-beam"
-
+	icon_state = "lpad-idle"
+	///The item that it will accept and mark as complete
+	var/brother_bounty
 
 /obj/effect/holo_pad/Initialize()
 	. = ..()
-	add_atom_colour("#ff7777", FIXED_COLOUR_PRIORITY)
+	add_atom_colour("#ff3737", FIXED_COLOUR_PRIORITY)
+	var/static/list/connections = list(COMSIG_ATOM_ENTERED = PROC_REF(on_entered))
+	AddElement(/datum/element/connect_loc, connections)
+
+/obj/effect/holo_pad/proc/on_entered(datum/source, atom/movable/possible_bounty)
+	SIGNAL_HANDLER
+	if(!istype(possible_bounty, brother_bounty))
+		return
+	complete_light_steal(possible_bounty)
+
+/obj/effect/holo_pad/proc/complete_light_steal(atom/stolen_thing)
+	qdel(stolen_thing)
+	playsound(loc, 'sound/machines/wewewew.ogg', 70, TRUE)
+	new /obj/effect/temp_visual/delivery_flash(loc)
+	spawn_syndicrate()
+	qdel(src)
+
+/obj/effect/holo_pad/proc/spawn_syndicrate()
+	var/datum/supply_pack/misc/syndicate/brother_pack = new
+	var/obj/structure/closet/crate/brother_crate = brother_pack.generate()
+	brother_crate.locked = FALSE
+	brother_crate.icon_state = "syndicrate"
+	brother_crate.update_appearance(UPDATE_ICON)
+	var/list/landing_zones = list()
+	for(var/turf/possible in range(1, loc))
+		if(possible.is_blocked_turf(exclude_mobs = TRUE))
+			continue
+		landing_zones += possible
+	podspawn(list(
+		"target" = length(landing_zones) ? pick(landing_zones) : loc,
+		"style" = STYLE_SYNDICATE,
+		"spawn" = brother_crate,
+	))
+
+
+/obj/effect/temp_visual/delivery_flash
+	duration = 0.8 SECONDS
+	icon_state = "medi_holo"
+
+/obj/effect/temp_visual/delivery_flash/Initialize()
+	. = ..()
+	add_atom_colour("#ff3737", FIXED_COLOUR_PRIORITY)
