@@ -64,6 +64,8 @@
 		weighted_candidates[candidate] = ROUND_UP(rounds_since_last / ROUNDS_PER_WEIGHT) // Increase weight by 1 every 2 rounds
 	return weighted_candidates
 
+#define TIME_UNTIL_SURE 20 MINUTES
+
 // Mark some antagonists as being things we care about for weight calculation
 /datum/antagonist
 	/// If true then having this datum assigned will reset your weight at the end of a round
@@ -73,7 +75,15 @@
 	. = ..()
 	if(!owner || !owner.current || !weighted_antagonist)
 		return
+	addtimer(CALLBACK(src, PROC_REF(record_antagonist_ckey)), TIME_UNTIL_SURE, TIMER_DELETE_ME)
+
+/// Adds someone to our list of "people who need their rounds since they were evil" count reset
+/datum/antagonist/proc/record_antagonist_ckey()
+	if(!owner || !owner.current)
+		return
 	SSpersistence.current_round_weighted_antagonists |= owner.current.ckey
+
+#undef TIME_UNTIL_SURE
 
 /datum/antagonist/traitor
 	weighted_antagonist = TRUE
