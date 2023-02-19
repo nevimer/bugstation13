@@ -43,6 +43,39 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	current.faction -= ROLE_WIZARD
 	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 
+/// On application, teleport to lair and set up
+/datum/antagonist/wizard_journeyman/on_gain()
+	ritual = new(owner.current)
+	RegisterSignal(ritual, GRAND_RITUAL_RUNE_DRAWN, PROC_REF(on_rune_drawn))
+	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
+	send_to_lair()
+	equip_wizard()
+	if (give_objectives)
+		create_objectives()
+	grant_hangover()
+	. = ..()
+	rename_wizard()
+
+/// If we get this signal you just drew a rune, now listen for it being done
+/datum/antagonist/wizard_journeyman/proc/on_rune_drawn(datum/action/cooldown/grand_ritual/ritual, obj/effect/grand_rune/drawn_rune)
+	SIGNAL_HANDLER
+	RegisterSignal(drawn_rune, COMSIG_GRAND_RUNE_COMPLETE, PROC_REF(on_rune_complete))
+
+/// If we get this signal a ritual step finished, we want to get stronger
+/datum/antagonist/wizard_journeyman/proc/on_rune_complete(obj/effect/grand_rune/finished_rune)
+	SIGNAL_HANDLER
+	UnregisterSignal(finished_rune, COMSIG_GRAND_RUNE_COMPLETE)
+	var/list/known_spells = list()
+	for (var/datum/action/cooldown/spell/spell in owner.current.actions)
+		if (spell.spell_max_level <= 1 || spell.spell_level >= spell.spell_max_level)
+			continue
+		known_spells += spell
+	if (!length(known_spells))
+		return
+	var/datum/action/cooldown/spell/empowered_spell = pick(known_spells)
+	empowered_spell.level_spell()
+	to_chat(owner, "Your knowledge of [initial(empowered_spell.name)] increases!")
+
 /// If we receive this signal, you're done with objectives
 /datum/antagonist/wizard_journeyman/proc/on_ritual_complete()
 	SIGNAL_HANDLER
@@ -52,18 +85,6 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	successful_ritual.completed = TRUE
 	objectives = list(successful_ritual)
 	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
-
-/// On application, teleport to lair and set up
-/datum/antagonist/wizard_journeyman/on_gain()
-	ritual = new(owner.current)
-	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
-	send_to_lair()
-	equip_wizard()
-	if (give_objectives)
-		create_objectives()
-	grant_hangover()
-	. = ..()
-	rename_wizard()
 
 /// Become human and put on the robe and wizard hat
 /datum/antagonist/wizard_journeyman/proc/equip_wizard()
@@ -82,10 +103,8 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 	var/can_steal = add_theft_objective()
 	// If the first theft objective failed then don't try and add a second
 	switch(rand((can_steal) ? 1 : 41, 100))
-		if (1 to 40)
+		if (1 to 90)
 			add_theft_objective()
-		if (41 to 90)
-			add_maroon_objective()
 		if (91 to 100)
 			add_diskie_objective()
 	add_roundend_objective()
@@ -212,3 +231,11 @@ GLOBAL_LIST_EMPTY(journeymanstart)
 		report += "- [spell]"
 
 	return report.Join("<br>")
+
+// Add an extra signal here
+/datum/action/cooldown/grand_ritual/draw_rune(turf/target_turf)
+	. = ..()
+	var/obj/effect/grand_rune/new_rune = rune?.resolve()
+	if (!new_rune)
+		return
+	SEND_SIGNAL(src, GRAND_RITUAL_RUNE_DRAWN, new_rune)

@@ -21,7 +21,7 @@ type Info = {
 export const SpellDiploma = (props, context) => {
   const { act, data } = useBackend<Info>(context);
   return (
-    <Window width={720} height={820} theme="wizard">
+    <Window width={940} height={820} theme="wizard">
       <Window.Content>
         <Stack vertical>
           <Stack.Item>
@@ -50,7 +50,7 @@ export const SpellDiploma = (props, context) => {
           <Stack.Item>
             <Section title="Major Selection">
               <Stack.Item>
-                Please select three of the nine options presented below.
+                Please select four of the twelve options presented below.
               </Stack.Item>
               <Stack.Item>You have {data.picks} choices remaining.</Stack.Item>
               <Stack.Item>

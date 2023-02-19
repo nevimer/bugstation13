@@ -7,3 +7,6 @@
 #define DIPLOMA_SPELL_OFFENSIVE "offensive"
 #define DIPLOMA_SPELL_DEFENSIVE "defensive"
 #define DIPLOMA_SPELL_OTHER "other"
+
+/// Signal sent when you draw a rune, passed the rune
+#define GRAND_RITUAL_RUNE_DRAWN "grand_ritual_rune_drawn"
