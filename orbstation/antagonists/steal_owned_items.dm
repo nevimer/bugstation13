@@ -22,15 +22,16 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective/steal/owned/find_target(dupe_search_range, list/blacklist)
 	var/list/approved_targets = list()
 	var/list/datum/mind/owners = get_owners()
-	for (var/datum/objective_item/steal/owned/possible_item in GLOB.owned_theft_items)
-		if (!possible_item.owner_exists())
-			continue
-		if (!is_unique_objective(possible_item.targetitem, dupe_search_range))
-			continue
-		for (var/datum/mind/M in owners)
-			if(M.current.mind.assigned_role.title in possible_item.excludefromjob)
+	check_items:
+		for (var/datum/objective_item/steal/owned/possible_item in GLOB.owned_theft_items)
+			if (!possible_item.owner_exists())
 				continue
-		approved_targets += possible_item
+			if (!is_unique_objective(possible_item.targetitem, dupe_search_range))
+				continue
+			for (var/datum/mind/M in owners)
+				if(M.current.mind.assigned_role.title in possible_item.excludefromjob)
+					continue check_items
+			approved_targets += possible_item
 	if (approved_targets.len)
 		return set_target(pick(approved_targets))
 	return set_target(null)
