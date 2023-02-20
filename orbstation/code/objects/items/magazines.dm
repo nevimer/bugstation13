@@ -145,3 +145,10 @@
 	desc = "A heartbreakingly beautiful romantic manga about a Tiziran princess and her human female lover, set amidst the chaos of the collapsing Tiziran Empire."
 	icon_state = "yuri"
 	emote_pool = list("blush", "cry")
+
+// Allows them to be cargo ordered
+/datum/supply_pack/goody/magazine
+	name = "Magazine"
+	desc = "Contains one magazine from the Nanotrasen Magazine Library. Don't forget to subscribe to Magazines Monthly!"
+	cost = PAYCHECK_CREW * 2
+	contains = list(/obj/effect/spawner/random/entertainment/magazine)

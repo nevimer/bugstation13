@@ -39,6 +39,11 @@
 	desc = "NAME is wearing the Ham Helmet again..."
 	emote_see = list("thinks about ham." )
 
-//Makes the alternate jester cap hide hair and ears.
-/obj/item/clothing/head/costume/jester/alt
-	flags_inv = HIDEEARS|HIDEHAIR
+// Allows it to be cargo ordered
+/datum/supply_pack/goody/hamhelmet
+	name = "Ham Helmet Two Pack"
+	desc = "Contains two Ham Helmets, one for you, and one for your beloved, be they a person or a corgi."
+	cost = PAYCHECK_CREW * 3
+	contains = list(/obj/item/clothing/head/helmet/ham,
+					/obj/item/clothing/head/helmet/ham,
+					/obj/item/paper/guides/hamhelmet)
