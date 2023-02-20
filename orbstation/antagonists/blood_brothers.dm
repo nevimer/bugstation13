@@ -1,21 +1,24 @@
 /// todo code projector to mark sent items as completed, code projector to summon crate, hard stealk objectives do not work right now
 
-/// equipping blood brothers
-
+/// equipping blood brothers with new implant
 /datum/antagonist/brother/on_gain()
 	. = ..()
 	var/datum/objective/steal/owned/brothers/light_steal = locate() in objectives
 	if(!light_steal)
 		return
 	var/obj/item/implant/holo_pad_projector/bb_implant = new(owner.current)
-	bb_implant.brother_bounty = light_steal.steal_target
+	bb_implant.brother_bounty = list(light_steal.steal_target) + light_steal.targetinfo.altitems
 	bb_implant.delivery_site = team.delivery_site
 	bb_implant.implant(owner.current, silent = TRUE)
 
+/datum/antagonist/brother/on_removal()
+	. = ..()
 
-/// changes to objectives
+
+//changes to objectives.
 
 /datum/objective/steal/owned/brothers
+	/// Where the objective is to be delivered to
 	var/delivery_site
 
 /datum/objective/steal/owned/brothers/set_target(datum/objective_item/item)
@@ -23,6 +26,19 @@
 	if(!item)
 		return
 	explanation_text = "Steal [targetinfo.name] and deliver it to the Syndicate by using your bounty pad projector implant at [delivery_site]."
+
+/datum/objective/steal/heist_bros
+	name = "Steal (Hard)"
+	/// list of objectives that require special gear and getting to a dangerous area or target
+	var/static/list/heists = list(
+		/datum/objective_item/steal/supermatter,
+		/datum/objective_item/steal/nuke_core,
+		/datum/objective_item/steal/functionalai,
+	)
+
+/datum/objective/steal/heist_bros/find_target(dupe_search_range, list/blacklist)
+	var/heist_target = pick(heists)
+	return set_target(new heist_target)
 
 /datum/team/brother_team
 	/// Area in the station where you will use your implant to deliver your item for extra gear
@@ -60,6 +76,7 @@
 		delivery_selection += area
 	delivery_site = pick(delivery_selection)
 
+/// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
 	if(!length(objectives))
 		var/datum/objective/steal/owned/brothers/steal_objective = new()
@@ -78,16 +95,12 @@
 		else
 			add_objective(new /datum/objective/assassinate, needs_target = TRUE)
 	else
-		var/static/list/steals = list(
-			/datum/objective_item/steal/supermatter,
-			/datum/objective_item/steal/nuke_core,
-			/datum/objective_item/steal/functionalai,)
-		var/hard_steal = pick(steals)
-		add_objective(new hard_steal, needs_target = TRUE)
+		add_objective(new /datum/objective/steal/heist_bros, needs_target = TRUE)
 
 
-/// new blood brother items
+// new blood brother items.
 
+/// implant on blood brothers that gives them a holo bounty pad
 /obj/item/implant/holo_pad_projector
 	name = "holographic bounty pad projector implant"
 	icon = 'icons/mob/actions/actions_items.dmi'
@@ -98,7 +111,7 @@
 	/// Area where the implant will activate
 	var/delivery_site
 	///The item that the blood brother has to steal
-	var/brother_bounty
+	var/list/brother_bounty
 
 /obj/item/implant/holo_pad_projector/activate()
 	. = ..()
@@ -125,7 +138,7 @@
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "lpad-idle"
 	///The item that it will accept and mark as complete
-	var/brother_bounty
+	var/list/brother_bounty
 
 /obj/effect/holo_pad/Initialize()
 	. = ..()
@@ -135,10 +148,14 @@
 
 /obj/effect/holo_pad/proc/on_entered(datum/source, atom/movable/possible_bounty)
 	SIGNAL_HANDLER
-	if(!istype(possible_bounty, brother_bounty))
+	if(!is_type_in_list(possible_bounty, brother_bounty))
+		return
+	// prevents steals to give double rewards
+	if(istype(possible_bounty, /obj/item/clothing/head/mob_holder))
 		return
 	complete_light_steal(possible_bounty)
 
+/// proc that fires when pad detects the correct item
 /obj/effect/holo_pad/proc/complete_light_steal(atom/stolen_thing)
 	qdel(stolen_thing)
 	playsound(loc, 'sound/machines/wewewew.ogg', 70, TRUE)
@@ -146,12 +163,46 @@
 	spawn_syndicrate()
 	qdel(src)
 
+/// proc that generates valid traitor items for the steal objective and puts it in a crate
+/obj/effect/holo_pad/proc/generate_reward_crate()
+	var/list/possible_items = list()
+	for(var/datum/uplink_item/item_path as anything in SStraitor.uplink_items_by_type)
+		var/datum/uplink_item/uplink_item = SStraitor.uplink_items_by_type[item_path]
+		if(!uplink_item.item)
+			continue
+		if(!(uplink_item.purchasable_from & UPLINK_TRAITORS))
+			continue
+		if(length(uplink_item.restricted_roles) || length(uplink_item.restricted_species))
+			continue
+		if(!uplink_item.surplus)
+			continue
+		if(uplink_item.progression_minimum)
+			continue
+		possible_items += uplink_item
+	var/obj/structure/closet/crate/syndicrate/surplus_crate = new
+	var/tc_budget = 35
+	while(tc_budget)
+		var/datum/uplink_item/uplink_item = pick_possible_item(possible_items, tc_budget)
+		if(!uplink_item)
+			continue
+		tc_budget -= uplink_item.cost
+		new uplink_item.item(surplus_crate)
+		surplus_crate.locked = FALSE
+		surplus_crate.created_items = TRUE
+		surplus_crate.update_appearance(UPDATE_ICON)
+	return surplus_crate
+
+/// proc that checks against probability and costs for uplink items
+/obj/effect/holo_pad/proc/pick_possible_item(list/possible_items, tc_budget)
+	var/datum/uplink_item/uplink_item = pick(possible_items)
+	if(prob(100 - uplink_item.surplus))
+		return null
+	if(tc_budget < uplink_item.cost)
+		return null
+	return uplink_item
+
+/// proc that calls down a syndicrate for blood brothers with 0 reputation items worth 35 TC
 /obj/effect/holo_pad/proc/spawn_syndicrate()
-	var/datum/supply_pack/misc/syndicate/brother_pack = new
-	var/obj/structure/closet/crate/brother_crate = brother_pack.generate()
-	brother_crate.locked = FALSE
-	brother_crate.icon_state = "syndicrate"
-	brother_crate.update_appearance(UPDATE_ICON)
 	var/list/landing_zones = list()
 	for(var/turf/possible in range(1, loc))
 		if(possible.is_blocked_turf(exclude_mobs = TRUE))
@@ -160,9 +211,8 @@
 	podspawn(list(
 		"target" = length(landing_zones) ? pick(landing_zones) : loc,
 		"style" = STYLE_SYNDICATE,
-		"spawn" = brother_crate,
+		"spawn" = generate_reward_crate(),
 	))
-
 
 /obj/effect/temp_visual/delivery_flash
 	duration = 0.8 SECONDS
