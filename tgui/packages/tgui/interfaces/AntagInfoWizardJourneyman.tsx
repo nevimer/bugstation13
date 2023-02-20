@@ -85,8 +85,8 @@ export const AntagInfoWizardJourneyman = (props, context) => {
               <Stack vertical fill>
                 <Stack.Item>
                   Your magical diploma will remind you what spells you majored
-                  in during your studies. You get three choices from three
-                  categories, each of which will present you with three options.
+                  in during your studies. You get four choices from three
+                  categories, each of which will present you with four options.
                   <br />
                   <span style={destructionstyle}>
                     The first category will present you with spells or artifacts

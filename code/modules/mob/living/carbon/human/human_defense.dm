@@ -503,14 +503,16 @@
 		if(!IS_ORGANIC_LIMB(L))
 			if(!informed)
 				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
+				do_sparks(5, 0, src) // ORBSTATION
 				informed = TRUE
 			switch(severity)
 				if(1)
 					L.receive_damage(0,10)
-					Paralyze(200)
+					adjustStaminaLoss(20) // ORBSTATION
 				if(2)
 					L.receive_damage(0,5)
-					Paralyze(100)
+					adjustStaminaLoss(10) // ORBSTATION
+
 
 /mob/living/carbon/human/acid_act(acidpwr, acid_volume, bodyzone_hit) //todo: update this to utilize check_obscured_slots() //and make sure it's check_obscured_slots(TRUE) to stop aciding through visors etc
 	var/list/damaged = list()

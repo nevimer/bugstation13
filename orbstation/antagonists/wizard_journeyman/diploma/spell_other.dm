@@ -125,3 +125,10 @@
 	item_path = /obj/item/antag_spawner/contract
 	category = DIPLOMA_SPELL_OTHER
 	weight = DIPLOMA_SPELL_RARE
+
+/datum/diploma_spell/vampirism
+	name = "Marrabo's Splattercasting"
+	desc = "Empower yourself with blood magic, gaining vampiric qualities. Your spells cast much more rapidly but drain your blood as fuel. (Warning: Becoming a vampire will make you appear as a pale human)"
+	spell_type = /datum/action/cooldown/spell/splattercasting
+	category = DIPLOMA_SPELL_OTHER
+	weight = DIPLOMA_SPELL_RARE

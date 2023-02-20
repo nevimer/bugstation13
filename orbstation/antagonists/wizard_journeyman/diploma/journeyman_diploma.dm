@@ -13,7 +13,7 @@
 	resistance_flags = FLAMMABLE
 
 	/// The number of spells you can pick remaining
-	var/picks_remaining = 3
+	var/picks_remaining = 4
 	/// The mind that first used this. Automatically assigned when a wizard spawns.
 	var/datum/mind/owner
 	/// A list of all purchased options
@@ -51,7 +51,7 @@
 			if (DIPLOMA_SPELL_OTHER)
 				spells_other[type] = possible_entry.weight
 
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 4)
 		entries += random_spell_from(spells_offensive)
 		entries += random_spell_from(spells_defensive)
 		entries += random_spell_from(spells_other)

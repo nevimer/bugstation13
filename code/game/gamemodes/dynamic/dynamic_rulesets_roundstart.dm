@@ -36,7 +36,11 @@
 	for (var/i = 1 to num_traitors)
 		if(candidates.len <= 0)
 			break
-		var/mob/M = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/M = pick_weight(weighted_candidates)
+		candidates -= M
+		/// ORB: end
 		assigned += M.mind
 		M.mind.special_role = ROLE_TRAITOR
 		M.mind.restricted_roles = restricted_roles
@@ -81,7 +85,11 @@
 	for (var/i in 1 to num_malf)
 		if(candidates.len <= 0)
 			break
-		var/mob/new_malf = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/new_malf = pick_weight(weighted_candidates)
+		candidates -= new_malf
+		/// ORB: end
 		assigned += new_malf.mind
 		new_malf.mind.special_role = ROLE_MALF
 		GLOB.pre_setup_antags += new_malf.mind
@@ -129,7 +137,11 @@
 		var/datum/team/brother_team/team = new
 		var/team_size = prob(10) ? min(3, candidates.len) : 2
 		for(var/k = 1 to team_size)
-			var/mob/bro = pick_n_take(candidates)
+			/// ORB: change to weighted pick
+			var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+			var/mob/bro = pick_weight(weighted_candidates)
+			candidates -= bro
+			/// ORB: end
 			assigned += bro.mind
 			team.add_member(bro.mind)
 			bro.mind.special_role = "brother"
@@ -183,7 +195,11 @@
 	for (var/i = 1 to num_changelings)
 		if(candidates.len <= 0)
 			break
-		var/mob/M = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/M = pick_weight(weighted_candidates)
+		candidates -= M
+		/// ORB: end
 		assigned += M.mind
 		M.mind.restricted_roles = restricted_roles
 		M.mind.special_role = ROLE_CHANGELING
@@ -234,7 +250,11 @@
 	for (var/i = 1 to num_ecult)
 		if(candidates.len <= 0)
 			break
-		var/mob/picked_candidate = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/picked_candidate = pick_weight(weighted_candidates)
+		candidates -= picked_candidate
+		/// ORB: end
 		assigned += picked_candidate.mind
 		picked_candidate.mind.restricted_roles = restricted_roles
 		picked_candidate.mind.special_role = ROLE_HERETIC
@@ -301,7 +321,11 @@
 	. = ..()
 	if(GLOB.wizardstart.len == 0)
 		return FALSE
-	var/mob/M = pick_n_take(candidates)
+	/// ORB: change to weighted pick
+	var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+	var/mob/M = pick_weight(weighted_candidates)
+	candidates -= M
+	/// ORB: end
 	if (M)
 		assigned += M.mind
 		M.mind.set_assigned_role(SSjob.GetJobType(/datum/job/space_wizard))
@@ -356,7 +380,11 @@
 	for(var/cultists_number = 1 to cultists)
 		if(candidates.len <= 0)
 			break
-		var/mob/M = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/M = pick_weight(weighted_candidates)
+		candidates -= M
+		/// ORB: end
 		assigned += M.mind
 		M.mind.special_role = ROLE_CULTIST
 		M.mind.restricted_roles = restricted_roles
@@ -432,7 +460,11 @@
 	for(var/operatives_number = 1 to operatives)
 		if(candidates.len <= 0)
 			break
-		var/mob/M = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/M = pick_weight(weighted_candidates)
+		candidates -= M
+		/// ORB: end
 		assigned += M.mind
 		M.mind.set_assigned_role(SSjob.GetJobType(/datum/job/nuclear_operative))
 		M.mind.special_role = ROLE_NUCLEAR_OPERATIVE
@@ -532,7 +564,11 @@
 	for(var/i = 1 to max_candidates)
 		if(candidates.len <= 0)
 			break
-		var/mob/M = pick_n_take(candidates)
+		/// ORB: change to weighted pick
+		var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+		var/mob/M = pick_weight(weighted_candidates)
+		candidates -= M
+		/// ORB: end
 		assigned += M.mind
 		M.mind.restricted_roles = restricted_roles
 		M.mind.special_role = antag_flag
