@@ -1,4 +1,5 @@
-/// todo code projector to mark sent items as completed, code projector to summon crate, hard stealk objectives do not work right now
+#define COMSIG_BB_PAD_COMPLETE "bb_pad_complete"
+#define COMSIG_BB_BOUNTY_SUCCESS "bb_bounty_success"
 
 /// equipping blood brothers with new implant
 /datum/antagonist/brother/on_gain()
@@ -10,15 +11,20 @@
 	bb_implant.brother_bounty = list(light_steal.steal_target) + light_steal.targetinfo.altitems
 	bb_implant.delivery_site = team.delivery_site
 	bb_implant.implant(owner.current, silent = TRUE)
+	RegisterSignal(bb_implant, COMSIG_BB_BOUNTY_SUCCESS, PROC_REF(bounty_success))
+
+/// called when objective is succeeded and lets team datum know
+/datum/antagonist/brother/proc/bounty_success()
+	SIGNAL_HANDLER
+	var/datum/team/brother_team/the_bros = team
+	the_bros.bounty_complete()
 
 /datum/antagonist/brother/on_removal()
 	owner.special_role = null
-	for(var/obj/item/implant/possible_implant in owner.current.implants)
-		if(istype(possible_implant, /obj/item/implant/holo_pad_projector))
-			possible_implant.removed(owner.current)
-			continue
+	var/obj/item/implant/holo_pad_projector/possible_implant = locate() in owner.current.implants
+	if(possible_implant)
+		qdel(possible_implant)
 	return ..()
-
 
 //changes to objectives.
 
@@ -63,7 +69,6 @@
 		/area/station/commons/storage/primary,
 		/area/station/service/cafeteria,
 		/area/station/service/kitchen/diner,
-		/area/station/service/bar,
 		/area/station/service/library,
 		/area/station/service/chapel,
 		/area/station/service/hydroponics/garden,
@@ -80,6 +85,18 @@
 			continue
 		delivery_selection += area
 	delivery_site = pick(delivery_selection)
+
+/// completes objective and removes implants from all blood brothers
+/datum/team/brother_team/proc/bounty_complete()
+	var/datum/objective/steal/owned/brothers/steal_objective = locate() in objectives
+	if(steal_objective)
+		steal_objective.completed = TRUE
+	for(var/datum/mind/brother in members)
+		var/obj/item/implant/holo_pad_projector/possible_implant = locate() in brother.current.implants
+		if(!possible_implant)
+			continue
+		qdel(possible_implant)
+		to_chat(brother.current, span_notice("Your implant fizzles away! Objective Complete."))
 
 /// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
@@ -101,7 +118,6 @@
 			add_objective(new /datum/objective/assassinate, needs_target = TRUE)
 	else
 		add_objective(new /datum/objective/steal/heist_bros, needs_target = TRUE)
-
 
 // new blood brother items.
 
@@ -131,9 +147,19 @@
 	if(our_turf.is_blocked_turf(exclude_mobs = TRUE))
 		imp_in.balloon_alert(imp_in, "blocked!")
 		return
+	var/obj/effect/holo_pad/other_pad = locate() in our_turf
+	if(other_pad)
+		imp_in.balloon_alert(imp_in, "already a pad there!")
+		return
 	syndie_pad = new(our_turf)
 	syndie_pad.brother_bounty = brother_bounty
 	active_pad = WEAKREF(syndie_pad)
+	RegisterSignal(syndie_pad, COMSIG_BB_PAD_COMPLETE, PROC_REF(pad_completion))
+
+/// called when holo pad collects the correct item
+/obj/item/implant/holo_pad_projector/proc/pad_completion()
+	SIGNAL_HANDLER
+	SEND_SIGNAL(src, COMSIG_BB_BOUNTY_SUCCESS)
 
 /// syndicate holo bounty pad capable of sending items to the syndicate in exchange for some gear.
 /obj/effect/holo_pad
@@ -166,6 +192,7 @@
 	playsound(loc, 'sound/machines/wewewew.ogg', 70, TRUE)
 	new /obj/effect/temp_visual/delivery_flash(loc)
 	spawn_syndicrate()
+	SEND_SIGNAL(src, COMSIG_BB_PAD_COMPLETE)
 	qdel(src)
 
 /// proc that generates valid traitor items for the steal objective and puts it in a crate
@@ -226,3 +253,6 @@
 /obj/effect/temp_visual/delivery_flash/Initialize()
 	. = ..()
 	add_atom_colour("#ff3737", FIXED_COLOUR_PRIORITY)
+
+#undef COMSIG_BB_PAD_COMPLETE
+#undef COMSIG_BB_BOUNTY_SUCCESS
