@@ -17,8 +17,6 @@
 		if(istype(possible_implant, /obj/item/implant/holo_pad_projector))
 			possible_implant.removed(owner.current)
 			continue
-		else
-			continue
 	return ..()
 
 
