@@ -1,5 +1,5 @@
 #define LIGHTING_PLANE_ALPHA_RAT 225 // lighting plane for ratfolk eyes (lower means darkness is less opaque)
-#define CHEESE_RUSH_MODIFIER -0.30 // speed modifier while under the effects of cheese rush
+#define CHEESE_RUSH_HUNGER_MODIFIER 4 // hunger increases this much faster under the effects of cheese rush
 
 // EARS
 
@@ -50,19 +50,9 @@
 	var/datum/reagent/consumable/cheese/cheese = locate(/datum/reagent/consumable/cheese) in owner.reagents.reagent_list
 	if(cheese?.volume)
 		cheese.volume = min(cheese.volume, 30) // let's cap the amount of cheese you can have in your stomach
-		if(!owner.has_movespeed_modifier(/datum/movespeed_modifier/cheese_rush))
-			if(ishuman(owner))
-				var/mob/living/carbon/human/H = owner
-				H.physiology.hunger_mod /= 0.25 // hunger increases faster in cheese rush mode
-			owner.add_movespeed_modifier(/datum/movespeed_modifier/cheese_rush)
-			to_chat(owner, span_notice("The cheese gives you a sudden burst of energy!"))
+		owner.apply_status_effect(/datum/status_effect/cheese_rush)
 	else
-		if(owner.has_movespeed_modifier(/datum/movespeed_modifier/cheese_rush))
-			if(ishuman(owner))
-				var/mob/living/carbon/human/H = owner
-				H.physiology.hunger_mod *= 0.25 // hunger returns to normal
-			owner.remove_movespeed_modifier(/datum/movespeed_modifier/cheese_rush)
-			to_chat(owner, span_warning("You feel the effects of your cheese rush wear off."))
+		owner.remove_status_effect(/datum/status_effect/cheese_rush)
 	return ..()
 
 /obj/item/organ/internal/stomach/ratfolk/Remove(mob/living/carbon/carbon, special = 0)
@@ -71,8 +61,37 @@
 		carbon.remove_movespeed_modifier(/datum/movespeed_modifier/cheese_rush)
 	return ..()
 
+/**
+ * Status effect: Increases move speed and hunger while you have cheese in you
+ */
+/datum/status_effect/cheese_rush
+	id = "cheese_rush"
+	alert_type = /atom/movable/screen/alert/status_effect/cheese_rush
+	var/spawned_last_move = FALSE
+
+/atom/movable/screen/alert/status_effect/cheese_rush
+	name = "Cheese Rush"
+	desc = "Your metabolism is going into overdrive, you feel dangerously cheesy!"
+	icon_state = "lightningorb"
+
+/datum/status_effect/cheese_rush/on_apply()
+	. = ..()
+	if(ishuman(owner))
+		var/mob/living/carbon/human/human_owner = owner
+		human_owner.physiology.hunger_mod *= CHEESE_RUSH_HUNGER_MODIFIER // hunger increases faster in cheese rush mode
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/cheese_rush)
+	to_chat(owner, span_notice("The cheese gives you a sudden burst of energy!"))
+
+/datum/status_effect/cheese_rush/on_remove()
+	. = ..()
+	if(ishuman(owner))
+		var/mob/living/carbon/human/human_owner = owner
+		human_owner.physiology.hunger_mod /= CHEESE_RUSH_HUNGER_MODIFIER // hunger returns to normal
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/cheese_rush)
+	to_chat(owner, span_warning("You feel the effects of your cheese rush wear off."))
+
 /datum/movespeed_modifier/cheese_rush
-	multiplicative_slowdown = CHEESE_RUSH_MODIFIER
+	multiplicative_slowdown = -0.3
 
 #undef LIGHTING_PLANE_ALPHA_RAT
-#undef CHEESE_RUSH_MODIFIER
+#undef CHEESE_RUSH_HUNGER_MODIFIER
