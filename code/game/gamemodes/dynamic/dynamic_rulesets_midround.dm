@@ -248,7 +248,10 @@
 			candidates -= player // We don't autotator people with roles already
 
 /datum/dynamic_ruleset/midround/from_living/autotraitor/execute()
-	var/mob/M = pick(candidates)
+	/// ORB: change to weighted pick
+	var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+	var/mob/M = pick_weight(weighted_candidates)
+	/// ORB: end
 	assigned += M
 	candidates -= M
 	var/datum/antagonist/traitor/newTraitor = new
@@ -477,7 +480,11 @@
 /datum/dynamic_ruleset/midround/from_living/blob_infection/execute()
 	if(!candidates || !candidates.len)
 		return FALSE
-	var/mob/living/carbon/human/blob_antag = pick_n_take(candidates)
+	/// ORB: change to weighted pick
+	var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+	var/mob/blob_antag = pick_weight(weighted_candidates)
+	candidates -= blob_antag
+	/// ORB: end
 	assigned += blob_antag.mind
 	blob_antag.mind.special_role = antag_flag
 	return ..()

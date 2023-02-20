@@ -123,9 +123,10 @@
 			candidates -= player
 
 /datum/dynamic_ruleset/midround/from_living/waking_heretic/execute()
-	var/mob/picked_mob = pick(candidates)
-	assigned += picked_mob
+	var/list/weighted_candidates = generate_weighted_candidate_list(candidates)
+	var/mob/picked_mob = pick_weight(weighted_candidates)
 	candidates -= picked_mob
+	assigned += picked_mob
 	var/datum/antagonist/heretic/new_heretic = picked_mob.mind.add_antag_datum(antag_datum)
 	message_admins("[ADMIN_LOOKUPFLW(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
 	log_game("DYNAMIC: [key_name(picked_mob)] was selected by the [name] ruleset and has been made into a midround heretic.")
