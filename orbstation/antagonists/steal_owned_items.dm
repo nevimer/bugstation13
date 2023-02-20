@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 
 /datum/objective_item/steal/owned/pet/ian
 	abstract = FALSE
-	name = "Ian, without a pet carrier."
+	name = "Ian, without a pet carrier"
 	pet_type = list(/mob/living/basic/pet/dog/corgi/ian, /mob/living/basic/pet/dog/corgi/puppy/ian)
 	excludefromjob = list(JOB_HEAD_OF_PERSONNEL)
 	owner = list(JOB_HEAD_OF_PERSONNEL)
@@ -252,7 +252,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 
 /datum/objective_item/steal/owned/pet/renault
 	abstract = FALSE
-	name = "Renault, without a pet carrier."
+	name = "Renault, without a pet carrier"
 	pet_type = list(/mob/living/simple_animal/pet/fox/renault)
 	excludefromjob = list(JOB_CAPTAIN)
 	owner = list(JOB_CAPTAIN)
@@ -260,7 +260,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 
 /datum/objective_item/steal/owned/pet/runtime
 	abstract = FALSE
-	name = "Runtime, without a pet carrier."
+	name = "Runtime, without a pet carrier"
 	pet_type = list(/mob/living/simple_animal/pet/cat/runtime)
 	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
 	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
