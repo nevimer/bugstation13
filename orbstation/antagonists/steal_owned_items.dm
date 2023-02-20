@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective/steal/owned/New(text)
 	if(text)
 		explanation_text = text
-	if (!GLOB.owned_theft_items.len)
+	if (!length(GLOB.owned_theft_items))
 		for (var/objective in subtypesof(/datum/objective_item/steal/owned))
 			new objective
 
@@ -248,6 +248,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	pet_type = list(/mob/living/basic/pet/dog/corgi/ian, /mob/living/basic/pet/dog/corgi/puppy/ian)
 	excludefromjob = list(JOB_HEAD_OF_PERSONNEL)
 	owner = list(JOB_HEAD_OF_PERSONNEL)
+	altitems = list(/mob/living/basic/pet/dog/corgi/puppy/ian, /mob/living/basic/pet/dog/corgi/ian)
 
 /datum/objective_item/steal/owned/pet/renault
 	abstract = FALSE
@@ -255,6 +256,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	pet_type = list(/mob/living/simple_animal/pet/fox/renault)
 	excludefromjob = list(JOB_CAPTAIN)
 	owner = list(JOB_CAPTAIN)
+	altitems = list(/mob/living/simple_animal/pet/fox/renault)
 
 /datum/objective_item/steal/owned/pet/runtime
 	abstract = FALSE
@@ -262,6 +264,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 	pet_type = list(/mob/living/simple_animal/pet/cat/runtime)
 	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
 	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
+	altitems = list(/mob/living/simple_animal/pet/cat/runtime)
 
 /datum/objective_item/steal/owned/lamarr
 	name = "the research director's pet facehugger"
