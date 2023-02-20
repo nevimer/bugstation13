@@ -212,7 +212,7 @@
 			continue
 		possible_items += uplink_item
 	var/obj/structure/closet/crate/syndicrate/surplus_crate = new
-	var/tc_budget = 35
+	var/tc_budget = 25
 	while(tc_budget)
 		var/datum/uplink_item/uplink_item = pick_possible_item(possible_items, tc_budget)
 		if(!uplink_item)
