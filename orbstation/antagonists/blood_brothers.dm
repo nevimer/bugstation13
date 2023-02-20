@@ -12,7 +12,14 @@
 	bb_implant.implant(owner.current, silent = TRUE)
 
 /datum/antagonist/brother/on_removal()
-	. = ..()
+	owner.special_role = null
+	for(var/obj/item/implant/possible_implant in owner.current.implants)
+		if(istype(possible_implant, /obj/item/implant/holo_pad_projector))
+			possible_implant.removed(owner.current)
+			continue
+		else
+			continue
+	return ..()
 
 
 //changes to objectives.
