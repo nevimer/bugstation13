@@ -7808,6 +7808,11 @@
 /area/station/biodome)
 "dhs" = (
 /obj/effect/turf_decal/delivery,
+/obj/structure/industrial_lift/public,
+/obj/machinery/light/directional/west,
+/obj/structure/railing{
+	dir = 8
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "dht" = (
@@ -14552,6 +14557,11 @@
 "fVU" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/delivery,
+/obj/structure/industrial_lift/public,
+/obj/structure/mirror/directional/west,
+/obj/structure/railing{
+	dir = 9
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "fWb" = (
@@ -22620,6 +22630,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/grass,
 /area/station/hallway/primary/central/aft)
+"jxb" = (
+/obj/structure/industrial_lift/public,
+/turf/closed/wall,
+/area/station/ai_monitored/security/armory)
 "jxg" = (
 /turf/closed/wall/r_wall,
 /area/station/hallway/secondary/exit/departure_lounge)
@@ -29947,6 +29961,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/bronze,
 /area/station/service/library)
+"mpy" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/industrial_lift/public,
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "mpz" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 4;
@@ -38573,10 +38592,6 @@
 /obj/item/chair/wood/wings,
 /turf/open/floor/plating,
 /area/station/service/abandoned_gambling_den)
-"pXM" = (
-/obj/structure/industrial_lift/public,
-/turf/open/openspace,
-/area/station/security/brig)
 "pXU" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
@@ -42849,11 +42864,7 @@
 /turf/open/floor/iron,
 /area/station/engineering/gravity_generator)
 "rGd" = (
-/obj/structure/industrial_lift/public,
 /obj/structure/mirror/directional/west,
-/obj/structure/railing{
-	dir = 9
-	},
 /turf/open/openspace,
 /area/station/security/brig)
 "rGi" = (
@@ -43614,11 +43625,6 @@
 /turf/open/floor/iron,
 /area/station/science/genetics)
 "rWr" = (
-/obj/structure/industrial_lift/public,
-/obj/machinery/light/directional/west,
-/obj/structure/railing{
-	dir = 8
-	},
 /turf/open/openspace,
 /area/station/security/brig)
 "rWF" = (
@@ -44376,6 +44382,22 @@
 "soh" = (
 /turf/closed/wall/mineral/wood,
 /area/station/biodome/aft)
+"son" = (
+/obj/effect/turf_decal/delivery,
+/obj/structure/industrial_lift/public,
+/obj/effect/landmark/lift_id{
+	specific_lift_id = "biodome_brig_lift"
+	},
+/obj/machinery/elevator_control_panel/directional/north{
+	name = "Brig Lift Control Panel";
+	preset_destination_names = list("2"="Lower Brig","3"="Upper Brig");
+	linked_elevator_id = "biodome_brig_lift"
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "soo" = (
 /turf/open/floor/iron/white/small,
 /area/station/medical/pharmacy)
@@ -47974,21 +47996,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/terracotta/small,
 /area/station/biodome)
-"tMW" = (
-/obj/structure/industrial_lift/public,
-/obj/effect/landmark/lift_id{
-	specific_lift_id = "biodome_brig_lift"
-	},
-/obj/machinery/elevator_control_panel/directional/north{
-	name = "Brig Lift Control Panel";
-	preset_destination_names = list("2"="Lower Brig","3"="Upper Brig");
-	linked_elevator_id = "biodome_brig_lift"
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/openspace,
-/area/station/security/brig)
 "tNi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -101527,8 +101534,8 @@ tju
 hbv
 kHf
 kHf
-dhs
-dhs
+son
+mpy
 kHf
 ncW
 xkb
@@ -167063,8 +167070,8 @@ uEl
 hnk
 uEl
 kHf
-tMW
-pXM
+rWr
+rWr
 xMD
 dUY
 dUY
@@ -168609,7 +168616,7 @@ hNy
 hNy
 fwM
 dhB
-dhB
+jxb
 qMY
 eIc
 dhB
