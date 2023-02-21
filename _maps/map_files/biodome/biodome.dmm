@@ -13007,8 +13007,8 @@
 /area/station/hallway/primary/port)
 "fmS" = (
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
-/obj/machinery/door/airlock/engineering{
-	name = "Power Access Hatch"
+/obj/machinery/door/airlock/maintenance{
+	name = "Security Delivery Hatch"
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/department/security)
@@ -13809,11 +13809,13 @@
 /turf/open/floor/iron/terracotta/small,
 /area/station/biodome/fore)
 "fEW" = (
-/obj/machinery/door/airlock/engineering,
 /obj/machinery/duct,
 /obj/effect/mapping_helpers/airlock/access/any/service/janitor,
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
+	},
+/obj/machinery/door/airlock/maintenance{
+	name = "Water Generator"
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
@@ -42022,7 +42024,9 @@
 /turf/open/floor/glass/reinforced,
 /area/station/science/xenobiology)
 "riv" = (
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance{
+	name = "Water Generator"
+	},
 /obj/machinery/duct,
 /obj/effect/mapping_helpers/airlock/access/all/service/janitor,
 /obj/effect/mapping_helpers/airlock/unres{
