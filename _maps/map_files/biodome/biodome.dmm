@@ -8960,6 +8960,8 @@
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "dEM" = (
@@ -9595,6 +9597,7 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "dRX" = (
@@ -14770,6 +14773,11 @@
 "fWX" = (
 /turf/open/floor/glass,
 /area/station/service/chapel/office)
+"fXc" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
+/turf/open/floor/iron,
+/area/station/security/checkpoint/escape)
 "fXj" = (
 /obj/effect/turf_decal/tile/red/full,
 /obj/structure/disposalpipe/segment{
@@ -19380,9 +19388,7 @@
 /area/station/biodome/fore)
 "hXG" = (
 /obj/effect/landmark/event_spawn,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "hXP" = (
@@ -19651,6 +19657,7 @@
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "icQ" = (
@@ -23409,12 +23416,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
-"jJR" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/station/security/checkpoint/escape)
 "jJY" = (
 /obj/machinery/light/directional/west,
 /turf/open/floor/fakepit,
@@ -25795,12 +25796,10 @@
 /turf/open/floor/iron,
 /area/station/commons/fitness)
 "kGT" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
-	dir = 8
-	},
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "kGV" = (
@@ -41543,12 +41542,6 @@
 /obj/effect/turf_decal/tile/yellow/opposingcorners,
 /turf/open/floor/iron,
 /area/station/engineering/gravity_generator)
-"qXD" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/station/security/checkpoint/escape)
 "qYc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -50705,14 +50698,6 @@
 /obj/structure/filingcabinet/security,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
-"uUH" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/station/security/checkpoint/escape)
 "uUV" = (
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 8
@@ -52577,6 +52562,7 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/red/half/contrasted,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "vIo" = (
@@ -54477,6 +54463,7 @@
 "wwk" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "wwD" = (
@@ -172004,7 +171991,7 @@ hHc
 hHc
 bEC
 nFt
-obW
+fXc
 qUQ
 tDj
 fFu
@@ -172518,7 +172505,7 @@ hHc
 hHc
 bEC
 mFe
-uUH
+vrU
 kGT
 mNx
 gaE
@@ -172775,7 +172762,7 @@ hHc
 hHc
 bEC
 cop
-wwk
+vrU
 vIi
 mNx
 gaE
@@ -173032,7 +173019,7 @@ hHc
 hHc
 bEC
 ekj
-wwk
+vrU
 dEL
 bEC
 wYY
@@ -173547,7 +173534,7 @@ hHc
 bEC
 mNx
 dRN
-jJR
+mNx
 bEC
 eaI
 iND
@@ -173803,7 +173790,7 @@ hHc
 hHc
 bEC
 mMA
-qXD
+wwk
 obW
 mNx
 nAH
