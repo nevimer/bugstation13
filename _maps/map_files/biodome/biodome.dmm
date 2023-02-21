@@ -1262,6 +1262,10 @@
 	},
 /turf/open/floor/eighties/red,
 /area/station/hallway/secondary/exit/departure_lounge)
+"axH" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/plating,
+/area/station/engineering/storage/tech)
 "axM" = (
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron/dark,
@@ -4601,6 +4605,13 @@
 	},
 /turf/open/floor/plating,
 /area/station/medical/medbay/central)
+"bRA" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/machinery/door/firedoor,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "bRR" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -6982,7 +6993,7 @@
 /area/station/construction/mining/aux_base)
 "cNY" = (
 /obj/machinery/door/airlock{
-	name = "Port Emergency Storage"
+	name = "Aft Emergency Storage Hut"
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
@@ -7737,7 +7748,9 @@
 /area/station/security/checkpoint/supply)
 "dfj" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "The Grotto"
+	},
 /turf/open/floor/iron/terracotta,
 /area/station/hallway/primary/aft)
 "dfn" = (
@@ -8994,10 +9007,13 @@
 /turf/open/floor/grass,
 /area/station/biodome)
 "dGf" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+/obj/machinery/door/airlock/public/glass{
+	name = "Primary Tool Hut"
+	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/commons/storage/primary)
 "dGl" = (
@@ -9443,6 +9459,10 @@
 /obj/item/clothing/shoes/wheelys/rollerskates,
 /turf/open/floor/glass,
 /area/station/hallway/secondary/service)
+"dQF" = (
+/obj/machinery/door/firedoor,
+/turf/open/floor/fakepit,
+/area/station/hallway/primary/aft)
 "dQH" = (
 /turf/closed/wall/r_wall,
 /area/station/engineering/transit_tube)
@@ -12241,7 +12261,10 @@
 /turf/open/floor/iron,
 /area/station/commons/dorms)
 "eXy" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Primary Tool Hut"
+	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/commons/storage/primary)
 "eXF" = (
@@ -14304,6 +14327,14 @@
 /obj/effect/turf_decal/siding/thinplating_new/terracotta,
 /turf/open/floor/iron/dark,
 /area/station/engineering/storage)
+"fQL" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/door/firedoor,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "fQW" = (
 /obj/machinery/power/apc/auto_name/directional/east,
 /obj/structure/cable,
@@ -15332,6 +15363,7 @@
 /obj/structure/chair/sofa/bench{
 	dir = 4
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/fakepit,
 /area/station/hallway/primary/aft)
 "gmI" = (
@@ -16951,12 +16983,14 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "gVA" = (
-/obj/structure/table,
 /obj/item/clothing/gloves/color/fyellow,
 /obj/machinery/light_switch/directional/south,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 9
 	},
+/obj/item/clothing/gloves/color/fyellow,
+/obj/item/storage/belt/utility,
+/obj/structure/rack,
 /turf/open/floor/wood,
 /area/station/commons/storage/primary)
 "gVE" = (
@@ -18878,7 +18912,9 @@
 /turf/open/floor/iron/terracotta/small,
 /area/station/biodome/aft)
 "hOo" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Art Hut"
+	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -19214,9 +19250,11 @@
 /turf/open/floor/carpet/donk,
 /area/station/security/prison/mess)
 "hWt" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/public/glass{
+	name = "The Grotto"
+	},
 /turf/open/floor/iron/terracotta,
 /area/station/hallway/primary/aft)
 "hWG" = (
@@ -19513,12 +19551,15 @@
 /turf/closed/wall,
 /area/station/commons/vacant_room/office)
 "ibJ" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/effect/landmark/navigate_destination/tools,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/airlock/public/glass{
+	name = "Primary Tool Hut"
+	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/commons/storage/primary)
 "ibN" = (
@@ -23191,6 +23232,7 @@
 /obj/effect/turf_decal/siding/yellow/end{
 	dir = 8
 	},
+/obj/item/radio,
 /turf/open/floor/wood,
 /area/station/commons/storage/primary)
 "jGV" = (
@@ -23628,7 +23670,9 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
 "jRX" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Engineering Access"
+	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/wood/large,
 /area/station/hallway/primary/aft)
@@ -25030,6 +25074,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
+"krH" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/light/directional/east,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "krQ" = (
 /obj/machinery/camera/directional/north{
 	c_tag = "Escape Pod - Port Hallway"
@@ -25637,7 +25686,10 @@
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "kEG" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Auxiliary Tool Hut"
+	},
 /turf/open/floor/wood/large,
 /area/station/commons/storage/tools)
 "kEL" = (
@@ -27679,12 +27731,14 @@
 /turf/open/floor/iron,
 /area/station/command/heads_quarters/ce)
 "lvB" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "The Grotto"
+	},
 /turf/open/floor/iron/terracotta,
 /area/station/hallway/primary/aft)
 "lvG" = (
@@ -30446,6 +30500,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/fakebasalt,
 /area/station/hallway/primary/aft)
 "myL" = (
@@ -35673,6 +35728,7 @@
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
 	},
+/obj/item/radio,
 /turf/open/floor/wood,
 /area/station/commons/storage/primary)
 "oFq" = (
@@ -36183,11 +36239,21 @@
 /area/station/security/processing)
 "oPR" = (
 /obj/structure/table,
-/obj/item/storage/medkit/regular,
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
 	},
 /obj/machinery/light/directional/east,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = -1
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -2;
+	pixel_y = 4
+	},
+/obj/item/storage/medkit/regular{
+	pixel_x = 4
+	},
 /turf/open/floor/wood,
 /area/station/commons/storage/primary)
 "oQg" = (
@@ -36983,11 +37049,6 @@
 /obj/machinery/firealarm/directional/east,
 /turf/open/floor/iron,
 /area/station/commons/dorms)
-"phw" = (
-/obj/machinery/door/airlock/public/glass,
-/obj/machinery/door/firedoor,
-/turf/open/floor/fakepit,
-/area/station/hallway/primary/aft)
 "phJ" = (
 /turf/closed/wall,
 /area/station/commons/dorms)
@@ -40648,6 +40709,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/fakebasalt,
 /area/station/hallway/primary/aft)
 "qKY" = (
@@ -41772,6 +41834,10 @@
 /obj/effect/turf_decal/tile/purple/opposingcorners,
 /turf/open/floor/iron/terracotta,
 /area/station/service/chapel)
+"rhg" = (
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/fakepit,
+/area/station/hallway/primary/aft)
 "rhj" = (
 /obj/structure/railing{
 	dir = 10
@@ -43478,11 +43544,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/security/processing)
-"rRr" = (
-/obj/machinery/door/airlock/public/glass,
-/obj/machinery/door/firedoor,
-/turf/open/floor/fakebasalt,
-/area/station/hallway/primary/aft)
 "rRt" = (
 /obj/effect/mapping_helpers/broken_floor,
 /obj/machinery/duct,
@@ -44102,10 +44163,13 @@
 /turf/open/floor/iron/textured_large,
 /area/station/maintenance/radshelter/civil)
 "sdO" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Auxiliary Tool Hut"
+	},
 /turf/open/floor/wood/large,
 /area/station/commons/storage/tools)
 "sdU" = (
@@ -44329,6 +44393,13 @@
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/stone,
 /area/station/maintenance/starboard/central)
+"sjQ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "sjW" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/components/unary/passive_vent{
@@ -52379,6 +52450,10 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/terracotta/small,
 /area/station/biodome/fore)
+"vHZ" = (
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/fakepit,
+/area/station/hallway/primary/aft)
 "vIi" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/red/half/contrasted,
@@ -53474,6 +53549,10 @@
 /obj/effect/spawner/random/engineering/tracking_beacon,
 /turf/open/floor/grass,
 /area/station/service/kitchen/diner)
+"whu" = (
+/obj/machinery/door/firedoor,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "whH" = (
 /obj/structure/bodycontainer/morgue,
 /turf/open/floor/iron/dark,
@@ -53732,6 +53811,13 @@
 	},
 /turf/open/floor/carpet/executive,
 /area/station/security/prison)
+"wmb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/fakebasalt,
+/area/station/hallway/primary/aft)
 "wmc" = (
 /obj/effect/turf_decal/tile/yellow/diagonal_edge,
 /obj/machinery/atmospherics/pipe/smart/simple/orange/visible,
@@ -55926,6 +56012,7 @@
 /obj/structure/railing/corner{
 	dir = 4
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/fakebasalt,
 /area/station/hallway/primary/aft)
 "xdT" = (
@@ -57850,10 +57937,12 @@
 "xRU" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/public/glass{
+	name = "The Grotto"
+	},
 /turf/open/floor/iron/terracotta,
 /area/station/hallway/primary/aft)
 "xSe" = (
@@ -157460,7 +157549,7 @@ dfj
 lqj
 nTy
 nTy
-nTy
+vHZ
 nTy
 nTy
 nTy
@@ -157469,7 +157558,7 @@ xiJ
 tQt
 gDP
 hrr
-hrr
+axH
 hrr
 dky
 ciM
@@ -158228,14 +158317,14 @@ neH
 eij
 neH
 jAa
-rRr
-phw
+whu
+dQF
 nPx
 cfo
 jVT
 jVT
 nPx
-phw
+dQF
 xiJ
 guV
 tyB
@@ -159266,7 +159355,7 @@ hFy
 hFy
 hFy
 hFy
-hFy
+fQL
 tRp
 tRp
 tRp
@@ -159512,7 +159601,7 @@ sXp
 neH
 wWM
 neH
-vpc
+dfj
 lqj
 gUS
 lqj
@@ -160290,7 +160379,7 @@ nTy
 lqj
 nTy
 nTy
-nTy
+yjM
 xXP
 wkD
 wkD
@@ -161838,16 +161927,16 @@ qUm
 tSu
 ijR
 ufJ
-nTy
-nTy
-iaX
+dQF
+dQF
+wmb
 qVs
 qVs
 qVs
 qVs
 qVs
-lqj
-lqj
+whu
+whu
 iPI
 iPI
 iPI
@@ -162097,7 +162186,7 @@ mlQ
 ufJ
 nTy
 nTy
-iaX
+sjQ
 qVs
 huZ
 epJ
@@ -162360,7 +162449,7 @@ wIo
 sep
 uOb
 qVs
-lqj
+jbE
 xLQ
 ltj
 nlc
@@ -163626,21 +163715,21 @@ uVy
 qAx
 jAa
 nTy
-nTy
-nTy
+yjM
+rhg
 lqj
 nce
 gbr
 gbr
 gbr
 gbr
-gbr
+krH
 gbr
 gbr
 gbr
 gbr
 vos
-nTy
+dQF
 dyz
 nTy
 mpH
@@ -163897,7 +163986,7 @@ aBG
 aBG
 nTy
 lqj
-lqj
+whu
 xzy
 rut
 lqj
@@ -164396,21 +164485,21 @@ neH
 cxe
 neH
 jAa
-nTy
+dQF
 uIR
 moQ
 oqn
 oqS
 uIR
-lqj
-lqj
+whu
+whu
 aBG
 wno
 pKX
 gzN
 aBG
-nTy
-lqj
+dQF
+whu
 cEV
 vmU
 gZj
@@ -165175,7 +165264,7 @@ nTy
 nTy
 lqj
 lqj
-nTy
+dQF
 nTy
 aGH
 nTy
@@ -165432,7 +165521,7 @@ aGH
 aGH
 aGH
 aGH
-aGH
+bRA
 aGH
 aGH
 lqj
@@ -165686,10 +165775,10 @@ nTy
 nTy
 yjM
 nTy
-nTy
+rhg
 jFy
 nTy
-nTy
+dQF
 nTy
 yjM
 nTy
