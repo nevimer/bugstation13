@@ -2893,9 +2893,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/machinery/door/airlock/engineering,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres,
+/obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "beF" = (
@@ -9326,6 +9326,7 @@
 "dOi" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
 "dOs" = (
@@ -19426,7 +19427,9 @@
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/aft)
 "ibC" = (
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Janitor's closet"
+	},
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet)
 "ibD" = (
@@ -33751,7 +33754,7 @@
 /obj/structure/bed/double,
 /obj/item/pillow/random,
 /obj/item/pillow/random,
-/obj/item/bedsheet/dorms,
+/obj/item/bedsheet/dorms_double,
 /turf/open/floor/glass/reinforced,
 /area/station/commons/dorms)
 "nUj" = (
@@ -37694,11 +37697,11 @@
 /turf/open/floor/grass,
 /area/station/security/courtroom)
 "pBP" = (
-/obj/machinery/door/airlock/engineering,
 /obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /obj/effect/mapping_helpers/airlock/unres{
 	dir = 8
 	},
+/obj/machinery/door/airlock/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "pBY" = (
@@ -42736,9 +42739,9 @@
 	dir = 1
 	},
 /obj/item/pillow/random,
-/obj/item/bedsheet/dorms,
 /obj/item/pillow/random,
 /obj/machinery/airalarm/directional/north,
+/obj/item/bedsheet/dorms_double,
 /turf/open/floor/carpet/neon/simple/white,
 /area/station/commons/dorms)
 "rCB" = (
@@ -48067,9 +48070,7 @@
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "tOT" = (
-/obj/structure/closet/emcloset{
-	anchored = 1
-	},
+/obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
 "tPg" = (
@@ -57615,6 +57616,11 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/airalarm/directional/north,
+/obj/machinery/button/door/directional/east{
+	name = "Transit Tube Lockdown Toggle";
+	req_access = list("command");
+	id = "transittube_ai"
+	},
 /turf/open/floor/iron/dark/smooth_edge{
 	dir = 4
 	},
