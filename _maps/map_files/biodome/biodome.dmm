@@ -2411,12 +2411,11 @@
 /area/station/security/warden)
 "aUx" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Zoo Exhibit 4"
+	},
 /obj/effect/mapping_helpers/airlock/access/all/service/janitor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "aUy" = (
@@ -4192,6 +4191,15 @@
 	},
 /turf/open/floor/grass,
 /area/station/hallway/secondary/exit/departure_lounge)
+"bJS" = (
+/obj/effect/mapping_helpers/airlock/access/all/service/janitor,
+/obj/machinery/door/airlock{
+	name = "Zoo Exhibit 3"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/plating,
+/area/station/maintenance/aft/upper)
 "bJY" = (
 /obj/machinery/light/warm/directional/east,
 /turf/open/water/jungle/biodome,
@@ -30060,6 +30068,15 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/wood/parquet,
 /area/station/cargo/storage)
+"mqM" = (
+/obj/effect/mapping_helpers/airlock/access/all/service/janitor,
+/obj/machinery/door/airlock{
+	name = "Zoo Exhibit 2"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/turf/open/floor/plating,
+/area/station/maintenance/aft/upper)
 "mqQ" = (
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/tile/blue/half{
@@ -54013,12 +54030,11 @@
 /area/station/maintenance/port/central)
 "wum" = (
 /obj/effect/mapping_helpers/airlock/access/all/service/janitor,
-/obj/machinery/door/airlock,
+/obj/machinery/door/airlock{
+	name = "Zoo Exhibit 1"
+	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
 "wup" = (
@@ -152144,7 +152160,7 @@ dST
 hIZ
 jDw
 nGY
-wum
+mqM
 xsO
 vxC
 fJC
@@ -153429,7 +153445,7 @@ dST
 tIM
 jWu
 nGY
-wum
+bJS
 xsO
 fJC
 vxC
