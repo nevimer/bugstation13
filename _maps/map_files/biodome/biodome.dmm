@@ -7616,11 +7616,16 @@
 /turf/open/floor/iron,
 /area/station/cargo/lobby)
 "dbn" = (
-/obj/item/kirbyplants/random,
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/camera/autoname/directional/west{
 	c_tag = "Command - Head of Personnel Office"
 	},
+/obj/item/storage/box/ids,
+/obj/item/storage/box/pdas{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/structure/table/wood,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hop)
 "dbu" = (
@@ -7836,6 +7841,16 @@
 	dir = 4
 	},
 /area/station/engineering/transit_tube)
+"dgc" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "bridge-down"
+	},
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "dgf" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -11596,6 +11611,8 @@
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/royalblue,
 /area/station/command/meeting_room)
 "eKb" = (
@@ -16847,6 +16864,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/navigate_destination/aiupload,
+/obj/effect/mapping_helpers/airlock/access/all/command/ai_upload,
 /turf/open/floor/iron,
 /area/station/ai_monitored/turret_protected/ai_upload)
 "gQC" = (
@@ -18695,6 +18713,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/west,
+/obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/hop)
 "hHc" = (
@@ -19135,15 +19154,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/station/security/prison/garden)
-"hRK" = (
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/camera/directional/north{
-	c_tag = "Command - Bridge Aft Access"
-	},
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "hRM" = (
 /obj/machinery/light/cold/directional/east,
 /obj/item/radio/intercom/directional/east,
@@ -20223,6 +20233,14 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
+"ioM" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor/preopen{
+	id = "bridge blast";
+	name = "Bridge Blast Door"
+	},
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "ioR" = (
 /obj/structure/sign/directions/science/directional/south{
 	dir = 1;
@@ -22382,10 +22400,10 @@
 	name = "Bridge"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "bridge-up"
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "jmL" = (
@@ -24946,6 +24964,12 @@
 	},
 /turf/open/openspace,
 /area/station/science/xenobiology)
+"knd" = (
+/obj/machinery/camera/directional/north{
+	c_tag = "Command - Bridge Aft Access"
+	},
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "knD" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -25794,6 +25818,9 @@
 "kEL" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/medkit/regular,
+/obj/structure/sign/nanotrasen{
+	pixel_x = 32
+	},
 /turf/open/floor/wood,
 /area/station/command/bridge)
 "kEX" = (
@@ -25834,6 +25861,16 @@
 "kFW" = (
 /turf/closed/wall/r_wall,
 /area/station/science/server)
+"kGp" = (
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/machinery/door/airlock/command{
+	name = "Conference Room"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/plating,
+/area/station/command/meeting_room)
 "kGO" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
@@ -26941,12 +26978,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth_large,
 /area/station/cargo/warehouse)
-"lcp" = (
-/obj/effect/turf_decal/siding/wood/end{
-	dir = 1
-	},
-/turf/open/water/jungle/biodome,
-/area/station/biodome/aft)
 "lcr" = (
 /obj/structure/stairs/east,
 /obj/structure/railing,
@@ -28794,6 +28825,16 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron,
 /area/station/cargo/lobby)
+"lNX" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
+/obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "bridge-up"
+	},
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "lOb" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -32647,12 +32688,6 @@
 /obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
-"nqP" = (
-/obj/structure/sign/nanotrasen{
-	pixel_x = 32
-	},
-/turf/open/floor/wood,
-/area/station/command/bridge)
 "nrd" = (
 /obj/structure/railing{
 	dir = 1
@@ -36485,6 +36520,11 @@
 "oTe" = (
 /turf/open/openspace,
 /area/station/ai_monitored/security/armory)
+"oTE" = (
+/turf/closed/wall/r_wall/fakewood{
+	color = "#a9734f"
+	},
+/area/station/biodome)
 "oTF" = (
 /obj/structure/altar_of_gods,
 /obj/item/storage/book/bible,
@@ -38149,13 +38189,13 @@
 	name = "Bridge"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "bridge-down"
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "pFj" = (
@@ -43087,8 +43127,9 @@
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/qm)
 "rBD" = (
-/obj/machinery/power/apc/auto_name/directional/north,
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet/royalblue,
 /area/station/command/meeting_room)
 "rBE" = (
@@ -43569,17 +43610,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet/auxiliary)
-"rOw" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/airlock/access/all/command/general,
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "rOH" = (
 /obj/effect/turf_decal/trimline/dark_blue/arrow_ccw{
 	dir = 4
@@ -45922,16 +45952,6 @@
 /obj/effect/turf_decal/tile/blue/diagonal_edge,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/checkpoint/medical)
-"sNU" = (
-/obj/machinery/door/airlock/command{
-	name = "Conference Room"
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/station/command/meeting_room)
 "sOd" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -48770,8 +48790,7 @@
 /area/station/ai_monitored/turret_protected/aisat/foyer)
 "tVC" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/wood,
 /area/station/command/meeting_room)
 "tVJ" = (
@@ -53734,13 +53753,13 @@
 	name = "Bridge"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/airlock/access/all/command/general,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "bridge-down"
+	},
 /turf/open/floor/iron/dark,
 /area/station/command/bridge)
 "whc" = (
@@ -99938,7 +99957,7 @@ qKr
 vZE
 pnf
 pnf
-lcp
+pnf
 pnf
 pnf
 pnf
@@ -164694,7 +164713,7 @@ pGz
 dng
 meU
 xWx
-nqP
+qWj
 kEL
 lTv
 lTv
@@ -164708,7 +164727,7 @@ lTv
 duw
 qWj
 omJ
-nOL
+kGp
 rBD
 eJL
 lky
@@ -164951,7 +164970,7 @@ bNV
 bNV
 meU
 jmI
-lTv
+lNX
 lTv
 lTv
 fNG
@@ -164963,7 +164982,7 @@ fNG
 fNG
 lTv
 lTv
-lTv
+dgc
 wgD
 nOL
 oEO
@@ -165208,8 +165227,8 @@ dUV
 tGF
 lTv
 kdR
-lTv
-rAq
+kdR
+oTE
 rAq
 rAq
 rAq
@@ -165219,12 +165238,12 @@ fQs
 fQs
 fQs
 fQs
-fQs
-lTv
+iCJ
+ioM
 cip
-sNU
+nOL
 tVC
-xNh
+lmk
 lmk
 lmk
 lCP
@@ -165465,8 +165484,8 @@ cFv
 cFv
 lTv
 gRD
-lTv
-rAq
+gRD
+oTE
 rAq
 rAq
 rAq
@@ -165476,8 +165495,8 @@ fQs
 fQs
 fQs
 fQs
-fQs
-lTv
+iCJ
+gRD
 uVv
 nOL
 lcS
@@ -165722,8 +165741,8 @@ meU
 meU
 lTv
 rbH
-lTv
-rAq
+gRD
+oTE
 rAq
 rAq
 rAq
@@ -165733,9 +165752,9 @@ fQs
 fQs
 fQs
 fQs
-fQs
-lTv
-hRK
+iCJ
+knd
+uVv
 nOL
 jTJ
 nOL
@@ -165979,8 +165998,8 @@ dSM
 rAq
 lTv
 gRD
-lTv
-rAq
+gRD
+oTE
 rAq
 rAq
 rAq
@@ -165990,8 +166009,8 @@ fQs
 fQs
 fQs
 fQs
-fQs
-lTv
+iCJ
+gRD
 uVv
 nOL
 lqy
@@ -166235,8 +166254,8 @@ cDb
 pGm
 pGm
 lTv
-rOw
-lTv
+jmI
+lNX
 ofe
 ofe
 cDb
@@ -166248,7 +166267,7 @@ ydn
 ydn
 ijZ
 ijZ
-lTv
+dgc
 pFh
 nOL
 nOL
