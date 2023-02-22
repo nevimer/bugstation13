@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective/steal/owned/New(text)
 	if(text)
 		explanation_text = text
-	if (!GLOB.owned_theft_items.len)
+	if (!length(GLOB.owned_theft_items))
 		for (var/objective in subtypesof(/datum/objective_item/steal/owned))
 			new objective
 
@@ -22,15 +22,16 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 /datum/objective/steal/owned/find_target(dupe_search_range, list/blacklist)
 	var/list/approved_targets = list()
 	var/list/datum/mind/owners = get_owners()
-	for (var/datum/objective_item/steal/owned/possible_item in GLOB.owned_theft_items)
-		if (!possible_item.owner_exists())
-			continue
-		if (!is_unique_objective(possible_item.targetitem, dupe_search_range))
-			continue
-		for (var/datum/mind/M in owners)
-			if(M.current.mind.assigned_role.title in possible_item.excludefromjob)
+	check_items:
+		for (var/datum/objective_item/steal/owned/possible_item in GLOB.owned_theft_items)
+			if (!possible_item.owner_exists())
 				continue
-		approved_targets += possible_item
+			if (!is_unique_objective(possible_item.targetitem, dupe_search_range))
+				continue
+			for (var/datum/mind/M in owners)
+				if(M.current.mind.assigned_role.title in possible_item.excludefromjob)
+					continue check_items
+			approved_targets += possible_item
 	if (approved_targets.len)
 		return set_target(pick(approved_targets))
 	return set_target(null)
@@ -243,24 +244,27 @@ GLOBAL_LIST_EMPTY(owned_theft_items)
 
 /datum/objective_item/steal/owned/pet/ian
 	abstract = FALSE
-	name = "Ian, without a pet carrier."
+	name = "Ian, without a pet carrier"
 	pet_type = list(/mob/living/basic/pet/dog/corgi/ian, /mob/living/basic/pet/dog/corgi/puppy/ian)
 	excludefromjob = list(JOB_HEAD_OF_PERSONNEL)
 	owner = list(JOB_HEAD_OF_PERSONNEL)
+	altitems = list(/mob/living/basic/pet/dog/corgi/puppy/ian, /mob/living/basic/pet/dog/corgi/ian)
 
 /datum/objective_item/steal/owned/pet/renault
 	abstract = FALSE
-	name = "Renault, without a pet carrier."
+	name = "Renault, without a pet carrier"
 	pet_type = list(/mob/living/simple_animal/pet/fox/renault)
 	excludefromjob = list(JOB_CAPTAIN)
 	owner = list(JOB_CAPTAIN)
+	altitems = list(/mob/living/simple_animal/pet/fox/renault)
 
 /datum/objective_item/steal/owned/pet/runtime
 	abstract = FALSE
-	name = "Runtime, without a pet carrier."
+	name = "Runtime, without a pet carrier"
 	pet_type = list(/mob/living/simple_animal/pet/cat/runtime)
 	excludefromjob = list(JOB_CHIEF_MEDICAL_OFFICER)
 	owner = list(JOB_CHIEF_MEDICAL_OFFICER)
+	altitems = list(/mob/living/simple_animal/pet/cat/runtime)
 
 /datum/objective_item/steal/owned/lamarr
 	name = "the research director's pet facehugger"
