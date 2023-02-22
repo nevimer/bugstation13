@@ -7841,16 +7841,6 @@
 	dir = 4
 	},
 /area/station/engineering/transit_tube)
-"dgc" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/command/general,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "bridge-down"
-	},
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "dgf" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -15758,6 +15748,15 @@
 	},
 /turf/open/floor/carpet/red,
 /area/station/service/theater)
+"gtB" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/camera/directional/north{
+	c_tag = "Command - Bridge Aft Access"
+	},
+/turf/open/floor/iron/dark,
+/area/station/command/bridge)
 "gtH" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	dir = 8;
@@ -20233,14 +20232,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-"ioM" = (
-/obj/effect/turf_decal/delivery,
-/obj/machinery/door/poddoor/preopen{
-	id = "bridge blast";
-	name = "Bridge Blast Door"
-	},
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "ioR" = (
 /obj/structure/sign/directions/science/directional/south{
 	dir = 1;
@@ -24964,12 +24955,6 @@
 	},
 /turf/open/openspace,
 /area/station/science/xenobiology)
-"knd" = (
-/obj/machinery/camera/directional/north{
-	c_tag = "Command - Bridge Aft Access"
-	},
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "knD" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -28825,16 +28810,6 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron,
 /area/station/cargo/lobby)
-"lNX" = (
-/obj/machinery/door/airlock/command/glass{
-	name = "Bridge"
-	},
-/obj/effect/mapping_helpers/airlock/access/all/command/general,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
-	cycle_id = "bridge-up"
-	},
-/turf/open/floor/iron/dark,
-/area/station/command/bridge)
 "lOb" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -36520,11 +36495,6 @@
 "oTe" = (
 /turf/open/openspace,
 /area/station/ai_monitored/security/armory)
-"oTE" = (
-/turf/closed/wall/r_wall/fakewood{
-	color = "#a9734f"
-	},
-/area/station/biodome)
 "oTF" = (
 /obj/structure/altar_of_gods,
 /obj/item/storage/book/bible,
@@ -164970,7 +164940,7 @@ bNV
 bNV
 meU
 jmI
-lNX
+lTv
 lTv
 lTv
 fNG
@@ -164982,7 +164952,7 @@ fNG
 fNG
 lTv
 lTv
-dgc
+lTv
 wgD
 nOL
 oEO
@@ -165227,8 +165197,8 @@ dUV
 tGF
 lTv
 kdR
-kdR
-oTE
+lTv
+rAq
 rAq
 rAq
 rAq
@@ -165238,8 +165208,8 @@ fQs
 fQs
 fQs
 fQs
-iCJ
-ioM
+fQs
+lTv
 cip
 nOL
 tVC
@@ -165484,8 +165454,8 @@ cFv
 cFv
 lTv
 gRD
-gRD
-oTE
+lTv
+rAq
 rAq
 rAq
 rAq
@@ -165495,8 +165465,8 @@ fQs
 fQs
 fQs
 fQs
-iCJ
-gRD
+fQs
+lTv
 uVv
 nOL
 lcS
@@ -165741,8 +165711,8 @@ meU
 meU
 lTv
 rbH
-gRD
-oTE
+lTv
+rAq
 rAq
 rAq
 rAq
@@ -165752,9 +165722,9 @@ fQs
 fQs
 fQs
 fQs
-iCJ
-knd
-uVv
+fQs
+lTv
+gtB
 nOL
 jTJ
 nOL
@@ -165998,8 +165968,8 @@ dSM
 rAq
 lTv
 gRD
-gRD
-oTE
+lTv
+rAq
 rAq
 rAq
 rAq
@@ -166009,8 +165979,8 @@ fQs
 fQs
 fQs
 fQs
-iCJ
-gRD
+fQs
+lTv
 uVv
 nOL
 lqy
@@ -166255,7 +166225,7 @@ pGm
 pGm
 lTv
 jmI
-lNX
+lTv
 ofe
 ofe
 cDb
@@ -166267,7 +166237,7 @@ ydn
 ydn
 ijZ
 ijZ
-dgc
+lTv
 pFh
 nOL
 nOL
