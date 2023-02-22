@@ -1,4 +1,3 @@
-#define LIGHTING_PLANE_ALPHA_RAT 225 // lighting plane for ratfolk eyes (lower means darkness is less opaque)
 #define CHEESE_RUSH_HUNGER_MODIFIER 4 // hunger increases this much faster under the effects of cheese rush
 
 // EARS
@@ -38,8 +37,7 @@
 	name = "rat eyes"
 	maxHealth = 0.35 * STANDARD_ORGAN_THRESHOLD // more fragile than normal eyes
 	flash_protect = FLASH_PROTECTION_SENSITIVE
-	lighting_alpha = LIGHTING_PLANE_ALPHA_RAT
-	see_in_dark = NIGHTVISION_FOV_RANGE
+	color_cutoffs = list(5, 5, 5)
 
 // STOMACH - increases movespeed temporarily when you consume cheese reagent (found in raw cheese)
 
@@ -93,5 +91,4 @@
 /datum/movespeed_modifier/cheese_rush
 	multiplicative_slowdown = -0.3
 
-#undef LIGHTING_PLANE_ALPHA_RAT
 #undef CHEESE_RUSH_HUNGER_MODIFIER

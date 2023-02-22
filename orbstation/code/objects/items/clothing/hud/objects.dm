@@ -45,9 +45,8 @@
 	inhand_icon_state = "gar_meson"
 	alternate_worn_layer = ABOVE_BODY_FRONT_HEAD_LAYER
 	clothing_traits = list(TRAIT_MADNESS_IMMUNE)
-	darkness_view = 2
 	vision_flags = SEE_TURFS
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	color_cutoffs = list(30, 20, 5)
 	glass_colour_type = /datum/client_colour/glass_colour/lightgreen
 	force = 10
 	throwforce = 10
