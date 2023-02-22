@@ -1133,10 +1133,12 @@
 /turf/open/floor/iron/white,
 /area/station/science/ordnance/burnchamber)
 "auO" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Law Sat"
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
@@ -10635,7 +10637,6 @@
 /turf/open/floor/noslip,
 /area/station/service/janitor)
 "eqP" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10643,6 +10644,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/door/airlock/public/glass{
+	name = "Law Sat"
+	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
 "eqT" = (
@@ -16391,7 +16395,6 @@
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
 "gHr" = (
-/obj/machinery/door/airlock/public/glass,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/disposalpipe/segment{
@@ -16401,6 +16404,9 @@
 /obj/machinery/door/firedoor,
 /obj/structure/sign/directions/vault/directional/south{
 	dir = 4
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Law Sat"
 	},
 /turf/open/floor/iron/terracotta/small,
 /area/station/hallway/primary/starboard)
@@ -17974,10 +17980,6 @@
 /obj/machinery/duct,
 /turf/open/floor/iron/dark,
 /area/station/science/research)
-"hqJ" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/turf/open/floor/iron/dark/smooth_half,
-/area/station/security/brig)
 "hqK" = (
 /obj/machinery/door/airlock/bronze,
 /obj/machinery/door/firedoor,
@@ -21617,6 +21619,7 @@
 	id = "visitation";
 	name = "Visitation Shutters"
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/iron,
 /area/station/security/prison/visit)
 "iXj" = (
@@ -23742,7 +23745,9 @@
 /turf/open/floor/iron/dark/textured,
 /area/station/engineering/atmos/mix)
 "jSd" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Law Sat"
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -26854,6 +26859,7 @@
 	id = "visitation";
 	name = "Visitation Shutters"
 	},
+/obj/structure/table/reinforced,
 /turf/open/floor/iron,
 /area/station/security/prison/visit)
 "lax" = (
@@ -28056,7 +28062,7 @@
 "lzO" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/shovel/spade,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "lzQ" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -34735,7 +34741,7 @@
 "ohr" = (
 /obj/machinery/hydroponics/soil,
 /obj/machinery/light/directional/east,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "oht" = (
 /obj/structure/table,
@@ -34969,6 +34975,10 @@
 "omx" = (
 /turf/open/floor/wood/large,
 /area/station/commons/storage/tools)
+"omy" = (
+/mob/living/simple_animal/hostile/asteroid/goliath,
+/turf/open/misc/asteroid/airless,
+/area/station/asteroid)
 "omC" = (
 /obj/structure/closet/emcloset,
 /turf/open/floor/iron/terracotta/small,
@@ -35557,7 +35567,7 @@
 "ozO" = (
 /obj/machinery/hydroponics/soil,
 /obj/machinery/light/directional/west,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "ozR" = (
 /obj/effect/turf_decal/loading_area{
@@ -37592,7 +37602,7 @@
 "psT" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/plant_analyzer,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "ptc" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -38287,6 +38297,10 @@
 /obj/machinery/defibrillator_mount/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
+"pJo" = (
+/obj/effect/spawner/random/vending/snackvend,
+/turf/open/floor/iron/dark,
+/area/station/hallway/primary/starboard)
 "pJp" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
 /turf/open/floor/iron/white,
@@ -39509,6 +39523,10 @@
 /obj/machinery/duct,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain/private)
+"qkN" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/carpet/black,
+/area/station/security/prison)
 "qkS" = (
 /obj/machinery/atmospherics/pipe/smart/simple/orange/hidden{
 	dir = 4
@@ -40054,7 +40072,7 @@
 /area/station/maintenance/disposal/incinerator)
 "qvC" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "qvE" = (
 /obj/effect/turf_decal/tile/dark_green/full,
@@ -41297,7 +41315,7 @@
 "qUt" = (
 /obj/machinery/hydroponics/soil,
 /obj/item/cultivator,
-/turf/open/floor/iron/dark,
+/turf/open/misc/asteroid,
 /area/station/security/prison/garden)
 "qUu" = (
 /obj/machinery/conveyor_switch/oneway{
@@ -43826,10 +43844,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/maintenance/department/security)
-"rUH" = (
-/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
-/turf/open/misc/asteroid/airless,
-/area/station/asteroid)
 "rUM" = (
 /obj/machinery/atmospherics/pipe/smart/simple/cyan/hidden,
 /obj/structure/disposalpipe/segment,
@@ -45607,6 +45621,10 @@
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/circuit,
 /area/station/ai_monitored/turret_protected/aisat_interior)
+"sJh" = (
+/obj/effect/spawner/random/vending/colavend,
+/turf/open/floor/iron/dark,
+/area/station/hallway/primary/starboard)
 "sJm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 5
@@ -48849,6 +48867,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/station/engineering/atmos/pumproom)
+"uak" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/iron,
+/area/station/security/prison/workout)
 "uax" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -102690,7 +102712,7 @@ xkb
 xkb
 xkb
 xkb
-hqJ
+xkb
 xkb
 rzh
 cUO
@@ -102964,7 +102986,7 @@ pEL
 vVu
 bEX
 lmY
-weK
+uak
 lmY
 oWW
 hNy
@@ -107838,7 +107860,7 @@ bYK
 tbD
 usE
 usE
-usE
+qkN
 usE
 usE
 usE
@@ -109606,7 +109628,7 @@ vtU
 vtU
 vtU
 hNy
-rRv
+omy
 nEO
 hNy
 hNy
@@ -109865,7 +109887,7 @@ cCZ
 hNy
 rRv
 rRv
-rUH
+rRv
 hNy
 cCZ
 cCZ
@@ -168973,7 +168995,7 @@ hJU
 svB
 syv
 fir
-fir
+sJh
 nzQ
 nUl
 nUl
@@ -170001,7 +170023,7 @@ uJh
 svB
 syv
 fir
-fir
+pJo
 nzQ
 nUl
 nUl
