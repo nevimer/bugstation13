@@ -3722,7 +3722,6 @@
 /area/station/hallway/primary/central/fore)
 "byj" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/machinery/light/directional/west,
 /obj/structure/disposalpipe/junction/yjunction{
 	dir = 8
 	},
@@ -4552,7 +4551,7 @@
 /area/station/service/hydroponics)
 "bQo" = (
 /obj/machinery/camera/directional/east{
-	c_tag = "Research - Xenobio Slime Chambers";
+	c_tag = "Research - Xenobio Slime Chambers Starboard";
 	network = list("ss13","rd","xeno")
 	},
 /turf/open/floor/engine,
@@ -4638,7 +4637,7 @@
 /area/station/commons/fitness)
 "bRS" = (
 /obj/machinery/camera/directional/east{
-	c_tag = "Research - Xenobio Feeding Deck";
+	c_tag = "Research - Xenobio Feeding Deck Starboard";
 	network = list("ss13","rd","xeno")
 	},
 /turf/open/openspace,
@@ -5034,6 +5033,10 @@
 /obj/structure/sign/calendar/directional/west,
 /turf/open/floor/eighties/red,
 /area/station/hallway/secondary/exit/departure_lounge)
+"caW" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/engine,
+/area/station/science/explab)
 "cbf" = (
 /obj/machinery/mechpad,
 /turf/open/floor/iron,
@@ -7527,7 +7530,7 @@
 	id = "biodome_science_lift"
 	},
 /obj/machinery/lift_indicator/directional/north{
-	id_tag = "biodome_science_lift"
+	linked_elevator_id = "biodome_science_lift"
 	},
 /turf/open/floor/iron,
 /area/station/science/research)
@@ -8187,6 +8190,13 @@
 	},
 /turf/open/floor/iron,
 /area/station/command/bridge)
+"dnM" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark,
+/area/station/science/research)
 "doc" = (
 /obj/effect/landmark/start/security_officer,
 /turf/open/floor/glass/reinforced,
@@ -13661,6 +13671,13 @@
 /obj/machinery/defibrillator_mount/directional/south,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
+"fAw" = (
+/obj/machinery/camera/directional/west{
+	c_tag = "Research - Xenobio Feeding Deck Port";
+	network = list("ss13","rd","xeno")
+	},
+/turf/open/openspace,
+/area/station/science/xenobiology)
 "fAz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/light/floor,
@@ -15014,7 +15031,7 @@
 /turf/open/floor/plating/reinforced,
 /area/station/service/janitor)
 "gcX" = (
-/turf/closed/wall,
+/turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/rd)
 "gdc" = (
 /obj/machinery/door/firedoor,
@@ -18172,12 +18189,6 @@
 	},
 /turf/open/floor/wood,
 /area/station/commons/storage/tools)
-"hvu" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/engine,
-/area/station/science/circuits)
 "hvx" = (
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/grass,
@@ -19367,7 +19378,7 @@
 	},
 /obj/effect/turf_decal/tile/purple/full,
 /obj/machinery/door/firedoor,
-/turf/open/floor/iron/dark,
+/turf/closed/wall/r_wall,
 /area/station/command/heads_quarters/rd)
 "hWV" = (
 /obj/structure/chair{
@@ -29058,9 +29069,6 @@
 /area/station/command/bridge)
 "lTy" = (
 /obj/machinery/light/small/directional/east,
-/obj/structure/railing{
-	dir = 4
-	},
 /turf/open/floor/engine,
 /area/station/science/circuits)
 "lTB" = (
@@ -48290,6 +48298,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/science/general,
 /turf/open/floor/iron/dark,
 /area/station/science/circuits)
 "tLb" = (
@@ -53154,6 +53163,13 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
+"vUu" = (
+/obj/machinery/camera/directional/west{
+	c_tag = "Research - Xenobio Slime Chambers Port";
+	network = list("ss13","rd","xeno")
+	},
+/turf/open/floor/engine,
+/area/station/science/xenobiology)
 "vUI" = (
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Maintenance Hatch"
@@ -54886,6 +54902,9 @@
 "wCG" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
+	},
+/obj/machinery/door/window/brigdoor/right/directional/west{
+	req_one_access = list("xenobiology","genetics")
 	},
 /turf/open/floor/holofloor/dark,
 /area/station/science/cytology)
@@ -89280,7 +89299,7 @@ tkz
 tkz
 vmJ
 lxF
-tkz
+vUu
 vmJ
 tkz
 tkz
@@ -92129,7 +92148,7 @@ jqt
 adC
 ito
 qhx
-qhx
+vvw
 ras
 qhx
 vvw
@@ -92901,7 +92920,7 @@ eDr
 aKd
 qhx
 sGc
-hvu
+sGc
 lTy
 sGc
 sGc
@@ -155073,7 +155092,7 @@ vTl
 rKS
 rKS
 rKS
-rKS
+fAw
 rKS
 vTl
 rKS
@@ -156636,7 +156655,7 @@ sCD
 iaT
 qva
 qva
-qva
+dnM
 byj
 hqB
 hqB
@@ -162804,7 +162823,7 @@ qml
 oQl
 uzo
 uzo
-uzo
+caW
 apS
 dmn
 bTC
