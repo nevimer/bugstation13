@@ -748,6 +748,13 @@
 		/obj/item/stack/cable_coil = 1,
 		/obj/item/stack/sheet/glass = 4)
 
+/obj/item/circuitboard/machine/fat_sucker
+	name = "Lipid Extractor"
+	greyscale_colors = CIRCUIT_COLOR_MEDICAL
+	build_path = /obj/machinery/fat_sucker
+	req_components = list(/datum/stock_part/micro_laser = 1,
+		/obj/item/kitchen/fork = 1)
+
 /obj/item/circuitboard/machine/harvester
 	name = "Harvester"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
@@ -766,7 +773,7 @@
 /obj/item/circuitboard/machine/medical_kiosk/multitool_act(mob/living/user)
 	. = ..()
 	var/new_cost = tgui_input_number(user, "New cost for using this medical kiosk", "Pricing", custom_cost, 1000, 10)
-	if(!new_cost || QDELETED(user) || QDELETED(src) || !user.canUseTopic(src, be_close = TRUE, no_dexterity = FALSE, no_tk = TRUE))
+	if(!new_cost || QDELETED(user) || QDELETED(src) || !user.can_perform_action(src, FORBID_TELEKINESIS_REACH))
 		return
 	if(loc != user)
 		to_chat(user, span_warning("You must hold the circuitboard to change its cost!"))

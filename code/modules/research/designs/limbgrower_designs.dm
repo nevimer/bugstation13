@@ -484,7 +484,7 @@
 	id = "alieneyes"
 	build_type = LIMBGROWER
 	reagents_list = list(/datum/reagent/medicine/c2/synthflesh = 10, /datum/reagent/toxin/acid/fluacid = 20)
-	build_path = /obj/item/organ/internal/eyes/night_vision/alien
+	build_path = /obj/item/organ/internal/eyes/alien
 	category = list(RND_CATEGORY_LIMBS_OTHER)
 
 /datum/design/xenomorph_liver
