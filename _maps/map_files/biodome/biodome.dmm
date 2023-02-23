@@ -1619,22 +1619,14 @@
 /area/station/medical/treatment_center)
 "aEh" = (
 /obj/structure/table/reinforced,
-/obj/item/defibrillator/loaded{
-	pixel_y = 6
-	},
-/obj/item/defibrillator/loaded{
-	pixel_y = 6;
-	pixel_x = 4
-	},
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/glasses/blindfold,
-/obj/item/clothing/ears/earmuffs,
-/obj/item/clothing/ears/earmuffs,
 /obj/machinery/door/window/left/directional/west{
 	name = "Secure Medical Storage";
 	req_access = list("medical")
 	},
 /obj/structure/window/reinforced,
+/obj/item/storage/medkit/o2,
+/obj/item/storage/medkit/o2,
+/obj/item/storage/medkit/o2,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "aEy" = (
@@ -3557,6 +3549,13 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/security/prison/garden)
+"btW" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/sink/directional/south,
+/turf/open/floor/grass,
+/area/station/science/genetics)
 "bua" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -3667,6 +3666,8 @@
 /obj/item/clothing/glasses/hud/health,
 /obj/item/storage/belt/medical,
 /obj/structure/window/reinforced,
+/obj/item/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "bwO" = (
@@ -7831,6 +7832,17 @@
 /obj/effect/spawner/random/structure/closet_private,
 /turf/open/floor/carpet/neon/simple/blue,
 /area/station/commons/dorms)
+"dfH" = (
+/obj/structure/closet/secure_closet/medical3,
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/clothing/gloves/latex/nitrile,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/belt/medical,
+/obj/structure/window/reinforced,
+/obj/item/defibrillator/loaded,
+/turf/open/floor/iron/dark,
+/area/station/medical/storage)
 "dfI" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -10167,6 +10179,7 @@
 	name = "Monkey Pen";
 	req_access = list("genetics")
 	},
+/obj/machinery/duct,
 /turf/open/floor/grass,
 /area/station/science/genetics)
 "ecq" = (
@@ -14012,6 +14025,7 @@
 	dir = 9
 	},
 /obj/structure/flora/rock/pile/jungle/style_random,
+/obj/item/food/grown/potato/sweet,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "fIP" = (
@@ -20063,6 +20077,7 @@
 "ijL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/circuit/green{
 	luminosity = 2
 	},
@@ -30981,6 +30996,7 @@
 /area/station/biodome)
 "mGi" = (
 /obj/structure/cable,
+/obj/machinery/duct,
 /turf/open/floor/iron,
 /area/station/science/genetics)
 "mGl" = (
@@ -38685,6 +38701,10 @@
 	name = "Secure Medical Storage";
 	req_access = list("medical")
 	},
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/glasses/blindfold,
+/obj/item/clothing/ears/earmuffs,
+/obj/item/clothing/ears/earmuffs,
 /turf/open/floor/iron/dark,
 /area/station/medical/storage)
 "pPI" = (
@@ -38969,6 +38989,14 @@
 /obj/effect/turf_decal/tile/green/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)
+"pVU" = (
+/obj/effect/turf_decal/tile/purple/opposingcorners,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/duct,
+/turf/open/floor/iron,
+/area/station/science/genetics)
 "pWk" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/white/smooth_large,
@@ -45540,6 +45568,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/station/engineering/main)
+"sDO" = (
+/obj/machinery/duct,
+/turf/open/floor/iron,
+/area/station/science/genetics)
 "sDQ" = (
 /obj/machinery/research/anomaly_refinery,
 /obj/structure/sign/clock/directional/west,
@@ -53858,6 +53890,11 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/fakebasalt,
 /area/station/hallway/primary/aft)
+"whz" = (
+/obj/effect/turf_decal/tile/purple/opposingcorners,
+/obj/machinery/duct,
+/turf/open/floor/iron,
+/area/station/science/genetics)
 "whH" = (
 /obj/structure/bodycontainer/morgue,
 /turf/open/floor/iron/dark,
@@ -56257,6 +56294,7 @@
 	},
 /obj/effect/mapping_helpers/airlock/access/all/science/genetics,
 /obj/structure/cable,
+/obj/machinery/duct,
 /turf/open/floor/plating,
 /area/station/maintenance/department/science)
 "xbL" = (
@@ -145046,7 +145084,7 @@ nKV
 jOb
 aEh
 pPs
-bwK
+dfH
 xXK
 jBW
 eFt
@@ -164271,7 +164309,7 @@ aXw
 aXw
 aXw
 aXw
-cLA
+bzj
 dJN
 oei
 rQi
@@ -164528,10 +164566,10 @@ eLP
 cLA
 jpl
 kwe
-rFM
+aXw
 xbI
 mGi
-xoI
+pVU
 afJ
 xoI
 xoI
@@ -164788,7 +164826,7 @@ cLA
 rFM
 dJN
 wLE
-kRf
+whz
 acX
 rxs
 edN
@@ -165045,7 +165083,7 @@ cLA
 rFM
 lHe
 xTS
-kRf
+whz
 qaQ
 cCA
 edN
@@ -165302,7 +165340,7 @@ cLA
 rFM
 lHe
 uzz
-kRf
+whz
 kRf
 wVC
 kRf
@@ -165559,7 +165597,7 @@ cLA
 rFM
 lHe
 sBR
-acX
+sDO
 acX
 ogD
 xWY
@@ -165815,7 +165853,7 @@ jpl
 pBb
 rFM
 lHe
-hhw
+btW
 eci
 hhw
 eeJ
