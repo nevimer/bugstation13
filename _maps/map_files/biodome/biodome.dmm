@@ -789,7 +789,6 @@
 /obj/machinery/computer/atmos_control/nocontrol/incinerator{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /turf/open/floor/iron/dark/textured,
 /area/station/maintenance/disposal/incinerator)
 "aoF" = (
@@ -3366,6 +3365,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/station/maintenance/disposal)
+"bpr" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 1
+	},
+/obj/structure/lattice,
+/turf/open/space/openspace,
+/area/space/nearstation)
 "bpE" = (
 /obj/effect/spawner/random/structure/crate_abandoned,
 /turf/open/floor/glass,
@@ -19921,11 +19927,6 @@
 	},
 /turf/open/misc/asteroid/airless,
 /area/station/asteroid)
-"igD" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
-/turf/open/floor/iron,
-/area/station/maintenance/disposal/incinerator)
 "igG" = (
 /obj/structure/table/wood,
 /obj/item/camera_film{
@@ -20284,7 +20285,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /obj/structure/lattice,
 /turf/open/space/openspace,
-/area/space)
+/area/space/nearstation)
 "ioC" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -24174,7 +24175,6 @@
 	pixel_y = -24
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "jXA" = (
@@ -27840,10 +27840,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
-"ltP" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/visible,
-/turf/closed/wall/r_wall,
-/area/station/maintenance/disposal/incinerator)
 "ltW" = (
 /obj/structure/cable,
 /turf/open/floor/iron/solarpanel/airless,
@@ -51875,6 +51871,10 @@
 /obj/structure/chair/stool/bar/directional/east,
 /turf/open/floor/carpet/orange,
 /area/station/security/prison)
+"vnI" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible,
+/turf/open/misc/asteroid/airless,
+/area/station/asteroid)
 "vnQ" = (
 /obj/structure/sign/painting/library{
 	pixel_x = -32
@@ -54448,7 +54448,7 @@
 	},
 /obj/structure/lattice,
 /turf/open/space/openspace,
-/area/space)
+/area/space/nearstation)
 "woz" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -59098,7 +59098,6 @@
 "ygC" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible,
 /obj/machinery/atmospherics/pipe/smart/simple/brown/visible/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible/layer2,
 /turf/open/floor/iron,
 /area/station/maintenance/disposal/incinerator)
 "ygM" = (
@@ -154677,14 +154676,14 @@ vwN
 jsO
 lqq
 gRq
-hNy
-hNy
-hNy
-hNy
-hNy
-hNy
-rRv
-rRv
+qHj
+qHj
+qHj
+qHj
+qHj
+qHj
+qHj
+qHj
 qHj
 qHj
 qHj
@@ -154942,9 +154941,9 @@ nec
 nec
 nec
 nec
-rRv
-rRv
-rRv
+qHj
+qHj
+qHj
 qHj
 qHj
 qHj
@@ -155199,16 +155198,16 @@ eAG
 sBK
 peo
 nec
-rRv
-rRv
-rRv
-rRv
-qHj
-qHj
-qHj
-qHj
-qHj
-hHc
+vnI
+vnI
+vnI
+vnI
+vnI
+vnI
+vnI
+vnI
+vnI
+bpr
 hHc
 hHc
 hHc
@@ -155455,7 +155454,7 @@ aQj
 jBH
 mdW
 aou
-ltP
+nec
 oeT
 nec
 nec
@@ -156225,7 +156224,7 @@ tbK
 iat
 hFU
 qDA
-igD
+iat
 tTR
 tTn
 nec
