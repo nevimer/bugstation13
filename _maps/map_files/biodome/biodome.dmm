@@ -996,11 +996,11 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Medbay Security Post"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/security/med,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/checkpoint/medical)
 "asD" = (
@@ -3106,11 +3106,11 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Cargo Security Post"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/any/security/cargo,
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/checkpoint/supply)
 "bjC" = (
@@ -14025,7 +14025,10 @@
 	dir = 9
 	},
 /obj/structure/flora/rock/pile/jungle/style_random,
-/obj/item/food/grown/potato/sweet,
+/obj/item/food/grown/potato/sweet{
+	name = "Yam";
+	desc = "Ooooooooough."
+	},
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "fIP" = (
@@ -22174,7 +22177,7 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
+/obj/effect/mapping_helpers/airlock/access/any/security/science,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "jfn" = (
@@ -42924,10 +42927,10 @@
 /obj/machinery/door/airlock/security/glass{
 	name = "Security Office"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/security/general,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/any/security/engine,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/engineering)
 "rvQ" = (
