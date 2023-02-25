@@ -24,6 +24,13 @@
 /obj/effect/spawner/random/techstorage/rnd_all,
 /turf/open/floor/plating,
 /area/station/engineering/storage/tech)
+"aaH" = (
+/obj/effect/turf_decal/trimline/red/warning{
+	dir = 8
+	},
+/obj/structure/table,
+/turf/open/floor/iron/dark/smooth_half,
+/area/station/security/brig)
 "aaP" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/machinery/door/window/left/directional/north{
@@ -468,6 +475,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/red/filled/corner,
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "ajw" = (
@@ -10754,6 +10764,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
+"eqS" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/turf/closed/wall/r_wall,
+/area/station/security/brig)
 "eqT" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -13274,6 +13288,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "fpH" = (
@@ -15385,7 +15402,8 @@
 	req_access = list("security")
 	},
 /obj/machinery/door/window/right/directional/east{
-	name = "Brig Reception"
+	name = "Brig Reception";
+	req_access = list("security")
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
@@ -16329,6 +16347,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/red/filled/line,
+/obj/structure/railing/corner{
+	dir = 1
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "gBb" = (
@@ -16502,6 +16523,14 @@
 	dir = 1
 	},
 /area/station/service/chapel)
+"gFC" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/iron/stairs/medium{
+	dir = 4
+	},
+/area/station/security/brig)
 "gFK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -25432,7 +25461,7 @@
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/directional/north,
 /obj/machinery/light/directional/north,
-/turf/open/floor/carpet/purple,
+/turf/open/floor/plating,
 /area/station/security/prison/work)
 "ksq" = (
 /obj/structure/cable,
@@ -27427,6 +27456,9 @@
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
 "lhu" = (
@@ -27607,6 +27639,16 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/engineering/transit_tube)
+"lla" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/door/window/brigdoor/security/cell/right/directional/east{
+	name = "Lower Brig";
+	req_access = list("security")
+	},
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "llb" = (
 /obj/machinery/duct,
 /obj/structure/cable,
@@ -30947,7 +30989,8 @@
 	req_access = list("security")
 	},
 /obj/machinery/door/window/left/directional/east{
-	name = "Brig Reception"
+	name = "Brig Reception";
+	req_access = list("security")
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
 	dir = 4;
@@ -35431,13 +35474,6 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
-"opA" = (
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 1
-	},
-/obj/machinery/airalarm/directional/north,
-/turf/open/floor/iron/smooth_half,
-/area/station/security/brig)
 "opC" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron,
@@ -40630,6 +40666,11 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
+"qyo" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/iron/dark/smooth_half,
+/area/station/security/brig)
 "qyt" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
@@ -45290,9 +45331,9 @@
 /turf/open/floor/iron,
 /area/station/engineering/gravity_generator)
 "srW" = (
-/obj/machinery/camera/directional/west{
-	c_tag = "Security - Genpop Lockers"
-	},
+/obj/structure/closet/secure_closet/brig/genpop,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
 "ssh" = (
@@ -46789,6 +46830,15 @@
 /obj/effect/turf_decal/tile/dark_green/diagonal_centre,
 /turf/open/floor/iron/white/smooth_large,
 /area/station/service/kitchen/diner)
+"sYc" = (
+/obj/machinery/camera/directional/west{
+	c_tag = "Security - Genpop Lockers"
+	},
+/obj/structure/closet/secure_closet/brig/genpop,
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron/dark/smooth_half,
+/area/station/security/brig)
 "sYd" = (
 /obj/structure/ladder,
 /obj/machinery/door/window/right/directional/south{
@@ -48105,6 +48155,15 @@
 /obj/effect/spawner/random/food_or_drink,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
+"tyU" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/door/window/brigdoor/security/cell/right/directional/west{
+	name = "Upper Brig";
+	req_access = list("security")
+	},
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/iron/dark/smooth_half,
+/area/station/security/brig)
 "tyV" = (
 /obj/machinery/camera/directional/south{
 	c_tag = "Research - Ordnance Storage";
@@ -49935,6 +49994,15 @@
 /obj/structure/fireaxecabinet/directional/east,
 /turf/open/floor/iron,
 /area/station/engineering/atmos)
+"uqh" = (
+/obj/structure/stairs/west,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/iron/stairs/medium{
+	dir = 4
+	},
+/area/station/security/brig)
 "uqi" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/techstorage/ai_all,
@@ -51237,10 +51305,10 @@
 /turf/open/floor/wood,
 /area/station/command/bridge)
 "uWe" = (
-/obj/structure/table,
 /obj/effect/turf_decal/trimline/red/warning{
 	dir = 8
 	},
+/obj/structure/window/reinforced/spawner/north,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
 "uWr" = (
@@ -52165,6 +52233,14 @@
 	},
 /turf/open/floor/iron/diagonal,
 /area/station/hallway/primary/central)
+"voq" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/red/filled/line,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "vos" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9
@@ -56373,14 +56449,6 @@
 /obj/effect/mapping_helpers/airlock/access/all/security/general,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/processing)
-"wXn" = (
-/obj/effect/turf_decal/trimline/red/filled/line{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/iron/smooth_half,
-/area/station/security/brig)
 "wXt" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plating,
@@ -56600,6 +56668,9 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/trimline/red/filled/corner{
 	dir = 1
+	},
+/obj/structure/railing{
+	dir = 8
 	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
@@ -57117,6 +57188,14 @@
 /obj/machinery/holopad,
 /turf/open/floor/grass,
 /area/station/service/hydroponics)
+"xnu" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/directional/north,
+/obj/structure/cable,
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "xnz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -101247,11 +101326,11 @@ hNy
 hNy
 hNy
 rRv
-cCZ
-rRv
-rRv
-cCZ
-hNy
+kHf
+kHf
+kHf
+kHf
+kHf
 hNy
 hNy
 vtU
@@ -101505,10 +101584,10 @@ hNy
 hNy
 hNy
 kHf
-kHf
-kHf
-kHf
-kHf
+ncW
+uCt
+sYc
+eqS
 kHf
 hNy
 vtU
@@ -101763,9 +101842,9 @@ hNy
 hNy
 kHf
 ncW
-uCt
+xkb
 srW
-ncW
+uqh
 kHf
 hNy
 vtU
@@ -102021,8 +102100,8 @@ kHf
 kHf
 ncW
 xkb
-xkb
-ncW
+srW
+gFC
 kHf
 hNy
 vtU
@@ -102278,8 +102357,8 @@ dhs
 kHf
 ncW
 xkb
-xkb
-ncW
+srW
+tyU
 kHf
 hNy
 vtU
@@ -102535,8 +102614,8 @@ mpy
 kHf
 ncW
 xkb
-xkb
-ncW
+srW
+qyo
 kHf
 hNy
 vtU
@@ -102792,7 +102871,7 @@ tng
 kHf
 jBl
 adL
-adL
+aaH
 uWe
 tZU
 tZU
@@ -165762,7 +165841,7 @@ aEc
 ipA
 vMM
 tgi
-uQE
+voq
 egm
 xLp
 ohQ
@@ -166530,7 +166609,7 @@ lVb
 yho
 yho
 iwf
-ths
+xnu
 vMM
 tgi
 gfw
@@ -167044,7 +167123,7 @@ qDb
 sMA
 xzG
 iwf
-ths
+lla
 lhq
 jep
 jrI
@@ -167301,7 +167380,7 @@ rJk
 xzG
 xzG
 iwf
-wXn
+rWr
 fpE
 tgi
 oKs
@@ -167558,7 +167637,7 @@ iwf
 iwf
 iwf
 iwf
-opA
+rWr
 ajv
 dUY
 qrF
