@@ -5651,6 +5651,10 @@
 "coK" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/visible,
 /obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "cryo_shutters";
+	name = "Cryo Shutter"
+	},
 /turf/open/floor/plating,
 /area/station/medical/cryo)
 "coV" = (
@@ -10358,6 +10362,15 @@
 	},
 /turf/open/floor/bronze,
 /area/station/service/library)
+"efk" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/machinery/button/door/directional/west{
+	name = "Cryo Shutter Control";
+	req_access = list("medical");
+	id = "cryo_shutters"
+	},
+/turf/open/floor/iron/dark,
+/area/station/medical/cryo)
 "efu" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms"
@@ -13158,6 +13171,7 @@
 /area/station/ai_monitored/security/armory)
 "fmH" = (
 /obj/item/food/baked_cheese,
+/obj/structure/rack,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "fmR" = (
@@ -15759,7 +15773,7 @@
 	desc = "Presumably placed here by top men.";
 	name = "\improper Ark of the Covenant"
 	},
-/obj/item/toy/plush/bubbleplush,
+/obj/item/toy/plush/ratplush,
 /turf/open/misc/asteroid,
 /area/station/maintenance/port/central)
 "gpM" = (
@@ -17454,10 +17468,6 @@
 /area/station/service/hydroponics)
 "hac" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "pharmacy_shutters2";
-	name = "Pharmacy Shutter"
-	},
 /obj/machinery/door/poddoor/preopen{
 	id = "pharmacy_shutters2";
 	name = "Pharmacy Shutter"
@@ -26896,6 +26906,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
+"kTK" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron,
+/area/station/security/prison)
 "kTN" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/flora/rock/icy/style_random,
@@ -29082,6 +29096,10 @@
 /area/station/cargo/storage)
 "lOc" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
+/obj/machinery/door/poddoor/preopen{
+	id = "pharmacy_shutters";
+	name = "Pharmacy Shutter"
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/pharmacy)
 "lOh" = (
@@ -48474,6 +48492,11 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/science/xenobiology)
+"tFq" = (
+/obj/machinery/power/apc/auto_name/directional/south,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/station/security/prison/workout)
 "tFt" = (
 /turf/closed/wall,
 /area/station/asteroid)
@@ -48840,6 +48863,10 @@
 /area/station/science/research)
 "tMG" = (
 /obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "cryo_shutters";
+	name = "Cryo Shutter"
+	},
 /turf/open/floor/plating,
 /area/station/medical/cryo)
 "tMJ" = (
@@ -50431,6 +50458,10 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/aft/upper)
+"uBu" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/carpet/black,
+/area/station/security/prison)
 "uBC" = (
 /obj/machinery/atmospherics/pipe/smart/simple/dark/visible{
 	dir = 6
@@ -50559,6 +50590,10 @@
 /area/station/maintenance/disposal/incinerator)
 "uDX" = (
 /obj/machinery/smartfridge/chemistry/preloaded,
+/obj/machinery/door/poddoor/preopen{
+	id = "pharmacy_shutters2";
+	name = "Pharmacy Shutter"
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
 "uEb" = (
@@ -57936,8 +57971,7 @@
 /turf/open/floor/grass,
 /area/station/service/hydroponics/garden)
 "xEm" = (
-/obj/machinery/power/apc/auto_name/directional/north,
-/obj/structure/cable,
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/carpet/neon,
 /area/station/security/prison/workout)
 "xEr" = (
@@ -104937,7 +104971,7 @@ dCO
 dCO
 dCO
 dCO
-cJs
+kTK
 aYJ
 cJs
 pYx
@@ -106486,7 +106520,7 @@ jQK
 gdc
 rCQ
 qtw
-weK
+tFq
 oWW
 hNy
 cCZ
@@ -108531,7 +108565,7 @@ lzO
 bYK
 tbD
 usE
-usE
+uBu
 qkN
 usE
 usE
@@ -146515,7 +146549,7 @@ lwn
 hNT
 tMG
 eGi
-mNP
+efk
 xfv
 mNP
 mhM
