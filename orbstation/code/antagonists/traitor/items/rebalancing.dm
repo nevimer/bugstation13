@@ -7,6 +7,10 @@
 /obj/vehicle/sealed/car/clowncar
 	escape_time = 15 SECONDS // Actually longer, but we removed the requirement to stay still
 
+/obj/vehicle/sealed/car/clowncar/Initialize(mapload)
+	. = ..()
+	emag_act() // Always use emag behaviour, it's silly for this item to upgrade something anyway
+
 /datum/armor/mod_theme_infiltrator // More similar to nuke op, still a bit better
 	melee = 20
 	bullet = 30
