@@ -12,16 +12,16 @@
 
 /obj/structure/closet/secure_closet/chief_medical/PopulateContents()
 	..()
-	new /obj/item/gun/energy/e_gun/mini(src)
+	new /obj/item/gun/energy/e_gun/mini/permitless(src)
 
 /obj/structure/closet/secure_closet/research_director/PopulateContents()
 	..()
-	new /obj/item/gun/energy/e_gun/mini(src)
+	new /obj/item/gun/energy/e_gun/mini/permitless(src)
 
 /obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
 	..()
-	new /obj/item/gun/energy/e_gun/mini(src)
+	new /obj/item/gun/energy/e_gun/mini/permitless(src)
 
 /obj/structure/closet/secure_closet/quartermaster/PopulateContents()
 	..()
-	new /obj/item/gun/energy/e_gun/mini(src)
+	new /obj/item/gun/energy/e_gun/mini/permitless(src)
