@@ -122,7 +122,7 @@
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
 		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
-	target.apply_damage(force * fist_pressure_setting, BRUTE, wound_bonus = CANT_WOUND)
+	target.apply_damage(force, BRUTE, wound_bonus = CANT_WOUND) // ORBSTATION: don't multiply the force
 	playsound(src, 'sound/weapons/resonator_blast.ogg', 50, TRUE)
 	playsound(src, 'sound/weapons/genhit2.ogg', 50, TRUE)
 
