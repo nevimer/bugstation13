@@ -116,14 +116,22 @@
 	if((!bomb && bombcheck) || !target || (get_dist(get_turf(target), get_turf(user)) <= 2))
 		return ..()
 
+	user.visible_message(
+		span_danger("[user] points [src] at [target]!"),
+		span_danger("You point [src] at [target]!")
+	)
+
 	cached_target = WEAKREF(target)
 	cached_modifiers = params
 	if(bomb?.valve_open)
-		user.visible_message(
-			span_danger("[user] points [src] at [target]!"),
-			span_danger("You point [src] at [target]!")
-		)
 		return
+
+	// ORBSTATION: Fire after a delay
+	playsound(src, 'sound/machines/boltsup.ogg', 50, TRUE)
+	if(!do_after(user, 2 SECONDS, src))
+		balloon_alert(user, "interrupted!")
+		return
+	// ORBSTATION end
 
 	cached_firer = WEAKREF(user)
 	if(!bomb)
