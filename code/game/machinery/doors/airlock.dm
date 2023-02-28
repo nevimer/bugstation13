@@ -712,14 +712,14 @@
 		if(isElectrified() && shock(user, 100))
 			return
 
-	if(ishuman(user) && prob(40) && density)
+	if(ishuman(user) && prob(5) && density) // ORBSTATION: adjusted probability
 		var/mob/living/carbon/human/H = user
 		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
 			playsound(src, 'sound/effects/bang.ogg', 25, TRUE)
 			if(!istype(H.head, /obj/item/clothing/head/helmet))
 				H.visible_message(span_danger("[user] headbutts the airlock."), \
 									span_userdanger("You headbutt the airlock!"))
-				H.Paralyze(100)
+				H.Paralyze(0.5 SECONDS) // ORBSTATION: adjusted duration
 				H.apply_damage(10, BRUTE, BODY_ZONE_HEAD)
 			else
 				visible_message(span_danger("[user] headbutts the airlock. Good thing [user.p_theyre()] wearing a helmet."))

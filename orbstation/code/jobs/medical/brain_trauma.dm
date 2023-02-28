@@ -78,6 +78,9 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 	gain_text = span_warning("You can't seem to concentrate.")
 	lose_text = span_notice("You feel focused.")
 
+/datum/brain_trauma/mild/dumbness/on_life(delta_time, times_fired)
+	return // This was just forced speech which we do not want
+
 /datum/brain_trauma/special/psychotic_brawling
 	name = "Chaotic Brawler"
 	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
