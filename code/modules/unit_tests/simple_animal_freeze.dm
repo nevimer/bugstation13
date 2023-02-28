@@ -116,6 +116,7 @@
 		/mob/living/simple_animal/hostile/bee/queen,
 		/mob/living/simple_animal/hostile/bee/short,
 		/mob/living/simple_animal/hostile/bee/toxin,
+		/mob/living/simple_animal/hostile/bee/toxin/holo,
 		/mob/living/simple_animal/hostile/big_legion,
 		/mob/living/simple_animal/hostile/blob,
 		/mob/living/simple_animal/hostile/blob/blobbernaut,
