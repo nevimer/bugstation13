@@ -4033,6 +4033,16 @@
 "ll" = (
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
+"lm" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	piping_layer = 4;
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/structure/mop_bucket/janitorialcart,
+/obj/item/mop,
+/turf/open/floor/iron/dark,
+/area/awaymission/snowdin/post/custodials)
 "ln" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
@@ -6439,11 +6449,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/lava/plasma,
 /area/awaymission/snowdin/cave/cavern)
-"rW" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/window/reinforced/plasma/unanchored,
-/turf/open/lava/plasma,
-/area/awaymission/snowdin/cave/cavern)
 "rY" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/random/exotic/snow_gear,
@@ -7184,6 +7189,11 @@
 /obj/effect/baseturf_helper/asteroid/snow,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/broken_shuttle)
+"vO" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/window/reinforced/plasma/spawner,
+/turf/open/lava/plasma,
+/area/awaymission/snowdin/cave/cavern)
 "vR" = (
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
@@ -7980,12 +7990,6 @@
 	},
 /obj/structure/fence/corner,
 /turf/open/floor/plating/snowed/cavern,
-/area/awaymission/snowdin/cave/cavern)
-"zl" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/window/reinforced/plasma/spawner/north,
-/obj/structure/window/reinforced/plasma/unanchored,
-/turf/open/lava/plasma,
 /area/awaymission/snowdin/cave/cavern)
 "zm" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -9170,16 +9174,6 @@
 /obj/item/shard,
 /turf/open/floor/mineral/plastitanium/red,
 /area/awaymission/snowdin/cave)
-"Et" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/mop_bucket/janitorialcart,
-/obj/item/mop,
-/turf/open/floor/iron/dark,
-/area/awaymission/snowdin/post/custodials)
 "Eu" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/cup/glass/bottle/beer{
@@ -9491,6 +9485,12 @@
 	heat_capacity = 1e+006
 	},
 /area/awaymission/snowdin/post/mining_dock)
+"FW" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/window/reinforced/plasma/spawner/north,
+/obj/structure/window/reinforced/plasma/spawner,
+/turf/open/lava/plasma,
+/area/awaymission/snowdin/cave/cavern)
 "FZ" = (
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/mining_main)
@@ -21927,7 +21927,7 @@ it
 jm
 jR
 jR
-Et
+lm
 mb
 mG
 mG
@@ -62400,7 +62400,7 @@ Bx
 BF
 rV
 rV
-rW
+vO
 fr
 sG
 rV
@@ -62545,7 +62545,7 @@ fr
 fr
 fr
 pA
-rW
+vO
 fr
 sG
 pA
@@ -62639,9 +62639,9 @@ fr
 fr
 pA
 rV
-rW
+vO
 fr
-zl
+FW
 fr
 sG
 rV
@@ -65047,7 +65047,7 @@ Cc
 rV
 rV
 rV
-rW
+vO
 fr
 sG
 rV
@@ -66332,7 +66332,7 @@ rV
 rV
 rV
 rV
-rW
+vO
 fr
 sG
 rV
@@ -66509,7 +66509,7 @@ fr
 fr
 rV
 rV
-rW
+vO
 fr
 sG
 rV
@@ -68034,7 +68034,7 @@ eJ
 eJ
 eJ
 pA
-rW
+vO
 fr
 sG
 rV

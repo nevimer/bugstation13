@@ -747,6 +747,17 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central)
+"apC" = (
+/obj/structure/cable,
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/supply/qm,
+/obj/machinery/door/airlock/command{
+	name = "Quartermaster's Office"
+	},
+/turf/open/floor/iron,
+/area/station/command/heads_quarters/qm)
 "apG" = (
 /obj/machinery/light_switch/directional/south,
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
@@ -8878,6 +8889,18 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/engine,
 /area/station/engineering/atmospherics_engine)
+"dmU" = (
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/security/glass{
+	name = "Security Office"
+	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/any/security/science,
+/turf/open/floor/iron,
+/area/station/security/checkpoint/science)
 "dno" = (
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
@@ -14851,18 +14874,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
-"fAe" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Engineering Security Post"
-	},
-/obj/machinery/door/firedoor,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/airlock/access/any/security/engine,
-/turf/open/floor/iron,
-/area/station/security/checkpoint/engineering)
 "fAI" = (
 /obj/effect/spawner/random/structure/crate,
 /obj/effect/decal/cleanable/dirt,
@@ -18564,18 +18575,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"gTo" = (
-/obj/effect/turf_decal/tile/red/fourcorners,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/glass{
-	name = "Security Office"
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/access/any/security/science,
-/turf/open/floor/iron,
-/area/station/security/checkpoint/science)
 "gTt" = (
 /turf/open/floor/carpet,
 /area/station/command/heads_quarters/hos)
@@ -23042,6 +23041,14 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/greater)
+"itX" = (
+/obj/effect/spawner/structure/window,
+/obj/machinery/door/poddoor/preopen{
+	id = "qmprivacy";
+	name = "Privacy Shutters"
+	},
+/turf/open/floor/plating,
+/area/station/command/heads_quarters/qm)
 "itY" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "Engineering";
@@ -28810,16 +28817,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
-"knT" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Security Post - Cargo"
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/access/any/security/cargo,
-/turf/open/floor/iron,
-/area/station/security/checkpoint/supply)
 "knU" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -30153,18 +30150,6 @@
 /obj/machinery/telecomms/broadcaster/preset_right,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/station/tcommsat/server)
-"kOh" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/security/glass{
-	name = "Medbay Security Post"
-	},
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/airlock/access/any/security/med,
-/turf/open/floor/iron/dark,
-/area/station/security/checkpoint/medical)
 "kOp" = (
 /obj/machinery/door/window/right/directional/south{
 	dir = 8;
@@ -32533,6 +32518,20 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/station/engineering/supermatter/room)
+"lEa" = (
+/obj/structure/table/wood,
+/obj/machinery/keycard_auth/directional/south{
+	pixel_x = -6
+	},
+/obj/machinery/button/door/directional/south{
+	id = "qmprivacy";
+	name = "Privacy Shutters Control";
+	req_access = list("qm");
+	pixel_y = -26;
+	pixel_x = 8
+	},
+/turf/open/floor/wood,
+/area/station/command/heads_quarters/qm)
 "lEr" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/cable,
@@ -45006,6 +45005,18 @@
 	},
 /turf/open/floor/iron/white/smooth_large,
 /area/station/medical/office)
+"pYy" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/security/glass{
+	name = "Medbay Security Post"
+	},
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/mapping_helpers/airlock/access/any/security/med,
+/turf/open/floor/iron/dark,
+/area/station/security/checkpoint/medical)
 "pYL" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -46958,10 +46969,6 @@
 /obj/effect/spawner/random/maintenance,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/fore)
-"qIK" = (
-/obj/effect/spawner/structure/window,
-/turf/open/floor/plating,
-/area/station/command/heads_quarters/qm)
 "qIP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -47648,15 +47655,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
-"qUm" = (
-/obj/effect/spawner/random/vending/snackvend,
-/obj/machinery/light/directional/east,
-/obj/machinery/light/directional/east,
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/turf/open/floor/wood,
-/area/station/security/office)
 "qUz" = (
 /obj/effect/turf_decal/tile/purple/half/contrasted,
 /turf/open/floor/iron/white,
@@ -53789,17 +53787,6 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/port)
-"sXz" = (
-/obj/structure/cable,
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/access/all/supply/qm,
-/obj/machinery/door/airlock/command/glass{
-	name = "Quartermaster's Office"
-	},
-/turf/open/floor/iron,
-/area/station/command/heads_quarters/qm)
 "sXE" = (
 /obj/structure/cable,
 /turf/open/floor/wood,
@@ -59980,6 +59967,14 @@
 /obj/machinery/vending/coffee,
 /turf/open/floor/iron/dark,
 /area/station/security/courtroom)
+"vfI" = (
+/obj/effect/spawner/random/vending/snackvend,
+/obj/machinery/light/directional/east,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/turf/open/floor/wood,
+/area/station/security/office)
 "vfO" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -61587,11 +61582,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/commons/fitness/recreation)
-"vHG" = (
-/obj/structure/table/wood,
-/obj/machinery/keycard_auth/directional/south,
-/turf/open/floor/wood,
-/area/station/command/heads_quarters/qm)
 "vHO" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
@@ -64499,6 +64489,18 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/department/medical/central)
+"wKF" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Engineering Security Post"
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/mapping_helpers/airlock/access/any/security/engine,
+/turf/open/floor/iron,
+/area/station/security/checkpoint/engineering)
 "wKG" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -68653,6 +68655,16 @@
 	},
 /turf/open/floor/iron,
 /area/station/medical/medbay/lobby)
+"yhp" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Security Post - Cargo"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/any/security/cargo,
+/turf/open/floor/iron,
+/area/station/security/checkpoint/supply)
 "yhK" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/stripes/line{
@@ -85967,7 +85979,7 @@ kQP
 kQP
 apZ
 lnG
-qIK
+itX
 ikJ
 kKr
 hyW
@@ -86224,7 +86236,7 @@ kQP
 mxO
 qkD
 ksM
-qIK
+itX
 xWV
 kKr
 hyW
@@ -86476,11 +86488,11 @@ jRM
 uKm
 thQ
 lme
-qIK
+itX
 sRD
 nre
 uXZ
-vHG
+lEa
 kQP
 kQP
 tiD
@@ -86733,7 +86745,7 @@ xCt
 iqt
 iqt
 utp
-sXz
+apC
 qTx
 qTx
 fHX
@@ -86990,7 +87002,7 @@ jRM
 bgx
 mmR
 wRj
-qIK
+itX
 cjJ
 cjJ
 cjJ
@@ -87247,7 +87259,7 @@ dka
 bgx
 mmR
 nyk
-qIK
+itX
 suJ
 bor
 iLV
@@ -87507,8 +87519,8 @@ nQh
 kQP
 kQP
 kQP
-qIK
-qIK
+itX
+itX
 kQP
 kQP
 kQP
@@ -88006,7 +88018,7 @@ jXu
 jmR
 ohf
 oUx
-knT
+yhp
 ivX
 bgx
 edA
@@ -92420,7 +92432,7 @@ aum
 qPJ
 qPJ
 qPJ
-kOh
+pYy
 qPJ
 qPJ
 qPJ
@@ -100398,7 +100410,7 @@ qos
 cQr
 kZx
 oBz
-gTo
+dmU
 vcE
 vcE
 oBz
@@ -101608,7 +101620,7 @@ kcg
 meL
 mxn
 iDP
-qUm
+vfI
 gMZ
 gTk
 ilh
@@ -110900,7 +110912,7 @@ hmf
 glz
 khu
 khu
-fAe
+wKF
 khu
 tKE
 uRL
