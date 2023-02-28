@@ -20,3 +20,22 @@
 /turf/open/floor/fake_snow/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 0
+
+/turf/open/floor/fake_iron_sand
+	desc = "Wait a minute. This martian soil is just painted on!"
+	icon_state = "ironsand1"
+	base_icon_state = "ironsand1"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SAND
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/floor/fake_iron_sand/Initialize(mapload)
+	. = ..()
+	icon_state = "ironsand[rand(1,15)]"
+
+/turf/open/floor/fake_iron_sand/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
+
+/turf/open/floor/fake_iron_sand/crowbar_act(mob/living/user, obj/item/I)
+	return
