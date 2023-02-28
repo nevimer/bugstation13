@@ -2,11 +2,9 @@
 GLOBAL_VAR_INIT(traitor_limit_antag_count, 0)
 
 /datum/game_mode/dynamic
-	/// Theoretical percentage of crew that can become traitors at 100 threat.
-	/// Used to calculate maximum traitor count for current population and threat level.
-	/// Remember that threat level generally falls somewhere around 50.
+	/// The number of alive players is multitplied by this percentage to determine the traitor limit.
 	/// Configurable in dynamic.json.
-	var/max_threat_traitor_percent = 0.5
+	var/traitor_limit_scaling_percentage = 0.25
 	/// Minimum amount of threat allowed to generate.
 	var/min_threat_level = 30
 	/// Chance that the roundstart threat report will be wrong about the threat level.
@@ -19,7 +17,7 @@ GLOBAL_VAR_INIT(traitor_limit_antag_count, 0)
 /// Calculates the limit for midround/latejoin traitor spawns based on current population and threat level.
 /// Returns TRUE or FALSE depending on if more traitors can spawn or not.
 /datum/game_mode/dynamic/proc/calculate_traitor_limit()
-	var/traitor_limit = round(((threat_level / 100) * max_threat_traitor_percent) * GLOB.alive_player_list.len, 1)
+	var/traitor_limit = round(traitor_limit_scaling_percentage * GLOB.alive_player_list.len, 1)
 	if(GLOB.traitor_limit_antag_count >= traitor_limit)
 		return FALSE
 
