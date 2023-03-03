@@ -4913,6 +4913,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/machinery/light/floor,
 /turf/open/floor/wood/parquet,
 /area/station/hallway/primary/central)
 "bWE" = (
@@ -11628,6 +11629,10 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central/aft)
+"eEW" = (
+/obj/machinery/light/cold/directional/west,
+/turf/open/floor/iron/terracotta,
+/area/station/hallway/secondary/construction/engineering)
 "eFi" = (
 /obj/structure/fluff/broken_flooring{
 	icon_state = "singular"
@@ -14168,6 +14173,7 @@
 /obj/item/stock_parts/cell/high,
 /obj/machinery/newscaster/directional/north,
 /obj/effect/turf_decal/tile/dark_red/half/contrasted,
+/obj/item/storage/belt/utility,
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 1
 	},
@@ -22722,7 +22728,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/iron,
 /area/station/engineering/atmos)
 "jeH" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -25180,6 +25186,15 @@
 "kfh" = (
 /turf/closed/wall/r_wall,
 /area/station/security/interrogation)
+"kfk" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/structure/railing,
+/obj/machinery/light/floor,
+/turf/open/floor/wood/parquet,
+/area/station/hallway/primary/central)
 "kfl" = (
 /obj/machinery/duct,
 /obj/effect/turf_decal/tile/purple/half/contrasted{
@@ -30517,7 +30532,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/openspace,
+/turf/open/floor/catwalk_floor/iron_smooth,
 /area/station/engineering/atmos/mix)
 "mcE" = (
 /obj/machinery/atmospherics/pipe/smart/manifold/purple/visible{
@@ -31223,6 +31238,11 @@
 	},
 /obj/item/storage/toolbox/electrical,
 /obj/item/clothing/head/utility/welding,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/head/utility/welding{
+	pixel_x = -3;
+	pixel_y = 5
+	},
 /obj/item/clothing/glasses/welding,
 /turf/open/floor/iron/white/smooth_edge{
 	dir = 4
@@ -36465,7 +36485,6 @@
 /turf/open/floor/engine,
 /area/station/engineering/atmos/hfr_room)
 "owj" = (
-/obj/machinery/light/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable/layer3,
 /turf/open/floor/engine,
@@ -38380,7 +38399,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/department/security/brig)
 "pjD" = (
-/obj/structure/tank_holder/extinguisher,
+/obj/effect/spawner/random/trash/moisture_trap,
 /turf/open/floor/plating,
 /area/station/maintenance/starboard/central)
 "pjI" = (
@@ -40039,6 +40058,10 @@
 /obj/machinery/computer/slot_machine,
 /turf/open/floor/stone,
 /area/station/commons/lounge)
+"pVe" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/engine,
+/area/station/engineering/supermatter/room)
 "pVf" = (
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume/incinerator_atmos{
 	dir = 8
@@ -40610,9 +40633,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/disposalpipe/junction{
 	dir = 4
 	},
@@ -45919,7 +45939,9 @@
 /turf/open/water/jungle/biodome,
 /area/station/biodome)
 "sjD" = (
-/obj/structure/statue/sandstone/venus,
+/obj/structure/statue/sandstone/venus{
+	anchored = 1
+	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/stone,
 /area/station/maintenance/starboard/central)
@@ -48810,7 +48832,8 @@
 /area/station/service/janitor)
 "trR" = (
 /obj/structure/statue/sandstone/venus{
-	dir = 1
+	dir = 1;
+	anchored = 1
 	},
 /obj/effect/turf_decal/bot_white,
 /turf/open/floor/stone,
@@ -49450,7 +49473,9 @@
 /area/station/science/circuits)
 "tEb" = (
 /obj/effect/turf_decal/tile/neutral/diagonal_centre,
-/obj/structure/mannequin/wood,
+/obj/structure/mannequin/wood{
+	anchored = 1
+	},
 /turf/open/floor/iron,
 /area/station/commons/locker)
 "tEq" = (
@@ -59098,6 +59123,10 @@
 /obj/machinery/light/warm/directional/north,
 /turf/open/floor/iron/dark,
 /area/station/medical/virology)
+"xAJ" = (
+/obj/machinery/light/directional/south,
+/turf/closed/mineral/random/stationside/asteroid/porus,
+/area/station/asteroid)
 "xAY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -93903,7 +93932,7 @@ gzb
 xTY
 qDk
 nTx
-nTx
+eEW
 uMM
 nnp
 nTx
@@ -97022,7 +97051,7 @@ nlO
 nlO
 nlO
 owj
-gXp
+pVe
 lCl
 kzz
 igj
@@ -156839,7 +156868,7 @@ mQi
 mQi
 mQi
 mQi
-sSz
+kfk
 nuN
 opX
 opX
@@ -162979,7 +163008,7 @@ oBm
 pmH
 pGm
 lHq
-ayc
+sro
 jzd
 dtv
 pGm
@@ -175088,7 +175117,7 @@ lWc
 qYc
 xvk
 xvk
-hNy
+xAJ
 hNy
 eZB
 eZB
