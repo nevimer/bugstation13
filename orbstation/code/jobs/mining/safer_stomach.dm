@@ -6,13 +6,6 @@
 	. = ..()
 	victim.AddElement(/datum/element/safe_stomach, regenerative_stomach = TRUE)
 
-/datum/action/cooldown/mob_cooldown/devour/burrow_and_devour(mob/living/devourer, mob/living/target)
-	. = ..()
-	if (target.loc != devourer)
-		return
-	target.AddElement(/datum/element/safe_stomach)
-	target.death() // Force untarget
-
 /**
  * Attached to a mob who has been eaten by another mob...
  * Prevents decay and optionally also heals them.
