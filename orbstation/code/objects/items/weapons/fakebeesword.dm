@@ -1,4 +1,4 @@
-/obj/item/weapons/fakebeesword
+/obj/item/melee/fakebeesword
 	name = "The Stinger"
 	desc = "A cheap replica of The Stinger. It isn't nearly as powerful, no wonder it's wielder died."
 	icon = 'icons/obj/weapons/items_and_weapons.dmi'
@@ -19,7 +19,7 @@
 	attack_verb_simple = list("slash", "sting", "prickle", "poke")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
-/obj/item/weapons/fakebeesword/afterattack(atom/target, mob/user, proximity)
+/obj/item/melee/fakebeesword/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity)
 		return
