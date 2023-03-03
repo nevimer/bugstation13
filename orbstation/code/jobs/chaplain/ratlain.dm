@@ -1,29 +1,53 @@
 /datum/religion_sect/rat
 	name = "Rat Worship"
-	desc = "Sacrifice cheese and mouse traps to grant favour."
+	desc = "Sacrifice cheese and mouse traps to grant favour. Can only heal rats with their bible, but can do so beyond death itself."
 	quote = "Let's see what kind of trouble we can get ourselves into."
 	tgui_icon = "cheese"
 	alignment = ALIGNMENT_NEUT
 	desired_items = list(/obj/item/food/ = "(especially cheese and dairy)", /obj/item/assembly/mousetrap)
-	rites_list = list(/datum/religion_rites/ratconvert, /datum/religion_rites/ratclog)
+	rites_list = list(/datum/religion_rites/ratconvert, /datum/religion_rites/pied_piper, /datum/religion_rites/ratclog)
 	altar_icon_state = "convertaltar-maint"
 
 #define SOUND_SQUEAK 'sound/effects/mousesqueek.ogg'
 
 /datum/religion_sect/rat/sect_bless(mob/living/target, mob/living/chap)
-	if (ishuman(target))
+	if (!ismouse(target) && !isregalrat(target))
 		return FALSE
-
+	if(target.health >= target.maxHealth)
+		return TRUE
 	if (ismouse(target))
-		var/mob/living/basic/mouse/blessedR = target
-		if(blessedR.health < blessedR.maxHealth)
-			blessedR.heal_bodypart_damage(blessedR.maxHealth)
-			blessedR.visible_message(span_notice("[chap] heals [blessedR] with the power of [GLOB.deity]!"))
-			to_chat(blessedR, span_boldnotice("May the power of [GLOB.deity] compel you to be healed!"))
-			playsound(chap, SOUND_SQUEAK, 25, TRUE, -1)
-			blessedR.add_mood_event("blessing", /datum/mood_event/blessing)
-
+		target.fully_heal()
+	else
+		target.heal_overall_damage(brute = 10, burn = 10)
+	target.visible_message(span_notice("[chap] heals [target] with the power of [GLOB.deity]!"))
+	to_chat(target, span_boldnotice("May the power of [GLOB.deity] compel you to be healed!"))
+	playsound(chap, SOUND_SQUEAK, 25, TRUE, -1)
 	return TRUE
+
+/obj/item/food/deadmouse/Initialize(mapload)
+	. = ..()
+	RegisterSignal(src, COMSIG_BIBLE_SMACKED, PROC_REF(on_bibled))
+
+/// When hit by a bible, check if we can spring back to life
+/obj/item/food/deadmouse/proc/on_bibled(datum/source, mob/living/user, direction)
+	SIGNAL_HANDLER
+	if(!istype(GLOB.religious_sect, /datum/religion_sect/rat) || !user.mind?.holy_role)
+		return
+
+	INVOKE_ASYNC(src, PROC_REF(reanimate), user)
+	return COMSIG_END_BIBLE_CHAIN
+
+/// Return from the grave
+/obj/item/food/deadmouse/proc/reanimate(mob/living/user)
+	balloon_alert(user, "reanimating...")
+	playsound(src, 'sound/effects/singlebeat.ogg', 60, TRUE)
+	if(!do_after(user, 4 SECONDS, target = src))
+		balloon_alert(user, "interrupted!")
+		return
+	playsound(src, 'sound/magic/magic_block_holy.ogg', 60, TRUE)
+	var/mob/living/basic/mouse/new_mouse = new(get_turf(src), /* tame = */ TRUE)
+	new_mouse.visible_message(span_notice("[new_mouse] miraculously springs to life!"))
+	qdel(src)
 
 #define TRAP_FAVOUR 25
 #define DAIRY_BONUS_MULT 2
@@ -56,6 +80,7 @@
 #undef DAIRY_BONUS_MULT
 #undef PER_NUTRIMENT_FAVOUR
 
+/// A rite to fill people with rat spit, so rats won't attack them
 /datum/religion_rites/ratconvert
 	name = "Rat Monarch Blessing"
 	desc = "Undergo the trial of the Rat Monarchs, after which rats will regard you as kin. Buckle a human to your altar to bless them, otherwise it will bless you."
@@ -97,7 +122,7 @@
 	if(!rite_target)
 		return FALSE
 
-	if (("rat" in rite_target.faction))
+	if ((FACTION_RAT in rite_target.faction))
 		rite_target.visible_message(span_notice("[rite_target] has already received the blessing!"))
 		return FALSE
 
@@ -117,6 +142,7 @@
 	C.reagents.add_reagent(/datum/reagent/rat_spit, 2 * REAGENTS_METABOLISM)
 	..()
 
+/// A rite which makes mice or rats appear... somewhere
 /datum/religion_rites/ratclog
 	name = "Call Forth Rodents"
 	desc = "Somewhere on the station, they will hear your call."
@@ -158,5 +184,93 @@
 
 /datum/round_event/scrubber_clog/rats/announce()
 	priority_announce("Rodent population explosion detected in the ventilation network. Blockage is believed to be in the [get_area_name(scrubber)] area.", "Infestation Alert")
+
+/// A rite which befriends a rat or mouse, if it doesn't already have an owner
+/datum/religion_rites/pied_piper
+	name = "Piper's Charm"
+	desc = "Whisper into the ear of a rodent placed upon your altar, persuading it to be a loyal companion."
+	ritual_length = 10 SECONDS
+	ritual_invocations = list("#Squeak squeak squeak.",
+	"#Eek squeak eek? Squeak eek.")
+	invoke_msg = "Squeak squeak eek squeak eek!"
+	favor_cost = 100
+	/// List of instructions we can give to a mouse
+	var/static/list/mouse_commands = list(
+		/datum/pet_command/idle,
+		/datum/pet_command/free,
+		/datum/pet_command/follow,
+	)
+
+/datum/religion_rites/pied_piper/perform_rite(mob/living/user, atom/religious_tool)
+	if(!ismovable(religious_tool))
+		religious_tool.balloon_alert(user, "invalid altar!")
+		return FALSE
+	var/atom/movable/movable_reltool = religious_tool
+	if(!movable_reltool)
+		return FALSE
+	if(!LAZYLEN(movable_reltool.buckled_mobs))
+		religious_tool.balloon_alert(user, "no valid target!")
+		return FALSE
+	var/mouse_count = 0
+	for (var/mob/living/basic/mouse/target_mouse in movable_reltool.buckled_mobs)
+		if(target_mouse.GetComponent(/datum/component/obeys_commands))
+			mouse_count++
+			continue // Already converted
+		to_chat(user, span_warning("You're going to bless the one buckled on [movable_reltool]."))
+		return ..()
+	if (mouse_count == 0)
+		religious_tool.balloon_alert(user, "only works on mice!")
+	else
+		religious_tool.balloon_alert(user, "mouse already converted!")
+	return FALSE
+
+/datum/religion_rites/pied_piper/invoke_effect(mob/living/user, atom/movable/religious_tool)
+	. = ..()
+	if(!ismovable(religious_tool))
+		CRASH("[name]'s perform_rite had a movable atom that has somehow turned into a non-movable!")
+	var/atom/movable/movable_reltool = religious_tool
+	var/mob/living/basic/mouse/rite_target
+	var/mouse_count = 0
+	for(var/mob/living/basic/mouse/target_mouse in movable_reltool.buckled_mobs)
+		mouse_count++
+		if(target_mouse.GetComponent(/datum/component/obeys_commands))
+			continue
+		rite_target = target_mouse
+		break
+	if(!rite_target)
+		if (mouse_count == 0)
+			religious_tool.balloon_alert(user, "mouse escaped!")
+		else
+			religious_tool.balloon_alert(user, "mouse already converted!")
+		return FALSE
+
+	var/list/command_list = mouse_commands.Copy()
+	if (rite_target.obj_damage == 0) // This is a mouse, not a rat
+		rite_target.ai_controller = new /datum/ai_controller/basic_controller/mouse_friend(rite_target)
+	else
+		command_list += /datum/pet_command/point_targetting/attack/mouse
+	rite_target.AddComponent(/datum/component/obeys_commands, command_list)
+	qdel(rite_target.GetComponent(/datum/component/tameable))
+	rite_target.befriend(user)
+	playsound(user, SOUND_SQUEAK, 25, TRUE, -1)
+	rite_target.balloon_alert_to_viewers("squeak!")
+	rite_target.resist_buckle()
+
+/// Mouse AI which isn't scared of humans and can follow instructions
+/datum/ai_controller/basic_controller/mouse_friend
+	blackboard = list(
+		BB_CURRENT_HUNTING_TARGET = null, // cheese
+		BB_LOW_PRIORITY_HUNTING_TARGET = null, // cable
+	)
+
+	ai_traits = STOP_MOVING_WHEN_PULLED
+	ai_movement = /datum/ai_movement/basic_avoidance
+	idle_behavior = /datum/idle_behavior/idle_random_walk
+	planning_subtrees = list(
+		/datum/ai_planning_subtree/pet_planning,
+		/datum/ai_planning_subtree/find_and_hunt_target/look_for_cheese,
+		/datum/ai_planning_subtree/random_speech/mouse,
+		/datum/ai_planning_subtree/find_and_hunt_target/look_for_cables,
+	)
 
 #undef SOUND_SQUEAK
