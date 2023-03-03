@@ -101,3 +101,35 @@
 		/obj/item/stack/sheet/pizza/fifty=1,
 		)
 	generate_items_inside(items_inside,src)
+
+/obj/item/storage/belt/medical/abductor
+	name = "\improper Zetan medical belt"
+	desc = "A belt used by extremely strong doctors."
+	icon = 'icons/obj/abductor.dmi'
+	icon_state = "belt"
+	inhand_icon_state = "security"
+	worn_icon_state = "security"
+	content_overlays = TRUE
+
+/obj/item/storage/belt/medical/abductor/PopulateContents()
+	new /obj/item/scalpel/alien(src)
+	new /obj/item/retractor/alien(src)
+	new /obj/item/hemostat/alien(src)
+	new /obj/item/circular_saw/alien(src)
+	new /obj/item/cautery/alien(src)
+	new /obj/item/surgicaldrill/alien(src)
+	new /obj/item/surgical_drapes(src)
+
+//Giving subtypes to some items so they have clearer names in the sandbox vendor
+/obj/item/storage/belt/military/abductor/full/zetan
+	name = "\improper Zetan toolbelt"
+	desc = "A belt used by extremely strong engineers."
+
+/obj/item/storage/belt/medical/ert/debug
+	name = "advanced medical belt"
+
+/obj/item/storage/belt/utility/full/powertools/debug
+	name = "advanced toolbelt"
+
+/obj/item/uplink/sandbox //This is NOT the debug uplink, which has unlimited TC, because I don't think we should give those out.
+	name = "traitor uplink"
