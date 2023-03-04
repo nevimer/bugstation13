@@ -11,7 +11,7 @@
 	if (isalien(target))
 		return ..()
 	if (apply_debuff && istype(target))
-		target.apply_status_effect(/datum/status_effect/xeno_neurotoxin)
+		target.apply_status_effect(/datum/status_effect/xeno_neurotoxin, blocked)
 	return ..()
 
 /// Deals stamina damage on application and more over time
@@ -29,15 +29,26 @@
 	desc = "You can feel yourself going numb."
 	icon_state = "woozy"
 
+/datum/status_effect/xeno_neurotoxin/on_creation(mob/living/new_owner, blocked_amount)
+	duration = blocked_scaling(initial(duration), blocked_amount)
+	instant_damage = blocked_scaling(initial(instant_damage), blocked_amount)
+	return ..()
+
 /datum/status_effect/xeno_neurotoxin/on_apply()
 	. = ..()
 	owner.apply_damage(instant_damage, damagetype = STAMINA)
 
-/datum/status_effect/xeno_neurotoxin/refresh(effect, ...)
-	duration += initial(duration)
-	owner.apply_damage(instant_damage, damagetype = STAMINA)
+/datum/status_effect/xeno_neurotoxin/refresh(effect, blocked_amount)
+	instant_damage = blocked_scaling(initial(instant_damage), blocked_amount)
+	duration += blocked_scaling(initial(duration), blocked_amount)
+	owner.apply_damage(blocked_scaling(instant_damage, blocked_amount), damagetype = STAMINA)
 
 /datum/status_effect/xeno_neurotoxin/tick(delta_time, times_fired)
 	owner.apply_damage(damage_per_tick, damagetype = STAMINA)
 	if(HAS_TRAIT_FROM(owner, TRAIT_INCAPACITATED, STAMINA)) // Entered stamina crit
 		qdel(src)
+
+/// If the target is wearing something which blocks or partially blocks neurotoxin, reduce the damage & duration
+/datum/status_effect/xeno_neurotoxin/proc/blocked_scaling(value, blocked_percent)
+	var/scaler = (100 - blocked_percent) / 100
+	return value * scaler
