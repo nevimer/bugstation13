@@ -15159,8 +15159,10 @@
 /area/station/science/xenobiology)
 "fUx" = (
 /obj/structure/table/wood,
-/obj/item/paper_bin/carbon,
-/obj/item/pen,
+/obj/machinery/fax{
+	fax_name = "Psychology Office";
+	name = "Psychology Office Fax Machine"
+	},
 /turf/open/floor/wood/parquet,
 /area/station/medical/psychology)
 "fUz" = (
@@ -52822,11 +52824,10 @@
 /area/station/maintenance/department/crew_quarters/dorms)
 "uYf" = (
 /obj/structure/table/wood,
-/obj/machinery/fax{
-	fax_name = "Psychology Office";
-	name = "Psychology Office Fax Machine"
-	},
 /obj/structure/sign/poster/official/random/directional/south,
+/obj/machinery/computer/records/medical/laptop{
+	dir = 1
+	},
 /turf/open/floor/wood/parquet,
 /area/station/medical/psychology)
 "uYi" = (
@@ -53067,10 +53068,9 @@
 /area/station/engineering/lobby)
 "vdi" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/records/medical/laptop{
-	dir = 4
-	},
 /obj/item/radio/intercom/directional/west,
+/obj/item/paper_bin/carbon,
+/obj/item/pen,
 /turf/open/floor/wood/parquet,
 /area/station/medical/psychology)
 "vdl" = (
