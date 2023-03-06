@@ -53,3 +53,26 @@
 	var/atom/movable/body = pick(chasm_contents)
 	body.forceMove(get_turf(src))
 	return TRUE
+
+// Orb override to climb calmly out of a chasm instead of hurling yourself in a random direction
+/datum/component/chasm/on_revive(mob/living/escapee)
+	var/atom/chasm = parent
+	var/turf/escape_turf = get_nearest_safe_turf(chasm)
+	if (!escape_turf)
+		return ..() // Fall back to flinging
+
+	chasm.visible_message(span_boldwarning("After a long climb, [escapee] emerges from [chasm]!"))
+	escapee.forceMove(escape_turf)
+	escapee.Paralyze(5 SECONDS, TRUE)
+	UnregisterSignal(escapee, COMSIG_LIVING_REVIVE)
+
+/datum/component/chasm/proc/get_nearest_safe_turf(atom/chasm)
+	var/list/nearby_open_turfs = list()
+	for (var/turf/open/sanctuary in orange(3, chasm))
+		if (sanctuary.is_blocked_turf(exclude_mobs = FALSE) || ischasm(sanctuary) || islava(sanctuary))
+			continue
+		nearby_open_turfs += sanctuary
+
+	if (!length(nearby_open_turfs))
+		return null
+	return get_closest_atom(/turf/, nearby_open_turfs, chasm)
