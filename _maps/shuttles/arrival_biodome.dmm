@@ -2,14 +2,30 @@
 "a" = (
 /turf/open/floor/wood/large,
 /area/shuttle/arrival)
+"b" = (
+/obj/structure/table,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/book/granter/magazine/biodome{
+	pixel_x = 5
+	},
+/turf/open/floor/wood/large,
+/area/shuttle/arrival)
 "c" = (
 /obj/structure/window/reinforced{
 	dir = 4;
 	layer = 2.9
 	},
 /obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/item/book/granter/magazine/biodome,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/book/granter/magazine/biodome{
+	pixel_x = -7
+	},
 /obj/docking_port/mobile/arrivals,
 /turf/open/floor/glass/reinforced,
 /area/shuttle/arrival)
@@ -24,9 +40,17 @@
 /area/shuttle/arrival)
 "f" = (
 /obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/effect/spawner/random/clothing/island_time,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_y = 2;
+	pixel_x = -6
+	},
+/obj/effect/spawner/random/clothing/island_time{
+	pixel_y = 3
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "h" = (
@@ -47,7 +71,10 @@
 /turf/open/floor/glass/reinforced,
 /area/shuttle/arrival)
 "j" = (
-/obj/item/book/granter/magazine/biodome,
+/obj/item/book/granter/magazine/biodome{
+	pixel_y = 8;
+	pixel_x = 4
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "k" = (
@@ -65,8 +92,13 @@
 /area/shuttle/arrival)
 "l" = (
 /obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/item/book/granter/magazine/biodome,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/book/granter/magazine/biodome{
+	pixel_x = -6
+	},
 /turf/open/floor/wood/large,
 /area/shuttle/arrival)
 "m" = (
@@ -101,7 +133,10 @@
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "s" = (
-/obj/effect/spawner/random/clothing/island_time,
+/obj/effect/spawner/random/clothing/island_time{
+	pixel_y = -4;
+	pixel_x = -3
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "t" = (
@@ -149,7 +184,9 @@
 /turf/open/floor/wood/large,
 /area/shuttle/arrival)
 "B" = (
-/obj/effect/spawner/random/food_or_drink/island_booze,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 7
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "C" = (
@@ -272,9 +309,17 @@
 /area/shuttle/arrival)
 "V" = (
 /obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/effect/spawner/random/food_or_drink/island_booze,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_y = 4
+	},
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 9;
+	pixel_y = 9
+	},
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = -4;
+	pixel_y = 7
+	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 "X" = (
@@ -285,6 +330,19 @@
 	dir = 1
 	},
 /turf/open/misc/beach/coastline_b,
+/area/shuttle/arrival)
+"Z" = (
+/obj/structure/table,
+/obj/effect/spawner/random/food_or_drink/island_booze,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/effect/spawner/random/clothing/island_time{
+	pixel_x = -6;
+	pixel_y = 7
+	},
+/turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 
 (1,1,1) = {"
@@ -388,7 +446,7 @@ S
 "}
 (12,1,1) = {"
 S
-f
+Z
 r
 Q
 E
@@ -408,7 +466,7 @@ P
 w
 a
 A
-l
+b
 A
 a
 w
