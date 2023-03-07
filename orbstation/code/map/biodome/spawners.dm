@@ -7,11 +7,15 @@
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/cuba_libre = 2,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/iced_tea = 4,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/long_island_iced_tea = 2,
+		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/long_john_silver = 2,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/margarita = 3,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/mauna_loa = 1,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/painkiller = 2,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/pina_colada = 4,
+		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/salt_and_swell = 2,
+		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/sea_breeze = 3,
 		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/tequila_sunrise = 3,
+		/obj/item/reagent_containers/cup/glass/drinkingglass/filled/tropical_storm = 2,
 	)
 
 //filled drinks to populate the spawner with (these are here because they aren't used anywhere else)
@@ -35,6 +39,10 @@
 	name = "Long Island Iced Tea"
 	list_reagents = list(/datum/reagent/consumable/ethanol/longislandicedtea = 25)
 
+/obj/item/reagent_containers/cup/glass/drinkingglass/filled/long_john_silver
+	name = "Long John Silver"
+	list_reagents = list(/datum/reagent/consumable/ethanol/long_john_silver = 25)
+
 /obj/item/reagent_containers/cup/glass/drinkingglass/filled/margarita
 	name = "Margarita"
 	list_reagents = list(/datum/reagent/consumable/ethanol/margarita = 25)
@@ -51,9 +59,21 @@
 	name = "Pina Colada"
 	list_reagents = list(/datum/reagent/consumable/ethanol/pina_colada = 25)
 
+/obj/item/reagent_containers/cup/glass/drinkingglass/filled/salt_and_swell
+	name = "Salt and Swell"
+	list_reagents = list(/datum/reagent/consumable/ethanol/salt_and_swell = 25)
+
+/obj/item/reagent_containers/cup/glass/drinkingglass/filled/sea_breeze
+	name = "Sea Breeze"
+	list_reagents = list(/datum/reagent/consumable/ethanol/sea_breeze = 25)
+
 /obj/item/reagent_containers/cup/glass/drinkingglass/filled/tequila_sunrise
 	name = "Tequila Sunrise"
 	list_reagents = list(/datum/reagent/consumable/ethanol/tequila_sunrise = 25)
+
+/obj/item/reagent_containers/cup/glass/drinkingglass/filled/tropical_storm
+	name = "Tropical Storm"
+	list_reagents = list(/datum/reagent/consumable/ethanol/tropical_storm = 25)
 
 /obj/effect/spawner/random/clothing/island_time
 	name = "island time clothing spawner"
