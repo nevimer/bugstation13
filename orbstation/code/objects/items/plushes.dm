@@ -7,13 +7,6 @@
 	attack_verb_simple = list("squeak", "erm", "blush")
 	gender = FEMALE
 
-/obj/machinery/vending/wardrobe/cargo_wardrobe
-    premium = list(
-        /obj/item/clothing/under/rank/cargo/miner = 3,
-        /obj/item/clothing/head/costume/mailman = 1,
-        /obj/item/clothing/under/misc/mailman = 1,
-        /obj/item/toy/plush/felfyplushie = 1,
-    )
 
 /obj/item/toy/plush/pennyplushie
 	name = "lady penelope dreadful plushie"
@@ -24,8 +17,3 @@
 	attack_verb_simple = list("ohoho", "bite", "treat")
 	gender = FEMALE
 
-/obj/machinery/vending/wardrobe/bar_wardrobe
-		premium = list(
-		/obj/item/storage/box/dishdrive = 1,
-		/obj/item/toy/plush/pennyplushie = 1,
-		)
