@@ -1,7 +1,7 @@
 /obj/machinery/vending/sandboxvend
 	name = "SandboxVend"
 	desc = "Free tools to help you sandbox. Use at your own discretion, and try not to ruin the station for others."
-	icon = 'orbstation/icons/obj/sbvend.dmi'
+	icon = 'orbstation/icons/obj/vending.dmi'
 	icon_state = "sbv"
 	panel_type = "sbvpanel"
 	product_slogans = "Video games!;Find your true love here!;Slap it up!;It's all free!;Trans your gender!;Yayayayayay!"

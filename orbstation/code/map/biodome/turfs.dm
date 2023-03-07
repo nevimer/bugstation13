@@ -39,3 +39,16 @@
 
 /turf/open/floor/fake_iron_sand/crowbar_act(mob/living/user, obj/item/I)
 	return
+
+/turf/open/floor/wood/stairs
+	icon = 'orbstation/icons/turf/floor.dmi'
+	icon_state = "woodstairs_up"
+
+/turf/open/floor/wood/stairs/down
+	icon_state = "woodstairs_down"
+
+/turf/open/floor/wood/stairs/left
+	icon_state = "woodstairs_left"
+
+/turf/open/floor/wood/stairs/right
+	icon_state = "woodstairs_right"
