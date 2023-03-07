@@ -2,17 +2,6 @@
 "a" = (
 /turf/open/floor/wood/large,
 /area/shuttle/arrival)
-"b" = (
-/obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze{
-	pixel_x = -6;
-	pixel_y = 5
-	},
-/obj/item/book/granter/magazine/biodome{
-	pixel_x = 5
-	},
-/turf/open/floor/wood/large,
-/area/shuttle/arrival)
 "c" = (
 /obj/structure/window/reinforced{
 	dir = 4;
@@ -50,6 +39,19 @@
 	},
 /obj/effect/spawner/random/clothing/island_time{
 	pixel_y = 3
+	},
+/turf/open/floor/iron/terracotta/small,
+/area/shuttle/arrival)
+"g" = (
+/obj/structure/table,
+/obj/effect/spawner/random/food_or_drink/island_booze,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = 6;
+	pixel_y = 4
+	},
+/obj/effect/spawner/random/clothing/island_time{
+	pixel_x = -6;
+	pixel_y = 7
 	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
@@ -153,7 +155,7 @@
 /obj/machinery/door/airlock/titanium{
 	name = "Arrivals Shuttle Airlock"
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/shuttle/arrival)
 "x" = (
 /obj/effect/turf_decal/siding/wood{
@@ -291,7 +293,7 @@
 /area/shuttle/arrival)
 "S" = (
 /obj/effect/spawner/structure/window/reinforced/shuttle,
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/shuttle/arrival)
 "T" = (
 /obj/structure/chair/comfy/shuttle{
@@ -322,6 +324,17 @@
 	},
 /turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
+"W" = (
+/obj/structure/table,
+/obj/effect/spawner/random/food_or_drink/island_booze{
+	pixel_x = -6;
+	pixel_y = 5
+	},
+/obj/item/book/granter/magazine/biodome{
+	pixel_x = 5
+	},
+/turf/open/floor/wood/large,
+/area/shuttle/arrival)
 "X" = (
 /turf/open/floor/glass/reinforced,
 /area/shuttle/arrival)
@@ -330,19 +343,6 @@
 	dir = 1
 	},
 /turf/open/misc/beach/coastline_b,
-/area/shuttle/arrival)
-"Z" = (
-/obj/structure/table,
-/obj/effect/spawner/random/food_or_drink/island_booze,
-/obj/effect/spawner/random/food_or_drink/island_booze{
-	pixel_x = 6;
-	pixel_y = 4
-	},
-/obj/effect/spawner/random/clothing/island_time{
-	pixel_x = -6;
-	pixel_y = 7
-	},
-/turf/open/floor/iron/terracotta/small,
 /area/shuttle/arrival)
 
 (1,1,1) = {"
@@ -446,7 +446,7 @@ S
 "}
 (12,1,1) = {"
 S
-Z
+g
 r
 Q
 E
@@ -466,7 +466,7 @@ P
 w
 a
 A
-b
+W
 A
 a
 w
