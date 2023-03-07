@@ -19,7 +19,6 @@
 #define BUGS (1<<18)
 #define GORE (1<<19)
 #define CUCUMBER (1<<20)
-#define DONK (1<<21) //ORBSTATION ADDITION
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -67,7 +66,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"BUGS", \
 	"GORE", \
 	"CUCUMBER", \
-	"DONK", \ //ORBSTATION ADDITION
 )
 
 /// IC meaning (more or less) for food flags
@@ -93,7 +91,6 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Bugs", \
 	"Gore", \
 	"Cucumbers", \
-	"Donk", \ //ORBSTATION ADDITION
 )
 
 #define DRINK_NICE 1

@@ -1,46 +1,46 @@
 //Makes donk pockets edible by everyone
 
 /obj/item/food/donkpocket
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/dankpocket
-	foodtypes = DONK | VEGETABLES
+	foodtypes = JUNKFOOD | VEGETABLES
 
 /obj/item/food/donkpocket/spicy
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/spicy
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/teriyaki
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/teriyaki
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/pizza
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/pizza
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/honk
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/honk
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/berry
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/berry
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/gondola
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
 
 /obj/item/food/donkpocket/warm/gondola
-	foodtypes = DONK
+	foodtypes = JUNKFOOD
