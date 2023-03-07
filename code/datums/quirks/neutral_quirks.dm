@@ -412,7 +412,7 @@
 	// Gamer diet
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	var/datum/species/species = human_holder.dna.species
-	species.liked_food = JUNKFOOD
+	species.liked_food = JUNKFOOD | DONK //ORBSTATION EDIT
 	RegisterSignal(human_holder, COMSIG_SPECIES_GAIN, PROC_REF(on_species_gain))
 	RegisterSignal(human_holder, COMSIG_MOB_WON_VIDEOGAME, PROC_REF(won_game))
 	RegisterSignal(human_holder, COMSIG_MOB_LOST_VIDEOGAME, PROC_REF(lost_game))
