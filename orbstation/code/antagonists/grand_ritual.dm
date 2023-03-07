@@ -47,15 +47,3 @@
 
 /datum/grand_finale/armageddon/death_yell(mob/living/carbon/human/invoker)
 	priority_announce(pick(possible_last_words + orb_last_words), null, 'sound/magic/voidblink.ogg', sender_override = "[invoker.real_name]")
-
-#define RITUAL_EXTRA_TIME 3 MINUTES
-
-// Extend active shuttle timers
-/obj/effect/grand_rune/on_invocation_complete(mob/living/user)
-	if (SSshuttle.emergency && (SSshuttle.emergency.mode == SHUTTLE_CALL || SSshuttle.emergency.mode == SHUTTLE_DOCKED))
-		SSshuttle.emergency.setTimer(SSshuttle.emergency.timeLeft(1) + RITUAL_EXTRA_TIME)
-		var/time_left = SSshuttle.emergency.timeLeft()
-		priority_announce("Unexpected interference with shuttle routing calculations. [SSshuttle.emergency.mode == SHUTTLE_CALL ? "arrival" : "departure"] will now occur in an estimated [(time_left / 60) % 60]:[add_leading(num2text(time_left % 60), 2, "0")] minutes.", sound = ANNOUNCER_SPANOMALIES)
-	return ..()
-
-#undef RITUAL_EXTRA_TIME
