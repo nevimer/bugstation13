@@ -16,3 +16,13 @@
 			category["products"] += orb_category["products"]
 			break
 	return ..()
+
+/obj/machinery/vending/wardrobe/cargo_wardrobe
+    orb_premium = list(
+        /obj/item/toy/plush/felfyplushie = 1,
+    )
+
+/obj/machinery/vending/wardrobe/bar_wardrobe
+    orb_premium = list(
+        /obj/item/toy/plush/pennyplushie = 1,
+    )
