@@ -2,7 +2,6 @@
 /datum/orderable_item/veggies/korta_nut
 	name = "Korta Nut"
 	item_path = /obj/item/food/grown/korta_nut
-	cost_per_order = 10
 
 /datum/orderable_item/veggies/sweet_korta_nut
 	name = "Sweet Korta Nut"
