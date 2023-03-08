@@ -151,9 +151,8 @@
 	name = "NanoTrasen 'Biodome' Travel Brochure"
 	starting_title = "NanoTrasen 'Biodome' Travel Brochure"
 	desc = "A somewhat tacky brochure for NanoTrasen's new line of 'Biodome'-class stations."
-	icon = 'icons/obj/bureaucracy.dmi'
-	icon_state = "pamphlet" //TODO: make a unique magazine sprite instead
-	pages_to_mastery = 3 //so you can see a few remarks each time
+	icon_state = "biochure"
+	pages_to_mastery = 2 //so you can see a few remarks each time
 	remarks = list(
 		"Now with live, open-air entertainment (entertainment is still largely clown-based)...",
 		"See the dome in style with our new 'BioTube' transit system...",
