@@ -162,7 +162,6 @@
 	default_price = 0
 	extra_price = 0
 	payment_department = NO_FREEBIES // yes freebies bitch
-	light_mask = "magivend-light-mask"
 	light_color = LIGHT_COLOR_PURPLE
 
 //price overrides

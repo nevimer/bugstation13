@@ -114,7 +114,7 @@ GLOBAL_LIST_EMPTY(journeymanstart)
  * Returns true if we managed to generate an objective
  */
 /datum/antagonist/wizard_journeyman/proc/add_theft_objective()
-	var/datum/objective/steal/owned/theft = new
+	var/datum/objective/steal/theft = new
 	theft.owner = owner
 	theft.find_target(list(owner))
 	objectives += theft

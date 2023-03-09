@@ -4,7 +4,7 @@
 /// equipping blood brothers with new implant
 /datum/antagonist/brother/on_gain()
 	. = ..()
-	var/datum/objective/steal/owned/brothers/light_steal = locate() in objectives
+	var/datum/objective/steal/brothers/light_steal = locate() in objectives
 	if(!light_steal)
 		return
 	var/obj/item/implant/holo_pad_projector/bb_implant = new(owner.current)
@@ -28,11 +28,11 @@
 
 //changes to objectives.
 
-/datum/objective/steal/owned/brothers
+/datum/objective/steal/brothers
 	/// Where the objective is to be delivered to
 	var/delivery_site
 
-/datum/objective/steal/owned/brothers/set_target(datum/objective_item/item)
+/datum/objective/steal/brothers/set_target(datum/objective_item/item)
 	. = ..()
 	if(!item)
 		return
@@ -88,7 +88,7 @@
 
 /// completes objective and removes implants from all blood brothers
 /datum/team/brother_team/proc/bounty_complete()
-	var/datum/objective/steal/owned/brothers/steal_objective = locate() in objectives
+	var/datum/objective/steal/brothers/steal_objective = locate() in objectives
 	if(steal_objective)
 		steal_objective.completed = TRUE
 	for(var/datum/mind/brother in members)
@@ -101,7 +101,7 @@
 /// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
 	if(!length(objectives))
-		var/datum/objective/steal/owned/brothers/steal_objective = new()
+		var/datum/objective/steal/brothers/steal_objective = new()
 		steal_objective.delivery_site = initial(delivery_site.name)
 		add_objective(steal_objective, needs_target = TRUE)
 		return

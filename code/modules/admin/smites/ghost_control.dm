@@ -1,7 +1,7 @@
-/datum/smite/deadchatpossession
+/datum/smite/ghost_control
 	name = "Ghost Control"
 
-/datum/smite/deadchatpossession/effect(client/user, mob/living/target)
+/datum/smite/ghost_control/effect(client/user, mob/living/target)
 	target.AddComponent(/datum/component/deadchat_control/cardinal_movement, ANARCHY_MODE, list(
 		"clap" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "clap"),
 		"cry" = CALLBACK(target, TYPE_PROC_REF(/mob, emote), "cry"),
@@ -23,7 +23,7 @@
 	to_chat(target, span_revenwarning("You feel a ghastly presence!!!"))
 
 
-/datum/smite/deadchatpossession/proc/ghost_shove(mob/living/carbon/target)
+/datum/smite/ghost_control/proc/ghost_shove(mob/living/carbon/target)
 	if(!istype(target) || target.get_active_held_item())
 		return
 	var/list/shoveables = list()
@@ -32,9 +32,9 @@
 	if(!length(shoveables))
 		return
 	var/mob/living/shove_me = pick(shoveables)
-	target.attack_hand_secondary(shove_me)
+	target.UnarmedAttack(shove_me, proximity_flag = TRUE, modifiers = list("right" = TRUE))
 
-/datum/smite/deadchatpossession/proc/ghost_sit(mob/living/target)
+/datum/smite/ghost_control/proc/ghost_sit(mob/living/target)
 	if(HAS_TRAIT(target, TRAIT_IMMOBILIZED))
 		return
 	var/list/chairs = list()
@@ -45,7 +45,7 @@
 	var/obj/structure/chair/sitting_chair = pick(chairs)
 	sitting_chair.buckle_mob(target, check_loc = FALSE)
 
-/datum/smite/deadchatpossession/proc/ghost_speed(mob/living/target, new_speed)
+/datum/smite/ghost_control/proc/ghost_speed(mob/living/target, new_speed)
 	if(target.m_intent == new_speed)
 		return
 	target.toggle_move_intent()

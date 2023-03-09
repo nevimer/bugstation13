@@ -55,34 +55,34 @@
 	if(!new_ling)
 		return
 
-	var/turf/T
+	var/turf/picked_turf
 	var/datum/map_template/shuttle/changeling_pod/ship = new
 	if(SSmapping.empty_space) // if there's an empty space z level, spawn the pod somewhere there
 		var/x = rand(TRANSITIONEDGE,world.maxx - TRANSITIONEDGE - ship.width)
 		var/y = rand(TRANSITIONEDGE,world.maxy - TRANSITIONEDGE - ship.height)
 		var/z = SSmapping.empty_space.z_value
-		T = locate(x,y,z)
+		picked_turf = locate(x,y,z)
 	else // otherwise, try to use a random carp spawn location
 		var/list/spawn_points = list()
-		for(var/obj/effect/landmark/carpspawn/C in GLOB.landmarks_list)
-			spawn_points += C
+		for(var/obj/effect/landmark/carpspawn/carp_spawn in GLOB.landmarks_list)
+			spawn_points += carp_spawn
 		var/obj/pod_spawn = pick(spawn_points)
-		T = locate(pod_spawn.x,pod_spawn.y,pod_spawn.z)
-		pod_spawn.Destroy() // removes the spawn point from the landmarks list so the game doesn't spawn a carp on our poor changeling
+		picked_turf = locate(pod_spawn.x,pod_spawn.y,pod_spawn.z)
+		qdel(pod_spawn) // removes the spawn point from the landmarks list so the game doesn't spawn a carp on our poor changeling
 
-	if(!T)
+	if(!picked_turf)
 		CRASH("Changeling infiltrator event found no turf to load in.")
 
-	if(!ship.load(T, centered = TRUE))
+	if(!ship.load(picked_turf, centered = TRUE))
 		CRASH("Loading changeling infiltrator ship failed!")
 
 	// Spawns the changeling at the changeling spawner object
 	// don't feel great about this, but the problem is that get_affected_turfs returns a list of turfs
 	// so you have to loop through the turfs and then loop through each turf to find the spawner object
 	// the pirate event also does this. it is what it is
-	for(var/turf/A in ship.get_affected_turfs(T, centered = TRUE))
+	for(var/turf/A in ship.get_affected_turfs(picked_turf, centered = TRUE))
 		for(var/obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator/spawner in A)
-			var/mob/living/carbon/human/new_mob = spawner.create(new_ling)
+			var/mob/living/carbon/human/new_mob = spawner.create_from_ghost(new_ling)
 			return new_mob
 
 /obj/effect/mob_spawn/ghost_role/human/changeling_infiltrator
