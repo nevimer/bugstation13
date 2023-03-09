@@ -34,7 +34,13 @@
 	if(!nukeop_outfit) // this variable is null in instances where an antagonist datum is granted via enslaving the mind (/datum/mind/proc/enslave_mind_to_creator), like in golems.
 		return
 
-	operative.set_species(/datum/species/human) //Plasmamen burn up otherwise, and besides, all other species are vulnerable to asimov AIs. Let's standardize all operatives being human.
+	//ORBSTATION EDIT - Nukies can be multiple species picked from a whitelist. This cannot go upstream due to Asimov AI policy.
+	var/datum/species/nukie_species = pick(GLOB.nukeops_species_whitelist)
+	if(nukie_species)
+		operative.set_species(nukie_species)
+	else
+		operative.set_species(/datum/species/human) //just in case
+	//END ORBSTATION EDIT
 
 	operative.equipOutfit(nukeop_outfit)
 	return TRUE
