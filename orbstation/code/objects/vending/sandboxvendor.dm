@@ -11,6 +11,7 @@
 	tiltable = FALSE // i love you
 	use_power = NO_POWER_USE
 	idle_power_usage = 0
+	light_mask = "sbv-light-mask"
 	product_categories = list(
 		list(
 			"name" = "Essentials",
