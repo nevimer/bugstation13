@@ -1,12 +1,14 @@
 /datum/traitor_objective_category/assassinate
 	name = "Assassination"
 	objectives = list(
+		//starter assassinations, basically just require you to kill someone
 		list(
-			/datum/traitor_objective/assassinate/calling_card = 3,
+			/datum/traitor_objective/assassinate/calling_card = 1,
+			/datum/traitor_objective/assassinate/behead = 1,
+		) = 1,
+		//above but for heads
+		list(
 			/datum/traitor_objective/assassinate/calling_card/heads_of_staff = 1,
-		) = 5,
-		list(
-			/datum/traitor_objective/assassinate/behead = 3,
 			/datum/traitor_objective/assassinate/behead/heads_of_staff = 1,
 		) = 1,
 	)
@@ -17,10 +19,7 @@
 
 	abstract_type = /datum/traitor_objective/assassinate
 
-	progression_minimum = 20 MINUTES
-
-	progression_reward = 12 MINUTES
-	telecrystal_reward = list(1, 2)
+	progression_minimum = 30 MINUTES
 
 	// The code below is for limiting how often you can get this objective. You will get this objective at a maximum of maximum_objectives_in_period every objective_period
 	/// The objective period at which we consider if it is an 'objective'. Set to 0 to accept all objectives.
@@ -45,20 +44,22 @@
 /datum/traitor_objective/assassinate/calling_card
 	name = "Assassinate %TARGET% the %JOB TITLE%, and plant a calling card"
 	description = "Kill your target and plant a calling card in the pockets of your victim. If your calling card gets destroyed before you are able to plant it, this objective will fail."
+	progression_reward = 2 MINUTES
+	telecrystal_reward = list(1, 2)
 
-	var/obj/item/paper/calling_card/card // the object that will be spawned by the calling card button
+	var/obj/item/paper/calling_card/card
 
 /datum/traitor_objective/assassinate/calling_card/heads_of_staff
-	progression_reward = 16 MINUTES
-	telecrystal_reward = list(3, 4)
+	progression_reward = 4 MINUTES
+	telecrystal_reward = list(2, 3)
 
 	heads_of_staff = TRUE
 
 /datum/traitor_objective/assassinate/behead
 	name = "Behead %TARGET%, the %JOB TITLE%"
 	description = "Behead and hold %TARGET%'s head to succeed this objective. If the head gets destroyed before you can do this, you will fail this objective."
-
-	progression_reward = 16 MINUTES
+	progression_reward = 2 MINUTES
+	telecrystal_reward = list(1, 2)
 
 	///the body who needs to hold the head
 	var/mob/living/needs_to_hold_head
@@ -66,8 +67,8 @@
 	var/obj/item/bodypart/head/behead_goal
 
 /datum/traitor_objective/assassinate/behead/heads_of_staff
-	progression_reward = 20 MINUTES
-	telecrystal_reward = list(3, 4)
+	progression_reward = 4 MINUTES
+	telecrystal_reward = list(2, 3)
 
 	heads_of_staff = TRUE
 

@@ -1,11 +1,9 @@
-#define KIDNAP_BASE_PROG_REWARD 15 MINUTES
-
 /datum/traitor_objective_category/kidnapping
 	name = "Kidnap Personnel"
 	objectives = list( //Similar weights to destroy heirloom objectives
 		list(
 			/datum/traitor_objective/kidnapping/common = 20,
-			/datum/traitor_objective/kidnapping/less_common = 1,
+			/datum/traitor_objective/kidnapping/common/assistant = 1,
 		) = 4,
 		/datum/traitor_objective/kidnapping/uncommon = 3,
 		/datum/traitor_objective/kidnapping/rare = 2,
@@ -18,12 +16,6 @@
 		They must be delivered ALIVE, or this objective will fail."
 
 	abstract_type = /datum/traitor_objective/kidnapping
-
-	//this is a prototype so this progression is for all basic level kill objectives
-	progression_reward = KIDNAP_BASE_PROG_REWARD
-	telecrystal_reward = list(2, 3)
-
-	progression_minimum = 30 MINUTES
 
 	/// The period of time until you can take another objective after taking 3 objectives.
 	var/objective_period = 15 MINUTES
@@ -51,7 +43,7 @@
 /datum/traitor_objective/kidnapping/New(datum/uplink_handler/handler)
 	. = ..()
 	AddComponent(/datum/component/traitor_objective_limit_per_time, \
-		/datum/traitor_objective/assassinate, \
+		/datum/traitor_objective/kidnapping, \
 		time_period = objective_period, \
 		maximum_objectives = maximum_objectives_in_period \
 	)
@@ -59,32 +51,34 @@
 /datum/traitor_objective/kidnapping/common
 	progression_minimum = 0 MINUTES
 	progression_maximum = 30 MINUTES
+	progression_reward = list(2 MINUTES, 4 MINUTES)
+	telecrystal_reward = list(1, 2)
 	target_jobs = list(
+		// Cargo
+		/datum/job/cargo_technician,
+		// Engineering
+		/datum/job/atmospheric_technician,
+		/datum/job/station_engineer,
 		// Medical
+		/datum/job/chemist,
 		/datum/job/doctor,
 		/datum/job/paramedic,
 		/datum/job/psychologist,
-		/datum/job/chemist,
-		// Service
-		/datum/job/clown,
-		/datum/job/botanist,
-		/datum/job/janitor,
-		/datum/job/mime,
-		/datum/job/lawyer,
-		/datum/job/chaplain,
-		/datum/job/bartender,
-		/datum/job/curator,
-		// Cargo
-		/datum/job/cargo_technician,
 		// Science
 		/datum/job/geneticist,
 		/datum/job/roboticist,
-		// Engineering
-		/datum/job/station_engineer,
-		/datum/job/atmospheric_technician,
+		// Service
+		/datum/job/bartender,
+		/datum/job/botanist,
+		/datum/job/chaplain,
+		/datum/job/clown,
+		/datum/job/curator,
+		/datum/job/janitor,
+		/datum/job/lawyer,
+		/datum/job/mime,
 	)
 
-/datum/traitor_objective/kidnapping/less_common
+/datum/traitor_objective/kidnapping/common/assistant
 	progression_minimum = 0 MINUTES
 	progression_maximum = 15 MINUTES
 	target_jobs = list(
@@ -94,49 +88,47 @@
 /datum/traitor_objective/kidnapping/uncommon //Hard to fish out victims
 	progression_minimum = 0 MINUTES
 	progression_maximum = 45 MINUTES
+	progression_reward = list(4 MINUTES, 8 MINUTES)
+	telecrystal_reward = list(2, 3)
+
 	target_jobs = list(
-		// Medical
-		/datum/job/virologist,
 		// Cargo
 		/datum/job/shaft_miner,
-		// Service
-		/datum/job/cook,
+		// Medical
+		/datum/job/virologist,
 		// Science
 		/datum/job/scientist,
+		// Service
+		/datum/job/cook,
 	)
 
-	progression_reward = KIDNAP_BASE_PROG_REWARD + 3 MINUTES
-	telecrystal_reward = list(3, 4)
-	alive_bonus = 1
-
 /datum/traitor_objective/kidnapping/rare
+	progression_minimum = 15 MINUTES
+	progression_maximum = 60 MINUTES
+	progression_reward = list(8 MINUTES, 12 MINUTES)
+	telecrystal_reward = list(4, 5)
 	target_jobs = list(
-		// Security
-		/datum/job/security_officer,
-		/datum/job/warden,
-		/datum/job/detective,
 		// Heads of staff
-		/datum/job/head_of_personnel,
+		/datum/job/chief_engineer,
 		/datum/job/chief_medical_officer,
+		/datum/job/head_of_personnel,
 		/datum/job/research_director,
 		/datum/job/chief_engineer,
 		/datum/job/quartermaster,
+		// Security
+		/datum/job/detective,
+		/datum/job/security_officer,
+		/datum/job/warden,
 	)
-
-	progression_reward = KIDNAP_BASE_PROG_REWARD + 6 MINUTES
-	telecrystal_reward = list(4, 5)
-	alive_bonus = 2
 
 /datum/traitor_objective/kidnapping/captain
-	progression_minimum = 60 MINUTES
+	progression_minimum = 30 MINUTES
+	progression_reward = list(12 MINUTES, 16 MINUTES)
+	telecrystal_reward = list(4, 5)
 	target_jobs = list(
+		/datum/job/captain,
 		/datum/job/head_of_security,
-		/datum/job/captain
 	)
-
-	progression_reward = KIDNAP_BASE_PROG_REWARD + 10 MINUTES
-	telecrystal_reward = 5
-	alive_bonus = 2
 
 /datum/traitor_objective/kidnapping/generate_objective(datum/mind/generating_for, list/possible_duplicates)
 
@@ -352,7 +344,3 @@
 	sent_mob.set_eye_blur_if_lower(100 SECONDS)
 
 	new /obj/effect/pod_landingzone(pick(possible_turfs), return_pod)
-
-
-
-#undef KIDNAP_BASE_PROG_REWARD
