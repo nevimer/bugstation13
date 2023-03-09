@@ -1,7 +1,7 @@
 /obj/machinery/vending/sandboxvend
 	name = "SandboxVend"
 	desc = "Free tools to help you sandbox. Use at your own discretion, and try not to ruin the station for others."
-	icon = 'orbstation/icons/obj/sbvend.dmi'
+	icon = 'orbstation/icons/obj/vending.dmi'
 	icon_state = "sbv"
 	panel_type = "sbvpanel"
 	product_slogans = "Video games!;Find your true love here!;Slap it up!;It's all free!;Trans your gender!;Yayayayayay!"
@@ -59,8 +59,10 @@
 			"products" = list(
 				/obj/item/clothing/glasses/debug = 999,
 				/obj/item/clothing/gloves/chief_engineer = 999,
-				/obj/item/storage/belt/medical/ert = 999,
-				/obj/item/storage/belt/utility/full/powertools = 999,
+				/obj/item/storage/belt/medical/ert/debug = 999,
+				/obj/item/storage/belt/medical/abductor = 999,
+				/obj/item/storage/belt/utility/full/powertools/debug = 999,
+				/obj/item/storage/belt/military/abductor/full/zetan = 999,
 				/obj/item/clothing/shoes/magboots/advance = 999,
 				/obj/item/radio/headset/headset_cent/commander = 999,
 				/obj/item/storage/belt/military = 999,
@@ -153,6 +155,7 @@
 		/obj/item/stack/sheet/hauntium/fifty = 99,
 		/obj/item/suspiciousphone = 99,
 		/obj/item/guardiancreator/tech/choose/traitor = 99,
+		/obj/item/uplink/sandbox = 99, // Yes, infinite traitor uplinks might destroy the station, but it's for sandbox.
 	)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	refill_canister = /obj/item/vending_refill/clothing // wont populate categories without this
