@@ -99,7 +99,7 @@
 
 /datum/supply_pack/organic/randomized/dough/fill(obj/structure/closet/crate/newcrate)
 	for(var/i in 1 to 10)
-		var/item = pick(contains)
+		var/item = pick_weight(contains)
 		new item(newcrate)
 
 /obj/item/pizzabox/mothic_margherita
