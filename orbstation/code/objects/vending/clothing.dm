@@ -66,7 +66,7 @@
         list(
             "name" = "Accessories",
             "products" = list(
-                /obj/item/lipstick = 2,
+				/obj/item/lipstick = 2,
 				/obj/item/lipstick/white =2,
 				/obj/item/lipstick/blue =2,
 				/obj/item/lipstick/purple = 2,
