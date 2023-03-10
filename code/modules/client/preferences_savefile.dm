@@ -294,6 +294,19 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Quirks
 	all_quirks = save_data?["all_quirks"]
 
+	//ORBSTATION - EXTRA PREFS
+	//Languages
+	var/list/save_languages = SANITIZE_LIST(save_data["languages"])
+	for(var/language in save_languages)
+		var/value = save_languages[language]
+		save_languages -= language
+
+		if(istext(language))
+			language = _text2path(language)
+		save_languages[language] = value
+	languages = save_languages
+	//END ORBSTATION
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -351,6 +364,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Quirks
 	save_data["all_quirks"] = all_quirks
+
+	//ORBSTATION - EXTRA PREFS (aka "why we keep backups of everyone's saves")
+	//Languages
+	save_data["languages"] = languages
+	//END ORBSTATION
 
 	return TRUE
 

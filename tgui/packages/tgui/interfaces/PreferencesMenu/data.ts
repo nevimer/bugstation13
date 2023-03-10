@@ -92,6 +92,16 @@ export type QuirkInfo = {
   quirk_blacklist: string[][];
 };
 
+// ORBSTATION ADDITIONS START
+
+export type Language = {
+  description: string;
+  name: string;
+  icon: string;
+};
+
+// ORBSTATION ADDITIONS END
+
 export enum RandomSetting {
   AntagOnly = 1,
   Disabled = 2,
@@ -175,6 +185,14 @@ export type PreferencesMenuData = {
 
   active_slot: number;
   name_to_use: string;
+
+  // ORBSTATION ADDITIONS START
+
+  selected_languages: Language[];
+  unselected_languages: Language[];
+  total_language_points: number;
+
+  // ORBSTATION ADDITIONS END
 
   window: Window;
 };
