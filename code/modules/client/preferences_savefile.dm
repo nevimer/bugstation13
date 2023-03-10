@@ -296,7 +296,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//ORBSTATION - EXTRA PREFS
 	//Languages
-	var/list/save_languages = SANITIZE_LIST(save_data["languages"])
+	var/list/save_languages = SANITIZE_LIST(save_data?["languages"])
 	for(var/language in save_languages)
 		var/value = save_languages[language]
 		save_languages -= language
