@@ -13,7 +13,7 @@
 	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/granola_bar
-	venue_value = FOOD_PRICE_LEGENDARY
+	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/salad/greek_salad
 	venue_value = FOOD_PRICE_EXOTIC
