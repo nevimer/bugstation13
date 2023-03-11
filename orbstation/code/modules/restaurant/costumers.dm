@@ -253,7 +253,7 @@
 	friendly_pull_line = "Hey, I am busy!"
 	first_warning_line = "Hey, I just wanted breakfast!"
 	second_warning_line = "For robot god's sake, let me eat in peace!"
-	self_defense_line = "Never come before a bot and their breakfast."
+	self_defense_line = "Never come between a bot and their breakfast."
 	orderable_objects = list( ///morning food
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
