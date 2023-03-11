@@ -40,7 +40,7 @@
 
 	found_seat_lines = list("Finally, breaking camp.")
 	cant_find_seat_lines = list("The journey  never ends, so it seems.")
-	leave_mad_lines = list("I will forage for some nuts and berries")
+	leave_mad_lines = list("I will forage for some nuts and berries then")
 	leave_happy_lines = list("My journey can continue...")
 	wait_for_food_lines = list("The journey calls, but I am not ready...")
 	friendly_pull_line = "Ah, I have set up camp my friend."
@@ -49,7 +49,7 @@
 	self_defense_line = "And you are definitely weaker than a bear."
 	orderable_objects = list( ///nuts, berries, vegetables
 		VENUE_RESTAURANT = list(
-			/obj/item/food/pacoca = 10
+			/obj/item/food/pacoca = 10,
 			/obj/item/food/pizza/vegetable = 3,
 			/obj/item/food/pizza/mushroom = 3,
 			/obj/item/food/pizza/margherita = 3,
@@ -59,8 +59,8 @@
 			/obj/item/food/granola_bar = 2,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/applejack = 20
-			/datum/reagent/consumable/ethanol/barefoot = 3
+			/datum/reagent/consumable/ethanol/applejack = 20,
+			/datum/reagent/consumable/ethanol/barefoot = 3,
 			/datum/reagent/consumable/ethanol/aloe = 3,
 			/datum/reagent/consumable/tea = 4,
 			/datum/reagent/consumable/ethanol/bastion_bourbon = 1,
@@ -233,6 +233,7 @@
 			Booger
 			Cinderella
 			Chocolate Pudding
+			Gibb Floats
 			*/
 		),
 	)
@@ -256,6 +257,18 @@
 	orderable_objects = list( ///morning food
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
+			/*
+			bacon
+			jelliedtoast
+			friedegg
+			croissant
+			donut
+			full_english
+			frenchtoast
+			branrequests
+			pancake
+			waffles
+			*/
 		),
 	)
 
@@ -272,6 +285,14 @@
 	orderable_objects = list( ///vacation drinks
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
+			/*
+			Between the Sheets
+			Italian Hot Chocolate
+			Ginger Amaretto
+			Pan-Galactic Gargle Blaster
+			Pina Colada
+			Gin
+			*/
 		),
 	)
 
@@ -338,7 +359,7 @@
 	first_warning_line = "I lost many limbs while fighting carps."
 	second_warning_line = "They been replaced by stronger limbs!"
 	self_defense_line = "I will keelhaul ye!"
-	orderable_objects = list( ///fish, rice, anti-curvy
+	orderable_objects = list( ///fish, rice, anti-scurvy
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
 		),

@@ -13,10 +13,10 @@
 	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/granola_bar
-	venue_price = FOOD_PRICE_LEGENDARY
+	venue_value = FOOD_PRICE_LEGENDARY
 
 /obj/item/food/salad/greek_salad
-	venue_price = FOOD_PRICE_EXOTIC
+	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/herby_cheese
 	venue_value = FOOD_PRICE_NORMAL
@@ -25,7 +25,7 @@
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/pacoca
-	venue_price = FOOD_PRICE_NORMAL
+	venue_value = FOOD_PRICE_NORMAL
 
 //DRINKS
 
