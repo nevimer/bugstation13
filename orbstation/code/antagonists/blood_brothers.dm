@@ -97,6 +97,8 @@
 			continue
 		qdel(possible_implant)
 		to_chat(brother.current, span_notice("Your implant fizzles away! Objective Complete."))
+	if(CONFIG_GET(flag/log_traitor))
+		WRITE_LOG(GLOB.world_game_log, "BLOOD BROTHER: [name] delivered a [steal_objective.steal_target] at [worldtime2text()].")
 
 /// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
@@ -160,6 +162,8 @@
 /obj/item/implant/holo_pad_projector/proc/pad_completion()
 	SIGNAL_HANDLER
 	SEND_SIGNAL(src, COMSIG_BB_BOUNTY_SUCCESS)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_BB_PAD_COMPLETE)
+
 
 /// syndicate holo bounty pad capable of sending items to the syndicate in exchange for some gear.
 /obj/effect/holo_pad
