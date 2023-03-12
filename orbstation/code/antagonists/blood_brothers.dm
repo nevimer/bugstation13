@@ -49,7 +49,7 @@
 		dupe_search_range = get_owners()
 	var/approved_targets = list()
 	for(var/datum/objective_item/possible_item in GLOB.possible_items)
-		if(!possible_item.valid_objective_for(owners, require_owner = FALSE))
+		if(!possible_item.valid_objective_for(owners, require_owner = TRUE))
 			continue
 		if(possible_item.objective_type != OBJECTIVE_ITEM_TYPE_NORMAL)
 			continue
