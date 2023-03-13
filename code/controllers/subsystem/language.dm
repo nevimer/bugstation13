@@ -4,17 +4,5 @@ SUBSYSTEM_DEF(language)
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/language/Initialize()
-	// ORBSTATION EDIT START
-	if(!GLOB.all_languages.len)
-		for(var/L in subtypesof(/datum/language))
-			var/datum/language/language = L
-			if(!initial(language.key))
-				continue
-
-			GLOB.all_languages += language
-
-			var/datum/language/instance = new language
-
-			GLOB.language_datum_instances[language] = instance
-	// ORBSTATION EDIT END
+	orb_init_languages() // ORBSTATION REPLACEMENT (code moved to global proc)
 	return SS_INIT_SUCCESS

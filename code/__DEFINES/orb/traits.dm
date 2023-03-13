@@ -25,8 +25,6 @@
 #define TRAIT_DAMNED "damned"
 // Used by the "Damned" quirk and the "damned halo" element.
 #define TRAIT_DAMNED_HALO "damned_halo"
-// Gives an extra language point.
-#define QUIRK_LINGUIST "Linguist"
 //Trait sources
 // Special trait source for illiteracy granted by farsightedness
 #define FARSIGHT_TRAIT "farsighted_trait"

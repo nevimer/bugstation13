@@ -33,11 +33,7 @@
 /datum/language/narsie
 	secret = TRUE
 
-// Piratespeak - it'd be a bit goofy to allow this one
-/datum/language/piratespeak
-	secret = TRUE
-
-// Shadowtongue - weird and spooky language
+// Shadowtongue - "supernatural" language
 /datum/language/shadowtongue
 	secret = TRUE
 

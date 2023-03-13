@@ -25,17 +25,7 @@
 /datum/asset/spritesheet/languages/create_spritesheets()
 	var/list/to_insert = list()
 
-	if(!GLOB.all_languages.len)
-		for(var/iterated_language in subtypesof(/datum/language))
-			var/datum/language/language = iterated_language
-			if(!initial(language.key))
-				continue
-
-			GLOB.all_languages += language
-
-			var/datum/language/instance = new language
-
-			GLOB.language_datum_instances[language] = instance
+	orb_init_languages() //ensure languages have been initialized first
 
 	for (var/language_name in GLOB.all_languages)
 		var/datum/language/language = GLOB.language_datum_instances[language_name]
@@ -74,8 +64,6 @@
 	var/datum/language_holder/lang_holder = new species.species_language_holder()
 	for(var/language in preferences.get_adjusted_language_holder())
 		preferences.languages[language] = LANGUAGE_SPOKEN
-	qdel(lang_holder)
-	qdel(species)
 
 	for(var/language in lang_holder.spoken_languages)
 		preferences.languages[language] = LANGUAGE_SPOKEN
@@ -91,9 +79,7 @@
 
 	var/list/data = list()
 
-	var/max_languages = preferences.all_quirks.Find(QUIRK_LINGUIST) ? MAX_LANGUAGES_LINGUIST : MAX_LANGUAGES_NORMAL
-	var/species_type = preferences.read_preference(/datum/preference/choiced/species)
-	var/datum/species/species = new species_type()
+	var/max_languages = preferences.all_quirks.Find("Linguist") ? MAX_LANGUAGES_LINGUIST : MAX_LANGUAGES_NORMAL
 	var/datum/language_holder/lang_holder = preferences.get_adjusted_language_holder()
 	if(!preferences.languages || !preferences.languages.len || (preferences.languages && preferences.languages.len > max_languages)) // Too many languages, or no languages.
 		preferences.languages = list()
@@ -123,7 +109,6 @@
 			))
 
 	qdel(lang_holder)
-	qdel(species)
 
 	data["total_language_points"] = max_languages
 	data["selected_languages"] = selected_languages
@@ -149,7 +134,7 @@
  */
 /datum/preference_middleware/languages/proc/give_language(list/params)
 	var/language_name = params["language_name"]
-	var/max_languages = preferences.all_quirks.Find(QUIRK_LINGUIST) ? MAX_LANGUAGES_LINGUIST : MAX_LANGUAGES_NORMAL
+	var/max_languages = preferences.all_quirks.Find("Linguist") ? MAX_LANGUAGES_LINGUIST : MAX_LANGUAGES_NORMAL
 
 	if(preferences.languages && preferences.languages.len == max_languages) // too many languages
 		return TRUE
