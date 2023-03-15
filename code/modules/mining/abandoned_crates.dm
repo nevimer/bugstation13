@@ -207,7 +207,7 @@
 		if(87) //1% chance
 			new /obj/item/weed_extract(src)
 		if(88)
-			new /obj/item/reagent_containers/cup/glass/bottle/slimewine(src) //ORBSTATION EDIT
+			new /obj/item/reagent_containers/cup/glass/bottle/lizardwine(src)
 		if(89)
 			new /obj/item/melee/energy/sword/bananium(src)
 		if(90)

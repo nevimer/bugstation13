@@ -152,7 +152,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EMOTEMUTE "emotemute"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_NEARSIGHT "nearsighted"
-#define TRAIT_FAT "fat" //ORBSTATION REMOVAL
+//#define TRAIT_FAT "fat" //ORBSTATION REMOVAL
 #define TRAIT_HUSK "husk"
 ///Blacklisted from being revived via defibrilator
 #define TRAIT_DEFIB_BLACKLISTED "defib_blacklisted"
