@@ -147,12 +147,13 @@
 	C.adjust_nutrition(-bite_size * delta_time)
 	nutrients += bite_size * delta_time
 
-	if(next_fact <= 0)
+	//ORBSTATION REMOVAL - fatphobia
+	/*if(next_fact <= 0)
 		next_fact = initial(next_fact)
 		say(pick(fat_facts))
 		playsound(loc, 'sound/machines/chime.ogg', 30, FALSE)
 	else
-		next_fact--
+		next_fact--*/
 	use_power(active_power_usage)
 
 /obj/machinery/fat_sucker/proc/start_extracting()
@@ -166,7 +167,7 @@
 			update_appearance()
 			set_light(2, 1, "#ff0000")
 		else
-			say("Subject not fat enough.")
+			say("Subject nutritional content insuffficient.") //ORBSTATION EDIT
 			playsound(src, 'sound/machines/buzz-sigh.ogg', 40, FALSE)
 			overlays += "[icon_state]_red" //throw a red light icon over it, to show that it won't work
 

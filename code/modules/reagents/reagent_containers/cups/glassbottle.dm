@@ -439,6 +439,13 @@
 	icon_state = "disaronno"
 	list_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 100)
 
+/obj/item/reagent_containers/cup/glass/bottle/lizardwine
+	name = "bottle of lizard wine"
+	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
+	icon_state = "lizardwine"
+	list_reagents = list(/datum/reagent/consumable/ethanol/lizardwine = 100)
+	drink_type = FRUIT | ALCOHOL
+
 /obj/item/reagent_containers/cup/glass/bottle/grappa
 	name = "Phillipes well-aged Grappa"
 	desc = "Bottle of Grappa."

@@ -26,3 +26,6 @@
 
 /obj/item/food/danish_hotdog
 	foodtypes = GRAIN | MEAT | VEGETABLES | CUCUMBER
+
+/datum/species/moth
+	disliked_food = GROSS | BUGS | GORE

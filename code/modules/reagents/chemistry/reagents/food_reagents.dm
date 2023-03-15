@@ -912,13 +912,20 @@
 
 /datum/reagent/consumable/char
 	name = "Char"
-	description = "Essence of the grill."
+	description = "Essence of the grill. Has strange properties when overdosed."
 	reagent_state = LIQUID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#C8C8C8"
 	taste_mult = 6
 	taste_description = "smoke"
+	overdose_threshold = 15
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/char/overdose_process(mob/living/M, delta_time, times_fired)
+	if(DT_PROB(13, delta_time))
+		M.say(pick_list_replacements(BOOMER_FILE, "boomer"), forced = /datum/reagent/consumable/char)
+	..()
+	return
 
 /datum/reagent/consumable/bbqsauce
 	name = "BBQ Sauce"
@@ -1097,3 +1104,10 @@
 	color = "#CF3600" // rgb: 207, 54, 0
 	taste_description = "mint"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/consumable/mintextract/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
+	//ORBSTATION REMOVAL - fatphobia
+	/*if(HAS_TRAIT(affected_mob, TRAIT_FAT))
+		affected_mob.investigate_log("has been gibbed by consuming [src] while fat.", INVESTIGATE_DEATHS)
+		affected_mob.inflate_gib()*/
+	return ..()

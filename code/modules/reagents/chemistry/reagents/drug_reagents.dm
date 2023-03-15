@@ -201,7 +201,7 @@
 	affected_mob.adjustToxLoss(1 * REM * delta_time, FALSE, required_biotype = affected_biotype)
 	affected_mob.adjustOrganLoss(ORGAN_SLOT_BRAIN, (rand(5, 10) / 10) * REM * delta_time, required_organtype = affected_organtype)
 	. = TRUE
-/*
+
 /datum/reagent/drug/bath_salts
 	name = "Bath Salts"
 	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
@@ -231,7 +231,8 @@
 	..()
 
 /datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/affected_mob, delta_time, times_fired)
-	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
+	//var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
+	var/high_message = pick("You feel unpredictable.", "Your mind explodes into a fractal.", "You feel heat death in your synapses.") //ORBSTATION EDIT
 	if(DT_PROB(2.5, delta_time))
 		to_chat(affected_mob, span_notice("[high_message]"))
 	affected_mob.add_mood_event("salted", /datum/mood_event/stimulant_heavy, name)
@@ -252,8 +253,8 @@
 	if(DT_PROB(10, delta_time))
 		affected_mob.emote(pick("twitch","drool","moan"))
 	if(DT_PROB(28, delta_time))
-		M.drop_all_held_items()
-	..()*/
+		affected_mob.drop_all_held_items()
+	..()
 
 /datum/reagent/drug/aranesp
 	name = "Aranesp"

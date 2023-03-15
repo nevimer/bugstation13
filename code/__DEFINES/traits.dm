@@ -152,6 +152,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_EMOTEMUTE "emotemute"
 #define TRAIT_DEAF "deaf"
 #define TRAIT_NEARSIGHT "nearsighted"
+#define TRAIT_FAT "fat" //ORBSTATION REMOVAL
 #define TRAIT_HUSK "husk"
 ///Blacklisted from being revived via defibrilator
 #define TRAIT_DEFIB_BLACKLISTED "defib_blacklisted"
@@ -717,6 +718,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define EYE_DAMAGE "eye_damage"
 #define EAR_DAMAGE "ear_damage"
 #define GENETIC_MUTATION "genetic"
+//#define OBESITY "obesity" //ORBSTATION REMOVAL
 #define MAGIC_TRAIT "magic"
 #define TRAUMA_TRAIT "trauma"
 #define FLIGHTPOTION_TRAIT "flightpotion"
