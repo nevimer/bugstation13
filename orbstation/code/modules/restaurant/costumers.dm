@@ -120,29 +120,23 @@
 	self_defense_line = "Time to show you why I work out!"
 	orderable_objects = list( ///meats, legumes, pasta
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			Egg Bowl
-			Scotch Egg
-			Fried Egg
-			Chicken Nugget
-			BBQ Rib
-			Meatloaf
-			Spaghetti & Meatballs
-			Beef Noodle
-			Beans
-			*/
+			/obj/item/food/canned/beans = 20
+			/obj/item/food/nugget = 20
+			/obj/item/food/friedegg = 20,
+			/obj/item/food/scotchegg = 10,
+			/obj/item/food/salad/eggbowl = 10,
+			/obj/item/food/bbqribs = 5,
+			/obj/item/food/meatloaf = 5,
+			/obj/item/food/spaghetti/meatballspaghetti = 5,
+			/obj/item/food/spaghetti/beefnoodle= 5,
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-			Beepsky Smash
-			Protein blend
-			Moscow Mule
-			Green Giant Smoothie
-			Fernet Cola
-			Eggnog
-			*/
+			/datum/reagent/consumable/ethanol/eggnog = 5,
+			/datum/reagent/consumable/green_giant = 10,
+			/datum/reagent/consumable/ethanol/fernet_cola = 5
+			/datum/reagent/consumable/ethanol/beepsky_smash = 2,
+			/datum/reagent/consumable/ethanol/protein_blend = 1,
 		),
 	)
 
@@ -183,7 +177,7 @@
 			Mauna Loa
 			Toxins Special
 			Demons Blood
-			Rum
+			Bitters
 			*/
 		),
 	)
@@ -304,7 +298,7 @@
 
 	found_seat_lines = list("What do you have for a hungry fueljack?")
 	cant_find_seat_lines = list("Permission to land, sir!")
-	leave_mad_lines = list("You are lucky I am no longer in the pirate corps...")
+	leave_mad_lines = list("You are lucky I am no longer in the pirate corps, that we don't have...")
 	leave_happy_lines = list("A taste of home, away from home...")
 	wait_for_food_lines = list("Light, give me strength.")
 	friendly_pull_line = "*swear"
@@ -314,9 +308,22 @@
 	orderable_objects = list( ///moffic food and drinks
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
+			/*
+			Buttered Baked Corn
+			Ratatouille
+			Fueljack's Lunch
+			Big Baked Rice
+			Cotton Soup
+			Chili Sin Carne
+			Rice Porridge */
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
+			/*			Rum
+			Long John Silver
+			Admiralty
+			Tich Toch
+			*/
 		),
 	)
 
@@ -338,9 +345,25 @@
 	orderable_objects = list( ///tiziran food and drinks
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
+			/*
+			Black scrambled eggs
+			Fried blood sausage
+			Garlic and Oil Nizaya
+			Korta ice
+			Loaded poms-franzisks
+			Patzikula
+			Headcheese slice
+			Italic flatbread
+			*/
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
+			/*
+				Mushi Kombucha
+				Sea Breeze
+				White Tiziran
+				Drunken Espatier
+			*/
 		),
 	)
 
@@ -362,8 +385,27 @@
 	orderable_objects = list( ///fish, rice, anti-scurvy
 		VENUE_RESTAURANT = list(
 			/obj/item/food/burger/plain = 30,
+			/*
+			Sauerkraut
+			fishandchips
+			/obj/item/food/fish_poke
+			Spicy Filet Sushi
+			icecream
+			Vegetarian sushi
+			Citrus Delight
+			Fruit Salad
+			Meat Poké
+			*/
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
+			/*
+			rum
+			gin
+			Tropical storm
+			Andalusia
+			grog
+			Cuba Libre
+			*/
 		),
 	)
