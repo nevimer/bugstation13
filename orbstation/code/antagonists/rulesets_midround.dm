@@ -186,3 +186,7 @@
 	if(!spawn_locs.len)
 		return MAP_ERROR
 	new_character.forceMove(pick(spawn_locs))
+	addtimer(CALLBACK(src, PROC_REF(delay_announce)), 2 MINUTES)
+
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative/proc/delay_announce()
+	priority_announce("Encrypted communications intercepted in the vicinity of [station_name()]. There is an unknown threat aboard.", "Security Alert", ANNOUNCER_INTERCEPT)
