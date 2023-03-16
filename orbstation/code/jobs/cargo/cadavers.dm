@@ -15,7 +15,7 @@
 	var/mob/living/carbon/human/corpse = locate() in .
 	if(vampire_arrived || !prob(vampire_chance))
 		corpse.death()
-		for (var/obj/item/organ/part in corpse.internal_organs) //each cadaver comes with a complementary set of organs, held in stasis
+		for (var/obj/item/organ/part in corpse.organs) //each cadaver comes with a complementary set of organs, held in stasis
 			part.organ_flags |= ORGAN_FROZEN
 		return
 	vampire_arrived = TRUE
@@ -44,7 +44,7 @@
 /datum/supply_pack/medical/cadaver/ethereal/generate()
 	. = ..()
 	var/mob/living/carbon/human/corpse = locate() in .
-	for (var/obj/item/organ/internal/heart/ethereal/illegal_heart in corpse.internal_organs)
+	for (var/obj/item/organ/internal/heart/ethereal/illegal_heart in corpse.organs)
 		qdel(illegal_heart)
 
 /datum/supply_pack/medical/cadaver/felinid
@@ -114,6 +114,6 @@
 		return ..()
 	functional = FALSE
 	for(var/mob/living/carbon/corpse in src) //unfreeze the organs of any contained carbon
-		for(var/obj/item/organ/part as anything in corpse.internal_organs)
+		for(var/obj/item/organ/part as anything in corpse.organs)
 			part.organ_flags &= ~ORGAN_FROZEN
 	return ..()
