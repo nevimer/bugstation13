@@ -1,5 +1,5 @@
-#define FALSE_ALARM_COOLDOWN_LENGTH_MIN (30 SECONDS)
-#define FALSE_ALARM_COOLDOWN_LENGTH_MAX (1 MINUTES)
+#define FALSE_ALARM_COOLDOWN_LENGTH_MIN (20 MINUTES)
+#define FALSE_ALARM_COOLDOWN_LENGTH_MAX (30 MINUTES)
 #define SENSOR_TYPE_PROBABILITY 50
 #define INTRUDER_ANNOUNCE_PROBABILITY 5
 
@@ -18,7 +18,7 @@
 	force = TRUE // TURN THIS OFF
 
 /datum/station_trait/sensitive_equipment/New()
-	trait_processes = prob(100) // when this triggers, the false alarm version of this trait will activate
+	trait_processes = prob(30) // when this triggers, the false alarm version of this trait will activate
 	return ..()
 
 
