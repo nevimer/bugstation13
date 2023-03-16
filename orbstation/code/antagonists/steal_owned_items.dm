@@ -106,3 +106,21 @@
 	excludefromjob = list(JOB_RESEARCH_DIRECTOR)
 	exists_on_map = TRUE
 	item_owner = list(JOB_RESEARCH_DIRECTOR)
+
+// Add owners to items missing them
+
+/datum/objective_item/steal/traitor/det_revolver
+	item_owner = list(JOB_DETECTIVE)
+
+/datum/objective_item/steal/traitor/chief_engineer_belt
+	item_owner = list(JOB_CHIEF_ENGINEER)
+
+/datum/objective_item/steal/traitor/telebaton
+	item_owner = list(
+		JOB_RESEARCH_DIRECTOR,
+		JOB_CAPTAIN,
+		JOB_HEAD_OF_SECURITY,
+		JOB_HEAD_OF_PERSONNEL,
+		JOB_CHIEF_ENGINEER,
+		JOB_CHIEF_MEDICAL_OFFICER
+	)

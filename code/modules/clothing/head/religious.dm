@@ -20,7 +20,7 @@
 /obj/item/clothing/head/chaplain/taqiyah/white/Initialize(mapload)
 	. = ..()
 
-	create_storage(type = /datum/storage/pockets/small)
+	create_storage(storage_type = /datum/storage/pockets/small)
 
 /obj/item/clothing/head/chaplain/taqiyah/red
 	name = "red taqiyah"
@@ -30,4 +30,4 @@
 /obj/item/clothing/head/chaplain/taqiyah/red/Initialize(mapload)
 	. = ..()
 
-	create_storage(type = /datum/storage/pockets/small)
+	create_storage(storage_type = /datum/storage/pockets/small)
