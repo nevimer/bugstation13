@@ -2,6 +2,9 @@
 /obj/item/organ/internal/appendix
 	decay_factor = STANDARD_ORGAN_DECAY * 0.6 //25 minutes
 
+/obj/item/organ/internal/brain
+	decay_factor = STANDARD_ORGAN_DECAY * 0.25 //1 hour
+
 /obj/item/organ/internal/ears
 	decay_factor = STANDARD_ORGAN_DECAY * 0.6 //25 minutes
 
