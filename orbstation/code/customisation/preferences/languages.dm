@@ -25,7 +25,7 @@
 /datum/asset/spritesheet/languages/create_spritesheets()
 	var/list/to_insert = list()
 
-	orb_init_languages() //ensure languages have been initialized first
+	setup_language_list() //ensure languages have been initialized first
 
 	for (var/language_name in GLOB.all_languages)
 		var/datum/language/language = GLOB.language_datum_instances[language_name]

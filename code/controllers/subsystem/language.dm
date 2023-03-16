@@ -4,5 +4,5 @@ SUBSYSTEM_DEF(language)
 	flags = SS_NO_FIRE
 
 /datum/controller/subsystem/language/Initialize()
-	orb_init_languages() // ORBSTATION REPLACEMENT (code moved to global proc)
+	setup_language_list() // ORBSTATION REPLACEMENT (code moved to global proc)
 	return SS_INIT_SUCCESS

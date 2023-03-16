@@ -1,9 +1,8 @@
-// Initializes the global language list. Used in a couple different places. Named this way for future-proofing.
-/proc/orb_init_languages()
+// Initializes the global language list, if it does not already exist. Used in a couple different places.
+/proc/setup_language_list()
 	if(GLOB.all_languages.len)
 		return
-	for(var/language in subtypesof(/datum/language))
-		var/datum/language/language_type = language
+	for(var/datum/language/language_type as anything in subtypesof(/datum/language))
 		if(!initial(language_type.key))
 			continue
 
