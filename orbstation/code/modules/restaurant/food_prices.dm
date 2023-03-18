@@ -18,6 +18,15 @@
 /obj/item/food/cheese/wedge
 	venue_value = FOOD_PRICE_CHEAP
 
+/obj/item/food/chipsandsalsa
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/enchiladas
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/fiesta_corn_skillet
+	venue_value = FOOD_PRICE_EXOTIC
+
 /obj/item/food/friedegg
 	venue_value = FOOD_PRICE_CHEAP
 
@@ -56,6 +65,12 @@
 /datum/reagent/consumable/ethanol/bilk
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/bitters
+	glass_price = DRINK_PRICE_STOCK
+
+/datum/reagent/consumable/ethanol/crevice_spike
+	glass_price = DRINK_PRICE_EASY
+
 /datum/reagent/consumable/ethanol/eggnog
 	glass_price = DRINK_PRICE_EASY
 
@@ -65,8 +80,14 @@
 /datum/reagent/consumable/ethanol/iced_beer
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/mauna_loa
+	glass_price = DRINK_PRICE_HIGH
+
 /datum/reagent/consumable/ethanol/protein_blend
 	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/sbiten
+	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/ethanol/snowwhite
 	glass_price = DRINK_PRICE_EASY
@@ -78,4 +99,7 @@
 	glass_price = DRINK_PRICE_STOCK
 
 /datum/reagent/consumable/nuka_cola
+	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/toxins_special
 	glass_price = DRINK_PRICE_HIGH

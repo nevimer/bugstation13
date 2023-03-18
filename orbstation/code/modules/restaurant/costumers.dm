@@ -157,28 +157,23 @@
 	self_defense_line = "I am going to flatten you like a firetruck!"
 	orderable_objects = list( ///spice stuff
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			Cuban Nachos
-			fuegoburrito
-			Enchiladas
-			Fiesta Corn Skillet
-			Hot Chili
-			Chili Sin Carne
-			Chips and Salsa
-			Black Eyed Gumbo
-			*/
+			/obj/item/food/soup/vegetarian_chili = 25,
+			/obj/item/food/chipsandsalsa = 25,
+			/obj/item/food/enchiladas = 25,
+			/obj/item/food/soup/hotchili = 15,
+			/obj/item/food/salad/gumbo = 10,
+			/obj/item/food/fiesta_corn_skillet = 5,
+			/obj/item/food/cubannachos = 3,
+			/obj/item/food/fuegoburrito = 1,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-			Sbiten
-			Crevice Spike
-			Mauna Loa
-			Toxins Special
-			Demons Blood
-			Bitters
-			*/
+			/datum/reagent/consumable/ethanol/tequila = 35,
+			/datum/reagent/consumable/ethanol/vodka = 35,
+			/datum/reagent/consumable/ethanol/crevice_spike = 20,
+			/datum/reagent/consumable/ethanol/sbiten = 20,
+			/datum/reagent/consumable/ethanol/bitters = 5,
+			/datum/reagent/consumable/ethanol/toxins_special = 1.
+			/datum/reagent/consumable/ethanol/mauna_loa = 1,
 		),
 	)
 
