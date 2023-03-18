@@ -49,14 +49,14 @@
 	self_defense_line = "And you are definitely weaker than a bear."
 	orderable_objects = list( ///nuts, berries, vegetables
 		VENUE_RESTAURANT = list(
-			/obj/item/food/pacoca = 10,
+			/obj/item/food/pacoca = 20,
+			/obj/item/food/salad/herbsalad = 20,
+			/obj/item/food/salad/fruit = 5,
+			/obj/item/food/granola_bar = 5,
 			/obj/item/food/pizza/vegetable = 3,
 			/obj/item/food/pizza/mushroom = 3,
 			/obj/item/food/pizza/margherita = 3,
-			/obj/item/food/salad/herbsalad = 10,
-			/obj/item/food/salad/fruit = 5,
 			/obj/item/food/salad/greek_salad = 2,
-			/obj/item/food/granola_bar = 2,
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/applejack = 20,
@@ -194,36 +194,25 @@
 	self_defense_line = "*crack"
 	orderable_objects = list( ///pastries and sweet drinks
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			dulce de batata
-			Chocolate Cornet
-			Cannoli
-			Honk-pocket
-			Berry Clafoutis
-			Banana Cream Pie
-			Amanita Pie
-			Mothmallows
-			Cornuto
-			Strawberry ice cream sandwich
-			Sundae
-			Berry Muffin
-			ant candy
-			*/
+			/obj/item/food/cannoli = 30,
+			/obj/item/food/donkpocket/honk = 30,
+			/obj/item/food/chococornet = 20,
+			/obj/item/food/pie/berrytart = 20,
+			/obj/item/food/sundae = 10,
+			/obj/item/food/cake/mothmallow = 5,
+			/obj/item/food/pie/amanita_pie = 5,
+			/obj/item/food/ant_candy = 5,
+			/obj/item/food/donkpocket/honk = 1,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-			Alexander
-			Godmother
-			Amaretto
-			Banana Honk
-			Banana Milkshake
-			Booger
-			Cinderella
-			Chocolate Pudding
-			Gibb Floats
-			*/
+			/datum/reagent/consumable/ethanol/amaretto = 30,
+			/datum/reagent/consumable/ethanol/alexander = 20,
+			/datum/reagent/consumable/chocolatepudding = 20,
+			/datum/reagent/consumable/gibbfloats = 20,
+			/datum/reagent/consumable/ethanol/bananahonk = 15,
+			/datum/reagent/consumable/cinderella = 15,
+			/datum/reagent/consumable/ethanol/booger = 15,
+			/datum/reagent/consumable/ethanol/demonsblood = 1,
 		),
 	)
 

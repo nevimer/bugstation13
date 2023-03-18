@@ -1,9 +1,15 @@
 //FOOD
 
+/obj/item/food/ant_candy
+	venue_value = FOOD_PRICE_EXOTIC
+
 /obj/item/food/baked_cheese_platter
 	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/bbqribs
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/cake/mothmallow
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/canned/beans
@@ -20,6 +26,12 @@
 
 /obj/item/food/chipsandsalsa
 	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/chococornet
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/donkpocket/honk
+	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/enchiladas
 	venue_value = FOOD_PRICE_NORMAL
@@ -39,11 +51,17 @@
 /obj/item/food/herby_cheese
 	venue_value = FOOD_PRICE_NORMAL
 
+/datum/crafting_recipe/food/honkdae
+	venue_value = FOOD_PRICE_LEGENDARY
+
 /obj/item/food/meatloaf
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/pacoca
-	venue_value = FOOD_PRICE_NORMAL
+	venue_value = FOOD_PRICE_CHEAP
+
+/obj/item/food/pie/amanita_pie
+	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/salad/greek_salad
 	venue_value = FOOD_PRICE_EXOTIC
@@ -51,10 +69,22 @@
 /obj/item/food/scotchegg
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/sundae
+	venue_value = FOOD_PRICE_NORMAL
+
 //DRINKS
+
+/datum/reagent/consumable/cinderella
+	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/ethanol/alexander
+	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/ethanol/applejack
 	glass_price = DRINK_PRICE_STOCK
+
+/datum/reagent/consumable/ethanol/bananahonk
+	glass_price = DRINK_PRICE_MEDIUM
 
 /datum/reagent/consumable/ethanol/barefoot
 	glass_price = DRINK_PRICE_MEDIUM
@@ -68,8 +98,14 @@
 /datum/reagent/consumable/ethanol/bitters
 	glass_price = DRINK_PRICE_STOCK
 
+/datum/reagent/consumable/ethanol/booger
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/crevice_spike
 	glass_price = DRINK_PRICE_EASY
+
+/datum/reagent/consumable/ethanol/demonsblood
+	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/eggnog
 	glass_price = DRINK_PRICE_EASY
@@ -92,6 +128,12 @@
 /datum/reagent/consumable/ethanol/snowwhite
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/toxins_special
+	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/gibbfloats
+	glass_price = DRINK_PRICE_EASY
+
 /datum/reagent/consumable/green_giant
 	glass_price = DRINK_PRICE_MEDIUM
 
@@ -99,7 +141,4 @@
 	glass_price = DRINK_PRICE_STOCK
 
 /datum/reagent/consumable/nuka_cola
-	glass_price = DRINK_PRICE_HIGH
-
-/datum/reagent/consumable/ethanol/toxins_special
 	glass_price = DRINK_PRICE_HIGH
