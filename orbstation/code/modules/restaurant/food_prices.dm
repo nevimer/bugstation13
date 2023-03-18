@@ -51,7 +51,7 @@
 /obj/item/food/herby_cheese
 	venue_value = FOOD_PRICE_NORMAL
 
-/datum/crafting_recipe/food/honkdae
+/obj/item/food/honkdae
 	venue_value = FOOD_PRICE_LEGENDARY
 
 /obj/item/food/meatloaf

@@ -120,8 +120,8 @@
 	self_defense_line = "Time to show you why I work out!"
 	orderable_objects = list( ///meats, legumes, pasta
 		VENUE_RESTAURANT = list(
-			/obj/item/food/canned/beans = 20
-			/obj/item/food/nugget = 20
+			/obj/item/food/canned/beans = 20,
+			/obj/item/food/nugget = 20,
 			/obj/item/food/friedegg = 20,
 			/obj/item/food/scotchegg = 10,
 			/obj/item/food/salad/eggbowl = 10,
@@ -134,7 +134,7 @@
 			/datum/reagent/consumable/ethanol/beer = 25,
 			/datum/reagent/consumable/ethanol/eggnog = 5,
 			/datum/reagent/consumable/green_giant = 10,
-			/datum/reagent/consumable/ethanol/fernet_cola = 5
+			/datum/reagent/consumable/ethanol/fernet_cola = 5,
 			/datum/reagent/consumable/ethanol/beepsky_smash = 2,
 			/datum/reagent/consumable/ethanol/protein_blend = 1,
 		),
@@ -172,7 +172,7 @@
 			/datum/reagent/consumable/ethanol/crevice_spike = 20,
 			/datum/reagent/consumable/ethanol/sbiten = 20,
 			/datum/reagent/consumable/ethanol/bitters = 5,
-			/datum/reagent/consumable/ethanol/toxins_special = 1.
+			/datum/reagent/consumable/ethanol/toxins_special = 1,
 			/datum/reagent/consumable/ethanol/mauna_loa = 1,
 		),
 	)
