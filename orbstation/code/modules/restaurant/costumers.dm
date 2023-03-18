@@ -234,19 +234,12 @@
 	self_defense_line = "Never come between a bot and their breakfast."
 	orderable_objects = list( ///morning food
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			bacon
-			jelliedtoast
-			friedegg
-			croissant
-			donut
-			full_english
-			frenchtoast
-			branrequests
-			pancake
-			waffles
-			*/
+			/obj/item/food/friedegg = 20,
+			/obj/item/food/jelliedtoast = 20,
+			/obj/item/food/frenchtoast = 20,
+			/obj/item/food/meat/bacon = 10,
+			/obj/item/food/branrequests = 10,
+			/obj/item/food/full_english = 1,
 		),
 	)
 
@@ -260,17 +253,14 @@
 	first_warning_line = "Hey, I just wanted a nightcap!"
 	second_warning_line = "For robot god's sake, let me drink in peace!"
 	self_defense_line = "Never come before a bot and their drink."
-	orderable_objects = list( ///vacation drinks
+	orderable_objects = list( ///strong and sleepy drinks
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-			Between the Sheets
-			Italian Hot Chocolate
-			Ginger Amaretto
-			Pan-Galactic Gargle Blaster
-			Pina Colada
-			Gin
-			*/
+			/datum/reagent/consumable/ethanol/gin = 20,
+			/datum/reagent/consumable/ethanol/between_the_sheets = 10,
+			/datum/reagent/consumable/ethanol/ginger_amaretto = 10,
+			/datum/reagent/consumable/italian_coco = 5,
+			/datum/reagent/consumable/ethanol/gargle_blaster = 3,
+			/datum/reagent/consumable/ethanol/neurotoxin = 1,
 		),
 	)
 

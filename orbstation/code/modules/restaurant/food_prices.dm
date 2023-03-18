@@ -9,6 +9,9 @@
 /obj/item/food/bbqribs
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/branrequests
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/cake/mothmallow
 	venue_value = FOOD_PRICE_NORMAL
 
@@ -30,6 +33,9 @@
 /obj/item/food/chococornet
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/croissant
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/donkpocket/honk
 	venue_value = FOOD_PRICE_CHEAP
 
@@ -38,6 +44,9 @@
 
 /obj/item/food/fiesta_corn_skillet
 	venue_value = FOOD_PRICE_EXOTIC
+
+/obj/item/food/frenchtoast
+	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/friedegg
 	venue_value = FOOD_PRICE_CHEAP
@@ -53,6 +62,12 @@
 
 /obj/item/food/honkdae
 	venue_value = FOOD_PRICE_LEGENDARY
+
+/obj/item/food/jelliedtoast
+	venue_value = FOOD_PRICE_CHEAP
+
+/obj/item/food/meat/bacon
+	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/meatloaf
 	venue_value = FOOD_PRICE_NORMAL
@@ -113,10 +128,19 @@
 /datum/reagent/consumable/ethanol/fernet_cola
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/gargle_blaster
+	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/ethanol/ginger_amaretto
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/iced_beer
 	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/ethanol/mauna_loa
+	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/neurotoxin
 	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/protein_blend
@@ -135,6 +159,9 @@
 	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/green_giant
+	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/italian_coco
 	glass_price = DRINK_PRICE_MEDIUM
 
 /datum/reagent/consumable/milk
