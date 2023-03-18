@@ -72,7 +72,9 @@
 		/datum/language/shadowtongue,
 		/datum/language/terrum,
 		/datum/language/nekomimetic,
+		//ORBSTATION ADDITIONS
 		/datum/language/ratvaric,
+		/datum/language/slime,
 	)
 
 /obj/item/organ/internal/tongue/proc/handle_speech(datum/source, list/speech_args)
