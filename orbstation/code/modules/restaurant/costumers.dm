@@ -365,6 +365,6 @@
 			/datum/reagent/consumable/ethanol/squirt_cider = 5,
 			/datum/reagent/consumable/ethanol/cuba_libre = 5,
 			/datum/reagent/consumable/ethanol/tropical_storm = 5,
-			/datum/reagent/consumable/ethanol/hearty_punch = 1,
+			/datum/reagent/consumable/ethanol/salt_and_swell = 1,
 		),
 	)

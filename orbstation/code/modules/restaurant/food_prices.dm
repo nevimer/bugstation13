@@ -203,9 +203,6 @@
 /datum/reagent/consumable/ethanol/grog
 	glass_price = DRINK_PRICE_EASY
 
-/datum/reagent/consumable/ethanol/hearty_punch
-	glass_price = DRINK_PRICE_HIGH
-
 /datum/reagent/consumable/ethanol/iced_beer
 	glass_price = DRINK_PRICE_EASY
 
@@ -222,6 +219,9 @@
 	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/protein_blend
+	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/salt_and_swell
 	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/sbiten
