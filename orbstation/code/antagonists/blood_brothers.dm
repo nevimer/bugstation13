@@ -31,6 +31,36 @@
 /datum/objective/steal/brothers
 	/// Where the objective is to be delivered to
 	var/delivery_site
+	/// Don't try to deliver these items
+	var/static/list/brothers_blacklist = list(
+		/datum/objective_item/steal/blackbox,
+		/datum/objective_item/steal/blueprints,
+		/datum/objective_item/steal/documents,
+		/datum/objective_item/steal/functionalai,
+		/datum/objective_item/steal/hdd_extraction,
+		/datum/objective_item/steal/nukedisc,
+		/datum/objective_item/steal/nuke_core,
+		/datum/objective_item/steal/supermatter,
+	)
+
+/datum/objective/steal/brothers/find_target(dupe_search_range, list/blacklist)
+	var/list/datum/mind/owners = get_owners()
+	if(!dupe_search_range)
+		dupe_search_range = get_owners()
+	var/approved_targets = list()
+	for(var/datum/objective_item/possible_item in GLOB.possible_items)
+		if(!possible_item.valid_objective_for(owners, require_owner = TRUE))
+			continue
+		if(possible_item.objective_type != OBJECTIVE_ITEM_TYPE_NORMAL)
+			continue
+		if(is_type_in_list(possible_item, brothers_blacklist))
+			continue
+		if(!is_unique_objective(possible_item.targetitem,dupe_search_range))
+			continue
+		approved_targets += possible_item
+	if (length(approved_targets))
+		return set_target(pick(approved_targets))
+	return set_target(null)
 
 /datum/objective/steal/brothers/set_target(datum/objective_item/item)
 	. = ..()
@@ -45,6 +75,7 @@
 		/datum/objective_item/steal/supermatter,
 		/datum/objective_item/steal/nuke_core,
 		/datum/objective_item/steal/functionalai,
+		/datum/objective_item/steal/hdd_extraction,
 	)
 
 /datum/objective/steal/heist_bros/find_target(dupe_search_range, list/blacklist)
@@ -97,6 +128,8 @@
 			continue
 		qdel(possible_implant)
 		to_chat(brother.current, span_notice("Your implant fizzles away! Objective Complete."))
+	if(CONFIG_GET(flag/log_traitor))
+		WRITE_LOG(GLOB.world_game_log, "BLOOD BROTHER: [name] delivered a [steal_objective.steal_target] at [worldtime2text()].")
 
 /// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
@@ -160,6 +193,8 @@
 /obj/item/implant/holo_pad_projector/proc/pad_completion()
 	SIGNAL_HANDLER
 	SEND_SIGNAL(src, COMSIG_BB_BOUNTY_SUCCESS)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_BB_PAD_COMPLETE)
+
 
 /// syndicate holo bounty pad capable of sending items to the syndicate in exchange for some gear.
 /obj/effect/holo_pad

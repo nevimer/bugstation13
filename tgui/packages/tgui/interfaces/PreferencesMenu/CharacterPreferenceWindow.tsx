@@ -9,11 +9,17 @@ import { JobsPage } from './JobsPage';
 import { MainPage } from './MainPage';
 import { SpeciesPage } from './SpeciesPage';
 import { QuirksPage } from './QuirksPage';
+// ORBSTATION EDIT
+import { LanguagesPage } from './LanguagesMenu';
+// ORBSTATION EDIT END
 
 enum Page {
   Antags,
   Main,
   Jobs,
+  // ORBSTATION EDIT
+  Languages,
+  // ORBSTATION EDIT END
   Species,
   Quirks,
 }
@@ -63,6 +69,11 @@ export const CharacterPreferenceWindow = (props, context) => {
     case Page.Jobs:
       pageContents = <JobsPage />;
       break;
+    // ORBSTATION EDIT
+    case Page.Languages:
+      pageContents = <LanguagesPage />;
+      break;
+    // ORBSTATION EDIT END
     case Page.Main:
       pageContents = (
         <MainPage openSpecies={() => setCurrentPage(Page.Species)} />
@@ -130,7 +141,20 @@ export const CharacterPreferenceWindow = (props, context) => {
                   Occupations
                 </PageButton>
               </Stack.Item>
-
+              {
+                // ORBSTATION EDIT
+              }
+              <Stack.Item grow>
+                <PageButton
+                  currentPage={currentPage}
+                  page={Page.Languages}
+                  setPage={setCurrentPage}>
+                  Languages
+                </PageButton>
+              </Stack.Item>
+              {
+                // ORBSTATION EDIT end
+              }
               <Stack.Item grow>
                 <PageButton
                   currentPage={currentPage}

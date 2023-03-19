@@ -12,7 +12,7 @@
 		/obj/item/wizard_diploma = 1, )
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/sandal/magic
-	r_pocket = /obj/item/teleportation_scroll/apprentice // You just get to the station, then you're on your own
+	r_pocket = /obj/item/teleportation_scroll/apprentice/announcement // You just get to the station, then you're on your own
 	r_hand = /obj/item/reagent_containers/cup/glass/bottle/beer/almost_empty
 
 /// Randomise outfit
@@ -40,3 +40,10 @@
 	var/obj/item/wizard_diploma/diploma = locate() in wizard.back
 	if(diploma)
 		diploma.owner = wizard.mind
+
+/// Special scroll that announces the wizard's teleporting
+/obj/item/teleportation_scroll/apprentice/announcement
+
+/obj/item/teleportation_scroll/apprentice/announcement/on_spell_cast(datum/action/cooldown/spell/cast_spell, mob/living/cast_on)
+	priority_announce("Encrypted communications intercepted in the vicinity of [station_name()]. There is an unknown threat aboard.", "Security Alert", ANNOUNCER_INTERCEPT)
+	return ..()

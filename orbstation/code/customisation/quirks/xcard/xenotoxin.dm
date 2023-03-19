@@ -55,7 +55,7 @@
     if (!DT_PROB(DAMAGE_BURST_RATE, delta_time))
         return // early return if we fail the check
     // we didnt fail, so run the code
-    
+
     /// base chance of a bad burst, which increases as victim's health decreases
     var/bad_burst_base_chance = BAD_BURST_HEALTH_RAMP_THRESHOLD - victim.health
 
@@ -82,7 +82,7 @@
     victim.losebreath++
 
     // damage a random organ, weighted heavily towards the liver
-    var/obj/item/organ/organ = pick(victim.internal_organs) // choose a random organ
+    var/obj/item/organ/organ = pick(victim.organs) // choose a random organ
     organ = pick(organ, victim.getorganslot(ORGAN_SLOT_LIVER)) // choose randomly between that organ and the liver
     organ.applyOrganDamage(rand(ORGAN_DAMAGE_MIN,ORGAN_DAMAGE_MAX)) // deal a small amount of random (non-increasing) damage to that organ
 
