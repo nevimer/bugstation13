@@ -255,7 +255,8 @@
 	self_defense_line = "Never come before a bot and their drink."
 	orderable_objects = list( ///strong and sleepy drinks
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/gin = 20,
+			/datum/reagent/consumable/ethanol/gin = 25,
+			/datum/reagent/consumable/ethanol/the_hat = 5,
 			/datum/reagent/consumable/ethanol/between_the_sheets = 10,
 			/datum/reagent/consumable/ethanol/ginger_amaretto = 10,
 			/datum/reagent/consumable/italian_coco = 5,
@@ -349,28 +350,21 @@
 	self_defense_line = "I will keelhaul ye!"
 	orderable_objects = list( ///fish, rice, anti-scurvy
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			Sauerkraut
-			fishandchips
-			/obj/item/food/fish_poke
-			Spicy Filet Sushi
-			icecream
-			Vegetarian sushi
-			Citrus Delight
-			Fruit Salad
-			Meat Poké
-			*/
+			/obj/item/food/sauerkraut = 20,
+			/obj/item/food/vegetariansushiroll = 15,
+			/obj/item/food/salad/citrusdelight = 15,
+			/obj/item/food/fishandchips = 10,
+			/obj/item/food/fish_poke = 5,
+			/obj/item/food/meat_poke = 5,
+			/obj/item/food/spicyfiletsushiroll = 5,
+			/datum/custom_order/icecream = 20,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-			rum
-			gin
-			Tropical storm
-			Andalusia
-			grog
-			Cuba Libre
-			*/
+			/datum/reagent/consumable/ethanol/rum = 30,
+			/datum/reagent/consumable/ethanol/grog = 15,
+			/datum/reagent/consumable/ethanol/squirt_cider = 5,
+			/datum/reagent/consumable/ethanol/cuba_libre = 5,
+			/datum/reagent/consumable/ethanol/tropical_storm = 5,
+			/datum/reagent/consumable/ethanol/hearty_punch = 1,
 		),
 	)

@@ -54,6 +54,9 @@
 /obj/item/food/fiesta_corn_skillet
 	venue_value = FOOD_PRICE_EXOTIC
 
+/obj/item/food/fish_poke
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/frenchtoast
 	venue_value = FOOD_PRICE_CHEAP
 
@@ -93,6 +96,9 @@
 /obj/item/food/meatloaf
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/meat_poke
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/pacoca
 	venue_value = FOOD_PRICE_CHEAP
 
@@ -114,6 +120,9 @@
 /obj/item/food/salad/greek_salad
 	venue_value = FOOD_PRICE_EXOTIC
 
+/obj/item/food/sauerkraut
+	venue_value = FOOD_PRICE_CHEAP
+
 /obj/item/food/scotchegg
 	venue_value = FOOD_PRICE_NORMAL
 
@@ -126,7 +135,13 @@
 /obj/item/food/spaghetti/garlic_nizaya
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/spicyfiletsushiroll
+	venue_value = FOOD_PRICE_EXOTIC
+
 /obj/item/food/sundae
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/vegetariansushiroll
 	venue_value = FOOD_PRICE_NORMAL
 
 //DRINKS
@@ -164,6 +179,9 @@
 /datum/reagent/consumable/ethanol/crevice_spike
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/cuba_libre
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/demonsblood
 	glass_price = DRINK_PRICE_HIGH
 
@@ -181,6 +199,12 @@
 
 /datum/reagent/consumable/ethanol/ginger_amaretto
 	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/ethanol/grog
+	glass_price = DRINK_PRICE_EASY
+
+/datum/reagent/consumable/ethanol/hearty_punch
+	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/iced_beer
 	glass_price = DRINK_PRICE_EASY
@@ -209,11 +233,17 @@
 /datum/reagent/consumable/ethanol/snowwhite
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/squirt_cider
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/tich_toch
 	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/toxins_special
 	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/tropical_storm
+	glass_price = DRINK_PRICE_MEDIUM
 
 /datum/reagent/consumable/ethanol/white_tiziran
 	glass_price = DRINK_PRICE_MEDIUM
