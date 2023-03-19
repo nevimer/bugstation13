@@ -56,3 +56,8 @@
 /obj/item/clothing/head/costume/lizard
 	name = "reptilian cloche"
 	desc = "A rather tasteless hat made out of synthesised scales."
+
+/obj/item/toy/plush/greek_cucumber
+/obj/item/toy/plush/greek_cucumber/Initialize(mapload, vol)
+	. = ..()
+	return INITIALIZE_HINT_QDEL

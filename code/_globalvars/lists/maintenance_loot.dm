@@ -175,6 +175,8 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/roller = 1,
 		/obj/item/spear = 1,
 		/obj/item/weldingtool/largetank = 1,
+		//Orbstation exclusive items
+		/obj/item/toy/plush/milkinz = 1,
 		) = 8,
 
 	list(//equipment
