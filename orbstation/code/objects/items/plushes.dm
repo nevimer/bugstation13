@@ -24,7 +24,7 @@
 	icon_state = "amoungplush"
 	attack_verb_continuous = list("suses", "stabs", "ejects")
 	attack_verb_simple = list("sus", "stab", "eject")
-	squeak_override = list('sound/creatures/alien_organ_cut.ogg' =1)
+	squeak_override = list('sound/creatures/alien_organ_cut.ogg' = 1)
 
 /obj/item/toy/plush/tbhplushie
 	name = "tbh plushie"
@@ -33,7 +33,7 @@
 	icon_state = "tbhplush"
 	attack_verb_continuous = list("yippees", "stares", "paws")
 	attack_verb_simple = list("yippee", "stare", "paw")
-	squeak_override = list('orbstation/sound/tbh_yippee.ogg' =1,)
+	squeak_override = list('orbstation/sound/tbh_yippee.ogg' = 1,)
 
 /obj/item/toy/plush/milkinz
 	name = "milkinz"
@@ -44,4 +44,4 @@
 	throwforce = 5
 	attack_verb_continuous = list("squelches", "slaps", "slops")
 	attack_verb_simple = list("squelch", "slap", "slop")
-	squeak_override = list('sound/misc/splort.ogg' =1,)
+	squeak_override = list('sound/misc/splort.ogg' = 1,)

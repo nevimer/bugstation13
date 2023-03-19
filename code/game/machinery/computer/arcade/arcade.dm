@@ -70,7 +70,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/storage/box/party_poppers = 2,
 		//Orbstation additions
 		/obj/item/toy/plush/amoungplushie = 2,
-		/obj/item/toy/plush/tbhplushie = 2
+		/obj/item/toy/plush/tbhplushie = 2,
 		))
 
 /obj/machinery/computer/arcade
