@@ -6,10 +6,13 @@
 /obj/item/food/baked_cheese_platter
 	venue_value = FOOD_PRICE_EXOTIC
 
+/obj/item/food/bbqribs
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/big_baked_rice
 	venue_value = FOOD_PRICE_EXOTIC
 
-/obj/item/food/bbqribs
+/obj/item/food/black_eggs
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/branrequests
@@ -57,6 +60,9 @@
 /obj/item/food/friedegg
 	venue_value = FOOD_PRICE_CHEAP
 
+/obj/item/food/fried_blood_sausage
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/fueljacks_lunch
 	venue_value = FOOD_PRICE_NORMAL
 
@@ -66,6 +72,9 @@
 /obj/item/food/grilled_cheese
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/headcheese_slice
+	venue_value = FOOD_PRICE_CHEAP
+
 /obj/item/food/herby_cheese
 	venue_value = FOOD_PRICE_NORMAL
 
@@ -73,6 +82,9 @@
 	venue_value = FOOD_PRICE_LEGENDARY
 
 /obj/item/food/jelliedtoast
+	venue_value = FOOD_PRICE_CHEAP
+
+/obj/item/food/lizard_fries
 	venue_value = FOOD_PRICE_CHEAP
 
 /obj/item/food/meat/bacon
@@ -84,7 +96,16 @@
 /obj/item/food/pacoca
 	venue_value = FOOD_PRICE_CHEAP
 
+/obj/item/food/patzikula
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/pie/amanita_pie
+	venue_value = FOOD_PRICE_EXOTIC
+
+/obj/item/food/pizza/flatbread/italic
+	venue_value = FOOD_PRICE_LEGENDARY
+
+/obj/item/food/pizza/flatbread/italic
 	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/ratatouille
@@ -96,8 +117,14 @@
 /obj/item/food/scotchegg
 	venue_value = FOOD_PRICE_NORMAL
 
+/obj/item/food/snowcones/korta_ice
+	venue_value = FOOD_PRICE_EXOTIC
+
 /obj/item/food/soup/moth_cotton_soup
 	venue_value = FOOD_PRICE_EXOTIC
+
+/obj/item/food/spaghetti/garlic_nizaya
+	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/sundae
 	venue_value = FOOD_PRICE_NORMAL
@@ -140,6 +167,9 @@
 /datum/reagent/consumable/ethanol/demonsblood
 	glass_price = DRINK_PRICE_HIGH
 
+/datum/reagent/consumable/ethanol/drunken_espatier
+	glass_price = DRINK_PRICE_HIGH
+
 /datum/reagent/consumable/ethanol/eggnog
 	glass_price = DRINK_PRICE_EASY
 
@@ -161,6 +191,9 @@
 /datum/reagent/consumable/ethanol/mauna_loa
 	glass_price = DRINK_PRICE_HIGH
 
+/datum/reagent/consumable/ethanol/mushi_kombucha
+	glass_price = DRINK_PRICE_STOCK
+
 /datum/reagent/consumable/ethanol/neurotoxin
 	glass_price = DRINK_PRICE_HIGH
 
@@ -170,6 +203,9 @@
 /datum/reagent/consumable/ethanol/sbiten
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/sea_breeze
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/snowwhite
 	glass_price = DRINK_PRICE_EASY
 
@@ -178,6 +214,9 @@
 
 /datum/reagent/consumable/ethanol/toxins_special
 	glass_price = DRINK_PRICE_HIGH
+
+/datum/reagent/consumable/ethanol/white_tiziran
+	glass_price = DRINK_PRICE_MEDIUM
 
 /datum/reagent/consumable/gibbfloats
 	glass_price = DRINK_PRICE_EASY

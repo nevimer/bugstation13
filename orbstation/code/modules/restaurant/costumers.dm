@@ -288,8 +288,6 @@
 			/obj/item/food/ratatouille = 10,
 			/obj/item/food/big_baked_rice = 5,
 			/obj/item/food/soup/moth_cotton_soup = 1,
-			/*
-			Buttered Baked Corn*/
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/rum = 25,
@@ -316,26 +314,21 @@
 	self_defense_line = "May Atrakor smile on the victor!"
 	orderable_objects = list( ///tiziran food and drinks
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/*
-			Black scrambled eggs
-			Fried blood sausage
-			Garlic and Oil Nizaya
-			Korta ice
-			Loaded poms-franzisks
-			Patzikula
-			Headcheese slice
-			Italic flatbread
-			*/
+			/obj/item/food/headcheese_slice = 15,
+			/obj/item/food/lizard_fries = 15,
+			/obj/item/food/patzikula = 10,
+			/obj/item/food/black_eggs = 5,
+			/obj/item/food/fried_blood_sausage = 5,
+			/obj/item/food/spaghetti/garlic_nizaya = 5,
+			/obj/item/food/pizza/flatbread/italic = 2,
+			/obj/item/food/snowcones/korta_ice = 2,
+			/obj/item/food/pizza/flatbread/italic = 1,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*
-				Mushi Kombucha
-				Sea Breeze
-				White Tiziran
-				Drunken Espatier
-			*/
+			/datum/reagent/consumable/ethanol/mushi_kombucha = 25,
+			/datum/reagent/consumable/ethanol/sea_breeze = 2,
+			/datum/reagent/consumable/ethanol/white_tiziran = 2,
+			/datum/reagent/consumable/ethanol/drunken_espatier = 1,
 		),
 	)
 
