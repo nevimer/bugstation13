@@ -281,23 +281,21 @@
 	self_defense_line = "*aflap"
 	orderable_objects = list( ///moffic food and drinks
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
+			/obj/item/food/soup/rice_porridge = 20,
+			/obj/item/food/soup/vegetarian_chili = 20,
+			/obj/item/food/buttered_baked_corn = 10,
+			/obj/item/food/fueljacks_lunch = 10,
+			/obj/item/food/ratatouille = 10,
+			/obj/item/food/big_baked_rice = 5,
+			/obj/item/food/soup/moth_cotton_soup = 1,
 			/*
-			Buttered Baked Corn
-			Ratatouille
-			Fueljack's Lunch
-			Big Baked Rice
-			Cotton Soup
-			Chili Sin Carne
-			Rice Porridge */
+			Buttered Baked Corn*/
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/beer = 25,
-			/*			Rum
-			Long John Silver
-			Admiralty
-			Tich Toch
-			*/
+			/datum/reagent/consumable/ethanol/rum = 25,
+			/datum/reagent/consumable/ethanol/admiralty = 5,
+			/datum/reagent/consumable/ethanol/long_john_silver = 5,
+			/datum/reagent/consumable/ethanol/tich_toch = 1,
 		),
 	)
 

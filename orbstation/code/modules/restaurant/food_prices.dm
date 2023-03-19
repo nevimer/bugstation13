@@ -6,10 +6,16 @@
 /obj/item/food/baked_cheese_platter
 	venue_value = FOOD_PRICE_EXOTIC
 
+/obj/item/food/big_baked_rice
+	venue_value = FOOD_PRICE_EXOTIC
+
 /obj/item/food/bbqribs
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/branrequests
+	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/buttered_baked_corn
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/cake/mothmallow
@@ -51,6 +57,9 @@
 /obj/item/food/friedegg
 	venue_value = FOOD_PRICE_CHEAP
 
+/obj/item/food/fueljacks_lunch
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/granola_bar
 	venue_value = FOOD_PRICE_EXOTIC
 
@@ -78,11 +87,17 @@
 /obj/item/food/pie/amanita_pie
 	venue_value = FOOD_PRICE_EXOTIC
 
+/obj/item/food/ratatouille
+	venue_value = FOOD_PRICE_NORMAL
+
 /obj/item/food/salad/greek_salad
 	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/scotchegg
 	venue_value = FOOD_PRICE_NORMAL
+
+/obj/item/food/soup/moth_cotton_soup
+	venue_value = FOOD_PRICE_EXOTIC
 
 /obj/item/food/sundae
 	venue_value = FOOD_PRICE_NORMAL
@@ -91,6 +106,9 @@
 
 /datum/reagent/consumable/cinderella
 	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/ethanol/admiralty
+	glass_price = DRINK_PRICE_EASY
 
 /datum/reagent/consumable/ethanol/alexander
 	glass_price = DRINK_PRICE_EASY
@@ -137,6 +155,9 @@
 /datum/reagent/consumable/ethanol/iced_beer
 	glass_price = DRINK_PRICE_EASY
 
+/datum/reagent/consumable/ethanol/long_john_silver
+	glass_price = DRINK_PRICE_MEDIUM
+
 /datum/reagent/consumable/ethanol/mauna_loa
 	glass_price = DRINK_PRICE_HIGH
 
@@ -151,6 +172,9 @@
 
 /datum/reagent/consumable/ethanol/snowwhite
 	glass_price = DRINK_PRICE_EASY
+
+/datum/reagent/consumable/ethanol/tich_toch
+	glass_price = DRINK_PRICE_HIGH
 
 /datum/reagent/consumable/ethanol/toxins_special
 	glass_price = DRINK_PRICE_HIGH
