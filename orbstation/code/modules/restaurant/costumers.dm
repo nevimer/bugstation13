@@ -27,7 +27,7 @@
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/beer = 25,
 			/datum/reagent/consumable/ethanol/iced_beer = 15,
-			/datum/reagent/consumable/cream_soda = 15
+			/datum/reagent/consumable/cream_soda = 15,
 			/datum/reagent/consumable/ethanol/snowwhite = 15,
 			/datum/reagent/consumable/nuka_cola = 1
 		),
