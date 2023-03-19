@@ -149,6 +149,9 @@
 /datum/reagent/consumable/cinderella
 	glass_price = DRINK_PRICE_MEDIUM
 
+/datum/reagent/consumable/cream_soda
+	glass_price = DRINK_PRICE_EASY
+
 /datum/reagent/consumable/ethanol/admiralty
 	glass_price = DRINK_PRICE_EASY
 
@@ -174,6 +177,9 @@
 	glass_price = DRINK_PRICE_STOCK
 
 /datum/reagent/consumable/ethanol/booger
+	glass_price = DRINK_PRICE_MEDIUM
+
+/datum/reagent/consumable/ethanol/bug_spray
 	glass_price = DRINK_PRICE_MEDIUM
 
 /datum/reagent/consumable/ethanol/crevice_spike

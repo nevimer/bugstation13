@@ -15,8 +15,8 @@
 	self_defense_line = "Get bent! Literally!"
 	orderable_objects = list( ///similar to the american one, but simpler
 		VENUE_RESTAURANT = list(
-			/obj/item/food/burger/plain = 30,
-			/obj/item/food/burger/cheese = 30,
+			/obj/item/food/burger/plain = 20,
+			/obj/item/food/burger/cheese = 20,
 			/obj/item/food/burger/superbite = 1,
 			/obj/item/food/fries = 10,
 			/obj/item/food/cheesyfries = 5,
@@ -25,9 +25,10 @@
 			/datum/custom_order/icecream = 14,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/iced_beer = 6,
-			/datum/reagent/consumable/ethanol/snowwhite = 3,
 			/datum/reagent/consumable/ethanol/beer = 25,
+			/datum/reagent/consumable/ethanol/iced_beer = 15,
+			/datum/reagent/consumable/cream_soda = 15
+			/datum/reagent/consumable/ethanol/snowwhite = 15,
 			/datum/reagent/consumable/nuka_cola = 1
 		),
 	)
@@ -49,8 +50,9 @@
 	self_defense_line = "And you are definitely weaker than a bear."
 	orderable_objects = list( ///nuts, berries, vegetables
 		VENUE_RESTAURANT = list(
-			/obj/item/food/pacoca = 20,
-			/obj/item/food/salad/herbsalad = 20,
+			/obj/item/food/pacoca = 10,
+			/obj/item/food/soup/vegetable = 10,
+			/obj/item/food/salad/herbsalad = 10,
 			/obj/item/food/salad/fruit = 5,
 			/obj/item/food/granola_bar = 5,
 			/obj/item/food/pizza/vegetable = 3,
@@ -59,10 +61,11 @@
 			/obj/item/food/salad/greek_salad = 2,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/ethanol/applejack = 20,
-			/datum/reagent/consumable/ethanol/barefoot = 3,
-			/datum/reagent/consumable/ethanol/aloe = 3,
-			/datum/reagent/consumable/tea = 4,
+			/datum/reagent/consumable/ethanol/applejack = 15,
+			/datum/reagent/consumable/tea = 15,
+			/datum/reagent/consumable/ethanol/barefoot = 5,
+			/datum/reagent/consumable/ethanol/aloe = 5,
+			/datum/reagent/consumable/ethanol/bug_spray = 5,
 			/datum/reagent/consumable/ethanol/bastion_bourbon = 1,
 		),
 	)
