@@ -1282,8 +1282,13 @@
 /area/station/engineering/main)
 "axt" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/security/wooden_tv,
 /obj/item/radio/intercom/directional/west,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/paper_bin{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/pen,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "axw" = (
@@ -17645,10 +17650,7 @@
 /area/station/science/robotics/lab)
 "gOM" = (
 /obj/structure/table/wood,
-/obj/machinery/fax{
-	fax_name = "Captain's Office";
-	name = "Captain's Fax Machine"
-	},
+/obj/machinery/computer/security/wooden_tv,
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "gOV" = (
@@ -18863,13 +18865,11 @@
 /area/space/nearstation)
 "hoK" = (
 /obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_x = 1;
-	pixel_y = 9
-	},
-/obj/item/pen,
-/obj/item/book/manual/wiki/security_space_law,
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/fax{
+	fax_name = "Captain's Office";
+	name = "Captain's Fax Machine"
+	},
 /turf/open/floor/wood,
 /area/station/command/heads_quarters/captain)
 "hoP" = (
@@ -27031,6 +27031,7 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/start/depsec/science,
+/obj/structure/filingcabinet,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "kEG" = (
@@ -33033,7 +33034,10 @@
 /turf/open/floor/iron,
 /area/station/science/research)
 "mRt" = (
-/obj/structure/filingcabinet,
+/obj/structure/table,
+/obj/machinery/recharger{
+	pixel_y = 4
+	},
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "mRz" = (
@@ -39885,13 +39889,12 @@
 /area/station/service/hydroponics)
 "pAA" = (
 /obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
-/obj/item/pen,
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 6
+	},
+/obj/machinery/fax{
+	fax_name = "Security Office";
+	name = "Security Office Fax Machine"
 	},
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/office)
@@ -40594,13 +40597,14 @@
 /area/station/cargo/storage)
 "pQp" = (
 /obj/structure/table,
-/obj/machinery/fax{
-	fax_name = "Security Office";
-	name = "Security Office Fax Machine"
-	},
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 4
 	},
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
+	},
+/obj/item/pen,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/office)
 "pQt" = (
@@ -55785,11 +55789,8 @@
 	},
 /area/station/commons/lounge)
 "vQp" = (
-/obj/structure/table,
-/obj/machinery/recharger{
-	pixel_y = 4
-	},
 /obj/item/radio/intercom/directional/south,
+/obj/structure/filingcabinet,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "vQt" = (
