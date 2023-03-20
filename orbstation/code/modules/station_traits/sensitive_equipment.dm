@@ -15,8 +15,6 @@
 	COOLDOWN_DECLARE(objective_announcement_cooldown)
 	COOLDOWN_DECLARE(purchase_announcement_cooldown)
 
-	force = TRUE // TURN THIS OFF
-
 /datum/station_trait/sensitive_equipment/New()
 	trait_processes = prob(30) // when this triggers, the false alarm version of this trait will activate
 	return ..()
