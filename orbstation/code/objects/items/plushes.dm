@@ -24,6 +24,7 @@
 	icon_state = "fishplush"
 	attack_verb_continuous = list("bites", "squeak", "spins")
 	attack_verb_simple = list("bites", "squeak", "spins")
+	squeak_override = list('sound/weapons/laser.ogg' = 1)
 	gender = FEMALE
 
 /obj/item/toy/plush/ivonaplushie
@@ -33,4 +34,5 @@
 	icon_state = "ivonaplush"
 	attack_verb_continuous = list("growl", "chomp", "slash")
 	attack_verb_simple = list("growl", "chomp", "slash")
+	squeak_override = list('sound/weapons/kenetic_accel.ogg' = 1)
 	gender = FEMALE
