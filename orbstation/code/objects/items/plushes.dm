@@ -22,8 +22,8 @@
 	desc = "A fuzzy toy of Research's most scrungled roboticist, Fish. Matching Chip plushie coming soon!"
 	icon = 'orbstation/icons/obj/items/plushes.dmi'
 	icon_state = "fishplush"
-	attack_verb_continuous = list("bites", "squeak", "spins")
-	attack_verb_simple = list("bites", "squeak", "spins")
+	attack_verb_continuous = list("bites", "squeaks", "spins")
+	attack_verb_simple = list("bite", "squeak", "spin")
 	squeak_override = list('sound/weapons/laser.ogg' = 1)
 	gender = FEMALE
 
@@ -32,7 +32,7 @@
 	desc = "A plushed toy of mining's largest reptile, Ivona. Somehow smells just like the ash and brimstone of lavaland."
 	icon = 'orbstation/icons/obj/items/plushes.dmi'
 	icon_state = "ivonaplush"
-	attack_verb_continuous = list("growl", "chomp", "slash")
+	attack_verb_continuous = list("growls", "chomps", "slashes")
 	attack_verb_simple = list("growl", "chomp", "slash")
 	squeak_override = list('sound/weapons/kenetic_accel.ogg' = 1)
 	gender = FEMALE
