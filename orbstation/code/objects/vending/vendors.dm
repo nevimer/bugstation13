@@ -29,6 +29,16 @@
     orb_premium = list(
         /obj/item/toy/plush/pennyplushie = 1,
     )
+
+/obj/machinery/vending/wardrobe/robo_wardrobe
+	orb_premium = list(
+		/obj/item/toy/plush/fishplushie = 1
+	)
+
+/obj/machinery/vending/wardrobe/cargo_wardrobe
+	orb_premium = list(
+		/obj/item/toy/plush/ivonaplushie = 1
+	)
 //Items Added to General
 
 //Items Added to Contraband

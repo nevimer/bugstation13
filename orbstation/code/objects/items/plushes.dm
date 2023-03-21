@@ -17,3 +17,20 @@
 	attack_verb_simple = list("ohoho", "bite", "treat")
 	gender = FEMALE
 
+/obj/item/toy/plush/fishplushie
+	name = "fish plushie"
+	desc = "A fuzzy toy of Research's most scrungled roboticist, Fish. Matching Chip plushie coming soon!"
+	icon = 'orbstation/icons/obj/items/plushes.dmi'
+	icon_state = "fishplush"
+	attack_verb_continuous = list("bites", "squeak", "spins")
+	attack_verb_simple = list("bites", "squeak", "spins")
+	gender = FEMALE
+
+/obj/item/toy/plush/ivonaplushie
+	name = "ivona plushie"
+	desc = "A plushed toy of mining's largest reptile, Ivona. Somehow smells just like the ash and brimstone of lavaland."
+	icon = 'orbstation/icons/obj/items/plushes.dmi'
+	icon_state = "ivonaplush"
+	attack_verb_continuous = list("growl", "chomp", "slash")
+	attack_verb_simple = list("growl", "chomp", "slash")
+	gender = FEMALE
