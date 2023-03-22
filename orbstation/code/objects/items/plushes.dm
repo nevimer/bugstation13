@@ -36,6 +36,7 @@
 	attack_verb_simple = list("growl", "chomp", "slash")
 	squeak_override = list('sound/weapons/kenetic_accel.ogg' = 1)
 	gender = FEMALE
+
 /obj/item/toy/plush/amoungplushie
 	name = "amoung plushie"
 	desc = "A cuddly toy depicting the dangerous and rare alien species the amoung, seems kinda sus."
