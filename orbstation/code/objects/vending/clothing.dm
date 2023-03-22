@@ -61,7 +61,7 @@
                 /obj/item/clothing/suit/hawaiian/orange = 2,
                 /obj/item/clothing/suit/hawaiian/purple = 2,
                 /obj/item/clothing/suit/hawaiian/green = 2,
-            ),
+        	 ),
         ),
         list(
             "name" = "Accessories",
@@ -73,6 +73,6 @@
 				/obj/item/lipstick/jade = 2,
 				/obj/item/lipstick/green = 2,
 				/obj/item/lipstick/black = 2,
-            ),
+        	),
         ),
     )
