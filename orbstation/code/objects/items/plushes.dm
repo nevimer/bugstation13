@@ -19,7 +19,7 @@
 
 /obj/item/toy/plush/amoungplushie
 	name = "amoung plushie"
-	desc = "a cuddly toy depicting the dangerous and rare alien species the amoung, seems kinda sus."
+	desc = "A cuddly toy depicting the dangerous and rare alien species the amoung, seems kinda sus."
 	icon = 'orbstation/icons/obj/items/plushes.dmi'
 	icon_state = "amoungplush"
 	attack_verb_continuous = list("suses", "stabs", "ejects")
@@ -28,7 +28,7 @@
 
 /obj/item/toy/plush/tbhplushie
 	name = "tbh plushie"
-	desc = "A cuddly critter plushie, it's wide-eyed stare gives you a warm fuzzy feeling."
+	desc = "A cuddly critter plushie, its wide-eyed stare gives you a warm fuzzy feeling."
 	icon = 'orbstation/icons/obj/items/plushes.dmi'
 	icon_state = "tbhplush"
 	attack_verb_continuous = list("yippees", "stares", "paws")
@@ -37,7 +37,7 @@
 
 /obj/item/toy/plush/milkinz
 	name = "milkinz"
-	desc = "A milk soaked cat plushie, it's sad eyes bore into you despite its crusty exterior."
+	desc = "A milk soaked cat plushie, its sad eyes bore into you despite its crusty exterior."
 	icon = 'orbstation/icons/obj/items/plushes.dmi'
 	icon_state = "milkinz"
 	force = 5
