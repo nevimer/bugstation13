@@ -2285,8 +2285,8 @@
 /obj/machinery/door/airlock/wood{
 	name = "Diner Canopy"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/openspace,
 /area/station/service/kitchen/diner)
 "aQb" = (
@@ -2531,8 +2531,9 @@
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/effect/mapping_helpers/airlock/access/any/service/bar,
 /turf/open/floor/iron/smooth,
 /area/station/maintenance/department/crew_quarters/bar)
 "aUR" = (
@@ -16114,13 +16115,14 @@
 /turf/open/floor/iron,
 /area/station/engineering/engine_smes)
 "gig" = (
-/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/airlock/wood{
 	name = "Bar Maintenance Hatch"
 	},
+/obj/effect/mapping_helpers/airlock/access/any/service/bar,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/crew_quarters/bar)
 "giE" = (
@@ -22552,10 +22554,11 @@
 /area/station/science/cytology)
 "iRE" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/machinery/door/airlock/wood{
 	name = "Bar Maintenance Hatch"
 	},
+/obj/effect/mapping_helpers/airlock/access/any/service/bar,
+/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/crew_quarters/bar)
 "iSu" = (
@@ -36862,6 +36865,11 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plating,
 /area/station/ai_monitored/turret_protected/aisat/foyer)
+"opw" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/station/service/hydroponics)
 "opC" = (
 /obj/structure/extinguisher_cabinet/directional/east,
 /turf/open/floor/iron,
@@ -52696,11 +52704,11 @@
 /turf/open/misc/asteroid,
 /area/station/maintenance/department/electrical)
 "uDH" = (
-/obj/effect/mapping_helpers/airlock/access/all/engineering/general,
 /obj/machinery/door/airlock/wood{
 	name = "Diner Canopy"
 	},
 /obj/structure/lattice/catwalk,
+/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
 /turf/open/openspace,
 /area/station/service/kitchen/diner)
 "uDQ" = (
@@ -157803,7 +157811,7 @@ kKU
 kKU
 kKU
 kKU
-dIi
+opw
 sZD
 sZD
 sZD
