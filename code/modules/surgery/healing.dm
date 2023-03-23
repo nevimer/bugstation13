@@ -84,12 +84,10 @@
 	var/target_msg = "[user] fixes some of [target]'s wounds" //see above
 	var/brute_healed = brutehealing
 	var/burn_healed = burnhealing
-	if(target.stat == DEAD) //dead patients get way less additional heal from the damage they have.
-		brute_healed += round((target.getBruteLoss() * (brute_multiplier * 0.2)),0.1)
-		burn_healed += round((target.getFireLoss() * (burn_multiplier * 0.2)),0.1)
-	else
-		brute_healed += round((target.getBruteLoss() * brute_multiplier),0.1)
-		burn_healed += round((target.getFireLoss() * burn_multiplier),0.1)
+	//ORBSTATION REMOVAL: death no longer affects healing speed
+	//Instead, damage amounts higher than 200 are healed as if they were 200
+	brute_healed += round((min(target.getBruteLoss(), 200) * brute_multiplier),0.1)
+	burn_healed += round((min(target.getFireLoss(), 200) * burn_multiplier),0.1)
 	if(!get_location_accessible(target, target_zone))
 		brute_healed *= 0.55
 		burn_healed *= 0.55

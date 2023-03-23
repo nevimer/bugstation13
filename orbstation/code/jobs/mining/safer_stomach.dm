@@ -29,6 +29,7 @@
 	if (regenerative_stomach)
 		victim.fully_heal(HEAL_DAMAGE)
 	RegisterSignal(victim, COMSIG_MOVABLE_MOVED, PROC_REF(on_rescued))
+	RegisterSignal(victim, COMSIG_LIVING_REVIVE, PROC_REF(on_rescued))
 
 /datum/element/safe_stomach/Detach(mob/living/source, ...)
 	. = ..()

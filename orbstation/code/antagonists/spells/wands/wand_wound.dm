@@ -31,7 +31,6 @@
 	icon_state = "soulslash"
 	damage = 15
 	damage_type = BRUTE
-	nodamage = FALSE
 	/// Weighted list of inflicted wounds
 	var/static/list/wound_effects = list(
 		/datum/wound/blunt/critical = 1, /datum/wound/blunt/severe = 3,
