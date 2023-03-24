@@ -1,3 +1,6 @@
+// Allows inserting extra items into vending machines without editing upstream code.
+// Please do not place any products in here! Those should go in other files in this folder instead.
+
 /obj/machinery/vending
 	/// Extra items to add to the products list
 	var/list/orb_products = list()
@@ -19,27 +22,3 @@
 			category["products"] += orb_category["products"]
 			break
 	return ..()
-//Items Added to Premium
-/obj/machinery/vending/wardrobe/cargo_wardrobe
-    orb_premium = list(
-        /obj/item/toy/plush/felfyplushie = 1,
-		/obj/item/toy/plush/ivonaplushie = 1,
-    )
-
-/obj/machinery/vending/wardrobe/bar_wardrobe
-    orb_premium = list(
-        /obj/item/toy/plush/pennyplushie = 1,
-    )
-
-/obj/machinery/vending/wardrobe/robo_wardrobe
-	orb_premium = list(
-		/obj/item/toy/plush/fishplushie = 1
-	)
-
-//Items Added to General
-
-//Items Added to Contraband
-/obj/machinery/vending/autodrobe
-	orb_contraband = list(
-		/obj/item/clothing/glasses/salesman = 2,
-	)
