@@ -461,12 +461,9 @@
 /area/shuttle/escape/brig)
 "qy" = (
 /obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral/half{
-	dir = 8
-	},
 /obj/structure/table,
 /obj/item/healthanalyzer,
+/obj/effect/turf_decal/tile/neutral/anticorner,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "qG" = (
@@ -542,11 +539,8 @@
 /area/shuttle)
 "tq" = (
 /obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral/half{
-	dir = 8
-	},
 /obj/machinery/iv_drip,
+/obj/effect/turf_decal/tile/neutral/anticorner,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "tD" = (
@@ -567,8 +561,8 @@
 /area/shuttle)
 "uh" = (
 /obj/item/kirbyplants/random,
-/obj/effect/turf_decal/tile/dark/opposingcorners,
 /obj/machinery/status_display/evac/directional/west,
+/obj/effect/turf_decal/tile/dark/opposingcorners,
 /turf/open/floor/mineral/titanium,
 /area/shuttle)
 "uj" = (
@@ -631,8 +625,8 @@
 /area/shuttle)
 "wu" = (
 /obj/machinery/recharge_station,
-/obj/effect/turf_decal/tile/dark/opposingcorners,
 /obj/structure/extinguisher_cabinet/directional/east,
+/obj/effect/turf_decal/tile/dark/opposingcorners,
 /turf/open/floor/mineral/titanium,
 /area/shuttle)
 "wY" = (
@@ -714,11 +708,8 @@
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
@@ -771,11 +762,11 @@
 /area/shuttle)
 "Bw" = (
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/tile/neutral/half,
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1;
 	initialize_directions = 1
 	},
+/obj/effect/turf_decal/tile/neutral/half,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "BE" = (
@@ -868,11 +859,6 @@
 "Ff" = (
 /obj/structure/table,
 /obj/item/clothing/mask/breath/medical,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
 /obj/item/reagent_containers/cup/bottle/epinephrine{
 	pixel_x = -3;
 	pixel_y = 8
@@ -889,6 +875,10 @@
 	},
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/syringe,
+/obj/effect/turf_decal/tile/neutral/half,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "Fx" = (
@@ -1095,11 +1085,11 @@
 /area/shuttle)
 "NM" = (
 /obj/structure/table,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/healthanalyzer,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/item/clothing/mask/breath/medical,
-/obj/item/healthanalyzer,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "Ob" = (
@@ -1112,11 +1102,11 @@
 /obj/structure/closet/crate/medical,
 /obj/item/storage/belt/medical,
 /obj/effect/spawner/random/medical/supplies,
+/obj/item/defibrillator/loaded,
+/obj/item/defibrillator/loaded,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
-/obj/item/defibrillator/loaded,
-/obj/item/defibrillator/loaded,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "OB" = (
@@ -1208,14 +1198,14 @@
 /area/shuttle)
 "RU" = (
 /obj/machinery/light/directional/south,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/book/manual/wiki/surgery{
 	anchored = 1
+	},
+/obj/effect/turf_decal/tile/neutral/half,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
@@ -1242,9 +1232,6 @@
 /turf/open/floor/mineral/titanium,
 /area/shuttle)
 "Tb" = (
-/obj/effect/turf_decal/tile/neutral/half{
-	dir = 1
-	},
 /obj/structure/closet/emcloset{
 	anchored = 1
 	},
@@ -1261,6 +1248,9 @@
 /obj/item/storage/medkit/regular{
 	pixel_x = 2;
 	pixel_y = 3
+	},
+/obj/effect/turf_decal/tile/neutral/half{
+	dir = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
@@ -1292,13 +1282,13 @@
 /obj/effect/spawner/random/medical/surgery_tool_advanced,
 /obj/effect/spawner/random/medical/surgery_tool_advanced,
 /obj/machinery/light/directional/north,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
 /obj/effect/turf_decal/tile/neutral/half{
 	dir = 1
 	},
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "Tx" = (
@@ -1326,10 +1316,7 @@
 "Ud" = (
 /obj/machinery/light/directional/north,
 /obj/structure/extinguisher_cabinet/directional/north,
-/obj/effect/turf_decal/tile/neutral/half,
-/obj/effect/turf_decal/tile/neutral/half{
-	dir = 1
-	},
+/obj/effect/turf_decal/tile/neutral/full,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle)
 "Ug" = (
