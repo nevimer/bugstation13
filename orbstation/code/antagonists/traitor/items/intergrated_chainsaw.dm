@@ -23,37 +23,6 @@
 	progression_minimum = 30 MINUTES
 
 /obj/item/chainsaw/mounted_chainsaw/implanted
-	name = "mounted chainsaw"
-	desc = "A chainsaw that has replaced your arm."
-	icon_state = "chainsaw_on"
-	inhand_icon_state = "mounted_chainsaw"
-	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
+	name = "implanted chainsaw"
+	desc = "A chainsaw that has extended from your arm."
 	item_flags = ABSTRACT
-	w_class = WEIGHT_CLASS_HUGE
-	force = 24
-	throwforce = 0
-	throw_range = 0
-	throw_speed = 0
-	sharpness = SHARP_EDGED
-	attack_verb_continuous = list("saws", "tears", "lacerates", "cuts", "chops", "dices")
-	attack_verb_simple = list("saw", "tear", "lacerate", "cut", "chop", "dice")
-	hitsound = 'sound/weapons/chainsawhit.ogg'
-	tool_behaviour = TOOL_SAW
-	toolspeed = 1
-
-/obj/item/chainsaw/mounted_chainsaw/implanted/Initialize(mapload)
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, HAND_REPLACEMENT_TRAIT)
-
-/obj/item/chainsaw/mounted_chainsaw/implanted/Destroy()
-	var/obj/item/bodypart/part
-	new /obj/item/chainsaw(get_turf(src))
-	if(iscarbon(loc))
-		var/mob/living/carbon/holder = loc
-		var/index = holder.get_held_index_of_item(src)
-		if(index)
-			part = holder.hand_bodyparts[index]
-	. = ..()
-	if(part)
-		part.drop_limb()
