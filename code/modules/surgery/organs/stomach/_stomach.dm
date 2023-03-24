@@ -13,9 +13,8 @@
 	desc = "Onaka ga suite imasu."
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	//decay_factor = STANDARD_ORGAN_DECAY * 1.15 // ~13 minutes, the stomach is one of the first organs to die
-	decay_factor = STANDARD_ORGAN_DECAY * 0.75 //20 minutes
-	
+	decay_factor = STANDARD_ORGAN_DECAY * 1.15 // ~13 minutes, the stomach is one of the first organs to die
+
 	low_threshold_passed = "<span class='info'>Your stomach flashes with pain before subsiding. Food doesn't seem like a good idea right now.</span>"
 	high_threshold_passed = "<span class='warning'>Your stomach flares up with constant pain- you can hardly stomach the idea of food right now!</span>"
 	high_threshold_cleared = "<span class='info'>The pain in your stomach dies down for now, but food still seems unappealing.</span>"
@@ -121,6 +120,23 @@
 	if(HAS_TRAIT(human, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 
+	//ORBSTATION REMOVAL - fatphobia
+	/*//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
+	if(HAS_TRAIT_FROM(human, TRAIT_FAT, OBESITY))//I share your pain, past coder.
+		if(human.overeatduration < (200 SECONDS))
+			to_chat(human, span_notice("You feel fit again!"))
+			REMOVE_TRAIT(human, TRAIT_FAT, OBESITY)
+			human.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
+			human.update_inv_w_uniform()
+			human.update_inv_wear_suit()
+	else
+		if(human.overeatduration >= (200 SECONDS))
+			to_chat(human, span_danger("You suddenly feel blubbery!"))
+			ADD_TRAIT(human, TRAIT_FAT, OBESITY)
+			human.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
+			human.update_inv_w_uniform()
+			human.update_inv_wear_suit()*/
+
 	// nutrition decrease and satiety
 	if (human.nutrition > 0 && human.stat != DEAD)
 		// THEY HUNGER
@@ -151,6 +167,7 @@
 			human.overeatduration = max(human.overeatduration - (2 SECONDS * delta_time), 0) //doubled the unfat rate
 
 	//metabolism change
+	//ORBSTATION REMOVAL - deleted fat checking
 	if(nutrition > NUTRITION_LEVEL_FED && human.satiety > 80)
 		if(human.metabolism_efficiency != 1.25)
 			to_chat(human, span_notice("You feel vigorous."))
@@ -171,6 +188,7 @@
 	// If we did anything more then just set and throw alerts here I would add bracketing
 	// But well, it is all we do, so there's not much point bothering with it you get me?
 	switch(nutrition)
+		//ORBSTATION REMOVAL - no fat alert
 		if(NUTRITION_LEVEL_HUNGRY to INFINITY)
 			human.clear_alert(ALERT_NUTRITION)
 		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)

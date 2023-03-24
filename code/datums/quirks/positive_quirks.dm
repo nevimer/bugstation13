@@ -310,7 +310,7 @@
 
 /datum/quirk/voracious
 	name = "Voracious"
-	desc = "Nothing gets between you and your food. You eat faster and can always manage to eat junk food."
+	desc = "Nothing gets between you and your food. You eat faster and can binge on junk food! Being fat suits you just fine."
 	icon = "drumstick-bite"
 	value = 2
 	mob_trait = TRAIT_VORACIOUS

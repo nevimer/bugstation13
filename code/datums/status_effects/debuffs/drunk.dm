@@ -136,18 +136,26 @@
 	// Handle the Ballmer Peak.
 	// If our owner is a scientist (has the trait "TRAIT_BALLMER_SCIENTIST"), there's a 5% chance
 	// that they'll say one of the special "ballmer message" lines, depending their drunk-ness level.
-	/*
-	var/obj/item/organ/internal/liver/liver_organ = owner.getorganslot(ORGAN_SLOT_LIVER)
+
+	// ORBSTATION REMOVAL - no Ballmer Peak
+	/*var/obj/item/organ/internal/liver/liver_organ = owner.getorganslot(ORGAN_SLOT_LIVER)
 	if(liver_organ && HAS_TRAIT(liver_organ, TRAIT_BALLMER_SCIENTIST) && prob(5))
 		if(drunk_value >= BALLMER_PEAK_LOW_END && drunk_value <= BALLMER_PEAK_HIGH_END)
 			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_good_msg"), forced = "ballmer")
-	*/
 
-		//if(drunk_value > BALLMER_PEAK_WINDOWS_ME) // by this point you're into windows ME territory
-			//owner.say(pick_list_replacements(VISTA_FILE, "ballmer_windows_me_msg"), forced = "ballmer")
+
+		if(drunk_value > BALLMER_PEAK_WINDOWS_ME) // by this point you're into windows ME territory
+			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_windows_me_msg"), forced = "ballmer")*/
+	//END ORBSTATION REMOVAL
 
 	// And drunk people will always lose jitteriness
 	owner.adjust_jitter(-6 SECONDS)
+
+	// Over 11, we will constantly gain slurring up to 10 seconds of slurring.
+	//ORBSTATION REMOVAL - no drunken slurring
+	/*if(drunk_value >= 11)
+		owner.adjust_timed_status_effect(2.4 SECONDS, /datum/status_effect/speech/slurring/drunk, max_duration = 10 SECONDS)*/
+	//END ORBSTATION REMOVAL
 
 	// Over 41, we have a 30% chance to gain confusion, and we will always have 20 seconds of dizziness.
 	if(drunk_value >= 41)

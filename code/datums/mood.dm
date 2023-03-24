@@ -117,7 +117,14 @@
 		clear_mood_event(MOOD_CATEGORY_NUTRITION)  // if you happen to switch species while hungry youre no longer hungy
 		return FALSE // no moods for nutrition
 	switch(mob_parent.nutrition)
-		if(NUTRITION_LEVEL_WELL_FED to INFINITY)
+		//ORBSTATION EDIT
+		/*if(NUTRITION_LEVEL_FULL to INFINITY)
+			if (!HAS_TRAIT(L, TRAIT_VORACIOUS))
+				add_event(null, "nutrition", /datum/mood_event/fat)
+			else
+				add_event(null, "nutrition", /datum/mood_event/wellfed) // round and full
+		if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)*/
+		if(NUTRITION_LEVEL_WELL_FED to INFINITY) //ORBSTATION EDIT END
 			add_mood_event(MOOD_CATEGORY_NUTRITION, /datum/mood_event/wellfed)
 		if( NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
 			add_mood_event(MOOD_CATEGORY_NUTRITION, /datum/mood_event/fed)
@@ -300,7 +307,7 @@
 /// Prints the users mood, sanity, and moodies to chat
 /datum/mood/proc/print_mood(mob/user)
 	var/msg = "[span_info("<EM>My current mental status:</EM>")]\n"
-	msg += span_notice("My current stress: ") //Long term
+	msg += span_notice("My current stress: ") //Long term - ORBSTATION EDIT (sanity -> stress)
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
 			msg += "[span_boldnicegreen("My mind feels like a temple!")]\n"

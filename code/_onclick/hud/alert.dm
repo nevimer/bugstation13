@@ -179,6 +179,12 @@
 
 //End gas alerts
 
+
+/atom/movable/screen/alert/fat
+	name = "Fat"
+	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	icon_state = "fat"
+
 /atom/movable/screen/alert/hungry
 	name = "Hungry"
 	desc = "Some food would be good right about now."

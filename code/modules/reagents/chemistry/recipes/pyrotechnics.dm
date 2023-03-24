@@ -594,3 +594,8 @@
 	H_ion_release = -0.02
 	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_UNIQUE
 
+//ORBSTATION REMOVAL (doesn't make sense with the reflavored planet cracker...)
+/*/datum/chemical_reaction/reagent_explosion/patriotism_overload
+	required_reagents = list(/datum/reagent/consumable/ethanol/planet_cracker = 1, /datum/reagent/consumable/ethanol/triumphal_arch = 1)
+	strengthdiv = 20
+	mix_message = "<span class='boldannounce'>The two patriotic drinks instantly reject each other!</span>"*/

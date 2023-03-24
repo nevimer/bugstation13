@@ -776,9 +776,9 @@
 		ROLE_POSITRONIC_BRAIN,
 	)
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
-	required_candidates = 101
+	required_candidates = 1
 	weight = 4
-	cost = 3000 // Doesn't have the same impact on rounds as revenants, dragons, sentient disease (10) or syndicate infiltrators (5).
+	cost = 3 // Doesn't have the same impact on rounds as revenants, dragons, sentient disease (10) or syndicate infiltrators (5).
 	repeatable = TRUE
 
 /datum/dynamic_ruleset/midround/from_living/obsessed/trim_candidates()

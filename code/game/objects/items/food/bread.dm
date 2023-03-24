@@ -96,7 +96,7 @@
 
 /obj/item/food/bread/meat
 	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquent gentleman. Whatever the hell that's supposed to mean."
+	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
 	icon_state = "meatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -147,7 +147,7 @@
 
 /obj/item/food/bread/xenomeat
 	name = "xenomeatbread loaf"
-	desc = "A loaf of particularly caustic meatbread. Are you sure you should be eating this?"
+	desc = "The culinary base of every self-respecting eloquen/tg/entleman. Extra Heretical."
 	icon_state = "xenomeatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -160,7 +160,7 @@
 
 /obj/item/food/breadslice/xenomeat
 	name = "xenomeatbread slice"
-	desc = "A slice of particularly dubious meatbread."
+	desc = "A slice of delicious meatbread. Extra Heretical."
 	icon_state = "xenobreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,

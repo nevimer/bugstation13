@@ -61,6 +61,10 @@
 
 /obj/item/storage/box/survival/mining/PopulateContents()
 	..()
+	//ORBSTATION ADDITION - miners don't need TWO crowbars
+	var/obj/item/old_crowbar = locate(/obj/item/crowbar) in src
+	qdel(old_crowbar)
+	//END ORBSTATION ADDITION
 	new /obj/item/crowbar/red(src)
 
 // Engineer survival box

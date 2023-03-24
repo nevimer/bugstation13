@@ -12,13 +12,17 @@
 		fold_in(force = TRUE)
 	//Need more effects that aren't instadeath or permanent law corruption.
 	//Ask and you shall receive
-	switch(rand(1, 2))
+	switch(rand(1, 2)) //ORBSTATION EDIT
 		if(1)
 			adjust_stutter(1 MINUTES / severity)
 			to_chat(src, span_danger("Warning: Feedback loop detected in speech module."))
 		if(2)
 			adjust_slurring(INFINITY)
 			to_chat(src, span_danger("Warning: Audio synthesizer CPU stuck."))
+		//ORBSTATION REMOVAL
+		/*if(3)
+			adjust_timed_status_effect(INFINITY, /datum/status_effect/speech/stutter/derpspeech)
+			to_chat(src, span_danger("Warning: Vocabulary databank corrupted."))*/
 	if(prob(40))
 		mind.language_holder.selected_language = get_random_spoken_language()
 

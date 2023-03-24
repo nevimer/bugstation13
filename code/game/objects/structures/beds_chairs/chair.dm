@@ -519,7 +519,17 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/chair/stool/bar, 0)
 /obj/structure/chair/plastic/post_buckle_mob(mob/living/Mob)
 	Mob.pixel_y += 2
 	.=..()
-	//ORBSTATION DELETION: removed "snap_check" proc (interacted with "fat" mechanics)
+	if(iscarbon(Mob))
+		INVOKE_ASYNC(src, PROC_REF(snap_check), Mob)
+
+/obj/structure/chair/plastic/proc/snap_check(mob/living/carbon/Mob)
+	return //ORBSTATION EDIT - remove fatphobia by making this do nothing
+	/*if (Mob.nutrition >= NUTRITION_LEVEL_FAT)
+		to_chat(Mob, span_warning("The chair begins to pop and crack, you're too heavy!"))
+		if(do_after(Mob, 6 SECONDS, progress = FALSE))
+			Mob.visible_message(span_notice("The plastic chair snaps under [Mob]'s weight!"))
+			new /obj/effect/decal/cleanable/plastic(loc)
+			qdel(src)*/
 
 /obj/structure/chair/plastic/post_unbuckle_mob(mob/living/Mob)
 	Mob.pixel_y -= 2
