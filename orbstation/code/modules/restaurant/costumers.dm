@@ -36,7 +36,7 @@
 /datum/customer_data/hiker
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
+	base_icon_state = "generic_robot"
 	clothing_sets = list("hiker_clothes")
 
 	found_seat_lines = list("Finally, breaking camp.")
@@ -73,7 +73,7 @@
 /datum/customer_data/dairy_scientist
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
+	base_icon_state = "generic_robot"
 	clothing_sets = list("dairy_scientist_clothes")
 
 	found_seat_lines = list("I hope they have a bit of wendsleydale?", "Its okay I brought my own crackers.", "Could you hurry a bit please? I promised GR0-M1T I won't be long.", "I just love the cheese here.")
@@ -109,7 +109,7 @@
 /datum/customer_data/gymbro
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
+	base_icon_state = "generic_robot"
 	clothing_sets = list("gymbro_clothes")
 
 	found_seat_lines = list("Hup! I need my protein, bro!")
@@ -146,8 +146,8 @@
 /datum/customer_data/fireman
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_fireman")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("fireman_clothes")
 
 	found_seat_lines = list("Give me your spiciest food. I must become one with fire.")
 	cant_find_seat_lines = list("Don't they know this is an emergency?")
@@ -183,8 +183,8 @@
 /datum/customer_data/sweet_tooth
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_sweet_tooth")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("sweet_tooth_clothes")
 
 	found_seat_lines = list("Hi hi! I am here for some sweets, sweetie!")
 	cant_find_seat_lines = list("Aw. The place is full.")
@@ -222,8 +222,8 @@
 /datum/customer_data/shift_worker
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_shift_worker")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("shift_worker_clothes")
 
 /datum/customer_data/shift_worker/breakfast
 	found_seat_lines = list("Nothing better than starting the day with breakfast!")
@@ -271,8 +271,8 @@
 /datum/customer_data/shore_leave_moth
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_shore_leave_moth")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("shore_leave_moth_clothes")
 
 	found_seat_lines = list("What do you have for a hungry fueljack?")
 	cant_find_seat_lines = list("Permission to land, sir!")
@@ -304,8 +304,8 @@
 /datum/customer_data/praetorian_tiziran
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_praetorian_tiziran")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("praetorian_tiziran_clothes")
 
 	found_seat_lines = list("By the power of the Empress, I require sustenance!")
 	cant_find_seat_lines = list("The legion can not wait!")
@@ -339,8 +339,8 @@
 /datum/customer_data/space_whaler
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_space_whaler")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("whaler_clothes")
 
 	found_seat_lines = list("Avast! Fulfill me order, and there be coin for ye!")
 	cant_find_seat_lines = list("What shall we do with the impatient sailor...")
