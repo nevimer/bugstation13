@@ -1,8 +1,8 @@
 /datum/customer_data/greaser
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
-	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_greaser")
+	base_icon_state = "generic_robot"
+	clothing_sets = list("greaser_clothes")
 
 	found_seat_lines = list("Ayyyy!")
 	cant_find_seat_lines = list("Uncool man, can't hang without a seat!")
@@ -37,7 +37,7 @@
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
 	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_hiker")
+	clothing_sets = list("hiker_clothes")
 
 	found_seat_lines = list("Finally, breaking camp.")
 	cant_find_seat_lines = list("The journey  never ends, so it seems.")
@@ -74,7 +74,7 @@
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
 	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_dairy_scientist")
+	clothing_sets = list("dairy_scientist_clothes")
 
 	found_seat_lines = list("I hope they have a bit of wendsleydale?", "Its okay I brought my own crackers.", "Could you hurry a bit please? I promised GR0-M1T I won't be long.", "I just love the cheese here.")
 	cant_find_seat_lines = list("I'm so tired from standing...", "Oh gosh, my feets ache.", "Excuse me, can I have a chair? I left mine home.")
@@ -110,7 +110,7 @@
 	prefix_file = "strings/names/adjectives.txt"
 	base_icon = 'orbstation/icons/mob/tourists.dmi'
 	base_icon_state = "placeholder"
-	clothing_sets = list("placeholder_gymbro")
+	clothing_sets = list("gymbro_clothes")
 
 	found_seat_lines = list("Hup! I need my protein, bro!")
 	cant_find_seat_lines = list("Looks like I am not skipping leg day today.")
