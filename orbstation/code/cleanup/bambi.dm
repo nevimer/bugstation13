@@ -33,6 +33,7 @@
 
 /obj/item/crusher_trophy/wendigo_horn
 	name = "Bambi's horn"
+	desc = "A gnarled horn ripped from Bambi's skull. Suitable as a trophy for a kinetic crusher."
 
 /obj/item/wendigo_skull
 	name = "Bambi's skull"

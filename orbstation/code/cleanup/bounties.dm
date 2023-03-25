@@ -14,3 +14,7 @@
 		"goliath",
 		"changeling",)
 	description = replacetext(description, "%SOMETHING%", pick(things_you_dont_want_in_food))
+
+/datum/bounty/item/assistant/shadyjims
+	name = "Shady Rick's"
+	description = "There's an irate officer at CentCom demanding that he receive a box of Shady Rick's cigarettes. Please ship one. He's starting to make threats."

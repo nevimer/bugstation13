@@ -156,7 +156,7 @@
 	//Build the mob sprite and use it as our overlay
 	for(var/external_layer in bodypart_overlay.all_layers)
 		if(bodypart_overlay.layers & external_layer)
-			. += bodypart_overlay.get_overlay(external_layer, limb = null)
+			. += bodypart_overlay.get_overlay(external_layer, ownerlimb)
 
 ///The horns of a lizard!
 /obj/item/organ/external/horns
@@ -264,13 +264,13 @@
 
 /obj/item/organ/external/antennae/Insert(mob/living/carbon/receiver, special, drop_if_replaced)
 	. = ..()
-
+	if(!.)
+		return
 	RegisterSignal(receiver, COMSIG_HUMAN_BURNING, PROC_REF(try_burn_antennae))
 	RegisterSignal(receiver, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(heal_antennae))
 
 /obj/item/organ/external/antennae/Remove(mob/living/carbon/organ_owner, special, moving)
 	. = ..()
-
 	UnregisterSignal(organ_owner, list(COMSIG_HUMAN_BURNING, COMSIG_LIVING_POST_FULLY_HEAL))
 
 ///check if our antennae can burn off ;_;

@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 
 /datum/antagonist/wizard
 	name = "\improper Space Wizard"
-	roundend_category = "wizards"
+	roundend_category = "wizards" //ORBSTATION EDIT
 	antagpanel_category = ANTAG_GROUP_WIZARDS
 	job_rank = ROLE_WIZARD
 	antag_hud_name = "wizard"
@@ -67,8 +67,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/antagonist/wizard/on_gain()
 	if(!owner)
 		CRASH("Wizard datum with no owner.")
-	ritual = new(owner.current)
-	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
+	assign_ritual()
 	equip_wizard()
 	if(give_objectives)
 		create_objectives()
@@ -96,6 +95,11 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	wiz_team = new(owner)
 	wiz_team.name = "[owner.current.real_name] team"
 	wiz_team.master_wizard = src
+
+/// Initialises the grand ritual action for this mob
+/datum/antagonist/wizard/proc/assign_ritual()
+	ritual = new(owner.current)
+	RegisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE, PROC_REF(on_ritual_complete))
 
 /datum/antagonist/wizard/proc/send_to_lair()
 	// And now we ensure that its loaded
@@ -208,13 +212,14 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	var/mob/living/wizard_mob = mob_override || owner.current
 	wizard_mob.faction |= ROLE_WIZARD
 	add_team_hud(wizard_mob)
-	ritual.Grant(owner.current)
+	ritual?.Grant(owner.current)
 
 /datum/antagonist/wizard/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/wizard_mob = mob_override || owner.current
 	wizard_mob.faction -= ROLE_WIZARD
-	ritual.Remove(wizard_mob)
-	UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
+	if (ritual)
+		ritual.Remove(wizard_mob)
+		UnregisterSignal(ritual, COMSIG_GRAND_RITUAL_FINAL_COMPLETE)
 
 /// If we receive this signal, you're done with objectives
 /datum/antagonist/wizard/proc/on_ritual_complete()
@@ -244,6 +249,9 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/antagonist/wizard/apprentice/greet()
 	to_chat(owner, "<B>You are [master.current.real_name]'s apprentice! You are bound by magic contract to follow [master.p_their()] orders and help [master.p_them()] in accomplishing [master.p_their()] goals.")
 	owner.announce_objectives()
+
+/datum/antagonist/wizard/apprentice/assign_ritual()
+	return // Haven't learned how to do it yet
 
 /datum/antagonist/wizard/apprentice/equip_wizard()
 	. = ..()
@@ -351,6 +359,9 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	outfit_type = /datum/outfit/wizard/academy
 	move_to_lair = FALSE
 
+/datum/antagonist/wizard/academy/assign_ritual()
+	return // Has other duties to be getting on with
+
 /datum/antagonist/wizard/academy/equip_wizard()
 	. = ..()
 	if(!isliving(owner.current))
@@ -377,7 +388,8 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 	var/list/parts = list()
 
 	parts += printplayer(owner)
-	parts += "<br><B>Grand Rituals completed:</B> [ritual.times_completed]<br>"
+	if (ritual)
+		parts += "<br><B>Grand Rituals completed:</B> [ritual.times_completed]<br>"
 
 	var/count = 1
 	//var/wizardwin = 1
@@ -413,7 +425,7 @@ GLOBAL_LIST_EMPTY(wizard_spellbook_purchases_by_key)
 /datum/team/wizard/roundend_report()
 	var/list/parts = list()
 
-	parts += "<span class='header'>Wizards of [master_wizard.owner.name] team were:</span>"
+	parts += "<span class='header'>Wizards of [master_wizard.owner.name] team were:</span>" //ORBSTATION EDIT: these ain't witches
 	parts += master_wizard.roundend_report()
 	parts += " "
 	parts += "<span class='header'>[master_wizard.owner.name] apprentices and minions were:</span>"

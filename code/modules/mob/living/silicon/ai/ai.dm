@@ -192,8 +192,7 @@
 	builtInCamera = new (src)
 	builtInCamera.network = list("ss13")
 
-	ADD_TRAIT(src, TRAIT_PULL_BLOCKED, ROUNDSTART_TRAIT)
-	ADD_TRAIT(src, TRAIT_HANDS_BLOCKED, ROUNDSTART_TRAIT)
+	add_traits(list(TRAIT_PULL_BLOCKED, TRAIT_HANDS_BLOCKED), ROUNDSTART_TRAIT)
 
 	alert_control = new(src, list(ALARM_ATMOS, ALARM_FIRE, ALARM_POWER, ALARM_CAMERA, ALARM_BURGLAR, ALARM_MOTION), list(z), camera_view = TRUE)
 	RegisterSignal(alert_control.listener, COMSIG_ALARM_LISTENER_TRIGGERED, PROC_REF(alarm_triggered))
@@ -414,15 +413,17 @@
 	the_mmi.brainmob.name = src.real_name
 	the_mmi.brainmob.real_name = src.real_name
 	the_mmi.brainmob.container = the_mmi
-	the_mmi.brainmob.set_suicide(suiciding)
-	the_mmi.brain.suicided = suiciding
+
+	var/has_suicided_trait = HAS_TRAIT(src, TRAIT_SUICIDED)
+	the_mmi.brainmob.set_suicide(has_suicided_trait)
+	the_mmi.brain.suicided = has_suicided_trait
 	if(the_core)
 		var/obj/structure/ai_core/core = the_core
 		core.core_mmi = the_mmi
 		the_mmi.forceMove(the_core)
 	else
 		the_mmi.forceMove(get_turf(src))
-	if(the_mmi.brainmob.stat == DEAD && !suiciding)
+	if(the_mmi.brainmob.stat == DEAD && !has_suicided_trait)
 		the_mmi.brainmob.set_stat(CONSCIOUS)
 	if(mind)
 		mind.transfer_to(the_mmi.brainmob)
@@ -731,7 +732,7 @@
 				"xeno queen" = 'icons/mob/nonhuman-player/alien.dmi',
 				"horror" = 'icons/mob/silicon/ai.dmi',
 				"clock" = 'icons/mob/silicon/ai.dmi',
-				"angel" = 'icons/mob/silicon/ai.dmi'
+				"angel" = 'orbstation/icons/mob/ai.dmi' //ORBSTATION
 				)
 
 			input = tgui_input_list(usr, "Select a hologram", "Hologram", sort_list(icon_list))

@@ -8,8 +8,7 @@
 	gender = PLURAL
 
 	healing_factor = STANDARD_ORGAN_HEALING
-	//decay_factor = STANDARD_ORGAN_DECAY
-	decay_factor = STANDARD_ORGAN_DECAY * 0.6 //25 minutes
+	decay_factor = STANDARD_ORGAN_DECAY
 
 	low_threshold_passed = "<span class='info'>Your ears begin to resonate with an internal ring sometimes.</span>"
 	now_failing = "<span class='warning'>You are unable to hear at all!</span>"
@@ -69,7 +68,7 @@
 	visual = TRUE
 	damage_multiplier = 2
 
-/obj/item/organ/internal/ears/cat/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/internal/ears/cat/on_insert(mob/living/carbon/human/ear_owner)
 	. = ..()
 	if(istype(ear_owner) && ear_owner.dna)
 		color = ear_owner.hair_color
@@ -77,7 +76,7 @@
 		ear_owner.dna.update_uf_block(DNA_EARS_BLOCK)
 		ear_owner.update_body()
 
-/obj/item/organ/internal/ears/cat/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+/obj/item/organ/internal/ears/cat/on_remove(mob/living/carbon/human/ear_owner)
 	. = ..()
 	if(istype(ear_owner) && ear_owner.dna)
 		color = ear_owner.hair_color
@@ -88,13 +87,13 @@
 	name = "penguin ears"
 	desc = "The source of a penguin's happy feet."
 
-/obj/item/organ/internal/ears/penguin/Insert(mob/living/carbon/human/ear_owner, special = 0, drop_if_replaced = TRUE)
+/obj/item/organ/internal/ears/penguin/on_insert(mob/living/carbon/human/ear_owner)
 	. = ..()
 	if(istype(ear_owner))
 		to_chat(ear_owner, span_notice("You suddenly feel like you've lost your balance."))
 		ear_owner.AddElement(/datum/element/waddling)
 
-/obj/item/organ/internal/ears/penguin/Remove(mob/living/carbon/human/ear_owner,  special = 0)
+/obj/item/organ/internal/ears/penguin/on_remove(mob/living/carbon/human/ear_owner)
 	. = ..()
 	if(istype(ear_owner))
 		to_chat(ear_owner, span_notice("Your sense of balance comes back to you."))

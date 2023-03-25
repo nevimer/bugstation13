@@ -83,5 +83,11 @@ GLOBAL_LIST_INIT(orb_mysterious_brain_traumas, list(
 
 /datum/brain_trauma/special/psychotic_brawling
 	name = "Chaotic Brawler"
-	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
+	desc = "Patient fights in unpredictable ways, ranging from helping their target to hitting them with brutal strength."
 	scan_desc = "unpredictable reactions"
+
+/datum/brain_trauma/special/psychotic_brawling/bath_salts
+	name = "Chemically-Induced Chaotic Brawler"
+
+/datum/brain_trauma/mild/hallucinations
+	scan_desc = "hallucinations"

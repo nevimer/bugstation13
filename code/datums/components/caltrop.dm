@@ -99,7 +99,7 @@
 	if (!(flags & CALTROP_BYPASS_SHOES))
 		if ((H.wear_suit?.body_parts_covered | H.w_uniform?.body_parts_covered | H.shoes?.body_parts_covered) & FEET)
 			return
-		if(IS_DIGITIGRADE_LIMB(O)) //digitigrade legs offer the same protection as shoes
+		if(IS_DIGITIGRADE_LIMB(O)) //ORBSTATION: digitigrade legs offer the same protection as shoes
 			return
 
 	var/damage = rand(min_damage, max_damage)

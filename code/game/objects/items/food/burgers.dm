@@ -571,8 +571,8 @@
 	venue_value = FOOD_PRICE_NORMAL
 
 /obj/item/food/burger/chicken
-	name = "chicken sandwich"
-	desc = "A delicious chicken sandwich."
+	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
+	desc = "A delicious chicken sandwich, it is said the proceeds from this treat helps criminalize disarming people on the space frontier."
 	icon_state = "chickenburger"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,

@@ -25,6 +25,8 @@
 
 /obj/item/organ/internal/zombie_infection/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = TRUE)
 	. = ..()
+	if(!.)
+		return .
 	START_PROCESSING(SSobj, src)
 
 /obj/item/organ/internal/zombie_infection/Remove(mob/living/carbon/M, special = FALSE)
@@ -51,13 +53,9 @@
 	if(owner.health <= HEALTH_THRESHOLD_CRIT && owner.stat != DEAD)
 		if (causes_damage && !iszombie(owner))
 			owner.adjustToxLoss(0.5 * delta_time)
-	if(timer_id)
-		return
-	if(owner.suiciding)
+	if(timer_id || HAS_TRAIT(owner, TRAIT_SUICIDED) || !owner.getorgan(/obj/item/organ/internal/brain))
 		return
 	if(owner.stat != DEAD && !converts_living)
-		return
-	if(!owner.getorgan(/obj/item/organ/internal/brain))
 		return
 	if(!iszombie(owner))
 		to_chat(owner, "<span class='cultlarge'>You can feel your heart stopping, but something isn't right... \

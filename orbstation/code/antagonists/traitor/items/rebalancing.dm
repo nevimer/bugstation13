@@ -20,3 +20,7 @@
 	fire = 50
 	acid = 90
 	wound = 25
+
+// This item is incompatible with using LOOC for consent and thus should not be enabled
+/datum/uplink_item/device_tools/hypnotic_grenade
+	purchasable_from = NONE

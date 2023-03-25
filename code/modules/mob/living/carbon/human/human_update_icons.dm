@@ -292,7 +292,19 @@ There are several things that need to be remembered:
 
 		var/icon_file = DEFAULT_SHOES_FILE
 
-		var/mutable_appearance/shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = icon_file)
+		//ORBSTATION EDIT BEGIN - digishoes
+		var/handled_by_bodytype = FALSE
+		if((dna?.species.bodytype & BODYTYPE_DIGITIGRADE) && (shoes.supports_variations_flags & CLOTHING_DIGITIGRADE_VARIATION))
+			icon_file = DIGITIGRADE_SHOES_FILE
+			handled_by_bodytype = TRUE
+
+		var/mutable_appearance/shoes_overlay = shoes.build_worn_icon(
+			default_layer = SHOES_LAYER,
+			default_icon_file = icon_file,
+			override_file = handled_by_bodytype ? icon_file : null,
+		)
+		//ORBSTATION EDIT END
+
 		if(!shoes_overlay)
 			return
 		if(OFFSET_SHOES in dna.species.offset_features)

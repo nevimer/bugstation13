@@ -57,6 +57,7 @@
 	desc += " (Completed!)"
 	reject_mansus(our_heretic, user)
 	log_heretic_knowledge("[key_name(user)] completed a [name] at [worldtime2text()].")
+	message_admins("[ADMIN_LOOKUPFLW(user)] cast [name].")
 	return TRUE
 
 /// Proc that runs when you complete this ritual in order to cancel sacrifice objectives and remove the heartbeat of mansus knowledge
