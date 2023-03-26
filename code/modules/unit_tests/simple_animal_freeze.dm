@@ -272,6 +272,7 @@
 		/mob/living/simple_animal/hostile/skeleton,
 		/mob/living/simple_animal/hostile/skeleton/eskimo,
 		/mob/living/simple_animal/hostile/skeleton/ice,
+		/mob/living/simple_animal/hostile/skeleton/jim,
 		/mob/living/simple_animal/hostile/skeleton/plasmaminer,
 		/mob/living/simple_animal/hostile/skeleton/plasmaminer/jackhammer,
 		/mob/living/simple_animal/hostile/skeleton/templar,
