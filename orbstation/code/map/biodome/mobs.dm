@@ -13,9 +13,3 @@
 /mob/living/basic/rabbit/trefoil
 	name = "Trefoil"
 	desc = "This rabbit is always planning elaborate set pieces for their newest act."
-
-/mob/living/simple_animal/hostile/skeleton/jim
-	name = "Jim"
-	faction = list(FACTION_NEUTRAL)
-	desc = "Your friendly maintenance skeleton, Jim."
-
