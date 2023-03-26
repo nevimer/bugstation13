@@ -1,7 +1,6 @@
+// Additions to the AutoDrobe and ClothesMate clothing lists. For departmental wardrobes, see dept_wardrobes.dm.
+
 /obj/machinery/vending/autodrobe
-	orb_premium = list(
-		/obj/item/clothing/suit/hooded/wintercoat/cosmic = 1,
-	)
 	orb_product_categories = list(
 		list(
 			"name" = "Entertainers",
@@ -11,40 +10,11 @@
 			),
 		),
 	)
-
-/obj/machinery/vending/wardrobe/sec_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/sec = 3,
+	orb_premium = list(
+		/obj/item/clothing/suit/hooded/wintercoat/cosmic = 1,
 	)
-
-/obj/machinery/vending/wardrobe/medi_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/med = 4,
-	)
-
-/obj/machinery/vending/wardrobe/engi_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/engi = 3,
-	)
-
-/obj/machinery/vending/wardrobe/atmos_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/engi = 2,
-	)
-
-/obj/machinery/vending/wardrobe/cargo_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/supply = 2,
-	)
-
-/obj/machinery/vending/wardrobe/science_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/toggle/jacket/sci = 2,
-	)
-
-/obj/machinery/vending/wardrobe/bar_wardrobe
-	orb_products = list(
-		/obj/item/clothing/suit/hooded/wintercoat/bartender = 2,
+	orb_contraband = list(
+		/obj/item/clothing/glasses/salesman = 2,
 	)
 
 /obj/machinery/vending/clothing
