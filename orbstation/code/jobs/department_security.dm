@@ -27,7 +27,6 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/restraints/handcuffs(src)
-	new /obj/item/restraints/handcuffs(src)
 	update_appearance()
 
 // Adds capability of closet to talk on radio when unlocked
