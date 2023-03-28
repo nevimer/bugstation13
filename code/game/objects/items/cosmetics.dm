@@ -44,7 +44,7 @@
 	//It's still called Jade, but theres no HTML color for jade, so we use lime.
 	name = "jade lipstick"
 	colour = "lime"
-	
+
 /obj/item/lipstick/blue
 	name = "blue lipstick"
 	colour = "blue"
@@ -151,7 +151,7 @@
 	if(location == BODY_ZONE_PRECISE_MOUTH)
 		H.facial_hairstyle = "Shaved"
 	else
-		H.hairstyle = "Skinhead"
+		H.hairstyle = "S.H.A.R.P." // ORBSTATION EDIT TO REMOVE SKINHEAD
 
 	H.update_body_parts()
 	playsound(loc, 'sound/items/welder2.ogg', 20, TRUE)
