@@ -66,8 +66,9 @@
 	new /obj/item/gun/energy/disabler/departmental(src)
 	new /obj/item/storage/belt/security/departmental(src)
 	new /obj/item/clothing/accessory/armband/cargo(src)
-	new /obj/item/clothing/accessory/armband/deputy(src)
+	new /obj/item/clothing/accessory/armband/cargo(src)
 	new /obj/item/encryptionkey/headset_cargo(src)
+	new /obj/item/storage/box/zipties(src)
 
 /obj/structure/closet/secure_closet/security/engine
 	req_access = list()
@@ -81,8 +82,9 @@
 	new /obj/item/gun/energy/disabler/departmental(src)
 	new /obj/item/storage/belt/security/departmental(src)
 	new /obj/item/clothing/accessory/armband/engine(src)
-	new /obj/item/clothing/accessory/armband/deputy(src)
+	new /obj/item/clothing/accessory/armband/engine(src)
 	new /obj/item/encryptionkey/headset_eng(src)
+	new /obj/item/storage/box/zipties(src)
 
 /obj/structure/closet/secure_closet/security/science
 	req_access = list()
@@ -96,8 +98,9 @@
 	new /obj/item/gun/energy/disabler/departmental(src)
 	new /obj/item/storage/belt/security/departmental(src)
 	new /obj/item/clothing/accessory/armband/science(src)
-	new /obj/item/clothing/accessory/armband/deputy(src)
+	new /obj/item/clothing/accessory/armband/science(src)
 	new /obj/item/encryptionkey/headset_sci(src)
+	new /obj/item/storage/box/zipties(src)
 
 /obj/structure/closet/secure_closet/security/med
 	req_access = list()
@@ -111,8 +114,9 @@
 	new /obj/item/gun/energy/disabler/departmental(src)
 	new /obj/item/storage/belt/security/departmental(src)
 	new /obj/item/clothing/accessory/armband/medblue(src)
-	new /obj/item/clothing/accessory/armband/deputy(src)
+	new /obj/item/clothing/accessory/armband/medblue(src)
 	new /obj/item/encryptionkey/headset_med(src)
+	new /obj/item/storage/box/zipties(src)
 
 // Mapping access helpers
 /obj/effect/mapping_helpers/airlock/access/any/security/cargo/get_access()
