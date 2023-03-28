@@ -133,3 +133,17 @@
 
 /obj/item/uplink/sandbox //This is NOT the debug uplink, which has unlimited TC, because I don't think we should give those out.
 	name = "traitor uplink"
+
+/obj/item/extinguisher/debug
+	name = "infinite fire extinguisher"
+	desc = "An experimental fire extinguisher containing a stabilized miniature portal to an alternate universe fully submerged in water. The label promises that this technology is 'perfectly safe'."
+	max_water = INFINITY
+	precision = TRUE
+	power = 8
+	icon = 'orbstation/icons/obj/items/debug.dmi'
+	lefthand_file = 'orbstation/icons/obj/items/inhand_left.dmi'
+	righthand_file = 'orbstation/icons/obj/items/inhand_right.dmi'
+	icon_state = "debug_ext0"
+	worn_icon_state = "debug_ext"
+	inhand_icon_state = "debug_ext"
+	sprite_name = "debug_ext"

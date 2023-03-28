@@ -51,6 +51,7 @@
 				/obj/item/healthanalyzer/advanced/free = 999,
 				/obj/item/reagent_containers/hypospray/cmo = 999,
 				/obj/item/gun/magic/wand/resurrection/debug = 999,
+				/obj/item/extinguisher/debug = 999,
 			),
 		),
 
