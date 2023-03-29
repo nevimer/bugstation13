@@ -7,7 +7,8 @@
 		return
 	if (biological_state != BIO_SLIME) // Everything else is handled in super
 		return // We can turn this into a switch if we ever expand it
-
+	if (wound_bonus == CANT_WOUND)
+		return // Don't dismember on woundless damage
 	// If we're easy to dismember we don't reduce wounding damage from varying type
 	if (!HAS_TRAIT(owner, TRAIT_EASYDISMEMBER))
 		if (wounding_type == WOUND_SLASH)
