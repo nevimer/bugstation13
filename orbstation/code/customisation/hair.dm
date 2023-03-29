@@ -128,3 +128,6 @@
 	name = "tulip"
 	icon_state = "tulip"
 	icon = 'orbstation/icons/mob/species/podperson/podperson_hair.dmi'
+
+/datum/sprite_accessory/hair/skinhead
+	name = "S.H.A.R.P."
