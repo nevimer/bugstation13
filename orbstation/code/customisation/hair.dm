@@ -131,4 +131,3 @@
 
 /datum/sprite_accessory/hair/skinhead
 	name = "S.H.A.R.P."
-	icon_state = "hair_skinhead"
