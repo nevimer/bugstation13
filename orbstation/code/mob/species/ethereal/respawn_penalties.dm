@@ -45,7 +45,7 @@
 		qdel(src)
 		return
 	ethereal_heart.owner.revive(HEAL_ALL)
-	ethereal_heart = ethereal.getorganslot(ORGAN_SLOT_HEART)
+	ethereal_heart = ethereal.get_organ_slot(ORGAN_SLOT_HEART)
 	if (!(prob(90) && apply_new_penalty()))
 		to_chat(ethereal_heart.owner, span_notice("[notify_player_consequences()]"))
 

@@ -74,7 +74,7 @@
 		return FALSE
 	if (health <= hardcrit_threshold) // I can't think of a more elegant solution than repeating this
 		return FALSE
-	if (!getorganslot(ORGAN_SLOT_EARS))
+	if (!get_organ_slot(ORGAN_SLOT_EARS))
 		return FALSE
 	if (HAS_TRAIT_FROM(src, TRAIT_DEAF, EAR_DAMAGE)) // Just get it healed
 		return FALSE

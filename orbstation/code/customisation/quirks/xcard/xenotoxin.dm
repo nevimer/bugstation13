@@ -83,8 +83,8 @@
 
     // damage a random organ, weighted heavily towards the liver
     var/obj/item/organ/organ = pick(victim.organs) // choose a random organ
-    organ = pick(organ, victim.getorganslot(ORGAN_SLOT_LIVER)) // choose randomly between that organ and the liver
-    organ.applyOrganDamage(rand(ORGAN_DAMAGE_MIN,ORGAN_DAMAGE_MAX)) // deal a small amount of random (non-increasing) damage to that organ
+    organ = pick(organ, victim.get_organ_slot(ORGAN_SLOT_LIVER)) // choose randomly between that organ and the liver
+    organ.apply_organ_damage(rand(ORGAN_DAMAGE_MIN,ORGAN_DAMAGE_MAX)) // deal a small amount of random (non-increasing) damage to that organ
 
 /// Apply a particularly bad damage burst, which does more damage than a normal one, applies jitteryness, and can cause the victim to scream
 /datum/reagent/toxin/xenotoxin/proc/damage_burst_bad(mob/living/carbon/victim, damage_mul, delta_time)
