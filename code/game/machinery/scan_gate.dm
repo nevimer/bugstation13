@@ -122,7 +122,7 @@
 		if(SCANGATE_ZOMBIE)
 			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
-				if(is_species(H, /datum/species/zombie) || H.getorganslot(ORGAN_SLOT_ZOMBIE)) //Can detect dormant zombies
+				if(is_species(H, /datum/species/zombie) || H.get_organ_slot(ORGAN_SLOT_ZOMBIE)) //Can detect dormant zombies
 					beep = TRUE
 		if(SCANGATE_GUNS)
 			for(var/I in M.get_contents())

@@ -9,7 +9,7 @@
 
 /datum/quirk/robot_voice/add_unique()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	/*var/obj/item/organ/internal/tongue/old_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	/*var/obj/item/organ/internal/tongue/old_tongue = human_holder.get_organ_slot(ORGAN_SLOT_TONGUE)
 	old_tongue.Remove(human_holder)
 	qdel(old_tongue)*/
 
@@ -19,7 +19,7 @@
 	new_tongue.organ_flags |= ORGAN_UNREMOVABLE
 
 /datum/quirk/robot_voice/remove()
-	var/obj/item/organ/internal/tongue/robot/quirk_tongue = quirk_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	var/obj/item/organ/internal/tongue/robot/quirk_tongue = quirk_holder.get_organ_slot(ORGAN_SLOT_TONGUE)
 	if(!istype(quirk_tongue))
 		return
 

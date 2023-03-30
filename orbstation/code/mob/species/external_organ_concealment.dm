@@ -139,7 +139,7 @@
 	icon_state_hidden = "show_tail"
 
 /datum/action/conceal_organ/tail/get_organ()
-	return owner.getorganslot(ORGAN_SLOT_EXTERNAL_TAIL)
+	return owner.get_organ_slot(ORGAN_SLOT_EXTERNAL_TAIL)
 
 /datum/action/conceal_organ/tail/toggle_concealement()
 	var/obj/item/organ/external/tail/tail = get_organ()
@@ -156,7 +156,7 @@
 	icon_state_hidden = "show_wings"
 
 /datum/action/conceal_organ/wings/get_organ()
-	return owner.getorganslot(ORGAN_SLOT_EXTERNAL_WINGS)
+	return owner.get_organ_slot(ORGAN_SLOT_EXTERNAL_WINGS)
 
 /datum/action/conceal_organ/wings/toggle_concealement()
 	var/obj/item/organ/external/wings/moth/wings = get_organ()
@@ -173,7 +173,7 @@
 	icon_state_hidden = "show_antennae"
 
 /datum/action/conceal_organ/antennae/get_organ()
-	return owner.getorganslot(ORGAN_SLOT_EXTERNAL_ANTENNAE)
+	return owner.get_organ_slot(ORGAN_SLOT_EXTERNAL_ANTENNAE)
 
 /datum/action/conceal_organ/antennae/toggle_concealement()
 	var/obj/item/organ/external/antennae/antennae = get_organ()

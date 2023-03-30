@@ -11,7 +11,6 @@
 	has_gravity = STANDARD_GRAVITY
 	area_flags = UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
-	network_root_id = "MAGIC_NET"
 
 /obj/effect/landmark/start/wizard_journeyman
 	name = "wizard"
