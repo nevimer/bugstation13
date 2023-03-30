@@ -8,8 +8,9 @@
 
 /datum/species/lizard/randomize_features(mob/living/carbon/human/human_mob)
 	..()
-	human_mob.hairstyle = "Bald"
-	human_mob.facial_hair_color = "#F0E0C0" // for the colored snout option
+	if(istype(human_mob.dna.species, /datum/species/lizard))
+		human_mob.hairstyle = "Bald"
+		human_mob.facial_hair_color = "#F0E0C0" // for the colored snout option
 
 /datum/species/lizard/silverscale
 	/// Stored facial hair color for when the species is removed.
