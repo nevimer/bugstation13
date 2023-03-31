@@ -7641,7 +7641,6 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit/departure_lounge)
 "cUz" = (
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/table,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
@@ -16774,15 +16773,8 @@
 /obj/structure/industrial_lift/tram{
 	icon_state = "titanium"
 	},
-/obj/machinery/computer/tram_controls{
-	specific_lift_id = "tram_boat";
-	dir = 8
-	},
-/obj/effect/landmark/tram{
-	name = "Aft Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "aft_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/aft,
+/obj/machinery/computer/tram_controls/boat,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "gxh" = (
@@ -17712,10 +17704,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "gQD" = (
-/obj/machinery/button/tram{
-	id = "fore_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/fore,
 /turf/closed/wall/mineral/wood,
 /area/station/biodome/fore)
 "gQU" = (
@@ -19287,10 +19276,6 @@
 /obj/effect/turf_decal/tile/purple/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
-"hzL" = (
-/obj/effect/fishing_lure,
-/turf/open/floor/plating,
-/area/station/maintenance/fore/greater)
 "hAi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -21667,11 +21652,7 @@
 /turf/open/floor/wood/parquet,
 /area/station/service/kitchen/diner)
 "izf" = (
-/obj/effect/landmark/tram{
-	name = "Fore Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "fore_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/fore,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/fore)
 "izy" = (
@@ -22698,11 +22679,7 @@
 	},
 /area/station/command/heads_quarters/cmo)
 "iXz" = (
-/obj/effect/landmark/tram{
-	name = "Central Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "central_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/middle,
 /turf/open/water/jungle/biodome,
 /area/station/biodome)
 "iXJ" = (
@@ -28691,10 +28668,7 @@
 /turf/closed/wall,
 /area/station/construction/mining/aux_base)
 "lmO" = (
-/obj/structure/sign/collision_counter{
-	sign_change_name = "Indicator board- Boating incidents";
-	name = "boating incident counter"
-	},
+/obj/structure/sign/collision_counter/boat,
 /turf/closed/wall,
 /area/station/medical/treatment_center)
 "lmY" = (
@@ -30408,6 +30382,7 @@
 /area/station/tcommsat/server)
 "lTG" = (
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
 "lTK" = (
@@ -30623,13 +30598,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "lXm" = (
-/obj/structure/sign/collision_counter{
-	sign_change_name = "Indicator board- Boating incidents";
-	name = "boating incident counter";
-	desc = "A display that indicates how many boat related incidents have occured today.";
-	pixel_y = -1;
-	pixel_x = -1
-	},
+/obj/structure/sign/collision_counter/boat,
 /turf/closed/wall,
 /area/station/medical/medbay/lobby)
 "lXp" = (
@@ -42050,10 +42019,7 @@
 /area/station/medical/medbay/central)
 "qvR" = (
 /obj/structure/girder,
-/obj/machinery/button/tram{
-	id = "central_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/middle,
 /turf/open/water/jungle/biodome,
 /area/station/biodome)
 "qvT" = (
@@ -42202,10 +42168,7 @@
 /turf/open/openspace,
 /area/station/hallway/primary/starboard)
 "qzf" = (
-/obj/machinery/button/tram{
-	id = "aft_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/aft,
 /turf/closed/wall/mineral/wood,
 /area/station/biodome/aft)
 "qzw" = (
@@ -52225,7 +52188,6 @@
 /area/station/engineering/atmos/hfr_room)
 "uyA" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/cable,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
 "uyB" = (
@@ -57754,9 +57716,7 @@
 	icon_state = "titanium"
 	},
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/landmark/lift_id{
-	specific_lift_id = "tram_boat"
-	},
+/obj/effect/landmark/lift_id/boat,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "wEe" = (
@@ -98448,7 +98408,7 @@ hNy
 hNy
 sBz
 rcP
-hzL
+dYQ
 uiF
 dYQ
 sBz
