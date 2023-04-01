@@ -42,6 +42,14 @@
 	squeak_override = list('sound/weapons/kenetic_accel.ogg' = 1)
 	gender = FEMALE
 
+/obj/item/toy/plush/crew/glupplushie
+	name = "\improper Glup Shitto Doll"
+	desc = "Multitudes of this likeness of famous actor Glup Shitto were made, only for the film to be cancelled mid-shoot. \
+		To this date, Glup Shitto has never appeared on the big screen as the Head of Personnel."
+	icon_state = "glupplush"
+	gender = FEMALE
+
+
 /obj/item/toy/plush/amoungplushie
 	name = "amoung plushie"
 	desc = "A cuddly toy depicting the dangerous and rare alien species, the Amoung. Seems kinda sus."

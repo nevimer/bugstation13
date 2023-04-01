@@ -47,3 +47,8 @@
 	orb_products = list(
 		/obj/item/clothing/suit/toggle/jacket/sec = 3,
 	)
+
+/obj/machinery/vending/cart
+	orb_premium = list(
+		/obj/item/toy/plush/crew/glupplushie = 1,
+	)
