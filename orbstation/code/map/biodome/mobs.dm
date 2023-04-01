@@ -13,3 +13,5 @@
 /mob/living/basic/rabbit/trefoil
 	name = "Trefoil"
 	desc = "This rabbit is always planning elaborate set pieces for their newest act."
+
+/mob/living/basic/creature/docile
