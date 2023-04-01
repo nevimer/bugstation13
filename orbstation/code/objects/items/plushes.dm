@@ -114,6 +114,7 @@
 
 /// Become someone else
 /obj/item/toy/plush/crew/nancyplushie/proc/changeling_transform(picked_blorbo)
+	playsound(src, 'sound/effects/cartoon_pop.ogg', 100, vary = TRUE)
 	transforming = FALSE
 	if (picked_blorbo in plushie_dna)
 		var/atom/plush_type = plushie_dna[picked_blorbo]
