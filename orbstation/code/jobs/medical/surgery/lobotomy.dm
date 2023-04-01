@@ -2,7 +2,7 @@
 	name = "Experimental Neural Bypass"
 
 /datum/surgery_step/lobotomize
-	name = "perform neural bypass"
+	name = "perform neural bypass (scalpel)"
 
 /datum/surgery_step/lobotomize/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to rearrange the nerves in [target]'s brain..."),
