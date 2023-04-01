@@ -24,8 +24,8 @@
 /datum/element/sedated_mob/proc/on_attacked(mob/victim, atom/attacker)
 	SIGNAL_HANDLER
 
-	if (!victim.ai_controller)
+	if (!victim.ai_controller || victim.stat == DEAD)
 		return
 	victim.balloon_alert_to_viewers("looks upset")
 	victim.ai_controller = new awake_controller(victim)
-	victim.RemoveElement(/datum/element/sedated_mob)
+	victim.RemoveElement(/datum/element/sedated_mob, awake_controller)
