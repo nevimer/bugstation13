@@ -13,8 +13,8 @@
 	icon_state = "chainsaw_off"
 	items_to_create = list(/obj/item/chainsaw/mounted_chainsaw/implanted)
 
-/datum/uplink_item/role_restricted/intergrated_chainsaw
-	name = "Intergrated Chainsaw"
+/datum/uplink_item/role_restricted/integrated_chainsaw
+	name = "Integrated Chainsaw"
 	desc = "A chainsaw hand implanted inside the arm. The chainsaw emerges from the subject's arm and remains inside when not in use."
 	item = /obj/item/autosurgeon/syndicate/chainsaw
 	cost = 12
