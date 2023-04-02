@@ -25,6 +25,10 @@
 /datum/uplink_item/device_tools/hypnotic_grenade
 	purchasable_from = NONE
 
+// While this item has uses that are not inherently against the nature of orbstation, the most effective ones all are so until a transformation x-card exists this should not be enabled
+/datum/uplink_item/role_restricted/modified_syringe_gun
+	purchasable_from = NONE
+
 /datum/uplink_item/stealthy_tools/randomize
 	name = "Trigger Unfortunate Occurence"
 	desc = "When purchased, syndicate probabilty matrixes will cause a random event to occur on the station."
