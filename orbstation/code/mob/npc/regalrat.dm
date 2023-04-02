@@ -184,7 +184,7 @@
 	icon_state_living = "ratqueen"
 	icon_state_dead = "ratqueen_dead"
 
-// Rat queen alt (thicc rat but fat)
+/// Rat queen alt (thicc rat but fat)
 
 /datum/rat_fashion/rat_queen_alt
 	name = "rat queen alt"
