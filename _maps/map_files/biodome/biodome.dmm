@@ -4538,7 +4538,7 @@
 /turf/open/floor/iron/dark/textured,
 /area/station/ai_monitored/security/armory)
 "bNa" = (
-/obj/structure/chair/sofa/bench/right{
+/obj/structure/chair/sofa/bench/solo{
 	dir = 8
 	},
 /turf/open/floor/grass,
@@ -7641,7 +7641,6 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit/departure_lounge)
 "cUz" = (
-/obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/table,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
@@ -10508,14 +10507,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
-"dZQ" = (
-/obj/item/kirbyplants/random,
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/yellow/half,
-/turf/open/floor/iron,
-/area/station/command/bridge)
 "dZR" = (
 /obj/machinery/mass_driver/chapelgun,
 /obj/structure/sign/warning/vacuum/external/directional/north,
@@ -16774,15 +16765,8 @@
 /obj/structure/industrial_lift/tram{
 	icon_state = "titanium"
 	},
-/obj/machinery/computer/tram_controls{
-	specific_lift_id = "tram_boat";
-	dir = 8
-	},
-/obj/effect/landmark/tram{
-	name = "Aft Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "aft_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/aft,
+/obj/machinery/computer/tram_controls/boat,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "gxh" = (
@@ -17712,10 +17696,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "gQD" = (
-/obj/machinery/button/tram{
-	id = "fore_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/fore,
 /turf/closed/wall/mineral/wood,
 /area/station/biodome/fore)
 "gQU" = (
@@ -19287,10 +19268,6 @@
 /obj/effect/turf_decal/tile/purple/fourcorners,
 /turf/open/floor/iron/white,
 /area/station/medical/surgery/fore)
-"hzL" = (
-/obj/effect/fishing_lure,
-/turf/open/floor/plating,
-/area/station/maintenance/fore/greater)
 "hAi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -21164,6 +21141,12 @@
 /obj/structure/lattice,
 /turf/open/space/openspace,
 /area/space/nearstation)
+"iox" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/obj/effect/spawner/random/food_or_drink/donkpockets,
+/turf/open/floor/iron/smooth_large,
+/area/station/cargo/warehouse)
 "ioC" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -21667,11 +21650,7 @@
 /turf/open/floor/wood/parquet,
 /area/station/service/kitchen/diner)
 "izf" = (
-/obj/effect/landmark/tram{
-	name = "Fore Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "fore_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/fore,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/fore)
 "izy" = (
@@ -22698,11 +22677,7 @@
 	},
 /area/station/command/heads_quarters/cmo)
 "iXz" = (
-/obj/effect/landmark/tram{
-	name = "Central Boat Dock";
-	specific_lift_id = "tram_boat";
-	platform_code = "central_boat_dock"
-	},
+/obj/effect/landmark/tram/boat/middle,
 /turf/open/water/jungle/biodome,
 /area/station/biodome)
 "iXJ" = (
@@ -26961,7 +26936,6 @@
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/landmark/start/depsec/science,
-/obj/structure/filingcabinet,
 /turf/open/floor/iron/dark,
 /area/station/security/checkpoint/science)
 "kEG" = (
@@ -27028,6 +27002,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/command/meeting_room)
 "kGO" = (
@@ -28691,10 +28666,7 @@
 /turf/closed/wall,
 /area/station/construction/mining/aux_base)
 "lmO" = (
-/obj/structure/sign/collision_counter{
-	sign_change_name = "Indicator board- Boating incidents";
-	name = "boating incident counter"
-	},
+/obj/structure/sign/collision_counter/boat,
 /turf/closed/wall,
 /area/station/medical/treatment_center)
 "lmY" = (
@@ -28716,6 +28688,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/airlock/access/all/medical/chemistry,
 /turf/open/floor/plating,
 /area/station/medical/chemistry)
 "lnK" = (
@@ -30408,6 +30381,7 @@
 /area/station/tcommsat/server)
 "lTG" = (
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/west,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
 "lTK" = (
@@ -30623,13 +30597,7 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
 "lXm" = (
-/obj/structure/sign/collision_counter{
-	sign_change_name = "Indicator board- Boating incidents";
-	name = "boating incident counter";
-	desc = "A display that indicates how many boat related incidents have occured today.";
-	pixel_y = -1;
-	pixel_x = -1
-	},
+/obj/structure/sign/collision_counter/boat,
 /turf/closed/wall,
 /area/station/medical/medbay/lobby)
 "lXp" = (
@@ -36675,7 +36643,7 @@
 /turf/open/floor/iron,
 /area/station/tcommsat/computer)
 "onM" = (
-/obj/structure/chair/sofa/bench/left{
+/obj/structure/chair/sofa/bench/solo{
 	dir = 4
 	},
 /turf/open/floor/grass,
@@ -42050,10 +42018,7 @@
 /area/station/medical/medbay/central)
 "qvR" = (
 /obj/structure/girder,
-/obj/machinery/button/tram{
-	id = "central_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/middle,
 /turf/open/water/jungle/biodome,
 /area/station/biodome)
 "qvT" = (
@@ -42202,10 +42167,7 @@
 /turf/open/openspace,
 /area/station/hallway/primary/starboard)
 "qzf" = (
-/obj/machinery/button/tram{
-	id = "aft_boat_dock";
-	lift_id = "tram_boat"
-	},
+/obj/machinery/button/tram/boat/aft,
 /turf/closed/wall/mineral/wood,
 /area/station/biodome/aft)
 "qzw" = (
@@ -52225,7 +52187,6 @@
 /area/station/engineering/atmos/hfr_room)
 "uyA" = (
 /obj/machinery/airalarm/directional/south,
-/obj/structure/cable,
 /turf/open/floor/iron/herringbone,
 /area/station/commons/vacant_room/commissary)
 "uyB" = (
@@ -52968,14 +52929,6 @@
 /obj/structure/sign/poster/official/random/directional/north,
 /turf/open/floor/carpet/executive,
 /area/station/security/prison)
-"uOL" = (
-/obj/item/kirbyplants/random,
-/obj/effect/turf_decal/tile/green/half,
-/obj/effect/turf_decal/tile/yellow/half{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/station/command/bridge)
 "uPi" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/bot,
@@ -57754,9 +57707,7 @@
 	icon_state = "titanium"
 	},
 /obj/structure/chair/comfy/shuttle,
-/obj/effect/landmark/lift_id{
-	specific_lift_id = "tram_boat"
-	},
+/obj/effect/landmark/lift_id/boat,
 /turf/open/water/jungle/biodome,
 /area/station/biodome/aft)
 "wEe" = (
@@ -98448,7 +98399,7 @@ hNy
 hNy
 sBz
 rcP
-hzL
+dYQ
 uiF
 dYQ
 sBz
@@ -108491,7 +108442,7 @@ avu
 dAF
 dAF
 dAF
-hNy
+dAF
 hNy
 hNy
 hNy
@@ -108747,7 +108698,7 @@ pLH
 euM
 nAp
 gcl
-dAF
+nkq
 dAF
 dAF
 dAF
@@ -109005,7 +108956,7 @@ fUq
 lcn
 qoX
 jSN
-nkq
+iox
 ibh
 dxy
 vuK
@@ -166065,23 +166016,23 @@ meU
 meU
 meU
 meU
-mcO
-mcO
-mcO
-lTv
-mcO
-mcO
-rAq
-rAq
-rAq
-rAq
 rAq
 mcO
 mcO
 lTv
 mcO
 mcO
+rAq
+rAq
+rAq
+rAq
+rAq
 mcO
+mcO
+lTv
+mcO
+mcO
+lTv
 lTv
 fQs
 fQs
@@ -166322,8 +166273,8 @@ cFv
 cFv
 cFv
 cFv
-lTv
-uOL
+mcO
+mcO
 sig
 lHg
 mZX
@@ -166337,7 +166288,7 @@ mcO
 mTv
 ttG
 sLV
-dZQ
+mcO
 mcO
 mcO
 fQs
