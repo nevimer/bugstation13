@@ -25,7 +25,7 @@
 /datum/map_template/shuttle/emergency/maintshuttle
 	suffix = "maintshuttle"
 	name = "Maintenance Tsar's Pleasure Barge"
-	description = "The grand pleasure barge of the Maintenance Tsar, loaded with Cheese, drink, and the Maintenance Tsar themself. It is not compliant with Space OSHA standards."
+	description = "The grand pleasure barge of the Maintenance Tsar, loaded with cheese, drink, and the Maintenance Tsar themself. It is not compliant with Space OSHA standards."
 	credit_cost = CARGO_CRATE_VALUE * 7
 	emag_only = TRUE
 
