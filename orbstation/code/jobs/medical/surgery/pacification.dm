@@ -3,7 +3,7 @@
 		This chip can only be terminated by CentCom officials following an official investigation."
 
 /datum/surgery_step/pacify
-	name = "attach chip"
+	name = "attach chip (hemostat)"
 
 /datum/surgery_step/pacify/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to carefully insert the chip into [target]..."),
