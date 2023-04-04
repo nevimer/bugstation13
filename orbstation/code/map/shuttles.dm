@@ -22,6 +22,12 @@
 	credit_cost = CARGO_CRATE_VALUE * 5
 	emag_only = TRUE
 	admin_notes = "this things tiny as fuck"
+/datum/map_template/shuttle/emergency/maintshuttle
+	suffix = "maintshuttle"
+	name = "Maintenance Tsars Pleasure Barge"
+	description = "The grand pleasure barge of the Maintenance Tsar, loaded with Cheese, drink, and the Maintenance Tsar themself. It is not compliant with Space OSHA standards."
+	credit_cost = CARGO_CRATE_VALUE * 7
+	emag_only = TRUE
 
 // Other shuttles
 
