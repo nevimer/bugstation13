@@ -74,7 +74,7 @@
 		if(!possible_target.assigned_role)
 			continue
 
-		if(HAS_TRAIT(possible_target, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
+		if(HAS_TRAIT(possible_target.current, TRAIT_XCARD_EYE_TRAUMA)) //ORBSTATION
 			continue
 
 		if(heads_of_staff)
