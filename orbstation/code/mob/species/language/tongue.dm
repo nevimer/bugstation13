@@ -18,4 +18,5 @@
 		/datum/language/nekomimetic,
 		/datum/language/ratvaric,
 		/datum/language/solcom,
+		/datum/language/slime,
 	)
