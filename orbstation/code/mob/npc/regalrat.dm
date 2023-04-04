@@ -175,3 +175,27 @@
 	SpinAnimation(30)
 	animate(src, transform = matrix()*0.7, time = 3 SECONDS, loop = -1, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
 	animate(transform = matrix(), time = 3 SECONDS, loop = -1)
+
+/// Rat queen (thicc rat)
+
+/datum/rat_fashion/rat_queen
+	name = "rat queen"
+	allow_random = FALSE // it'd probably be strange to see one of these in the wild
+	icon_state_living = "ratqueen"
+	icon_state_dead = "ratqueen_dead"
+
+/// Rat queen alt (thicc rat but fat)
+
+/datum/rat_fashion/rat_queen_alt
+	name = "rat queen alt"
+	allow_random = FALSE
+	icon_state_living = "ratqueen_fat"
+	icon_state_dead = "ratqueen_dead"
+
+/// Ringmaster (thicc rat but clothed)
+
+/datum/rat_fashion/ringmaster
+	name = "ringmaster"
+	allow_random = FALSE
+	icon_state_living = "ringmaster"
+	icon_state_dead = "ratqueen_dead" // the other PR didn't include a corpse sprite for this one :(
