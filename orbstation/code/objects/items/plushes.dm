@@ -42,6 +42,94 @@
 	squeak_override = list('sound/weapons/kenetic_accel.ogg' = 1)
 	gender = FEMALE
 
+/obj/item/toy/plush/crew/glupplushie
+	name = "\improper Glup Shitto Doll"
+	desc = "Multitudes of this likeness of famous actor Glup Shitto were made, only for the film to be cancelled mid-shoot. \
+		To this date, Glup Shitto has never appeared on the big screen as the Head of Personnel."
+	icon_state = "glupplush"
+	gender = FEMALE
+
+/obj/item/toy/plush/crew/nancyplushie
+	name = "\improper Cuddle-me Nancy"
+	desc = "Part of a line of toys based on real doctors, designed to put anxious patients at ease. \
+		This model was quietly removed from circulation without explanation, but one seems to have ended up here."
+	icon_state = "nancyplush"
+	attack_verb_continuous = list("bump~s", "thump~s", "stings")
+	attack_verb_simple = list("bump~", "thump~", "sting")
+	gender = FEMALE
+	/// Are we currently changing shape?
+	var/transforming = FALSE
+	/// Whose DNA have we got stored?
+	var/list/absorbed_dna = list("Nancy")
+	/// Who has DNA? Note: This is a naive check, fish fingers and fishing rods will contain the DNA of Fish
+	var/static/list/plushie_dna = list(
+		"Felfy" = /obj/item/toy/plush/crew/felfyplushie,
+		"Fish" = /obj/item/toy/plush/crew/fishplushie,
+		"Glup" = /obj/item/toy/plush/crew/glupplushie,
+		"Ivona" = /obj/item/toy/plush/crew/ivonaplushie,
+		"Penelope" = /obj/item/toy/plush/crew/pennyplushie,
+	)
+
+// Absorb DNA Sting
+/obj/item/toy/plush/crew/nancyplushie/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	if (!proximity_flag)
+		return
+	var/matched_name
+	for (var/blorbo in plushie_dna)
+		if (findtext(target.name, blorbo))
+			matched_name = blorbo
+			break
+	if (!matched_name || (matched_name in absorbed_dna))
+		return
+	balloon_alert_to_viewers("giggle~")
+	absorbed_dna |= matched_name
+	flick("nancyflash", src)
+
+// Transform
+/obj/item/toy/plush/crew/nancyplushie/attack_self(mob/user)
+	. = ..()
+	if (transforming || length(absorbed_dna) < 2)
+		return
+	var/list/options = list()
+	for (var/name in absorbed_dna)
+		var/datum/radial_menu_choice/choice = new()
+		choice.name = name
+		if (name in plushie_dna)
+			var/atom/plush_type = plushie_dna[name]
+			choice.image = image(icon = initial(plush_type.icon), icon_state = initial(plush_type.icon_state))
+		else
+			choice.image = image(icon = initial(icon), icon_state = initial(icon_state))
+		options += list("[choice.name]" = choice)
+
+	var/picked_blorbo = show_radial_menu(user, user, options, require_near = TRUE)
+	if (!picked_blorbo)
+		return TRUE
+	transforming = TRUE
+	user.dropItemToGround(src)
+	balloon_alert_to_viewers("giggle~")
+	Shake()
+	addtimer(CALLBACK(src, PROC_REF(changeling_transform), picked_blorbo), 2.5 SECONDS, TIMER_DELETE_ME)
+	return TRUE
+
+/// Become someone else
+/obj/item/toy/plush/crew/nancyplushie/proc/changeling_transform(picked_blorbo)
+	playsound(src, 'sound/effects/cartoon_pop.ogg', 100, vary = TRUE)
+	transforming = FALSE
+	if (picked_blorbo in plushie_dna)
+		var/atom/plush_type = plushie_dna[picked_blorbo]
+		name = initial(plush_type.name)
+		desc = initial(plush_type.desc)
+		icon = initial(plush_type.icon)
+		icon_state = initial(plush_type.icon_state)
+		return
+
+	name = initial(name)
+	desc = initial(desc)
+	icon = initial(icon)
+	icon_state = initial(icon_state)
+	return
+
 /obj/item/toy/plush/amoungplushie
 	name = "amoung plushie"
 	desc = "A cuddly toy depicting the dangerous and rare alien species, the Amoung. Seems kinda sus."
