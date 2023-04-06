@@ -1,7 +1,7 @@
 /obj/item/melee/fakebeesword
 	name = "The Stinger"
 	desc = "A cheap replica of The Stinger. It isn't nearly as powerful, no wonder it's wielder died."
-	icon = 'icons/obj/weapons/items_and_weapons.dmi'
+	icon = 'icons/obj/weapons/sword.dmi'
 	icon_state = "beesword"
 	inhand_icon_state = "stinger"
 	worn_icon_state = "stinger"

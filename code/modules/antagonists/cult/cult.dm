@@ -475,7 +475,10 @@
 
 	if(members.len)
 		parts += "<span class='header'>The cultists were:</span>"
-		parts += printplayerlist(true_cultists)
+		if(length(true_cultists))
+			parts += printplayerlist(true_cultists)
+		else
+			parts += printplayerlist(members)
 
 	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
 
