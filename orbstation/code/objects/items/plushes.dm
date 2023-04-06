@@ -23,6 +23,38 @@
 	attack_verb_continuous = list("ohohos", "bites", "treats")
 	attack_verb_simple = list("ohoho", "bite", "treat")
 	gender = FEMALE
+	/// Chance to release microfilaments on interaction
+	var/asbestos_hug_chance = 5
+	/// Chance to release microfilaments on impact
+	var/asbestos_hurl_chance = 20
+
+/obj/item/toy/plush/crew/pennyplushie/attack_self(mob/user)
+	. = ..()
+	if (!prob(asbestos_hug_chance))
+		return
+	release_asbestos()
+
+/obj/item/toy/plush/crew/pennyplushie/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	. = ..()
+	if (!prob(asbestos_hurl_chance))
+		return
+	release_asbestos()
+
+/// Share penny's special treat
+/obj/item/toy/plush/crew/pennyplushie/proc/release_asbestos()
+	visible_message(span_warning("[src] releases a cloud of asbestos fibres!"))
+	var/datum/effect_system/fluid_spread/smoke/bad/asbestos/smoke = new
+	smoke.set_up(1, holder = src, location = src)
+	smoke.start()
+
+/// Penny's asbestos cloud spawner
+/datum/effect_system/fluid_spread/smoke/bad/asbestos
+	effect_type = /obj/effect/particle_effect/fluid/smoke/bad/asbestos
+
+/// Penny's asbestos cloud
+/obj/effect/particle_effect/fluid/smoke/bad/asbestos
+	lifetime = 6 SECONDS
+	color = COLOR_OFF_WHITE
 
 /obj/item/toy/plush/crew/fishplushie
 	name = "\improper Fish plushie"
