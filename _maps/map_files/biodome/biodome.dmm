@@ -2140,6 +2140,7 @@
 /obj/machinery/camera/directional/east{
 	c_tag = "Security - Locker Room"
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/lockers)
 "aNE" = (
@@ -26273,10 +26274,6 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/fore/greater)
-"krs" = (
-/obj/structure/cable,
-/turf/open/floor/wood/parquet,
-/area/station/cargo/storage)
 "kru" = (
 /obj/machinery/light_switch/directional/east,
 /obj/machinery/light/small/directional/east,
@@ -32949,6 +32946,12 @@
 /obj/structure/closet/firecloset,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter/room)
+"mSJ" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/structure/cable,
+/turf/open/floor/wood,
+/area/station/service/abandoned_gambling_den)
 "mSN" = (
 /obj/structure/chair/stool/directional/west,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -35962,6 +35965,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/station/hallway/primary/starboard)
+"obq" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth_half,
+/area/station/security/lockers)
 "obD" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
@@ -41677,6 +41686,9 @@
 /turf/open/floor/iron/dark,
 /area/station/hallway/secondary/exit/departure_lounge)
 "qoe" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/lockers)
 "qoh" = (
@@ -46342,6 +46354,8 @@
 /area/station/hallway/secondary/entry)
 "sch" = (
 /obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet,
 /area/station/cargo/storage)
 "scl" = (
@@ -51959,6 +51973,10 @@
 /obj/effect/mapping_helpers/airlock/unres,
 /turf/open/floor/plating,
 /area/station/maintenance/central/greater)
+"usA" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron/smooth_half,
+/area/station/security/lockers)
 "usC" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/iron/dark,
@@ -52388,6 +52406,7 @@
 	id = "armory";
 	name = "Armory Shutter"
 	},
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/showroomfloor,
 /area/station/security/lockers)
 "uCL" = (
@@ -58592,6 +58611,7 @@
 /area/station/engineering/atmos/storage/gas)
 "wWl" = (
 /obj/machinery/holopad,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron/smooth_half,
 /area/station/security/lockers)
 "wWs" = (
@@ -172248,7 +172268,7 @@ nqd
 sOg
 etn
 mNo
-qoe
+obq
 cwu
 cwu
 jIE
@@ -172505,7 +172525,7 @@ vNy
 oks
 pJA
 uCJ
-qoe
+usA
 wWl
 mmP
 fBz
@@ -173213,7 +173233,7 @@ dod
 bjl
 qcQ
 sch
-krs
+qcQ
 tDm
 jGu
 moc
@@ -175805,7 +175825,7 @@ dET
 lzy
 eZB
 gyD
-mRN
+mSJ
 sTC
 tcu
 eZB
