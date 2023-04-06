@@ -8,7 +8,7 @@
 		return
 	message_admins("[current] became an antagonist, but may be the Acting Captain!")
 
-#define SPARE_ID_ITEMS list(/obj/item/card/id/advanced/gold/captains_spare, /obj/item/paper/fluff/spare_id_safe_code)
+#define SPARE_ID_ITEMS list(/obj/item/card/id/advanced/gold/captains_spare, /obj/item/paper/paperslip/corporate/fluff/spare_id_safe_code)
 /// Returns true if this mind owns an item which would allow you to get the captain's spare ID
 /datum/mind/proc/has_spare_ID_access()
 	if (!current)
