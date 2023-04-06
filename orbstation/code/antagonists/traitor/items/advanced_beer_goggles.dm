@@ -3,7 +3,7 @@
 * Use it to have a secret medical hud and meson capabilties
 */
 /obj/item/clothing/glasses/hud/health/sunglasses/advanced_beer_goggles
-	name = "Advanced Beer Goggles"
+	name = "beer goggles"
 	icon_state = "sunhudbeer"
 	inhand_icon_state = "sunglasses"
 	desc = "A pair of sunglasses outfitted with apparatus to scan reagents, as well as providing an innate understanding of liquid viscosity while in motion. They feel slightly heavier than you'd expect."
