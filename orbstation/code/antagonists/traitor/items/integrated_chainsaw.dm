@@ -9,7 +9,7 @@
 /obj/item/organ/internal/cyberimp/arm/melee/chainsaw
 	name = "arm-mounted chainsaw implant"
 	desc = "A chainsaw hand implanted inside the arm. The chainsaw emerges from the subject's arm and remains inside when not in use."
-	icon = 'icons/obj/weapons/items_and_weapons.dmi'
+	icon = 'icons/obj/weapons/chainsaw.dmi'
 	icon_state = "chainsaw_off"
 	items_to_create = list(/obj/item/chainsaw/mounted_chainsaw/implanted)
 
