@@ -9,20 +9,21 @@
 
 /obj/item/grenade/boozenade/Initialize(mapload)
 	. = ..()
-	create_reagents(BOOZENADE_CAPACITY, AMOUNT_VISIBLE)
+	create_reagents(BOOZENADE_CAPACITY, TRANSPARENT)
 
 //Special proc to only allow booze to be poured inside. Partly copied from smoke machine.
 /obj/item/grenade/boozenade/attackby(obj/item/attacking_item, mob/user, params)
-	if(is_reagent_container(attacking_item) && attacking_item.is_open_container())
-		var/obj/item/reagent_containers/container = attacking_item
-		for(var/reagent in container.reagents.reagent_list)
-			if(!istype(reagent, /datum/reagent/consumable/ethanol))
-				to_chat(user, span_notice("You can only put booze in the booze grenade!"))
-				return
-		var/units = container.reagents.trans_to(src, container.amount_per_transfer_from_this, transfered_by = user)
-		if(units)
-			to_chat(user, span_notice("You transfer [units] units of the solution to [src]."))
+	if(!is_reagent_container(attacking_item) || !attacking_item.is_open_container())
+		return
+	var/obj/item/reagent_containers/container = attacking_item
+	for(var/reagent in container.reagents.reagent_list)
+		if(!istype(reagent, /datum/reagent/consumable/ethanol))
+			to_chat(user, span_notice("You can only put booze in the booze grenade!"))
 			return
+	var/units = container.reagents.trans_to(src, container.amount_per_transfer_from_this, transfered_by = user)
+	if(units)
+		to_chat(user, span_notice("You transfer [units] units of the solution to [src]."))
+		return
 
 /obj/item/grenade/boozenade/detonate(mob/living/lanced_by)
 	. = ..()
