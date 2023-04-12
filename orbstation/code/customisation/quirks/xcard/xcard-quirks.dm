@@ -63,6 +63,7 @@
 	mob_trait = TRAIT_XCARD_BORG_IMMUNE
 	examine_text = "cannot be made into a cyborg."
 
+// casting the trait so it applies to the brain level
 /datum/quirk/xcard/uncyborgable/add_to_holder(mob/living/new_holder, quirk_transfer, client/client_source)
 	. = ..()
 	if(!.)

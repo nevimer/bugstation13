@@ -267,6 +267,9 @@
 
 				if(istype(P, /obj/item/mmi) && !core_mmi)
 					var/obj/item/mmi/M = P
+					if(M.brain && HAS_TRAIT(M.brain, TRAIT_XCARD_BORG_IMMUNE)) // ORBSTATION ADDITION
+						balloon_alert(user, "incompatible!")
+						return
 					if(!M.brain_check(user))
 						var/install = tgui_alert(user, "This [AI_CORE_BRAIN(M)] is inactive, would you like to make an inactive AI?", "Installing AI [AI_CORE_BRAIN(M)]", list("Yes", "No"))
 						if(install != "Yes")
