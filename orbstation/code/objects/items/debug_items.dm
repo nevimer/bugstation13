@@ -7,15 +7,13 @@
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	matter = 200
 	max_matter = 200
-	matter_divisor = 35
 
 	wallcost = 0
 	floorcost = 0
 	launchcost = 0
 	deconcost = 0
 
-	walldelay = 3
-	floordelay = 3
+	condelay = 3
 	decondelay = 3
 
 /obj/item/holosign_creator/atmos/super
