@@ -1,7 +1,7 @@
 /datum/quirk/augmented
 	name = "Fully Augmented"
 	desc = "You never asked for this. Or maybe you did. Either way, all your limbs are cybernetic."
-	icon = "bolt-auto"
+	icon = FA_ICON_PLUG_CIRCLE_BOLT
 	value = 0
 	medical_record_text = "During physical examination, patient was found to have fully augmented limbs."
 

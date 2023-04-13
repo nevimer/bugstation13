@@ -1,7 +1,7 @@
 /datum/quirk/food_order_subscriber
 	name = "Food Delivery Subscription"
 	desc = "You have subscribed to NTGRUB, for a low-low price you will receive regular deliveries of food tailored to your tastes."
-	icon = "gift"
+	icon = FA_ICON_GIFT
 	value = 6
 	mob_trait = TRAIT_NTGRUB_SUB
 	gain_text = "<span class='danger'>You have subscribed to NTGRUB!</span>"

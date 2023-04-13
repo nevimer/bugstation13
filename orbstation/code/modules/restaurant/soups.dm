@@ -24,3 +24,6 @@
 
 /obj/item/reagent_containers/cup/bowl/soup/cheese
 	initial_reagent = /datum/reagent/consumable/nutriment/soup/cheese
+
+/obj/item/reagent_containers/cup/bowl/soup/seed
+	initial_reagent = /datum/reagent/consumable/nutriment/soup/seed

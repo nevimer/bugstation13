@@ -2,7 +2,7 @@
 /datum/quirk/xcard
 	xcard_quirk = TRUE
 	abstract_parent_type = /datum/quirk/xcard
-	icon = "x" //all x-card quirks use a big "X" icon for clarity
+	icon = FA_ICON_X //all x-card quirks use a big "X" icon for clarity
 	value = 0 //x-card quirks are always free
 
 	var/examine_text //text when quirk owner is examined, if any

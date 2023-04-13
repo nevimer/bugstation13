@@ -2,7 +2,7 @@
 	name = "debug rapid-light-device (RLD)"
 	desc = "A device used to rapidly provide lighting sources to an area. Activate to switch modes."
 	icon = 'icons/obj/tools.dmi'
-	icon_state = "rld-5"
+	icon_state = "rld"
 	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
 	matter = 200
