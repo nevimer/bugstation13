@@ -238,9 +238,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_science_lift"
-	},
 /turf/open/floor/iron/dark,
 /area/station/science/research)
 "aeQ" = (
@@ -27318,7 +27315,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_medbay_lift"
+	elevator_linked_id = "biodome_medbay_lift";
+	elevator_mode = 1
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
@@ -35363,9 +35361,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_science_lift"
-	},
 /turf/open/floor/iron,
 /area/station/science/research)
 "nMg" = (
@@ -49728,7 +49723,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_brig_lift"
+	elevator_linked_id = "biodome_brig_lift";
+	elevator_mode = 1;
+	dir = 8
 	},
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
@@ -57052,10 +57049,6 @@
 /obj/structure/disposalpipe/trunk/multiz/down{
 	dir = 4
 	},
-/obj/machinery/door/window/left/directional/east{
-	name = "Maintenance Door";
-	req_access = list("engineering")
-	},
 /turf/open/floor/plating,
 /area/station/science/research)
 "wmf" = (
@@ -61156,7 +61149,9 @@
 /obj/effect/turf_decal/loading_area/red,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_brig_lift"
+	elevator_linked_id = "biodome_brig_lift";
+	elevator_mode = 1;
+	dir = 1
 	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
@@ -61829,10 +61824,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/obj/machinery/door/window/left/directional/east{
-	name = "Maintenance Door";
-	req_access = list("engineering")
-	},
 /turf/open/floor/plating,
 /area/station/science/research)
 "xZJ" = (
@@ -62105,7 +62096,9 @@
 /obj/effect/turf_decal/loading_area/red,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_brig_lift"
+	elevator_linked_id = "biodome_brig_lift";
+	elevator_mode = 1;
+	dir = 1
 	},
 /turf/open/floor/iron/smooth_half,
 /area/station/security/brig)
@@ -62155,7 +62148,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/elevator{
-	elevator_linked_id = "biodome_medbay_lift"
+	elevator_linked_id = "biodome_medbay_lift";
+	elevator_mode = 1
 	},
 /turf/open/floor/plating,
 /area/station/medical/medbay/central)
