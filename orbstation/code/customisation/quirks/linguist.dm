@@ -5,4 +5,4 @@
 	value = 4
 	gain_text = span_notice("You feel more equipped to handle different modes of conversation.")
 	lose_text = span_danger("You feel a little less multilingual.")
-	icon = "globe"
+	icon = FA_ICON_GLOBE

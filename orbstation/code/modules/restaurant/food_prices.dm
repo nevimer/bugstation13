@@ -129,8 +129,8 @@
 /obj/item/food/snowcones/korta_ice
 	venue_value = FOOD_PRICE_EXOTIC
 
-/obj/item/food/soup/moth_cotton_soup
-	venue_value = FOOD_PRICE_EXOTIC
+/datum/reagent/consumable/nutriment/soup/cottonball
+	glass_price = FOOD_PRICE_EXOTIC
 
 /obj/item/food/spaghetti/garlic_nizaya
 	venue_value = FOOD_PRICE_NORMAL

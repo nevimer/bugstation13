@@ -19,21 +19,21 @@
     required_reagents = list (/datum/reagent/consumable/ethanol/gin = 1, /datum/reagent/oxygen = 1, /datum/reagent/bromine = 1, /datum/reagent/lithium = 1, /datum/reagent/iron = 1, /datum/reagent/nitrogen = 1)
     reaction_tags = REACTION_TAG_DRINK | REACTION_TAG_EASY | REACTION_TAG_OTHER
 
-/datum/reagent/consumable/ethanol/goblin_juice/overdose_process(mob/living/M, delta_time, times_fired)
-	M.set_jitter_if_lower(10 SECONDS * REM * delta_time)
+/datum/reagent/consumable/ethanol/goblin_juice/overdose_process(mob/living/M, seconds_per_tick, times_fired)
+	M.set_jitter_if_lower(10 SECONDS * REM * seconds_per_tick)
 	M.add_atom_colour(color, WASHABLE_COLOUR_PRIORITY)
 	..()
 
-/datum/reagent/consumable/ethanol/goblin_juice/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjust_dizzy(-10 SECONDS * REM * delta_time)
-	M.adjust_drowsiness(-6 SECONDS * REM * delta_time)
-	M.AdjustSleeping(-40 * REM * delta_time)
+/datum/reagent/consumable/ethanol/goblin_juice/on_mob_life(mob/living/carbon/M, seconds_per_tick, times_fired)
+	M.adjust_dizzy(-10 SECONDS * REM * seconds_per_tick)
+	M.adjust_drowsiness(-6 SECONDS * REM * seconds_per_tick)
+	M.AdjustSleeping(-40 * REM * seconds_per_tick)
 
-	if(DT_PROB(2.5, delta_time))
+	if(SPT_PROB(2.5, seconds_per_tick))
 		M.emote("twitch")
 
-	if (M.has_reagent(/datum/reagent/consumable/ethanol/goblin_juice, minor_overdose) && DT_PROB(10, delta_time))
-		M.set_jitter_if_lower(3 SECONDS * REM * delta_time)
+	if (M.has_reagent(/datum/reagent/consumable/ethanol/goblin_juice, minor_overdose) && SPT_PROB(10, seconds_per_tick))
+		M.set_jitter_if_lower(3 SECONDS * REM * seconds_per_tick)
 
 	..()
 	. = TRUE

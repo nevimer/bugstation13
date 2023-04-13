@@ -1,7 +1,7 @@
 /datum/quirk/bioscrambler_victim
 	name = "Bioscrambler Victim"
 	desc = "In the past, a run-in with a bioscrambler anomaly left your body irrevocably scrambled. All your limbs are those of a different species!"
-	icon = "dna"
+	icon = FA_ICON_DNA
 	value = 0
 	medical_record_text = "A bioscrambler accident has left the patient's body parts scrambled."
 

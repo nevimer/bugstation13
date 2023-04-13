@@ -10,7 +10,7 @@
 	your character name, and cannot be modififed unless the chip is unlocked by an ID with \
 	Head of Personnel access. The chip will be locked once attached to an ID. \
 	Examine the chip for more information."
-	icon = "user-group"
+	icon = FA_ICON_USER_GROUP
 	value = 0
 
 /datum/quirk/item_quirk/plurality/add_unique()

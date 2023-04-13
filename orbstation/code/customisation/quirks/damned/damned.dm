@@ -2,7 +2,7 @@
 	name = "Damned"
 	desc = "You have angered the gods! You will be set ablaze upon entering the chapel, and other \
 	holy things such as holy books, holy water, and the null rod will have adverse effects against you."
-	icon = "cloud-bolt"
+	icon = FA_ICON_CLOUD_BOLT
 	mob_trait = TRAIT_DAMNED
 	value = -3
 	gain_text = span_danger("The gods are angry with you!")
