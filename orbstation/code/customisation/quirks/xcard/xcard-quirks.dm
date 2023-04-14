@@ -2,7 +2,7 @@
 /datum/quirk/xcard
 	xcard_quirk = TRUE
 	abstract_parent_type = /datum/quirk/xcard
-	icon = "x" //all x-card quirks use a big "X" icon for clarity
+	icon = FA_ICON_X //all x-card quirks use a big "X" icon for clarity
 	value = 0 //x-card quirks are always free
 
 	var/examine_text //text when quirk owner is examined, if any
@@ -48,13 +48,19 @@
 	mob_trait = TRAIT_XCARD_PARADOX_CLONE
 	//this SHOULDN'T appear on examine - other players should not know that you can't have an evil twin.
 
-
 /datum/quirk/xcard/pax_surgery
 	name = "X-CARD: Pacification Surgery"
 	desc = "Attempts to perform the pacification surgery on you will not occur. \
 			Pax, the reagent with similar mechanical abilities, will still apply its effects."
 	mob_trait = TRAIT_XCARD_PAX_SURGERY
 	examine_text = "pacification surgery can not be performed."
+
+/datum/quirk/xcard/hypnosis
+	name = "X-CARD: Hypnosis"
+	desc = "You have an iron force of will and can shrug off sources of brainwashing, \
+		reducing them instead to merely a painful migraine."
+	mob_trait = TRAIT_XCARD_HYPNOSIS
+	examine_text = "immune to hypnotic suggestion."
 
 /datum/quirk/xcard/uncyborgable
 	name = "X-CARD: Cyborg Conversion"

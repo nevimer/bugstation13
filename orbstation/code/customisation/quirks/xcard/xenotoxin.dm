@@ -43,16 +43,16 @@
     /// the more bursts you suffer, the more damage each one does and the higher the chance that you'll get "bad bursts" that deal extra damage
     var/num_damage_bursts = 0
 
-/datum/reagent/toxin/xenotoxin/on_mob_life(mob/living/carbon/victim, delta_time, times_fired)
+/datum/reagent/toxin/xenotoxin/on_mob_life(mob/living/carbon/victim, seconds_per_tick, times_fired)
     ..()
 
     // apply a fluctuating amount of stamina damage in little chunks over time
-    if (DT_PROB(STAM_DAMAGE_RATE, delta_time))
-        victim.adjustStaminaLoss(rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)
+    if (SPT_PROB(STAM_DAMAGE_RATE, seconds_per_tick))
+        victim.adjustStaminaLoss(rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * seconds_per_tick, 0)
 
     // check to see if we should apply a damage burst
     // these deal sudden, larger amounts of toxin and stamina damage, and display a warning message
-    if (!DT_PROB(DAMAGE_BURST_RATE, delta_time))
+    if (!SPT_PROB(DAMAGE_BURST_RATE, seconds_per_tick))
         return // early return if we fail the check
     // we didnt fail, so run the code
 
@@ -66,18 +66,18 @@
 
     if (prob(bad_burst_chance))
         to_chat(victim, span_danger("Your heartrate spikes, and it feels like acid is running through your veins!"))
-        damage_burst_bad(victim, DAMAGE_BURST_MUL + num_damage_bursts, delta_time)
+        damage_burst_bad(victim, DAMAGE_BURST_MUL + num_damage_bursts, seconds_per_tick)
     else
         to_chat(victim, span_danger("Your blood hurts!"))
-        damage_burst_normal(victim, DAMAGE_BURST_MUL + num_damage_bursts, delta_time)
+        damage_burst_normal(victim, DAMAGE_BURST_MUL + num_damage_bursts, seconds_per_tick)
 
     num_damage_bursts++
 
 /// Apply a "damage burst", which deals increasing amounts of toxicity and stamina damage, causes breath loss, and deals a small amount of organ damage
-/datum/reagent/toxin/xenotoxin/proc/damage_burst_normal(mob/living/carbon/victim, damage_mul, delta_time)
+/datum/reagent/toxin/xenotoxin/proc/damage_burst_normal(mob/living/carbon/victim, damage_mul, seconds_per_tick)
 
-    victim.adjustToxLoss(damage_mul * toxpwr * REM * delta_time, 0)
-    victim.adjustStaminaLoss(damage_mul * rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * delta_time, 0)  // REM is reagent-effects-multiplier
+    victim.adjustToxLoss(damage_mul * toxpwr * REM * seconds_per_tick, 0)
+    victim.adjustStaminaLoss(damage_mul * rand(STAM_DAMAGE_MIN, STAM_DAMAGE_MAX) * REM * seconds_per_tick, 0)  // REM is reagent-effects-multiplier
 
     victim.losebreath++
 
@@ -87,18 +87,18 @@
     organ.apply_organ_damage(rand(ORGAN_DAMAGE_MIN,ORGAN_DAMAGE_MAX)) // deal a small amount of random (non-increasing) damage to that organ
 
 /// Apply a particularly bad damage burst, which does more damage than a normal one, applies jitteryness, and can cause the victim to scream
-/datum/reagent/toxin/xenotoxin/proc/damage_burst_bad(mob/living/carbon/victim, damage_mul, delta_time)
+/datum/reagent/toxin/xenotoxin/proc/damage_burst_bad(mob/living/carbon/victim, damage_mul, seconds_per_tick)
 
-    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * delta_time, /datum/status_effect/dizziness, only_if_higher = TRUE)
-    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * delta_time, /datum/status_effect/jitter, only_if_higher = TRUE)
+    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * seconds_per_tick, /datum/status_effect/dizziness, only_if_higher = TRUE)
+    victim.set_timed_status_effect((JITTER_TIME + num_damage_bursts) * REM * seconds_per_tick, /datum/status_effect/jitter, only_if_higher = TRUE)
 
     if(prob(SCREAM_PROB))
         victim.emote("scream") // ow, my blood!
 
     // do the normal amount of damage
-    damage_burst_normal(victim, damage_mul, delta_time)
+    damage_burst_normal(victim, damage_mul, seconds_per_tick)
     // do a little extra damage, for funsies
-    damage_burst_normal(victim, damage_mul/2, delta_time)
+    damage_burst_normal(victim, damage_mul/2, seconds_per_tick)
 
 #undef STAM_DAMAGE_MIN
 #undef STAM_DAMAGE_MAX

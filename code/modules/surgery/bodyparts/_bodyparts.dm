@@ -397,7 +397,7 @@
 	return bodypart_organs
 
 //Return TRUE to get whatever mob this is in to update health.
-/obj/item/bodypart/proc/on_life(delta_time, times_fired)
+/obj/item/bodypart/proc/on_life(seconds_per_tick, times_fired)
 	SHOULD_CALL_PARENT(TRUE)
 
 #define WAS_DISMEMBERED "dismembered" // Orb code interception to allow jelly dismemberment

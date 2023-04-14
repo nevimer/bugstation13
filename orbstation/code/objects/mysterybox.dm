@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(mystery_box_cheese, list(
 	/obj/item/food/raw_headcheese,
 	/obj/item/food/mac_balls,
 	/obj/item/food/mozzarella_sticks,
-	/obj/item/food/soup/moth_cheese_soup,
+	/obj/item/reagent_containers/cup/bowl/soup/cheese,
 	/obj/item/food/sustenance_bar/cheese,
 ))
 

@@ -1,7 +1,7 @@
 /datum/quirk/door_closer
 	name = "Compulsive Door Closer"
 	desc = "There is something that troubles you about walking through airlocks and doors. You absolutely must close them behind you. You can however, close your eyes to push through this."
-	icon = "door-closed"
+	icon = FA_ICON_DOOR_CLOSED
 	value = 3
 	mob_trait = TRAIT_DOOR_CLOSER
 	gain_text = "<span class='danger'>You feel very strongly about passing through doorways.</span>"

@@ -51,7 +51,7 @@
 	orderable_objects = list( ///nuts, berries, vegetables
 		VENUE_RESTAURANT = list(
 			/obj/item/food/pacoca = 10,
-			/obj/item/food/soup/vegetable = 10,
+			/datum/reagent/consumable/nutriment/soup/vegetable_soup = 10,
 			/obj/item/food/salad/herbsalad = 10,
 			/obj/item/food/salad/fruit = 5,
 			/obj/item/food/granola_bar = 5,
@@ -160,10 +160,10 @@
 	self_defense_line = "I am going to flatten you like a firetruck!"
 	orderable_objects = list( ///spice stuff
 		VENUE_RESTAURANT = list(
-			/obj/item/food/soup/vegetarian_chili = 25,
+			/datum/reagent/consumable/nutriment/soup/chili_sin_carne = 25,
 			/obj/item/food/chipsandsalsa = 25,
 			/obj/item/food/enchiladas = 25,
-			/obj/item/food/soup/hotchili = 15,
+			/datum/reagent/consumable/nutriment/soup/hotchili = 25,
 			/obj/item/food/salad/gumbo = 10,
 			/obj/item/food/fiesta_corn_skillet = 5,
 			/obj/item/food/cubannachos = 3,
@@ -285,13 +285,13 @@
 	self_defense_line = "*aflap"
 	orderable_objects = list( ///moffic food and drinks
 		VENUE_RESTAURANT = list(
-			/obj/item/food/soup/rice_porridge = 20,
-			/obj/item/food/soup/vegetarian_chili = 20,
+			/datum/reagent/consumable/nutriment/soup/chili_sin_carne = 20,
+			/datum/reagent/consumable/nutriment/soup/rice_porridge = 20,
 			/obj/item/food/buttered_baked_corn = 10,
 			/obj/item/food/fueljacks_lunch = 10,
 			/obj/item/food/ratatouille = 10,
 			/obj/item/food/big_baked_rice = 5,
-			/obj/item/food/soup/moth_cotton_soup = 1,
+			/datum/reagent/consumable/nutriment/soup/cottonball = 1,
 		),
 		VENUE_BAR = list(
 			/datum/reagent/consumable/ethanol/rum = 25,
