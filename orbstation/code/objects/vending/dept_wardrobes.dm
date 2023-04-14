@@ -37,6 +37,10 @@
 	)
 
 /obj/machinery/vending/wardrobe/robo_wardrobe
+	orb_products = list(
+		/obj/item/clothing/under/rank/rnd/roboticist/boiler = 2,
+		/obj/item/clothing/under/rank/rnd/roboticist/boiler/skirt = 2,
+	)
 	orb_premium = list(
 		/obj/item/toy/plush/crew/fishplushie = 1
 	)
