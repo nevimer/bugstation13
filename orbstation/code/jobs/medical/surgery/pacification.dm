@@ -5,6 +5,11 @@
 /datum/surgery_step/pacify
 	name = "attach chip (hemostat)"
 
+/datum/surgery/advanced/pacify/can_start(mob/user, mob/living/carbon/target)
+	if(HAS_TRAIT(target, TRAIT_XCARD_PAX_SURGERY))
+		return FALSE
+	return ..()
+
 /datum/surgery_step/pacify/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to carefully insert the chip into [target]..."),
 		span_notice("[user] begins to fix [target]'s brain."),

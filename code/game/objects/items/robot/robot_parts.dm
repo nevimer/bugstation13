@@ -243,6 +243,9 @@
 
 	else if(istype(W, /obj/item/mmi))
 		var/obj/item/mmi/M = W
+		if(M.brain && HAS_TRAIT(M.brain, TRAIT_XCARD_BORG_IMMUNE)) // ORBSTATION ADDITION
+			balloon_alert(user, "incompatible!")
+			return
 		if(check_completion())
 			if(!chest.cell)
 				to_chat(user, span_warning("The endoskeleton still needs a power cell!"))

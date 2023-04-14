@@ -10,6 +10,8 @@
 #define TRAIT_XCARD_EYE_TRAUMA "xcard_eye_trauma"
 // Prevents this character from being chosen by the Paradox Clone antag.
 #define TRAIT_XCARD_PARADOX_CLONE "xcard_paradox_clone"
+// Prevents pacification surgery from being performed on this character.
+#define TRAIT_XCARD_PAX_SURGERY "xcard_pax_surgery"
 // Prevents this character from being hypnotised.
 #define TRAIT_XCARD_HYPNOSIS "xcard_hypnosis"
 // Makes you immune to bioscrambler limb-swapping (used for x-card, but may be applied to species with a unique shape too)

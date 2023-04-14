@@ -48,6 +48,13 @@
 	mob_trait = TRAIT_XCARD_PARADOX_CLONE
 	//this SHOULDN'T appear on examine - other players should not know that you can't have an evil twin.
 
+/datum/quirk/xcard/pax_surgery
+	name = "X-CARD: Pacification Surgery"
+	desc = "Attempts to perform the pacification surgery on you will not occur. \
+			Pax, the reagent with similar mechanical abilities, will still apply its effects."
+	mob_trait = TRAIT_XCARD_PAX_SURGERY
+	examine_text = "pacification surgery can not be performed."
+
 /datum/quirk/xcard/hypnosis
 	name = "X-CARD: Hypnosis"
 	desc = "You have an iron force of will and can shrug off sources of brainwashing, \
@@ -55,14 +62,30 @@
 	mob_trait = TRAIT_XCARD_HYPNOSIS
 	examine_text = "immune to hypnotic suggestion."
 
-/*
 /datum/quirk/xcard/uncyborgable
-	name = "Cyborg Incompatibility"
+	name = "X-CARD: Cyborg Conversion"
 	desc = "Your brain is oddly-shaped, and will not fit into cyborg bodies or AI cores. \
 			(It can still be put into an MMI, and you can still become a cyborg or AI if you enter a positronic brain as a ghost.)"
 	mob_trait = TRAIT_XCARD_BORG_IMMUNE
-	examine_text = span_notice("[p_their(TRUE)] brain cannot be used to make a cyborg or AI, though it can be placed into an MMI.\n")
-*/
+	examine_text = "cannot be made into a cyborg."
+
+// casting the trait so it applies to the brain level
+/datum/quirk/xcard/uncyborgable/add_to_holder(mob/living/new_holder, quirk_transfer, client/client_source)
+	. = ..()
+	if(!.)
+		return
+	var/obj/item/organ/internal/brain/perfect_brain = new_holder.get_organ_slot(ORGAN_SLOT_BRAIN)
+	if(!perfect_brain)
+		return
+	ADD_TRAIT(perfect_brain, mob_trait, QUIRK_TRAIT)
+	RegisterSignal(new_holder, COMSIG_CARBON_GAIN_ORGAN, PROC_REF(transfer_trait))
+
+/datum/quirk/xcard/uncyborgable/proc/transfer_trait(mob/living/source, obj/item/organ/internal/brain/new_brain)
+	SIGNAL_HANDLER
+	if(!istype(new_brain))
+		return
+	ADD_TRAIT(new_brain, mob_trait, QUIRK_TRAIT)
+
 
 //proc to append x-card traits to examine text (everyone should be able to see these!)
 /mob/living/carbon/human/proc/examine_xcards()
