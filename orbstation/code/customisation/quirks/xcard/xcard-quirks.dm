@@ -48,6 +48,13 @@
 	mob_trait = TRAIT_XCARD_PARADOX_CLONE
 	//this SHOULDN'T appear on examine - other players should not know that you can't have an evil twin.
 
+/datum/quirk/xcard/hypnosis
+	name = "X-CARD: Hypnosis"
+	desc = "You have an iron force of will and can shrug off sources of brainwashing, \
+		reducing them instead to merely a painful migraine."
+	mob_trait = TRAIT_XCARD_HYPNOSIS
+	examine_text = "immune to hypnotic suggestion."
+
 /*
 /datum/quirk/xcard/uncyborgable
 	name = "Cyborg Incompatibility"

@@ -49,7 +49,10 @@
 	hypno_alert.desc = "\"[hypnotic_phrase]\"... your mind seems to be fixated on this concept."
 	..()
 
-/datum/brain_trauma/hypnosis/on_lose()
+/datum/brain_trauma/hypnosis/on_lose(silent)
+	if (HAS_TRAIT(owner, TRAIT_XCARD_HYPNOSIS)) // ORBSTATION ADDITION
+		silent = TRUE
+		return ..()
 	message_admins("[ADMIN_LOOKUPFLW(owner)] is no longer hypnotized with the phrase '[hypnotic_phrase]'.")
 	owner.log_message("is no longer hypnotized with the phrase '[hypnotic_phrase]'.", LOG_GAME)
 	to_chat(owner, span_userdanger("You suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you."))

@@ -10,6 +10,8 @@
 #define TRAIT_XCARD_EYE_TRAUMA "xcard_eye_trauma"
 // Prevents this character from being chosen by the Paradox Clone antag.
 #define TRAIT_XCARD_PARADOX_CLONE "xcard_paradox_clone"
+// Prevents this character from being hypnotised.
+#define TRAIT_XCARD_HYPNOSIS "xcard_hypnosis"
 // Makes you immune to bioscrambler limb-swapping (used for x-card, but may be applied to species with a unique shape too)
 #define TRAIT_BIOSCRAMBLER_IMMUNE "bioscrambler_immune"
 // Multiplies the time it takes to craft items by FAST_CRAFTER_MOD
