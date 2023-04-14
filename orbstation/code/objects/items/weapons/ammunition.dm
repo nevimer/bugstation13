@@ -11,10 +11,14 @@
 	category = CAT_WEAPON_AMMO
 
 /obj/item/ammo_casing/a357
+	desc = "A .357 Magnum bullet. Loud, Brutal, Efficient."
+	icon = 'orbstation/icons/obj/weapons/ammunition.dmi'
 	icon_state = "a357"
 
 /obj/item/ammo_casing/a357_brass
 	name = ".357 unloaded casing"
 	desc = "A fresh new brass case for a .357 shell. Necessary for making new rounds, but not enough on it's own."
-	icon_state = "brass-as357"
+	icon = 'orbstation/icons/obj/weapons/ammunition.dmi'
+	icon_state = "brassa357"
+	caliber = CALIBER_357
 	projectile_type = null
