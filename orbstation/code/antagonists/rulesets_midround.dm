@@ -190,3 +190,39 @@
 
 /datum/dynamic_ruleset/midround/from_ghosts/lone_operative/proc/delay_announce()
 	priority_announce("Encrypted communications intercepted in the vicinity of [station_name()]. There is an unknown threat aboard.", "Security Alert", ANNOUNCER_INTERCEPT)
+
+/// Midround Clown Lone Operative Ruleset (From Ghosts)
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny
+	name = "Lone Clown Operative"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
+	antag_datum = /datum/antagonist/nukeop/clownop/lone
+	antag_flag = ROLE_CLOWN_LONE_OPERATIVE
+	antag_flag_override = ROLE_NUCLEAR_OPERATIVE
+	requirements = list(101,60,50,40,30,20,10,10,10,10)
+	required_candidates = 1
+	weight = 2
+	cost = 5
+	minimum_round_time = 40 MINUTES
+
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny/ready(forced = FALSE)
+	if (!check_candidates())
+		return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny/finish_setup(mob/new_character, index)
+	..()
+	new_character.mind.set_assigned_role(SSjob.GetJobType(/datum/job/clown_operative))
+
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny/finish_setup(mob/new_character, index)
+	..()
+	var/list/spawn_locs = list()
+	for(var/obj/effect/landmark/carpspawn/L in GLOB.landmarks_list)
+		spawn_locs += L.loc
+	if(!spawn_locs.len)
+		return MAP_ERROR
+	new_character.forceMove(pick(spawn_locs))
+	addtimer(CALLBACK(src, PROC_REF(delay_announce)), 2 MINUTES)
+
+/datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny/proc/delay_announce()
+	priority_announce("Encrypted communications intercepted in the vicinity of [station_name()]. There is an unknown threat aboard.", "Security Alert", ANNOUNCER_INTERCEPT)
+
