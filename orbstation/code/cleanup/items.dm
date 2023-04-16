@@ -87,6 +87,12 @@
 /obj/structure/sign/poster/official/no_erp
 	desc = "This poster reminds the crew that Eroticism, Raunchiness and Pornography are banned on Nanotrasen stations."
 
+//Delete this poster if it ever appears and replace it with a random one.
+/obj/structure/sign/poster/contraband/got_wood/Initialize(mapload, vol)
+	. = ..()
+	new /obj/structure/sign/poster/contraband/random(loc)
+	return INITIALIZE_HINT_QDEL
+
 //Removed the word "ghetto" from item descriptions
 /obj/item/flashlight/lamp/bananalamp
 	desc = "Only a clown would think to make a silly banana-shaped lamp. Even has a goofy pullstring."
