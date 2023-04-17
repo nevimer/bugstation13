@@ -2302,7 +2302,7 @@
 	name = "Diner Canopy"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/openspace,
 /area/station/service/kitchen/diner)
 "aQb" = (
@@ -2580,6 +2580,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/station/service/theater)
+"aVd" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/station/maintenance/port/greater)
 "aVf" = (
 /obj/machinery/atmospherics/components/binary/crystallizer{
 	dir = 4
@@ -10897,6 +10901,11 @@
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 5
 	},
+/obj/machinery/door/window/right/directional/south{
+	name = "Freezer";
+	req_access = list("kitchen")
+	},
+/obj/structure/window/reinforced/spawner/directional/west,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/station/service/kitchen/coldroom)
 "egm" = (
@@ -16228,8 +16237,7 @@
 /obj/machinery/door/airlock/wood{
 	name = "Bar Maintenance Hatch"
 	},
-/obj/effect/mapping_helpers/airlock/access/any/service/bar,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/crew_quarters/bar)
 "giE" = (
@@ -21856,6 +21864,12 @@
 "iyR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/door/window/left/directional/east{
+	req_one_access = list("service","maint_tunnels")
+	},
+/obj/machinery/door/window/left/directional/east{
+	req_one_access = list("service","maint_tunnels")
+	},
 /turf/open/floor/wood/parquet,
 /area/station/service/kitchen/diner)
 "izf" = (
@@ -22681,8 +22695,7 @@
 /obj/machinery/door/airlock/wood{
 	name = "Bar Maintenance Hatch"
 	},
-/obj/effect/mapping_helpers/airlock/access/any/service/bar,
-/obj/effect/mapping_helpers/airlock/access/any/engineering/general,
+/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/floor/catwalk_floor,
 /area/station/maintenance/department/crew_quarters/bar)
 "iRL" = (
@@ -33448,6 +33461,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/iron,
 /area/station/science/research)
+"mXg" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/station/maintenance/department/security)
 "mXi" = (
 /obj/machinery/atmospherics/components/binary/pump/off{
 	dir = 1;
@@ -33951,6 +33968,11 @@
 /area/station/science/xenobiology)
 "nfG" = (
 /obj/structure/ladder,
+/obj/structure/window/reinforced/spawner/directional/east,
+/obj/machinery/door/window/right/directional/south{
+	name = "Backroom";
+	req_access = list("bar")
+	},
 /turf/open/floor/iron/checker,
 /area/station/service/bar/backroom)
 "nfH" = (
@@ -44954,13 +44976,6 @@
 	},
 /turf/open/floor/grass,
 /area/station/service/theater)
-"rpC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/obj/structure/falsewall/wood,
-/turf/open/floor/wood/parquet,
-/area/station/service/kitchen/diner)
 "rpM" = (
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
 	dir = 4
@@ -47934,9 +47949,8 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/obj/structure/falsewall/wood,
 /turf/open/floor/wood/parquet,
-/area/station/service/kitchen/diner)
+/area/station/biodome)
 "szX" = (
 /obj/structure/noticeboard/directional/north,
 /obj/structure/disposalpipe/segment{
@@ -48192,6 +48206,11 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
+"sFP" = (
+/obj/effect/mapping_helpers/broken_floor,
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/station/maintenance/aft/upper)
 "sFT" = (
 /obj/effect/spawner/structure/window/hollow/plasma,
 /turf/open/floor/plating/plasma,
@@ -52137,6 +52156,10 @@
 "ukj" = (
 /turf/open/floor/glass,
 /area/station/hallway/primary/starboard)
+"ukp" = (
+/obj/structure/ladder,
+/turf/open/floor/engine/hull,
+/area/station/asteroid)
 "ukO" = (
 /obj/effect/turf_decal/tile/yellow/diagonal_edge,
 /obj/effect/spawner/random/engineering/tracking_beacon,
@@ -53040,7 +53063,7 @@
 	name = "Diner Canopy"
 	},
 /obj/structure/lattice/catwalk,
-/obj/effect/mapping_helpers/airlock/access/all/engineering/maintenance,
+/obj/effect/mapping_helpers/airlock/access/any/service/maintenance,
 /turf/open/openspace,
 /area/station/service/kitchen/diner)
 "uDQ" = (
@@ -56904,6 +56927,10 @@
 	},
 /turf/open/floor/catwalk_floor/iron,
 /area/station/biodome/aft)
+"wfw" = (
+/obj/structure/ladder,
+/turf/open/floor/plating/airless,
+/area/station/solars/port/aft)
 "wfF" = (
 /obj/effect/turf_decal/tile/yellow/diagonal_edge,
 /obj/machinery/camera{
@@ -85067,9 +85094,9 @@ cCZ
 cCZ
 cCZ
 cCZ
-cCZ
+wfw
 ycJ
-cCZ
+kcX
 cCZ
 cCZ
 cCZ
@@ -89629,7 +89656,7 @@ oQV
 cJU
 cJU
 cJU
-cJU
+rZH
 wpF
 tbw
 tbw
@@ -145396,7 +145423,7 @@ tiU
 ikk
 tMa
 ikk
-vxs
+aVd
 wbu
 vxs
 ahB
@@ -150603,9 +150630,9 @@ hHc
 hHc
 hHc
 hHc
+ukp
 hHc
-hHc
-hHc
+kQJ
 hHc
 hHc
 hHc
@@ -156484,7 +156511,7 @@ fJC
 vxC
 xsO
 vxC
-eKQ
+sFP
 fJC
 geA
 bxE
@@ -162354,7 +162381,7 @@ qrZ
 iJt
 nTY
 lpO
-rpC
+nTY
 szR
 lKQ
 lKQ
@@ -170101,7 +170128,7 @@ nIC
 cEV
 fKL
 gww
-uEl
+mXg
 uEl
 kSo
 uEl
@@ -174227,7 +174254,7 @@ xfs
 avN
 ouU
 rRv
-hHc
+rRv
 hNy
 hNy
 oOB
@@ -174741,7 +174768,7 @@ avN
 ups
 ouU
 hHc
-hHc
+rRv
 hHc
 hNy
 hNy
