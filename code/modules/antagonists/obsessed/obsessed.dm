@@ -190,7 +190,7 @@
 	for(var/mob/living/carbon/human/human_alive in GLOB.alive_mob_list)
 		if(!human_alive.mind)
 			continue
-		if(human_alive == oldmind.current || human_alive.mind.assigned_role.faction != FACTION_STATION || human_alive.mind.has_antag_datum(/datum/antagonist/obsessed))
+		if(human_alive == oldmind.current || human_alive.mind.assigned_role.faction != FACTION_STATION || human_alive.mind.has_antag_datum(/datum/antagonist/obsessed) || human_alive.mind.has_antag_datum(/datum/antagonist/contract_killer)) //ORBSTATION EDIT
 			continue //the jealousy target has to have a job, and not be the obsession or obsessed.
 		all_coworkers += human_alive.mind
 		if(!(our_departments & human_alive.mind.assigned_role.departments_bitflags))
@@ -201,6 +201,8 @@
 		target = pick(viable_coworkers)
 	else if(length(all_coworkers))//find someone who works on the station
 		target = pick(all_coworkers)
+	else //ORBSTATION ADDITION though technically it's an upstream bug
+		return null
 	return oldmind
 
 
