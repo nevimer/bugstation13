@@ -103,6 +103,7 @@
 #define ROLE_CHANGELING_INFILTRATOR "Changeling Infiltrator"
 #define ROLE_WIZARD_JOURNEYMAN "Wizard Journeyman"
 #define ROLE_HERETIC_MIDROUND "Waking Heretic"
+#define ROLE_CLOWN_LONE_OPERATIVE "Lone Clown Operative"
 
 /// This defines the antagonists you can operate with in the settings.
 /// Keys are the antagonist, values are the number of days since the player's
@@ -143,6 +144,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_WIZARD_JOURNEYMAN = 0,
 	ROLE_CHANGELING_INFILTRATOR = 0,
 	ROLE_HERETIC_MIDROUND = 0,
+	ROLE_CLOWN_LONE_OPERATIVE = 0,
 
 	// Latejoin
 	ROLE_HERETIC_SMUGGLER = 0,
