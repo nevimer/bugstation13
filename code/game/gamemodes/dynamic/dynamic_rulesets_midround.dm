@@ -684,7 +684,7 @@
 	var/dead_mobs_required = 20
 	var/need_extra_spawns_value = 15
 	var/list/spawn_locs = list()
-	var/dead_players_required = 3 //ORBSTATION
+	var/dead_players_required = 2 //ORBSTATION
 
 /datum/dynamic_ruleset/midround/from_ghosts/revenant/acceptable(population=0, threat=0)
 	//ORBSTATION EDIT
