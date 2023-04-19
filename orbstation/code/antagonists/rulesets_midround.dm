@@ -1,8 +1,4 @@
-//////////////////////////////////////////////
-//                                          //
-//           SYNDICATE TRAITORS             //
-//                                          //
-//////////////////////////////////////////////
+/// Midround Traitor Ruleset (From Living)
 
 // Don't create more traitors if it exceeds the limit for the current population & threat level.
 /datum/dynamic_ruleset/midround/from_living/autotraitor/ready(forced = FALSE)
@@ -12,12 +8,7 @@
 			return FALSE
 	return ..()
 
-//////////////////////////////////////////////
-//                                          //
-//         CHANGELING INFILTRATOR           //
-//                                          //
-//////////////////////////////////////////////
-
+/// Midround Changeling Infiltrator Ruleset (From Ghosts)
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator
 	name = "Changeling Infiltrator"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
@@ -42,12 +33,7 @@
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/finish_setup(mob/new_character, index)
 	return // the spawned player is given the antag datum via the spawner, so we don't need to do it here
 
-//////////////////////////////////////////////
-//                                          //
-//            WIZARD JOURNEYMAN             //
-//                                          //
-//////////////////////////////////////////////
-
+/// Midround Wizard Journeyman Ruleset (From Ghosts)
 /datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman
 	name = "Wizard Journeyman"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
@@ -78,12 +64,7 @@
 	if (GLOB.journeymanstart.len)
 		new_character.forceMove(pick(GLOB.journeymanstart))
 
-//////////////////////////////////////////////
-//                                          //
-//            HERETIC (MIDROUND)            //
-//                                          //
-//////////////////////////////////////////////
-
+/// Midround Heretic Ruleset (From Living)
 /datum/dynamic_ruleset/midround/from_living/waking_heretic
 	name = "Waking Heretic"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_LIGHT // heretics need time to set up, so this should happen earlier in the round
@@ -142,12 +123,7 @@
 
 	return TRUE
 
-//////////////////////////////////////////////
-//                                          //
-//              LONE OPERATIVE              //
-//                                          //
-//////////////////////////////////////////////
-
+/// Midround Lone Operative Ruleset (From Ghosts)
 /datum/dynamic_ruleset/midround/from_ghosts/lone_operative
 	name = "Lone Operative"
 	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
