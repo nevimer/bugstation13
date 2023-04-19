@@ -8,6 +8,62 @@
 			return FALSE
 	return ..()
 
+/// Midround Changeling Infiltrator Ruleset (From Ghosts)
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator
+	name = "Changeling Infiltrator"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
+	antag_flag = ROLE_CHANGELING_INFILTRATOR
+	antag_flag_override = ROLE_CHANGELING
+	antag_datum = /datum/antagonist/changeling/infiltrator
+	weight = 5
+	cost = 12
+	requirements = list(101,60,50,50,40,20,20,10,10,10)
+	required_candidates = 1
+	repeatable = FALSE
+
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/ready(forced = FALSE)
+	if (required_candidates > (dead_players.len + list_observers.len))
+		return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/generate_ruleset_body(mob/applicant)
+	var/mob/living/carbon/human/new_mob = spawn_changeling_infiltrator(applicant)
+	return new_mob
+
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/finish_setup(mob/new_character, index)
+	return // the spawned player is given the antag datum via the spawner, so we don't need to do it here
+
+/// Midround Wizard Journeyman Ruleset (From Ghosts)
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman
+	name = "Wizard Journeyman"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
+	antag_datum = /datum/antagonist/wizard_journeyman
+	antag_flag = ROLE_WIZARD_JOURNEYMAN
+	antag_flag_override = ROLE_WIZARD
+	required_enemies = list(2,2,2,2,1,1,1,0,0,0)
+	requirements = list(101,101,60,50,40,30,20,10,10,10)
+	required_candidates = 1
+	weight = 5
+	cost = 12
+	enemy_roles = list(
+		JOB_CAPTAIN,
+		JOB_DETECTIVE,
+		JOB_HEAD_OF_SECURITY,
+		JOB_SECURITY_OFFICER,
+		JOB_WARDEN,
+		JOB_CHAPLAIN,
+	)
+
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/ready(forced = FALSE)
+	if (!check_candidates())
+		return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/wizard_journeyman/finish_setup(mob/new_character, index)
+	..()
+	if (GLOB.journeymanstart.len)
+		new_character.forceMove(pick(GLOB.journeymanstart))
+
 /// Midround Heretic Ruleset (From Living)
 /datum/dynamic_ruleset/midround/from_living/waking_heretic
 	name = "Waking Heretic"
