@@ -89,10 +89,3 @@
 /obj/structure/sign/poster/contraband/imperial_propaganda
 	name = "REMEMBER ZAGOSKELD"
 	desc = "An old Tiziran Empire propaganda poster from the Civil War's early conflicts. It takes advantage of a massive attack on the Imperial capital to stir up patriotic sentiment."
-
-// Not actually a rename due to balance changes. Consider moving elsewhere.
-/datum/design/c38_iceblox
-	name = "Speed Loader (.38 Iceblox) (Lethal/Very Lethal (Jellypeople))"
-
-/datum/design/temp_gun
-	name = "Temperature Gun Part Kit (Less Lethal/Very Lethal (Jellypeople))"
