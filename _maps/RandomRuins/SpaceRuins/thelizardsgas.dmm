@@ -59,11 +59,11 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/thelizardsgas)
-"dr" = (
-/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
-/obj/structure/sign/warning/vacuum/directional/east,
-/obj/effect/mapping_helpers/broken_floor,
-/turf/open/floor/plating,
+"di" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/cowboy,
+/obj/structure/cable,
+/turf/open/floor/iron/white/side,
 /area/ruin/space/has_grav/thelizardsgas)
 "gL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -87,14 +87,6 @@
 "iA" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
-"iC" = (
-/obj/structure/sign/warning/electric_shock/directional/north,
-/obj/machinery/suit_storage_unit/standard_unit,
-/obj/machinery/power/terminal{
-	dir = 4
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
@@ -126,12 +118,6 @@
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
 	},
-/area/ruin/space/has_grav/thelizardsgas)
-"mh" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/cowboy,
-/obj/structure/cable,
-/turf/open/floor/iron/white/side,
 /area/ruin/space/has_grav/thelizardsgas)
 "mN" = (
 /obj/effect/spawner/random/food_or_drink/booze,
@@ -195,11 +181,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/thelizardsgas)
-"sO" = (
-/obj/structure/cable,
-/obj/structure/sign/warning/fire/directional/north,
-/turf/open/floor/iron/white/side,
-/area/ruin/space/has_grav/thelizardsgas)
 "ua" = (
 /obj/effect/spawner/random/structure/billboard/roadsigns,
 /turf/open/misc/asteroid/airless,
@@ -221,6 +202,11 @@
 "wb" = (
 /turf/open/misc/asteroid/airless,
 /area/ruin/space/has_grav/thelizardsgas)
+"xb" = (
+/obj/structure/cable,
+/obj/structure/sign/warning/fire/directional/north,
+/turf/open/floor/iron/white/side,
+/area/ruin/space/has_grav/thelizardsgas)
 "xy" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -229,6 +215,12 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
+"yU" = (
+/obj/structure/sign/warning/no_smoking/directional/north{
+	desc = "An incredibly bad idea."
+	},
+/turf/template_noop,
+/area/template_noop)
 "zn" = (
 /obj/structure/rack,
 /obj/effect/spawner/random/food_or_drink/snack,
@@ -241,26 +233,6 @@
 /turf/open/floor/iron/dark/smooth_corner{
 	dir = 4
 	},
-/area/ruin/space/has_grav/thelizardsgas)
-"AZ" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/crate/secure/freezer{
-	desc = "There's a reason why this is behind the counter. Do not sell to minors.";
-	locked = 0;
-	name = "The GOOD Stuff"
-	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	coverlocked = 0;
-	locked = 0;
-	network_id = null;
-	start_charge = 60
-	},
-/obj/structure/cable,
-/obj/item/paper/fluff/spaceruins/lizardsgas/memorandum,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/turf/open/floor/iron/dark/smooth_corner,
 /area/ruin/space/has_grav/thelizardsgas)
 "Bi" = (
 /obj/structure/closet{
@@ -343,15 +315,6 @@
 /obj/structure/flora/rock,
 /turf/open/misc/asteroid/airless,
 /area/ruin/space/has_grav/thelizardsgas)
-"Io" = (
-/obj/machinery/power/smes{
-	charge = 2e+006;
-	network_id = null;
-	output_level = 0
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
 "Je" = (
 /turf/open/floor/iron/white/side{
 	dir = 8
@@ -387,8 +350,24 @@
 /obj/machinery/portable_atmospherics/scrubber,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
+"KN" = (
+/obj/machinery/power/smes{
+	charge = 2e+006;
+	output_level = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/thelizardsgas)
 "LA" = (
 /turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/thelizardsgas)
+"LT" = (
+/obj/structure/sign/warning/electric_shock/directional/north,
+/obj/machinery/suit_storage_unit/standard_unit,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
 "Mw" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -416,6 +395,12 @@
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
 	},
+/area/ruin/space/has_grav/thelizardsgas)
+"Pb" = (
+/obj/machinery/atmospherics/pipe/smart/simple/yellow/hidden,
+/obj/structure/sign/warning/vacuum/directional/east,
+/obj/effect/mapping_helpers/broken_floor,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
 "Pi" = (
 /obj/effect/turf_decal/tile/dark{
@@ -500,6 +485,25 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
+"Vy" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/crate/secure/freezer{
+	desc = "There's a reason why this is behind the counter. Do not sell to minors.";
+	locked = 0;
+	name = "The GOOD Stuff"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	coverlocked = 0;
+	start_charge = 60
+	},
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/structure/cable,
+/obj/item/paper/fluff/spaceruins/lizardsgas/memorandum,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/thelizardsgas)
 "VP" = (
 /obj/structure/table/reinforced,
 /obj/item/gps/spaceruin,
@@ -521,12 +525,6 @@
 	dir = 1
 	},
 /area/ruin/space/has_grav/thelizardsgas)
-"Ww" = (
-/obj/structure/sign/warning/no_smoking/directional/north{
-	desc = "An incredibly bad idea."
-	},
-/turf/template_noop,
-/area/template_noop)
 "WP" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden,
@@ -680,7 +678,7 @@ CA
 Qg
 Qg
 mR
-AZ
+Vy
 rs
 zz
 JY
@@ -796,7 +794,7 @@ sN
 iO
 Ss
 GM
-dr
+Pb
 ss
 Bu
 Bu
@@ -825,7 +823,7 @@ Wh
 mR
 mR
 mR
-Ww
+yU
 CA
 MB
 CA
@@ -872,7 +870,7 @@ Ud
 LA
 LA
 LA
-sO
+xb
 Zs
 zn
 UO
@@ -949,11 +947,11 @@ CA
 CA
 Qg
 mR
-iC
+LT
 xy
 Kw
 mR
-mh
+di
 Zs
 zn
 UO
@@ -976,7 +974,7 @@ CA
 CA
 Qg
 mR
-Io
+KN
 cm
 Mw
 Cv

@@ -165,6 +165,9 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 
 GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 	list(//tools
+		//Orbstation exclusive items
+		/obj/item/toy/plush/milkinz = 1,
+		//Orb items end
 		/obj/item/grenade/iedcasing/spawned = 1,
 		/obj/item/hatchet = 1,
 		/obj/item/melee/baton/security/cattleprod = 1,
@@ -175,8 +178,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/roller = 1,
 		/obj/item/spear = 1,
 		/obj/item/weldingtool/largetank = 1,
-		//Orbstation exclusive items
-		/obj/item/toy/plush/milkinz = 1,
+		/obj/item/market_uplink/blackmarket = 1,
 		) = 8,
 
 	list(//equipment
