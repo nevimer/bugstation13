@@ -1,3 +1,8 @@
+#define CK_OBJ_INTEL "gather_intel"
+#define CK_OBJ_POLAROID "take_polaroid"
+#define CK_OBJ_HEIRLOOM "steal_heirloom"
+#define CK_OBJ_COVERUP "kill_coworker"
+
 /// A re-imagining of the "Obsessed" antag, sharing some of its mechanics and goals but not the unpleasant flavor.
 /datum/antagonist/contract_killer
 	name = "Contract Killer"
@@ -22,7 +27,7 @@
 	owner.announce_objectives()
 
 /datum/antagonist/contract_killer/forge_objectives()
-	var/list/objectives_left = list("intel", "polaroid")
+	var/list/objectives_left = list(CK_OBJ_INTEL, CK_OBJ_POLAROID)
 	var/datum/objective/assassinate/kill_objective = new
 	kill_objective.owner = owner
 	var/datum/mind/target_mind = kill_objective.find_target()
@@ -33,34 +38,33 @@
 	if(heirloom_quirk)
 		family_heirloom = heirloom_quirk.heirloom?.resolve()
 		if(family_heirloom)
-			objectives_left += "heirloom"
+			objectives_left += CK_OBJ_HEIRLOOM
 
 	// If the target is not the captain, someone in the same department might also be a kill objective.
 	if(!is_captain_job(target_mind.assigned_role))
-		objectives_left += "coverup"
+		objectives_left += CK_OBJ_COVERUP
 
 	for(var/i in 1 to 2)
-		var/chosen_objective = pick(objectives_left)
-		objectives_left.Remove(chosen_objective)
+		var/chosen_objective = pick_n_take(objectives_left)
 		switch(chosen_objective)
-			if("intel")
+			if(CK_OBJ_INTEL)
 				var/datum/objective/gather_intel/intel = new
 				intel.owner = owner
 				intel.target = target_mind
 				intel.start_ticking()
 				objectives += intel
-			if("polaroid")
+			if(CK_OBJ_POLAROID)
 				var/datum/objective/polaroid/polaroid = new
 				polaroid.owner = owner
 				polaroid.target = target_mind
 				objectives += polaroid
-			if("heirloom")
+			if(CK_OBJ_HEIRLOOM)
 				var/datum/objective/steal/heirloom_thief/heirloom_thief = new
 				heirloom_thief.owner = owner
 				heirloom_thief.target = target_mind //while you usually wouldn't need this for stealing, we need the name of the obsession
 				heirloom_thief.steal_target = family_heirloom
 				objectives += heirloom_thief
-			if("coverup")
+			if(CK_OBJ_COVERUP)
 				var/datum/objective/assassinate/jealous/jealous = new
 				jealous.owner = owner
 				jealous.target = target_mind //will reroll into a coworker on the objective itself
@@ -69,26 +73,28 @@
 	objectives += kill_objective //Add the assassinate last, because you're meant to save it for last.
 
 	//last objective
-	if(prob(70)) //70% - "clean kill" objective
-		var/datum/objective/clean_kill/clean = new
-		clean.owner = owner
-		objectives += clean
-	else if(prob(50)) //15% - "frame job" objective
-		var/datum/objective/frame_job/frame = new
-		frame.owner = owner
-		frame.find_target(blacklist = list(target_mind))
-		objectives += frame
-	else //15% - "accident kill" objective
-		var/datum/objective/accident_kill/accident = new
-		accident.owner = owner
-		objectives += accident
+	var/obj_prob = rand(1,100)
+	switch(obj_prob)
+		if(1 to 70) //70% - "clean kill" objective
+			var/datum/objective/clean_kill/clean = new
+			clean.owner = owner
+			objectives += clean
+		if(71 to 85) //15% - "frame job" objective
+			var/datum/objective/frame_job/frame = new
+			frame.owner = owner
+			frame.find_target(blacklist = list(target_mind))
+			objectives += frame
+		if(86 to 100) //15% - "accident kill" objective
+			var/datum/objective/accident_kill/accident = new
+			accident.owner = owner
+			objectives += accident
 
 	for(var/datum/objective/O in objectives)
 		O.update_explanation_text()
 
 //Objectives
 
-//Copied partly from the "spend time" objective from Obsessed. Spend time close to your target to gather intel.
+/// Spend time close to your target to gather intel. Copied partly from the "spend time" objective from Obsessed.
 /datum/objective/gather_intel
 	name = "gather_intel"
 	var/timer = 8 MINUTES
@@ -113,7 +119,7 @@
 /datum/objective/gather_intel/check_completion()
 	return timer <= 0 || explanation_text == "Free Objective"
 
-//Obsessed handled all of this in a trauma. We don't have that luxury, so here it is!
+/// Every tick, checks if the killer's target is within 7 tiles. Counts down their timer and gives them a mood buff if so.
 /datum/objective/gather_intel/proc/on_life(mob/living/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
 
@@ -136,6 +142,7 @@
 			return
 		owner.current.add_mood_event("studying", /datum/mood_event/studying_target, target.current.name)
 
+/// Mood given every tick while within 7 tiles of your target.
 /datum/mood_event/studying_target
 	description = "Your days are numbered..."
 	mood_change = 6
@@ -145,6 +152,7 @@
 /datum/mood_event/studying_target/add_effects(name)
 	description = "Your days are numbered, [name]..."
 
+/// Powerful mood only given once, when the target has been fully studied.
 /datum/mood_event/studied_target
 	description = "I have finished studying my target. Soon I'll make the kill..."
 	mood_change = 8
@@ -154,7 +162,7 @@
 /datum/mood_event/studying_target/add_effects(name)
 	description = "Your days are numbered, [name]..."
 
-//Polaroid objective - keep a photo of your target alive, and your target dead, on your person.
+/// Polaroid objective - keep a photo of your target alive, and your target dead, on your person.
 /datum/objective/polaroid/update_explanation_text()
 	..()
 	if(target?.current)
@@ -163,7 +171,7 @@
 	else
 		explanation_text = "Free Objective"
 
-//Changing the objective text. Not bothering to reflavor "jealous" internally.
+/// Slight edit of the Obsessed "jealous" objective, tasking the killer to eliminate a randomly-chosen co-worker of the target.
 /datum/objective/assassinate/jealous/update_explanation_text()
 	..()
 	if(target?.current && old)
@@ -171,10 +179,12 @@
 	else
 		explanation_text = "Free Objective"
 
+/// "Default" RP objective, telling you to do this cleanly.
 /datum/objective/clean_kill
 	name = "clean kill"
 	explanation_text = "Do not get caught. Avoid collateral damage."
 
+/// RP objective, tasking you to frame a random person on the station for your murder. Likely to get silly when you try to frame the captain.
 /datum/objective/frame_job
 	name = "frame job"
 
@@ -185,6 +195,7 @@
 	else
 		explanation_text = "Do not get caught. Avoid collateral damage." //just do the default if this one isn't available
 
+/// RP objective asking you to make the murder look like an accident. Very up for interpretation by design.
 /datum/objective/accident_kill
 	name = "accident kill"
 	explanation_text = "Make the murder look like an accident."
@@ -221,3 +232,8 @@
 	for(var/obj/item/knife/kitchen/carried_knife in H.get_equipped_items(TRUE))
 		carried_knife.add_mob_blood(H)
 	H.regenerate_icons()
+
+#undef CK_OBJ_INTEL
+#undef CK_OBJ_POLAROID
+#undef CK_OBJ_HEIRLOOM
+#undef CK_OBJ_COVERUP
