@@ -92,6 +92,8 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	prompt_name = "a glitched infiltrator (please tell an admin if you see this!)"
+	you_are_text = "You are a code error! Tell an admin if you see this."
+	flavour_text = "This message should never appear! Tell an admin if it does."
 	outfit = /datum/outfit/infiltrator
 	anchored = TRUE
 	density = FALSE
