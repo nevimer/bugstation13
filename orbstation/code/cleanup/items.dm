@@ -123,3 +123,7 @@
 	. = ..()
 	return INITIALIZE_HINT_QDEL
 
+// It's already a reference item. Why are they lizardskin and not snakeskin?
+/obj/item/clothing/shoes/discoshoes
+	name = "green snakeskin shoes"
+	desc = "They may have lost some of their lustre over the years, but these green snakeskin shoes fit you perfectly."

@@ -29,3 +29,12 @@
 
 /obj/item/food/meatball
 	desc = "A great meal all round."
+
+/obj/item/food/deadmouse
+	desc = "They look like somebody dropped the bass on it. A delicacy among maintenance-dwellers."
+
+/obj/item/food/deadmouse/moldy
+	desc = "A dead rodent, consumed by mold and rot. Even the grimiest of maint gremlins might think twice about eating this."
+
+/obj/item/food/pizza/flatbread/imperial
+	desc = "A flatbread topped with pate, pickled vegetables, and cubed headcheese. Something of an acquired taste."
