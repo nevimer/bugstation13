@@ -48,4 +48,5 @@
 	. = ..()
 
 	to_chat(spawned_mob, span_alert("[flavour_text]"))
+	spawned_mob.set_nutrition(20) //you've been out of food for days now
 	to_chat(spawned_mob, span_alert("[important_text]"))
