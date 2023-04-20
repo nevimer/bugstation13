@@ -8,9 +8,9 @@
 /obj/item/toy/plush/space_lizard_plushie
 	desc = "An adorable stuffed toy that resembles a very determined spacefaring tiziran. To infinity and beyond, little guy."
 
-// The original referenced "lizard janitors" which is just a baffling meme. It would be weird to just swap the name out.
+// The original referenced "lizard janitors" which is just a baffling meme. Giving it an unrelated ad instead.
 /obj/machinery/vending/wardrobe/jani_wardrobe
-	product_ads = ""
+	product_ads = "Clean up your act!"
 
 /datum/reagent/mutationtoxin/lizard
 	name = "Tiziran Mutation Toxin"
