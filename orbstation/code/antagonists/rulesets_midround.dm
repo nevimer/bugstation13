@@ -227,3 +227,38 @@
 /datum/dynamic_ruleset/midround/from_ghosts/lone_operative_funny/proc/delay_announce()
 	priority_announce("Encrypted communications intercepted in the vicinity of [station_name()]. There is an unknown threat aboard.", "Security Alert", ANNOUNCER_INTERCEPT)
 
+/// Midround Contract Killer Ruleset (From Living)
+/datum/dynamic_ruleset/midround/from_living/contract_killer
+	name = "Contract Killer"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_LIGHT
+	antag_datum = /datum/antagonist/contract_killer
+	antag_flag = ROLE_CONTRACT_KILLER
+	restricted_roles = list(
+		JOB_AI,
+		JOB_CYBORG,
+		ROLE_POSITRONIC_BRAIN,
+	)
+	required_enemies = list(1,1,1,0,0,0,0,0,0,0)
+	required_candidates = 1
+	weight = 4 //weight and cost are duplicated from Obsessed
+	cost = 3
+	repeatable = TRUE
+
+/datum/dynamic_ruleset/midround/from_living/contract_killer/trim_candidates()
+	..()
+	candidates = living_players
+	for(var/mob/living/player in candidates)
+		if(issilicon(player))
+			candidates -= player
+		else if(is_centcom_level(player.z))
+			candidates -= player
+		else if(player.mind && (player.mind.special_role || player.mind.antag_datums?.len > 0))
+			candidates -= player
+
+/datum/dynamic_ruleset/midround/from_living/contract_killer/execute()
+	var/mob/living/carbon/human/killer = pick_n_take(candidates)
+	var/datum/antagonist/contract_killer/new_killer = new
+	killer.mind.add_antag_datum(new_killer)
+	message_admins("[ADMIN_LOOKUPFLW(killer)] has been made into a Contract Killer by the midround ruleset.")
+	log_game("[key_name(killer)] was made into a Contract Killer by the midround ruleset.")
+	return TRUE
