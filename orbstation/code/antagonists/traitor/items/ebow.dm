@@ -6,8 +6,8 @@
 	It will synthesize and fire bolts tipped with a debilitating \
 	toxin that will damage and disorient targets, causing them to \
 	slur as if inebriated. It can produce an infinite number \
-	of bolts, but takes time to automatically recharge after each shot. \
-	Additionally, its internal battery must be manually rewound after six shots."
+	of bolts, but can only be fired once every two seconds. \
+	After firing six shots, its mechanism must be manually rewound."
 
 /obj/item/gun/energy/recharge/ebow
 	desc = "A weapon favored by syndicate stealth specialists. It generates its own ammo, but its internal battery must be rewound after a few shots."
