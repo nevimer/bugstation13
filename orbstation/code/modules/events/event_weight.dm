@@ -5,3 +5,6 @@
 /datum/round_event_control/spacevine
 	weight = 10
 	max_occurrences = 1
+
+/datum/round_event_control/morph
+	weight = 5
