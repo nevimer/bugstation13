@@ -17,7 +17,7 @@
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /datum/design/special_hotload
-	name = ".38 Special Hot Load bullet"
+	name = ".38 Special Hot Load bullet (VERY LETHAL)"
 	id = "special_hotload"
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 3000)
