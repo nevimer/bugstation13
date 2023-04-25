@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(syndicate_employers, list(
 	"Children of the 3rd Soviet Republic",
 	"Free Radicals",
 	"Ghosts of the 3rd Soviet Union",
-	"Ngaouhaki Pharmaceuticals",
+	"Ngaouhaki FPC",
 	"Suojaheimøstusek Resource & Logistics, plc",
 ))
 ///employers that are from nanotrasen
@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(normal_employers, list(
 	"Chariraxa Agricultural Concern",
     "Flagbearers of the New Kronstadt",
 	"Ghosts of the 3rd Soviet Union",
-	"Ngaouhaki Pharmaceuticals",
+	"Ngaouhaki FPC",
 	"Suojaheimøstusek Resource & Logistics, plc",
 ))
 
