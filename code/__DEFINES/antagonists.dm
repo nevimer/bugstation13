@@ -198,7 +198,7 @@ GLOBAL_LIST_INIT(normal_employers, list(
 	//ORBSTATION EMPLOYERS
 	"Azik Interstellar",
 	"Chariraxa Agricultural Concern",
-    "Flagbearers of the New Kronstadt",
+	"Flagbearers of the New Kronstadt",
 	"Ghosts of the 3rd Soviet Union",
 	"Ngaouhaki FPC",
 	"Suojaheimøstusek Resource & Logistics, plc",
