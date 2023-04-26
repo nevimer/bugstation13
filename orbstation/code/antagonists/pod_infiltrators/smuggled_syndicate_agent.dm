@@ -28,37 +28,6 @@
 	uplink_handler.telecrystals = 25
 	uplink_handler.progression_points = SStraitor.current_global_progression
 
-// Event that spawns the agent and their ship. Does not alert the crew (obviously)
-
-/datum/round_event_control/smuggled_agent
-	name = "Smuggled Syndicate Agent"
-	description = "A Syndicate agent spawns in a pod, tasked with the usual murder and theft."
-	category = EVENT_CATEGORY_INVASION
-	typepath = /datum/round_event/ghost_role/smuggled_agent
-	weight = 8 // slightly higher than aliens
-	earliest_start = 30 MINUTES
-	max_occurrences = 1
-	dynamic_should_hijack = TRUE
-
-/datum/round_event/ghost_role/smuggled_agent
-	role_name = "smuggled Syndicate agent"
-
-/datum/round_event/ghost_role/smuggled_agent/spawn_role()
-	var/list/candidates = get_candidates(ROLE_TRAITOR, ROLE_SMUGGLED_AGENT)
-	if(!candidates.len) // we only need one
-		return NOT_ENOUGH_PLAYERS
-
-	var/mob/dead/selected = pick_n_take(candidates)
-
-	var/mob/living/new_mob = spawn_infiltrator(selected, INFIL_SPAWNER_TRAITOR)
-
-	if(!new_mob)
-		return NOT_ENOUGH_PLAYERS
-
-	spawned_mobs += new_mob
-
-	return SUCCESSFUL_SPAWN
-
 /obj/effect/mob_spawn/ghost_role/human/infiltrator/traitor
 	name = "syndicate sleeper"
 	desc = "An aging cryo sleeper in ominous red-and-black."

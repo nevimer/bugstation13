@@ -18,38 +18,6 @@
 	escape_objective.owner = owner
 	objectives += escape_objective
 
-// Event that spawns the changeling and their ship. Does not alert the crew (obviously)
-
-/datum/round_event_control/changeling_infiltrator
-	name = "Changeling Infiltrator"
-	description = "A Changeling Infiltrator spawns in a pod, tasked to eat some of the crew."
-	category = EVENT_CATEGORY_INVASION
-	typepath = /datum/round_event/ghost_role/changeling_infiltrator
-	weight = 8 // slightly higher than aliens
-	min_players = 14
-	earliest_start = 30 MINUTES
-	max_occurrences = 1
-	dynamic_should_hijack = TRUE
-
-/datum/round_event/ghost_role/changeling_infiltrator
-	role_name = "changeling infiltrator"
-
-/datum/round_event/ghost_role/changeling_infiltrator/spawn_role()
-	var/list/candidates = get_candidates(ROLE_CHANGELING, ROLE_CHANGELING_INFILTRATOR)
-	if(!candidates.len) // we only need one
-		return NOT_ENOUGH_PLAYERS
-
-	var/mob/dead/selected = pick_n_take(candidates)
-
-	var/mob/living/new_mob = spawn_infiltrator(selected, INFIL_SPAWNER_LING)
-
-	if(!new_mob)
-		return NOT_ENOUGH_PLAYERS
-
-	spawned_mobs += new_mob
-
-	return SUCCESSFUL_SPAWN
-
 /obj/effect/mob_spawn/ghost_role/human/infiltrator/changeling
 	name = "changeling sleeper"
 	desc = "An old cryo sleeper, desperately frozen shut many years ago."

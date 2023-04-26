@@ -8,7 +8,7 @@
 	description = "A desperate survivor who spawns in a pod, and must do everything they can to stay alive."
 	category = EVENT_CATEGORY_FRIENDLY //they might not be helpful but they aren't an antag
 	typepath = /datum/round_event/ghost_role/disaster_survivor
-	weight = 8 // same weight as the other infiltrators
+	weight = 10
 	earliest_start = 30 MINUTES
 	max_occurrences = 1
 
