@@ -27,7 +27,32 @@
 	return ..()
 
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/generate_ruleset_body(mob/applicant)
-	var/mob/living/carbon/human/new_mob = spawn_changeling_infiltrator(applicant)
+	var/mob/living/carbon/human/new_mob = spawn_infiltrator(applicant, INFIL_SPAWNER_LING)
+	return new_mob
+
+/datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/finish_setup(mob/new_character, index)
+	return // the spawned player is given the antag datum via the spawner, so we don't need to do it here
+
+/// Midround Smuggled Syndicate Agent Ruleset (From Ghosts)
+/datum/dynamic_ruleset/midround/from_ghosts/smuggled_syndicate_agent
+	name = "Smuggled Syndicate Agent"
+	midround_ruleset_style = MIDROUND_RULESET_STYLE_HEAVY
+	antag_flag = ROLE_SMUGGLED_AGENT
+	antag_flag_override = ROLE_TRAITOR
+	antag_datum = /datum/antagonist/traitor/agent
+	weight = 5
+	cost = 8
+	requirements = list(101,60,50,50,40,20,20,10,10,10)
+	required_candidates = 1
+	repeatable = FALSE
+
+/datum/dynamic_ruleset/midround/from_ghosts/smuggled_syndicate_agent/ready(forced = FALSE)
+	if (required_candidates > (dead_players.len + list_observers.len))
+		return FALSE
+	return ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/smuggled_syndicate_agent/generate_ruleset_body(mob/applicant)
+	var/mob/living/carbon/human/new_mob = spawn_infiltrator(applicant, INFIL_SPAWNER_TRAITOR)
 	return new_mob
 
 /datum/dynamic_ruleset/midround/from_ghosts/changeling_infiltrator/finish_setup(mob/new_character, index)

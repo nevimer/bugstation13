@@ -101,6 +101,7 @@
 
 // Orb roles
 #define ROLE_CHANGELING_INFILTRATOR "Changeling Infiltrator"
+#define ROLE_SMUGGLED_AGENT "Smuggled Syndicate Agent"
 #define ROLE_CONTRACT_KILLER "Contract Killer"
 #define ROLE_KILLER_LATEJOIN "Contract Killer (Latejoin)"
 #define ROLE_WIZARD_JOURNEYMAN "Wizard Journeyman"
@@ -145,6 +146,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_WIZARD_MIDROUND = 14,
 	ROLE_WIZARD_JOURNEYMAN = 0,
 	ROLE_CHANGELING_INFILTRATOR = 0,
+	ROLE_SMUGGLED_AGENT = 0,
 	ROLE_HERETIC_MIDROUND = 0,
 	ROLE_CONTRACT_KILLER = 0,
 	ROLE_CLOWN_LONE_OPERATIVE = 0,
