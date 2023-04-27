@@ -156,7 +156,7 @@
 /datum/religion_rites/ratclog/invoke_effect(mob/living/user, atom/movable/religious_tool)
 	..()
 	var/datum/round_event_control/scrubber_clog/rats/event = locate(/datum/round_event_control/scrubber_clog/rats) in SSevents.control
-	if(event.runEvent())
+	if(event.run_event())
 		to_chat(user, span_notice("You hear a distant scratching and scuttling."))
 		return TRUE
 	to_chat(user, span_notice("It appears that no more rats are forthcoming."))
