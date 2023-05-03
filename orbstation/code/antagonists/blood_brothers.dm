@@ -130,6 +130,7 @@
 		to_chat(brother.current, span_notice("Your implant fizzles away! Objective Complete."))
 	if(CONFIG_GET(flag/log_traitor))
 		WRITE_LOG(GLOB.world_game_log, "BLOOD BROTHER: [name] delivered a [steal_objective.steal_target] at [worldtime2text()].")
+	add_objective(new /datum/objective/assassinate, needs_target = TRUE) //gives bbs new assassination objective
 
 /// generates a light steal objective if there are no objectives and then from then on generates murder or heist objectives
 /datum/team/brother_team/forge_single_objective()
