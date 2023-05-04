@@ -1146,9 +1146,8 @@
 /turf/open/floor/iron,
 /area/station/security/office)
 "auN" = (
-/obj/machinery/airalarm/mixingchamber{
-	pixel_y = -24
-	},
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
 	},
@@ -7239,10 +7238,8 @@
 /obj/machinery/atmospherics/pipe/smart/manifold/purple/visible{
 	dir = 1
 	},
-/obj/machinery/airalarm/mixingchamber{
-	dir = 1;
-	pixel_y = 24
-	},
+/obj/machinery/airalarm/directional/north,
+/obj/effect/mapping_helpers/airalarm/mixingchamber_access,
 /obj/machinery/meter,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
@@ -18810,10 +18807,8 @@
 /area/station/medical/chemistry)
 "hlj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/all_access{
-	dir = 4;
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/all_access,
 /obj/machinery/power/terminal{
 	dir = 1
 	},
@@ -31030,10 +31025,8 @@
 	network = list("ss13","engine")
 	},
 /obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
-/obj/machinery/airalarm/engine{
-	dir = 4;
-	pixel_x = 24
-	},
+/obj/machinery/airalarm/directional/east,
+/obj/effect/mapping_helpers/airalarm/engine_access,
 /obj/structure/cable/layer3,
 /turf/open/floor/engine,
 /area/station/engineering/supermatter)
@@ -41911,10 +41904,8 @@
 /turf/open/floor/iron/dark,
 /area/station/engineering/supermatter/room)
 "qkU" = (
-/obj/machinery/airalarm/kitchen_cold_room{
-	dir = 8;
-	pixel_x = -24
-	},
+/obj/machinery/airalarm/directional/west,
+/obj/effect/mapping_helpers/airalarm/tlv_cold_room,
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 10
