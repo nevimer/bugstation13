@@ -534,13 +534,13 @@
 
 /datum/design/limb_disk/basic
 	name = "Basic Non-human Design Disk"
-	desc = "Contains designs for the specialized organs of many of the species NanoTrasen employs."
+	desc = "Contains designs for the specialized organs of many of the species Nanotrasen employs."
 	id = "limbdesign_basic"
 	build_path = /obj/item/disk/design_disk/limbs/basic
 
 /datum/design/limb_disk/advanced
 	name = "Advanced Non-human Design Disk"
-	desc = "Contains designs for the specialized organs of many of the species NanoTrasen employs."
+	desc = "Contains designs for the specialized organs of many of the species Nanotrasen employs."
 	id = "limbdesign_advanced"
 	build_path = /obj/item/disk/design_disk/limbs/advanced
 
