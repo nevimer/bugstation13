@@ -4609,12 +4609,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/central)
-"bNG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/effect/spawner/random/trash/mess,
-/turf/open/floor/plating,
-/area/station/maintenance/starboard/central)
 "bNK" = (
 /obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/visible{
 	dir = 4
@@ -5925,7 +5919,7 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/machinery/light/directional/east,
+/obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/station/security/checkpoint/escape)
 "cor" = (
@@ -13017,11 +13011,11 @@
 "eWQ" = (
 /obj/structure/table/glass,
 /obj/item/reagent_containers/chem_pack,
-/obj/machinery/airalarm/directional/north,
 /obj/machinery/camera/directional/north{
 	c_tag = "Medbay - Trauma Center Fore";
 	network = list("ss13","medbay")
 	},
+/obj/item/radio/intercom/directional/north,
 /turf/open/floor/white,
 /area/station/medical/treatment_center)
 "eWZ" = (
@@ -14495,7 +14489,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/station/security/checkpoint/medical)
 "fAu" = (
-/obj/machinery/light/cold/directional/west,
 /obj/structure/bed/pod{
 	desc = "An old medical bed, just waiting for replacement with something up to date.";
 	dir = 4;
@@ -17962,6 +17955,10 @@
 /obj/structure/sign/poster/contraband/random/directional/south,
 /turf/open/floor/carpet/orange,
 /area/station/service/theater)
+"gSj" = (
+/obj/effect/spawner/random/trash/mess,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/central)
 "gSn" = (
 /obj/effect/spawner/random/engineering/tracking_beacon,
 /obj/effect/turf_decal/siding/purple{
@@ -21314,6 +21311,9 @@
 /obj/structure/statue/snow/snowman,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/tile/blue,
+/obj/structure/sign/collision_counter/boat{
+	pixel_x = -32
+	},
 /turf/open/floor/iron/white,
 /area/station/medical/medbay/lobby)
 "inZ" = (
@@ -24751,6 +24751,7 @@
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 8
 	},
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "jJr" = (
@@ -25950,6 +25951,10 @@
 /obj/effect/mapping_helpers/broken_floor,
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
+"khL" = (
+/obj/effect/spawner/structure/window/hollow/reinforced/middle,
+/turf/open/floor/plating,
+/area/station/maintenance/starboard/central)
 "khP" = (
 /obj/structure/table,
 /obj/item/folder/red,
@@ -28954,10 +28959,6 @@
 "lmJ" = (
 /turf/closed/wall,
 /area/station/construction/mining/aux_base)
-"lmO" = (
-/obj/structure/sign/collision_counter/boat,
-/turf/closed/wall,
-/area/station/medical/treatment_center)
 "lmY" = (
 /obj/structure/weightmachine/stacklifter,
 /obj/effect/turf_decal/bot,
@@ -30895,10 +30896,6 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
-"lXm" = (
-/obj/structure/sign/collision_counter/boat,
-/turf/closed/wall,
-/area/station/medical/medbay/lobby)
 "lXp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -31047,10 +31044,10 @@
 	},
 /obj/item/stack/medical/mesh,
 /obj/item/stack/medical/suture,
-/obj/item/radio/intercom/directional/north,
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 1
 	},
+/obj/machinery/status_display/evac/directional/north,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "lZZ" = (
@@ -38803,15 +38800,6 @@
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/iron/freezer,
 /area/station/commons/toilet)
-"oYM" = (
-/obj/machinery/light/cold/directional/east,
-/obj/machinery/stasis,
-/obj/machinery/defibrillator_mount/directional/east,
-/obj/effect/turf_decal/tile/blue/half{
-	dir = 4
-	},
-/turf/open/floor/iron/white,
-/area/station/medical/treatment_center)
 "oYV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -39282,10 +39270,11 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/light/cold/directional/west,
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 8
 	},
+/obj/machinery/status_display/evac/directional/west,
+/obj/machinery/light/cold/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "phk" = (
@@ -39521,6 +39510,13 @@
 	},
 /turf/open/floor/plating,
 /area/station/maintenance/port/central)
+"plE" = (
+/obj/effect/turf_decal/trimline/red/filled/line{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/smooth_half,
+/area/station/security/brig)
 "plF" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -53016,7 +53012,6 @@
 	dir = 4;
 	name = "medical bed"
 	},
-/obj/machinery/status_display/evac/directional/west,
 /obj/machinery/defibrillator_mount/directional/north,
 /obj/effect/turf_decal/tile/blue/anticorner{
 	dir = 4
@@ -56800,7 +56795,6 @@
 /turf/open/floor/plating/airless,
 /area/station/science/ordnance/bomb)
 "wcR" = (
-/obj/machinery/status_display/evac/directional/east,
 /obj/structure/table/glass,
 /obj/item/reagent_containers/cup/bottle/epinephrine,
 /obj/item/reagent_containers/cup/bottle/multiver{
@@ -56810,6 +56804,10 @@
 /obj/effect/turf_decal/tile/blue/anticorner{
 	dir = 4
 	},
+/obj/structure/sign/collision_counter/boat{
+	pixel_y = 32
+	},
+/obj/machinery/light/cold/directional/east,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "wda" = (
@@ -59577,6 +59575,7 @@
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 9
 	},
+/obj/machinery/firealarm/directional/west,
 /turf/open/floor/iron/dark/smooth_half,
 /area/station/security/brig)
 "xas" = (
@@ -62248,6 +62247,7 @@
 /obj/effect/turf_decal/tile/blue/half{
 	dir = 8
 	},
+/obj/machinery/light/cold/directional/west,
 /turf/open/floor/iron/white,
 /area/station/medical/treatment_center)
 "ycd" = (
@@ -106108,7 +106108,7 @@ rXx
 fsA
 snN
 oyW
-hNy
+gSj
 bRU
 bGM
 gCO
@@ -106365,8 +106365,8 @@ ldP
 oyW
 uFB
 oyW
-hNy
-bRU
+gNh
+khL
 bGM
 gNh
 bRU
@@ -106622,7 +106622,7 @@ mRT
 iYN
 dAm
 oyW
-cCZ
+uZp
 bRU
 bGM
 uZp
@@ -106879,7 +106879,7 @@ oyW
 oyW
 jLF
 oyW
-cCZ
+gNh
 bRU
 bGM
 uZp
@@ -107136,9 +107136,9 @@ hNy
 oyW
 vtU
 oyW
-cCZ
+uZp
 bRU
-bNG
+bGM
 uZp
 bRU
 vWr
@@ -107393,8 +107393,8 @@ hNy
 oyW
 rpX
 oyW
-cCZ
-bRU
+gNh
+uZp
 bGM
 uZp
 dsR
@@ -107650,7 +107650,7 @@ vtU
 oyW
 vtU
 oyW
-cCZ
+aCm
 bRU
 bGM
 vAB
@@ -149807,7 +149807,7 @@ mNP
 olm
 sZX
 sZX
-lmO
+sZX
 sZX
 bim
 jpo
@@ -151606,7 +151606,7 @@ jXb
 iEt
 sZX
 wcR
-oYM
+pJg
 ftG
 gKm
 paN
@@ -152891,7 +152891,7 @@ cVB
 knD
 cVB
 eyw
-lXm
+eyw
 uCO
 bIP
 eyw
@@ -167073,7 +167073,7 @@ mvG
 iJB
 mvG
 nAj
-cue
+plE
 cue
 pSM
 vje
