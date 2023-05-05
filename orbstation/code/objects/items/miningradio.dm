@@ -46,7 +46,6 @@
     if(!length(mining_z_levels))
         return WEATHER_ALERT_CLEAR // No problems if there are no mining z levels
 
-    var/datum/weather/ongoing_weather
     for(var/datum/weather/check_weather as anything in SSweather.processing)
         if(!check_weather.barometer_predictable || check_weather.stage == END_STAGE)
             continue
