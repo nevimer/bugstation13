@@ -122,12 +122,21 @@
 	var/datum/objective/steal/brothers/steal_objective = locate() in objectives
 	if(steal_objective)
 		steal_objective.completed = TRUE
+
+	var/datum/objective/assassinate/newkill = new()
+	newkill.team = src
+	newkill.find_target()
+	newkill.update_explanation_text()
+	objectives += newkill
+
 	for(var/datum/mind/brother in members)
 		var/obj/item/implant/holo_pad_projector/possible_implant = locate() in brother.current.implants
 		if(!possible_implant)
 			continue
 		qdel(possible_implant)
-		to_chat(brother.current, span_notice("Your implant fizzles away! Objective Complete."))
+		to_chat(brother.current, span_notice("Your implant fizzles away! The Syndicate has given you a new objective."))
+		var/datum/antagonist/brother/bb_datum = brother.has_antag_datum(/datum/antagonist/brother)
+		bb_datum.objectives += newkill
 	if(CONFIG_GET(flag/log_traitor))
 		WRITE_LOG(GLOB.world_game_log, "BLOOD BROTHER: [name] delivered a [steal_objective.steal_target] at [worldtime2text()].")
 
