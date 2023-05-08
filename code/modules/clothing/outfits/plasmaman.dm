@@ -21,7 +21,7 @@
 
 	uniform = /obj/item/clothing/under/plasmaman/enviroslacks
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
-	head = /obj/item/clothing/head/helmet/space/plasmaman/white
+	head = /obj/item/clothing/head/helmet/space/plasmaman/detective
 
 /datum/outfit/plasmaman/warden
 	name = "Warden Plasmaman"
@@ -167,7 +167,7 @@
 
 	uniform = /obj/item/clothing/under/plasmaman/enviroslacks
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
-	head = /obj/item/clothing/head/helmet/space/plasmaman/medical
+	head = /obj/item/clothing/head/helmet/space/plasmaman/white
 
 /datum/outfit/plasmaman/mime
 	name = "Mime Plasmaman"
@@ -184,6 +184,13 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/clown
 	head = /obj/item/clothing/head/helmet/space/plasmaman/clown
 	mask = /obj/item/clothing/mask/gas/clown_hat/plasmaman
+
+/datum/outfit/plasmaman/lawyer
+	name = "Lawyer Plasmaman"
+
+	uniform = /obj/item/clothing/under/plasmaman/lawyer
+	gloves = /obj/item/clothing/gloves/color/plasmaman/white
+	head = /obj/item/clothing/head/helmet/space/plasmaman/lawyer
 
 /datum/outfit/plasmaman/captain
 	name = "Captain Plasmaman"
