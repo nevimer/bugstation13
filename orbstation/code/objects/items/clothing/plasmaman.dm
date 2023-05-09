@@ -29,3 +29,11 @@
 	desc = "A blue and white envirosuit designed specifically for lawyers, looks particularly nice with a blue overcoat and tie."
 	icon_state = "lawyer_envirosuit"
 	inhand_icon_state = null
+
+/obj/item/clothing/head/helmet/space/plasmaman/coroner
+	icon = 'icons/obj/clothing/head/plasmaman_hats.dmi'
+	worn_icon = 'icons/mob/clothing/head/plasmaman_head.dmi'
+
+/obj/item/clothing/under/plasmaman/coroner
+	icon = 'icons/obj/clothing/under/plasmaman.dmi'
+	worn_icon = 'icons/mob/clothing/under/plasmaman.dmi'
