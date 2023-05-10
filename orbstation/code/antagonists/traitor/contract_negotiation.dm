@@ -93,8 +93,8 @@
 
 	var/objectives_text = "<br> The original objectives were:"
 
+	var/count = 1
 	for(var/explanation in old_objectives)
-		var/count = 1
 		objectives_text += "<br><B>Objective #[count]</B>: [explanation]"
 		count++
 

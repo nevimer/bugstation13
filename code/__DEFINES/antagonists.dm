@@ -152,6 +152,14 @@ GLOBAL_LIST_INIT(syndicate_employers, list(
 	"Tiger Cooperative Fanatic",
 	"Waffle Corporation Terrorist",
 	"Waffle Corporation",
+	//ORBSTATION EMPLOYERS
+	"Azik Interstellar",
+	"Chariraxa Agricultural Concern",
+	"Children of the 3rd Soviet Republic",
+	"Free Radicals",
+	"Ghosts of the 3rd Soviet Union",
+	"Ngaouhaki FPC",
+	"Suojaheimøstusek Resource & Logistics, plc",
 ))
 ///employers that are from nanotrasen
 GLOBAL_LIST_INIT(nanotrasen_employers, list(
@@ -160,6 +168,8 @@ GLOBAL_LIST_INIT(nanotrasen_employers, list(
 	"Gone Postal",
 	"Internal Affairs Agent",
 	"Legal Trouble",
+	//ORBSTATION EMPLOYERS
+	"Flagbearers of the New Kronstadt",
 ))
 
 ///employers who hire agents to do the hijack
@@ -169,6 +179,9 @@ GLOBAL_LIST_INIT(hijack_employers, list(
 	"Gone Postal",
 	"Tiger Cooperative Fanatic",
 	"Waffle Corporation Terrorist",
+	//ORBSTATION EMPLOYERS
+	"Children of the 3rd Soviet Republic",
+	"Free Radicals",
 ))
 
 ///employers who hire agents to do a task and escape... or martyrdom. whatever
@@ -182,6 +195,13 @@ GLOBAL_LIST_INIT(normal_employers, list(
 	"Legal Trouble",
 	"MI13",
 	"Waffle Corporation",
+	//ORBSTATION EMPLOYERS
+	"Azik Interstellar",
+	"Chariraxa Agricultural Concern",
+	"Flagbearers of the New Kronstadt",
+	"Ghosts of the 3rd Soviet Union",
+	"Ngaouhaki FPC",
+	"Suojaheimøstusek Resource & Logistics, plc",
 ))
 
 ///employers for malfunctioning ais. they do not have sides, unlike traitors.
@@ -325,3 +345,8 @@ GLOBAL_LIST_INIT(human_invader_antagonists, list(
 #define ANTAG_GROUP_SYNDICATE "Syndicate"
 #define ANTAG_GROUP_WIZARDS "Wizard Federation"
 #define ANTAG_GROUP_XENOS "Xenomorph Infestation"
+
+#define HUNTER_PACK_COPS "cop_hunters"
+#define HUNTER_PACK_RUSSIAN "russian_hunters"
+#define HUNTER_PACK_BOUNTY "bounty_hunters"
+#define HUNTER_PACK_PSYKER "psyker_hunters"

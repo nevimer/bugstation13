@@ -88,6 +88,9 @@
 /datum/antagonist/traitor
 	weighted_antagonist = TRUE
 
+/datum/antagonist/traitor/agent
+	weighted_antagonist = FALSE // We don't count ghost roles
+
 /datum/antagonist/brother
 	weighted_antagonist = TRUE
 
