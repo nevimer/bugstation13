@@ -3,7 +3,8 @@
 /// Spend time close to your target to gather intel. Copied partly from the "spend time" objective from Obsessed.
 /datum/objective/gather_intel
 	name = "gather_intel"
-	var/timer = 5 MINUTES
+	//var/timer = 5 MINUTES
+	var/timer = 5 SECONDS
 	var/viewing = FALSE //whether the killer is viewing their target
 
 /datum/objective/gather_intel/proc/start_ticking()
@@ -41,9 +42,11 @@
 		viewing = FALSE
 	if(viewing)
 		timer -= seconds_per_tick SECONDS //mob subsystem ticks every 2 seconds(?), remove 20 deciseconds from the timer. sure, that makes sense.
-		if(timer <= 0) //give a ten-minute mood buff, announce to chat, and stop ticking
+		if(timer <= 0) //give a ten-minute mood buff, announce to chat, give access to gear, and stop ticking
 			owner.current.add_mood_event("studied", /datum/mood_event/studied_target, target.current.name)
-			to_chat(owner.current, span_boldbig("You have finished studying [target.current.name]. Complete your other preparations and kill them!"))
+			to_chat(owner.current, span_boldbig("You have finished studying [target.current.name]. You may now acquire your assassination gear."))
+			var/datum/action/get_killer_gear/gear_action = new(owner.current)
+			gear_action.Grant(owner.current)
 			stop_ticking()
 			return
 		owner.current.add_mood_event("studying", /datum/mood_event/studying_target, target.current.name)
@@ -68,16 +71,17 @@
 /datum/mood_event/studying_target/add_effects(name)
 	description = "Your days are numbered, [name]..."
 
-/// Cut power objective - find a way to cut power to the target's workplace.
-/datum/objective/cut_power
-	name = "cut power"
+/// RP objectives that require no specialized code
+/datum/objective/contract_killer_rp
+	name = "contract killer instructions"
+	explanation_text = "Free Objective" //replaced in update_explanation_text()
+	var/list/rp_objectives = list(
+		"Make it look like an accident.",
+		""
+	)
 
-/datum/objective/cut_power/update_explanation_text()
-	..()
-	if(target?.current)
-		explanation_text = "Cut off power to [target.name]'s workplace."
-	else
-		explanation_text = "Free Objective"
+/datum/objective/contract_killer_rp/update_explanation_text()
+
 
 /// "Default" RP objective, telling you to do this cleanly.
 /datum/objective/clean_kill
