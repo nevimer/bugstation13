@@ -15,7 +15,7 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	head = /obj/item/clothing/head/helmet/space/plasmaman/security
 	mask = /obj/item/clothing/mask/gas/sechailer/plasmaman
-
+//Orb Only Change
 /datum/outfit/plasmaman/detective
 	name = "Detective Plasmaman"
 
@@ -161,7 +161,7 @@
 	uniform = /obj/item/clothing/under/plasmaman/janitor
 	gloves = /obj/item/clothing/gloves/color/plasmaman/janny
 	head = /obj/item/clothing/head/helmet/space/plasmaman/janitor
-
+//Orb Only Change
 /datum/outfit/plasmaman/psychologist
 	name = "Psychologist Plasmaman"
 
