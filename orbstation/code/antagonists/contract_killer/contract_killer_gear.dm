@@ -369,18 +369,6 @@
 	var/wizard_hat = pick(wizard_hats)
 	new wizard_hat(src)
 
-/*
-/// A belt with several random grenades. A poor choice for assassination - which is why it's rare.
-/obj/item/storage/secure/briefcase/contract_killer/grenades
-	kit_name = "Surplus Grenadier Belt"
-	gear_desc = "Subtlety? Subtlety is beneath you. You know there's nothing more effective for a quiet assassination job than grenades. Still, try to \
-		avoid collateral damage, if you can. Contains a belt with ??? random grenades."
-	weight = CONTRACT_KILLER_KIT_RARE
-
-/obj/item/storage/secure/briefcase/contract_killer/grenades/PopulateContents()
-	new /obj/item/grenade/syndieminibomb(src)
-	new /obj/item/grenade/syndieminibomb(src)*/
-
 // Unique items for kits
 
 /// An autosurgeon containing a special pre-preserved rush gland
