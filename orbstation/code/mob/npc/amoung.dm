@@ -143,7 +143,7 @@
 
 	new /obj/item/stack/cable_coil(loc)
 	new /obj/item/stack/sheet/cloth(loc)
-	new /obj/item/stock_parts/manipulator(loc)
+	new /obj/item/stock_parts/servo(loc)
 	new /obj/item/circular_saw(loc)
 	var/mob/living/simple_animal/pet/cat/kitten/surgeon = new(loc)
 	surgeon.name = "suspicious kitten"
