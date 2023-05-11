@@ -35,22 +35,20 @@
 
 	objectives += kill_objective // Second objective is the kill itself.
 
-	// Last objective will be a randomized directive on what to do with the body. This objective is the most optional one.
-	var/obj_prob = rand(1,100)
-	switch(obj_prob)
-		if(1 to 70) //70% - "clean kill" objective
-			var/datum/objective/clean_kill/clean = new
-			clean.owner = owner
-			objectives += clean
-		if(71 to 85) //15% - "frame job" objective
-			var/datum/objective/frame_job/frame = new
-			frame.owner = owner
-			frame.find_target(blacklist = list(target_mind))
-			objectives += frame
-		if(86 to 100) //15% - "accident kill" objective
-			var/datum/objective/accident_kill/accident = new
-			accident.owner = owner
-			objectives += accident
+	// Finally, generate a "fluff" objective that gives extra instructions.
+	var/list/potential_fluff_objs = list()
+
+	for(var/datum/objective/contract_killer/killer_obj as anything in subtypesof(/datum/objective/contract_killer))
+		potential_fluff_objs[killer_obj] = initial(killer_obj.weight)
+
+	var/chosen_obj = pick_weight(potential_fluff_objs)
+	var/datum/objective/contract_killer/fluff_obj = new chosen_obj
+	fluff_obj.owner = owner
+	if(istype(fluff_obj, /datum/objective/contract_killer/targeted))
+		fluff_obj.find_target(blacklist = list(target_mind))
+	if(istype(fluff_obj, /datum/objective/contract_killer/newscaster))
+		fluff_obj.give_summon_action()
+	objectives += fluff_obj
 
 	for(var/datum/objective/O in objectives)
 		O.update_explanation_text()
