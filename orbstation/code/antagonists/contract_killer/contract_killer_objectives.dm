@@ -109,7 +109,7 @@
 
 /datum/objective/contract_killer/targeted/find_remains
 	name = "discover remains"
-	weight = CONTRACT_KILLER_OBJ_UNCOMMON
+	weight = CONTRACT_KILLER_OBJ_COMMON
 
 /datum/objective/contract_killer/targeted/find_remains/update_explanation_text()
 	..()
