@@ -9,12 +9,16 @@
 	button_icon = 'icons/obj/storage/case.dmi'
 	button_icon_state = "secure"
 
-	var/list/equip_options = list() //list of kits to offer, set when the action is granted
+	var/list/items = list() //list of kits to offer, set when the action is granted
+	var/list/kit_types = list() //associative list of kit names to kit datums
 
 /// Set up which three kits the contract killer will be offered
 /datum/action/get_killer_gear/New()
 	..()
-	var/list/potential_kits = list()
+
+	var/list/potential_kits = list() //list of all possible kits and their weights
+	var/list/equip_options = list() //list of kits that have actually been chosen
+
 	for(var/datum/contract_killer_kit/kit as anything in subtypesof(/datum/contract_killer_kit))
 		potential_kits[kit] = initial(kit.weight)
 
@@ -23,14 +27,9 @@
 		potential_kits -= new_kit
 		equip_options += new_kit
 
-/datum/action/get_killer_gear/Trigger(trigger_flags)
-	. = ..()
-
-	var/list/kit_types = list()
 	for(var/datum/contract_killer_kit/kit as anything in equip_options)
 		kit_types[initial(kit.name)] = new kit
 
-	var/list/items = list()
 	for(var/kit_name in kit_types)
 		var/datum/contract_killer_kit/current_kit = kit_types[kit_name]
 		var/datum/radial_menu_choice/option = new
@@ -38,13 +37,15 @@
 		option.info = span_boldnotice(current_kit.description)
 		items[kit_name] = option
 
+/datum/action/get_killer_gear/Trigger(trigger_flags)
+	. = ..()
+
 	var/selection = show_radial_menu(owner, owner, items, radius = 38, tooltips = TRUE)
 	if(!selection)
 		return
 
 	var/datum/contract_killer_kit/chosen_set = kit_types[selection]
-	var/new_kit = new chosen_set.kit_path
-	owner.put_in_hands(new_kit)
+	owner.put_in_hands(new chosen_set.kit_path)
 	qdel(src)
 
 /// Datum for contract killer kits, for selection

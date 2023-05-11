@@ -44,10 +44,7 @@
 	var/chosen_obj = pick_weight(potential_fluff_objs)
 	var/datum/objective/contract_killer/fluff_obj = new chosen_obj
 	fluff_obj.owner = owner
-	if(istype(fluff_obj, /datum/objective/contract_killer/targeted))
-		fluff_obj.find_target(blacklist = list(target_mind))
-	if(istype(fluff_obj, /datum/objective/contract_killer/newscaster))
-		fluff_obj.give_summon_action()
+	fluff_obj.post_created(target_mind)
 	objectives += fluff_obj
 
 	for(var/datum/objective/O in objectives)

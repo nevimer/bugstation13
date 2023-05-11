@@ -30,7 +30,7 @@
 /datum/objective/gather_intel/proc/on_life(mob/living/source, seconds_per_tick, times_fired)
 	SIGNAL_HANDLER
 
-	if(!target || target.current.stat == DEAD)
+	if(!target || !target.current || target.current.stat == DEAD)
 		viewing = FALSE //we don't want to give a mood boost or progress for standing near a corpse
 		return
 	if(get_dist(get_turf(owner.current), get_turf(target.current)) > 7)
@@ -77,6 +77,9 @@
 	/// How likely this is to be chosen for the fluff objective.
 	var/weight = CONTRACT_KILLER_OBJ_ABSTRACT
 
+/datum/objective/contract_killer/proc/post_created(datum/mind/target_mind)
+	return
+
 /// Make the murder look like an accident
 /datum/objective/contract_killer/accident
 	name = "accident kill"
@@ -94,6 +97,9 @@
 /datum/objective/contract_killer/targeted
 	name = "targeted objective"
 	weight = CONTRACT_KILLER_OBJ_ABSTRACT
+
+/datum/objective/contract_killer/targeted/post_created(datum/mind/target_mind)
+	find_target(blacklist = list(target_mind))
 
 /datum/objective/contract_killer/targeted/frame
 	name = "frame job"
@@ -185,7 +191,7 @@
 		anonymous! Do as you like with the body when you finish."
 	weight = CONTRACT_KILLER_OBJ_COMMON
 
-/datum/objective/contract_killer/proc/give_summon_action()
+/datum/objective/contract_killer/newscaster/post_created(datum/mind/target_mind)
 	if(owner?.current)
 		var/datum/action/summon_anonymous_id/summon_action = new(owner.current)
 		summon_action.Grant(owner.current)
