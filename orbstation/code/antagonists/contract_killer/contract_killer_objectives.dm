@@ -19,7 +19,8 @@
 
 /datum/objective/gather_intel/update_explanation_text()
 	if(target?.current)
-		explanation_text = "Gather intel by spending at least [DisplayTimeText(timer)] around [target.name] while they're alive."
+		explanation_text = "Gather intel by spending at least [DisplayTimeText(timer)] around [target.name] while they're alive. Once complete, \
+			you will be able to choose a kit of special assassination gear."
 	else
 		explanation_text = "Free Objective"
 
