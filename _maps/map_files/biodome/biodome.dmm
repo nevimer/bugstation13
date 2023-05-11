@@ -1409,11 +1409,11 @@
 	dir = 8
 	},
 /obj/machinery/requests_console/directional/north{
-	announcementConsole = 1;
 	department = "Head of Security's Desk";
 	name = "Head of Security's Requests Console";
 	assistance_requestable = 1;
-	anon_tips_receiver = 1
+	anon_tips_receiver = 1;
+	can_send_announcements = 1
 	},
 /obj/item/radio/intercom/directional/east,
 /turf/open/floor/wood,
@@ -2797,7 +2797,7 @@
 /area/station/science/server)
 "baf" = (
 /obj/machinery/light_switch/directional/east,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 4
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -4130,7 +4130,7 @@
 /area/station/maintenance/central/greater)
 "bCk" = (
 /obj/structure/flora/grass/jungle/a/style_2,
-/turf/open/misc/beach/coastline_b,
+/turf/open/misc/beach/coast,
 /area/station/maintenance/radshelter/civil)
 "bCA" = (
 /obj/effect/spawner/random/structure/crate,
@@ -4216,11 +4216,11 @@
 	dir = 4
 	},
 /obj/machinery/requests_console/directional/west{
-	announcementConsole = 1;
 	assistance_requestable = 1;
 	department = "Quartermaster's Desk";
 	name = "Quartermaster's Desk Requests Console";
-	supplies_requestable = 1
+	supplies_requestable = 1;
+	can_send_announcements = 1
 	},
 /turf/open/floor/bamboo,
 /area/station/command/heads_quarters/qm)
@@ -5731,10 +5731,10 @@
 "ciM" = (
 /obj/structure/table,
 /obj/item/stock_parts/micro_laser,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/servo,
+/obj/item/stock_parts/servo,
+/obj/item/stock_parts/servo,
+/obj/item/stock_parts/servo,
 /obj/item/stock_parts/capacitor,
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/micro_laser/high,
@@ -5989,7 +5989,7 @@
 /area/station/hallway/primary/central/fore)
 "cpN" = (
 /obj/structure/flora/grass/jungle/a/style_random,
-/turf/open/misc/beach/coastline_b,
+/turf/open/misc/beach/coast,
 /area/station/maintenance/radshelter/civil)
 "cpP" = (
 /obj/structure/cable,
@@ -6327,11 +6327,11 @@
 /area/station/engineering/supermatter/room)
 "cuI" = (
 /obj/machinery/requests_console/directional/east{
-	announcementConsole = 1;
 	anon_tips_receiver = 1;
 	assistance_requestable = 1;
 	department = "Telecomms Admin";
-	name = "Telecomms Requests Console"
+	name = "Telecomms Requests Console";
+	can_send_announcements = 1
 	},
 /turf/open/floor/iron,
 /area/station/tcommsat/computer)
@@ -7625,7 +7625,7 @@
 /turf/open/water/jungle/biodome,
 /area/station/maintenance/fore/greater)
 "cSg" = (
-/turf/open/misc/beach/coastline_b,
+/turf/open/misc/beach/coast,
 /area/station/maintenance/radshelter/civil)
 "cSi" = (
 /obj/structure/toilet{
@@ -7800,7 +7800,7 @@
 /turf/open/floor/iron/terracotta/small,
 /area/station/biodome/aft)
 "cVX" = (
-/turf/open/misc/beach/coastline_t,
+/turf/open/misc/beach/sand,
 /area/station/ai_monitored/command/nuke_storage)
 "cVY" = (
 /obj/structure/sign/departments/maint/directional/east,
@@ -9884,7 +9884,7 @@
 /area/station/medical/medbay/central)
 "dMg" = (
 /obj/structure/closet/crate/silvercrate,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -10015,11 +10015,11 @@
 /area/station/maintenance/aft/upper)
 "dOs" = (
 /obj/machinery/requests_console/directional/east{
-	announcementConsole = 1;
 	department = "Captain's Desk";
 	name = "Captain's Requests Console";
 	assistance_requestable = 1;
-	anon_tips_receiver = 1
+	anon_tips_receiver = 1;
+	can_send_announcements = 1
 	},
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -16683,7 +16683,7 @@
 /area/station/cargo/drone_bay)
 "gsy" = (
 /obj/machinery/light/directional/west,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 8
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -18412,7 +18412,7 @@
 	c_tag = "Vault";
 	network = list("vault")
 	},
-/turf/open/misc/beach/coastline_t,
+/turf/open/misc/beach/sand,
 /area/station/ai_monitored/command/nuke_storage)
 "hcV" = (
 /obj/item/emptysandbag,
@@ -19437,7 +19437,7 @@
 	dir = 10
 	},
 /obj/item/banner/cargo/mundane,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/cargo/storage)
@@ -21112,7 +21112,7 @@
 	dir = 6
 	},
 /obj/item/banner/cargo/mundane,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/cargo/storage)
@@ -26341,8 +26341,8 @@
 /obj/item/stock_parts/micro_laser,
 /obj/item/stock_parts/capacitor,
 /obj/item/stock_parts/capacitor,
-/obj/item/stock_parts/manipulator,
-/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/servo,
+/obj/item/stock_parts/servo,
 /obj/structure/table/glass,
 /turf/open/floor/iron/vaporwave,
 /area/station/science/lab)
@@ -28231,7 +28231,7 @@
 /obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/cargo/storage)
@@ -28357,7 +28357,7 @@
 "kZn" = (
 /obj/structure/filingcabinet,
 /obj/item/folder/documents,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 6
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -32258,7 +32258,7 @@
 /area/station/engineering/atmos/hfr_room)
 "mvF" = (
 /obj/item/shovel,
-/turf/open/misc/beach/coastline_t,
+/turf/open/misc/beach/sand,
 /area/station/maintenance/starboard/lesser)
 "mvG" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -38004,7 +38004,7 @@
 /area/station/science/ordnance/freezerchamber)
 "oGk" = (
 /obj/structure/closet/crate/goldcrate,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -38110,12 +38110,12 @@
 "oIg" = (
 /obj/machinery/disposal/bin,
 /obj/machinery/requests_console/directional/north{
-	announcementConsole = 1;
 	anon_tips_receiver = 1;
 	assistance_requestable = 1;
 	department = "Research Director's Desk";
 	name = "Research Director's Requests Console";
-	receive_ore_updates = 1
+	receive_ore_updates = 1;
+	can_send_announcements = 1
 	},
 /obj/structure/disposalpipe/trunk,
 /obj/effect/turf_decal/tile/purple/anticorner{
@@ -39778,7 +39778,7 @@
 /area/station/maintenance/central/greater)
 "pqv" = (
 /mob/living/basic/carp/pet/biodome/fangfang,
-/turf/open/misc/beach/coastline_b,
+/turf/open/misc/beach/coast,
 /area/station/maintenance/radshelter/civil)
 "pqA" = (
 /obj/structure/disposalpipe/segment{
@@ -41992,11 +41992,11 @@
 	dir = 1
 	},
 /obj/machinery/requests_console/directional/south{
-	announcementConsole = 1;
 	anon_tips_receiver = 1;
 	assistance_requestable = 1;
 	department = "Bridge";
-	name = "Bridge Requests Console"
+	name = "Bridge Requests Console";
+	can_send_announcements = 1
 	},
 /obj/machinery/camera/directional/south{
 	c_tag = "Command - Meeting Room"
@@ -42404,7 +42404,7 @@
 /area/station/service/library)
 "qtp" = (
 /obj/machinery/computer/bank_machine,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 5
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -43025,7 +43025,7 @@
 /obj/item/clothing/head/costume/bearpelt,
 /obj/item/ammo_box/a357,
 /obj/item/gun/ballistic/revolver/russian,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 10
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -43947,7 +43947,7 @@
 /area/station/engineering/transit_tube)
 "qWt" = (
 /obj/machinery/ore_silo,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 9
 	},
 /area/station/ai_monitored/command/nuke_storage)
@@ -47249,11 +47249,11 @@
 	pixel_y = 2
 	},
 /obj/machinery/requests_console/directional/south{
-	announcementConsole = 1;
 	anon_tips_receiver = 1;
 	assistance_requestable = 1;
 	department = "Head of Personnel's Desk";
-	name = "Head of Personnel's Requests Console"
+	name = "Head of Personnel's Requests Console";
+	can_send_announcements = 1
 	},
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/wood,
@@ -55368,7 +55368,7 @@
 /area/station/hallway/secondary/exit/departure_lounge)
 "vzK" = (
 /mob/living/basic/carp/pet/biodome/funfun,
-/turf/open/misc/beach/coastline_b,
+/turf/open/misc/beach/coast,
 /area/station/maintenance/radshelter/civil)
 "vzP" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
@@ -60719,7 +60719,7 @@
 	dir = 6
 	},
 /obj/machinery/rnd/bepis,
-/turf/open/misc/beach/coastline_t{
+/turf/open/misc/beach/sand{
 	dir = 1
 	},
 /area/station/cargo/storage)
@@ -60929,11 +60929,11 @@
 /obj/item/stamp/head/cmo,
 /obj/item/clothing/neck/stethoscope,
 /obj/machinery/requests_console/directional/south{
-	announcementConsole = 1;
 	department = "Chief Medical Officer's Console";
 	name = "Chief Medical Officer's Request Console";
 	assistance_requestable = 1;
-	anon_tips_receiver = 1
+	anon_tips_receiver = 1;
+	can_send_announcements = 1
 	},
 /obj/machinery/button/door/directional/east{
 	id = "cmoprivacy";
