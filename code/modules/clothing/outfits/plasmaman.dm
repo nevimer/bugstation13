@@ -15,13 +15,13 @@
 	gloves = /obj/item/clothing/gloves/color/plasmaman/black
 	head = /obj/item/clothing/head/helmet/space/plasmaman/security
 	mask = /obj/item/clothing/mask/gas/sechailer/plasmaman
-//Orb Only Change
+
 /datum/outfit/plasmaman/detective
 	name = "Detective Plasmaman"
 
 	uniform = /obj/item/clothing/under/plasmaman/enviroslacks
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
-	head = /obj/item/clothing/head/helmet/space/plasmaman/detective
+	head = /obj/item/clothing/head/helmet/space/plasmaman/detective //ORBSTATION EDIT
 
 /datum/outfit/plasmaman/warden
 	name = "Warden Plasmaman"
@@ -169,13 +169,13 @@
 	uniform = /obj/item/clothing/under/plasmaman/janitor
 	gloves = /obj/item/clothing/gloves/color/plasmaman/janny
 	head = /obj/item/clothing/head/helmet/space/plasmaman/janitor
-//Orb Only Change
+
 /datum/outfit/plasmaman/psychologist
 	name = "Psychologist Plasmaman"
 
 	uniform = /obj/item/clothing/under/plasmaman/enviroslacks
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
-	head = /obj/item/clothing/head/helmet/space/plasmaman/white
+	head = /obj/item/clothing/head/helmet/space/plasmaman/white //ORBSTATION EDIT
 
 /datum/outfit/plasmaman/mime
 	name = "Mime Plasmaman"
@@ -193,12 +193,14 @@
 	head = /obj/item/clothing/head/helmet/space/plasmaman/clown
 	mask = /obj/item/clothing/mask/gas/clown_hat/plasmaman
 
+//ORBSTATION ADDITION
 /datum/outfit/plasmaman/lawyer
 	name = "Lawyer Plasmaman"
 
 	uniform = /obj/item/clothing/under/plasmaman/lawyer
 	gloves = /obj/item/clothing/gloves/color/plasmaman/white
 	head = /obj/item/clothing/head/helmet/space/plasmaman/lawyer
+//ORBSTATION ADDITION END
 
 /datum/outfit/plasmaman/captain
 	name = "Captain Plasmaman"
