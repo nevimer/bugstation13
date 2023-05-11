@@ -333,10 +333,8 @@
 
 /obj/item/storage/secure/briefcase/contract_killer/wizard/PopulateContents()
 	var/list/wizard_items = list(
-		/obj/item/book/granter/action/spell/forcewall,
-		/obj/item/book/granter/action/spell/knock,
-		/obj/item/book/granter/action/spell/lightningbolt,
-		/obj/item/book/granter/action/spell/summonitem,
+		/obj/item/gun/magic/staff/animate/unrestricted,
+		/obj/item/gun/magic/staff/chaos/unrestricted,
 		/obj/item/gun/magic/wand/door,
 		/obj/item/gun/magic/wand/fireball,
 		/obj/item/gun/magic/wand/animate,
@@ -420,3 +418,8 @@
 /obj/item/storage/box/syringes/piercing/PopulateContents()
 	for(var/i in 1 to 6)
 		new /obj/item/reagent_containers/syringe/piercing(src)
+
+// A staff of animation that anyone can use.
+/obj/item/gun/magic/staff/animate/unrestricted
+	allow_intruder_use = TRUE
+
