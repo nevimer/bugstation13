@@ -3,8 +3,7 @@
 /// Spend time close to your target to gather intel. Copied partly from the "spend time" objective from Obsessed.
 /datum/objective/gather_intel
 	name = "gather_intel"
-	//var/timer = 5 MINUTES
-	var/timer = 5 SECONDS
+	var/timer = 5 MINUTES
 	var/viewing = FALSE //whether the killer is viewing their target
 
 /datum/objective/gather_intel/proc/start_ticking()
