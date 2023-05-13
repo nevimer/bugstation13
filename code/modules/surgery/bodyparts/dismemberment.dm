@@ -19,12 +19,7 @@
 	if(!silent)
 		limb_owner.visible_message(span_danger("<B>[limb_owner]'s [name] is violently dismembered!</B>"))
 	INVOKE_ASYNC(limb_owner, TYPE_PROC_REF(/mob, emote), "scream")
-	//ORBSTATION EDIT START - slime dismemberment makes a funny sound
-	if(biological_state == BIO_SLIME)
-		playsound(get_turf(limb_owner), 'orbstation/sound/effects/slime_squish.ogg', 80, TRUE)
-	else
-		playsound(get_turf(limb_owner), 'sound/effects/dismember.ogg', 80, TRUE)
-	//ORBSTATION END
+	playsound(get_turf(limb_owner), 'sound/effects/dismember.ogg', 80, TRUE)
 	limb_owner.add_mood_event("dismembered", /datum/mood_event/dismembered)
 	limb_owner.add_mob_memory(/datum/memory/was_dismembered, lost_limb = src)
 	drop_limb()
