@@ -79,6 +79,9 @@
 /// A trait source when adding traits through unit tests
 #define TRAIT_SOURCE_UNIT_TESTS "unit_tests"
 
+// ORBSTATION ADDITION START
+#include "_orb/automapper.dm"
+// ORBSTATION ADDITION END
 #include "ablative_hud.dm"
 #include "achievements.dm"
 #include "anchored_mobs.dm"
