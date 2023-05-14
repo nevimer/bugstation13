@@ -80,7 +80,7 @@
 #define TRAIT_SOURCE_UNIT_TESTS "unit_tests"
 
 // ORBSTATION ADDITION START
-#include "_orb/automapper.dm"
+#include "~orb/automapper.dm"
 // ORBSTATION ADDITION END
 #include "ablative_hud.dm"
 #include "achievements.dm"
