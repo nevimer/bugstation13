@@ -226,6 +226,9 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/client/proc/validate_cards,
 	/client/proc/validate_puzzgrids,
 	/client/proc/view_runtimes,
+
+// Automapper
+	/client/proc/test_area_spawner,
 // Table shuffle procs
 	/client/proc/display_shuffle_log,
 	/client/proc/extreme_table_shuffle,
