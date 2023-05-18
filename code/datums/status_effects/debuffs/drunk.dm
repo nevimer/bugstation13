@@ -143,19 +143,14 @@
 		if(drunk_value >= BALLMER_PEAK_LOW_END && drunk_value <= BALLMER_PEAK_HIGH_END)
 			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_good_msg"), forced = "ballmer")
 
-
-		if(drunk_value > BALLMER_PEAK_WINDOWS_ME) // by this point you're into windows ME territory
-			owner.say(pick_list_replacements(VISTA_FILE, "ballmer_windows_me_msg"), forced = "ballmer")*/
+	// Drunk slurring scales in intensity based on how drunk we are -at 16 you will likely not even notice it,
+	// but when we start to scale up you definitely will
+	if(drunk_value >= 16)
+		owner.adjust_timed_status_effect(4 SECONDS, /datum/status_effect/speech/slurring/drunk, max_duration = 20 SECONDS)*/
 	//END ORBSTATION REMOVAL
 
 	// And drunk people will always lose jitteriness
 	owner.adjust_jitter(-6 SECONDS)
-
-	// Over 11, we will constantly gain slurring up to 10 seconds of slurring.
-	//ORBSTATION REMOVAL - no drunken slurring
-	/*if(drunk_value >= 11)
-		owner.adjust_timed_status_effect(2.4 SECONDS, /datum/status_effect/speech/slurring/drunk, max_duration = 10 SECONDS)*/
-	//END ORBSTATION REMOVAL
 
 	// Over 41, we have a 30% chance to gain confusion, and we will always have 20 seconds of dizziness.
 	if(drunk_value >= 41)

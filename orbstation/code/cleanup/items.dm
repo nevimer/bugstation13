@@ -8,7 +8,7 @@
 
 	..()
 
-/obj/item/storage/book/bible
+/obj/item/book/bible
 	name = "holy book"
 	icon_state = "holybook"
 	inhand_icon_state = "holybook"
