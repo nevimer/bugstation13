@@ -12,7 +12,7 @@
 	icon = 'orbstation/icons/obj/items/clothing/plasmaman_gloves.dmi'
 	worn_icon = 'orbstation/icons/obj/items/clothing/plasmaman_gloves_worn.dmi'
 
-/obj/item/clothing/head/helmet/space/plasmaman/detective
+/obj/item/clothing/head/helmet/space/plasmaman/security/detective
 	name = "detective plasma envirosuit helmet"
 	desc = "A brown and white envirohelmet designating its wearer as a detective. The sepia brown that coats its surface gives it a vintage feel."
 	icon_state = "detective_envirohelm"
