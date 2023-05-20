@@ -109,7 +109,7 @@
 	if(manifest)
 		. += "manifest"
 
-/obj/structure/closet/crate/coffin/stasis/open(mob/living/user, force = FALSE)
+/obj/structure/closet/crate/coffin/stasis/open(mob/living/user, force = FALSE, special_effects = TRUE)
 	if(!functional)
 		return ..()
 	functional = FALSE

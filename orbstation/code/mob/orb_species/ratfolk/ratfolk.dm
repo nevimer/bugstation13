@@ -54,6 +54,9 @@
 		ears.Insert(H, drop_if_replaced = FALSE)
 	return ..()
 
+/datum/species/ratfolk/get_scream_sound(mob/living/carbon/human/ratfolk)
+	return 'orbstation/sound/voice/ratfolk/ratfolk_scream.ogg'
+
 /datum/species/ratfolk/get_species_description()
 	return "The crafty, darkness-loving Ratfolk hail from vast underground cities beneath the frozen, \
 	snow-swept surface of Engira. Their knack for construction and repair makes them ideal engineers, \

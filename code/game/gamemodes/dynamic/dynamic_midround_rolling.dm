@@ -23,7 +23,7 @@
 	if (GLOB.dynamic_forced_extended)
 		return
 
-	if (EMERGENCY_PAST_POINT_OF_NO_RETURN)
+	if (EMERGENCY_CALLED) //ORBSTATION EDIT
 		return
 
 	var/spawn_heavy = prob(get_heavy_midround_injection_chance())

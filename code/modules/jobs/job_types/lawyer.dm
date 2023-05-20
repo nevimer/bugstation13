@@ -11,7 +11,7 @@
 	config_tag = "LAWYER"
 
 	outfit = /datum/outfit/job/lawyer
-	plasmaman_outfit = /datum/outfit/plasmaman/bar
+	plasmaman_outfit = /datum/outfit/plasmaman/lawyer //ORBSTATION EDIT
 
 	paycheck = PAYCHECK_CREW
 	paycheck_department = ACCOUNT_SRV

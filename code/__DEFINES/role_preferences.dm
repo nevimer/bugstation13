@@ -42,6 +42,7 @@
 #define ROLE_HERETIC_SMUGGLER "Heretic Smuggler"
 #define ROLE_PROVOCATEUR "Provocateur"
 #define ROLE_SYNDICATE_INFILTRATOR "Syndicate Infiltrator"
+#define ROLE_STOWAWAY_CHANGELING "Stowaway Changeling"
 
 // Other roles
 #define ROLE_SYNDICATE "Syndicate"
@@ -101,6 +102,7 @@
 
 // Orb roles
 #define ROLE_CHANGELING_INFILTRATOR "Changeling Infiltrator"
+#define ROLE_SMUGGLED_AGENT "Smuggled Syndicate Agent"
 #define ROLE_CONTRACT_KILLER "Contract Killer"
 #define ROLE_KILLER_LATEJOIN "Contract Killer (Latejoin)"
 #define ROLE_WIZARD_JOURNEYMAN "Wizard Journeyman"
@@ -145,6 +147,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_WIZARD_MIDROUND = 14,
 	ROLE_WIZARD_JOURNEYMAN = 0,
 	ROLE_CHANGELING_INFILTRATOR = 0,
+	ROLE_SMUGGLED_AGENT = 0,
 	ROLE_HERETIC_MIDROUND = 0,
 	ROLE_CONTRACT_KILLER = 0,
 	ROLE_CLOWN_LONE_OPERATIVE = 0,
@@ -154,6 +157,7 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_PROVOCATEUR = 14,
 	ROLE_SYNDICATE_INFILTRATOR = 0,
 	ROLE_KILLER_LATEJOIN = 0,
+	ROLE_STOWAWAY_CHANGELING = 0,
 
 	// I'm not too sure why these are here, but they're not moving.
 	ROLE_PAI = 0,

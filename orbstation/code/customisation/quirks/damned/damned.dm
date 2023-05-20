@@ -78,7 +78,7 @@
 
 // Holy book blessing effect
 
-/obj/item/storage/book/bible/bless(mob/living/L, mob/living/user)
+/obj/item/book/bible/bless(mob/living/L, mob/living/user)
 	. = ..()
 
 	if(!ishuman(L))

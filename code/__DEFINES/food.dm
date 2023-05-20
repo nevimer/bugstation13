@@ -18,7 +18,8 @@
 #define ORANGES (1<<17)
 #define BUGS (1<<18)
 #define GORE (1<<19)
-#define CUCUMBER (1<<20)
+#define STONE (1<<20)
+#define CUCUMBER (1<<21)
 
 DEFINE_BITFIELD(foodtypes, list(
 	"MEAT" = MEAT,
@@ -41,6 +42,8 @@ DEFINE_BITFIELD(foodtypes, list(
 	"ORANGES" = ORANGES,
 	"BUGS" = BUGS,
 	"GORE" = GORE,
+	"STONE" = STONE,
+	"CUCUMBER" = CUCUMBER,
 ))
 
 /// A list of food type names, in order of their flags
@@ -65,6 +68,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"ORANGES", \
 	"BUGS", \
 	"GORE", \
+	"STONE", \
 	"CUCUMBER", \
 )
 
@@ -90,6 +94,7 @@ DEFINE_BITFIELD(foodtypes, list(
 	"Oranges", \
 	"Bugs", \
 	"Gore", \
+	"Rocks", \
 	"Cucumbers", \
 )
 

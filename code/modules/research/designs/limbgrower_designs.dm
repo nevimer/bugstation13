@@ -233,7 +233,7 @@
 	desc = "Contains designs for various limbs."
 	id = "limbdesign_parent"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 300, /datum/material/glass = 100)
+	materials = list(/datum/material/iron =SMALL_MATERIAL_AMOUNT * 3, /datum/material/glass =SMALL_MATERIAL_AMOUNT)
 	build_path = /obj/item/disk/design_disk/limbs
 	category = list(
 		RND_CATEGORY_EQUIPMENT + RND_SUBCATEGORY_EQUIPMENT_MEDICAL
@@ -534,13 +534,13 @@
 
 /datum/design/limb_disk/basic
 	name = "Basic Non-human Design Disk"
-	desc = "Contains designs for the specialized organs of many of the species NanoTrasen employs."
+	desc = "Contains designs for the specialized organs of many of the species Nanotrasen employs."
 	id = "limbdesign_basic"
 	build_path = /obj/item/disk/design_disk/limbs/basic
 
 /datum/design/limb_disk/advanced
 	name = "Advanced Non-human Design Disk"
-	desc = "Contains designs for the specialized organs of many of the species NanoTrasen employs."
+	desc = "Contains designs for the specialized organs of many of the species Nanotrasen employs."
 	id = "limbdesign_advanced"
 	build_path = /obj/item/disk/design_disk/limbs/advanced
 
