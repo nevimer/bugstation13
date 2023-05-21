@@ -63,12 +63,7 @@
 
 /obj/machinery/self_actualization_device
 	name = "Self-Actualization Device"
-	desc = "With the power of modern neurological scanning and synthflesh cosmetic surgery, the Interdyne Pharmaceutical Corporation \
-	has teamed up with Nanotrasen Human Resources (and elsewise)  to bring you the Self-Actualization Device! \
-	Ever revived a patient and had them file a malpractice lawsuit because their head got attached to the wrong body? \
-	Just slap 'em in the SAD and turn it on! Their frown will turn upside down as they're reconstituted as their ideal self \
-	via the magic technology of brain scanning! Within a few short moments, they'll be popped out as their ideal self, \
-	ready to continue on with their day lawsuit-free!"
+	desc = "An Interdyne created identity safety tool that allows you to return to your original self, resetting your biological form back to it's base state. (Use this if any potential transformation or bodily change causes you dysphoria and it will reset you back to your base state)."
 	icon = 'orbstation/icons/obj/machines/self_actualization_device.dmi'
 	icon_state = "sad_open"
 	circuit = /obj/item/circuitboard/machine/self_actualization_device
@@ -84,8 +79,8 @@
 	var/next_fact = 10
 	/// A list containing advertisements that the machine says while working.
 	var/static/list/advertisements = list(\
-	"Thank you for using the Self-Actualization Device, brought to you by Interdyne, because you asked for it.", \
-	"The Self-Actualization device is not to be used by the elderly without direct adult supervision. Nanotransen is not liable for any and all injuries sustained under unsupervised usage of the Self-Actualization Device.", \
+	"Thank you for using the Self-Actualization Device, brought to you by Interdyne!.", \
+	"The Self-Actualization device is not to be used without direct supervision. Nanotransen is not liable for any and all injuries sustained under unsupervised usage of the Self-Actualization Device.", \
 	"Please make sure to clean the Self-Actualization Device every fifteen minutes! The Self-Actualization Device is not to be used un-cleaned.", \
 	"Before using the Self-Actualization Device, remove any and all metal devices, or you might make the term 'ironman' a bit too literal!" , \
 	"Have more questions about the Self-Actualization Device? Call your nearest Interdyne Representative to requisition more information about the Self-Actualization Device!" \
