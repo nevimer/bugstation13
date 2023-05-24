@@ -1,7 +1,6 @@
 /obj/effect/turf_decal/nanotrasen_logo
 	icon = 'orbstation/icons/turf/decals.dmi'
 	icon_state = "NT1"
-	alpha = 110
 
 /obj/effect/turf_decal/nanotrasen_logo/topmid
 	icon_state = "NT2"
