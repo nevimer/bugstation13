@@ -8,7 +8,7 @@
 	desired_atom = /obj/effect/landmark/start/assistant/dept/med
 
 /datum/area_spawn/eng_ass_landmark
-	target_areas = list(/area/station/engineering/break_room, /area/station/engineering/main)
+	target_areas = list(/area/station/engineering/break_room, /area/station/engineering/main, /area/station/engineering/lobby)
 	desired_atom = /obj/effect/landmark/start/assistant/dept/eng
 
 /datum/area_spawn/srv_ass_landmark
