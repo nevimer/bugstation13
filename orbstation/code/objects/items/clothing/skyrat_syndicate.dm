@@ -41,8 +41,8 @@
 	name = "syndicate maid arm covers"
 	desc = "Sinister cylindrical looking tubes that go over your arm, adorable in an evil way."
 	icon_state = "syndimaid_arms"
-	icon = 'orbstation/icons/obj/items/clothing/syndicate_gloves.dmi'
-	worn_icon = 'orbstation/icons/obj/items/clothing/syndicate_hands.dmi'
+	icon = 'orbstation/icons/obj/items/clothing/gloves.dmi'
+	worn_icon = 'orbstation/icons/obj/items/clothing/hands.dmi'
 	inhand_icon_state = null
 	greyscale_colors = null
 
