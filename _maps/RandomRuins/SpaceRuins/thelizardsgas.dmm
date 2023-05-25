@@ -30,6 +30,12 @@
 	dir = 8
 	},
 /area/ruin/space/has_grav/thelizardsgas)
+"bN" = (
+/obj/structure/rack,
+/obj/item/clothing/shoes/cowboy,
+/obj/structure/cable,
+/turf/open/floor/iron/white/side,
+/area/ruin/space/has_grav/thelizardsgas)
 "bO" = (
 /obj/structure/closet/crate/secure/gear,
 /turf/closed/mineral,
@@ -58,12 +64,6 @@
 	dir = 8
 	},
 /turf/template_noop,
-/area/ruin/space/has_grav/thelizardsgas)
-"di" = (
-/obj/structure/rack,
-/obj/item/clothing/shoes/cowboy,
-/obj/structure/cable,
-/turf/open/floor/iron/white/side,
 /area/ruin/space/has_grav/thelizardsgas)
 "gL" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -234,6 +234,25 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/thelizardsgas)
+"AZ" = (
+/obj/machinery/light/directional/west,
+/obj/structure/closet/crate/secure/freezer{
+	desc = "There's a reason why this is behind the counter. Do not sell to minors.";
+	locked = 0;
+	name = "The GOOD Stuff"
+	},
+/obj/machinery/power/apc/auto_name/directional/north{
+	coverlocked = 0;
+	start_charge = 60
+	},
+/obj/effect/mapping_helpers/apc/unlocked,
+/obj/structure/cable,
+/obj/item/paper/fluff/spaceruins/lizardsgas/memorandum,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/thelizardsgas)
 "Bi" = (
 /obj/structure/closet{
 	desc = "Why leave the chairs in a locker?";
@@ -268,6 +287,15 @@
 "CA" = (
 /turf/template_noop,
 /area/template_noop)
+"CU" = (
+/obj/item/toy/plush/lizard_plushie/space/green{
+	desc = "How the fuck did he get in there?!";
+	name = "Zingo"
+	},
+/turf/open/floor/engine/plasma{
+	initial_gas_mix = "plasma=35000;TEMP=293.15"
+	},
+/area/ruin/space/has_grav/thelizardsgas)
 "DG" = (
 /turf/open/floor/engine/plasma{
 	initial_gas_mix = "plasma=35000;TEMP=293.15"
@@ -315,6 +343,14 @@
 /obj/structure/flora/rock,
 /turf/open/misc/asteroid/airless,
 /area/ruin/space/has_grav/thelizardsgas)
+"Io" = (
+/obj/machinery/power/smes{
+	charge = 2e+006;
+	output_level = 0
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/thelizardsgas)
 "Je" = (
 /turf/open/floor/iron/white/side{
 	dir = 8
@@ -343,19 +379,20 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white/corner,
 /area/ruin/space/has_grav/thelizardsgas)
+"Kh" = (
+/mob/living/basic/lizard/space{
+	desc = "How are you ALIVE?!";
+	name = "Blarpo"
+	},
+/turf/open/floor/iron/white/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/thelizardsgas)
 "Kw" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2{
 	dir = 1
 	},
 /obj/machinery/portable_atmospherics/scrubber,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
-"KN" = (
-/obj/machinery/power/smes{
-	charge = 2e+006;
-	output_level = 0
-	},
-/obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/thelizardsgas)
 "LA" = (
@@ -418,15 +455,6 @@
 	},
 /turf/template_noop,
 /area/ruin/space/has_grav/thelizardsgas)
-"QQ" = (
-/obj/item/toy/plush/space_lizard_plushie{
-	desc = "How the fuck did he get in there?!";
-	name = "Zingo"
-	},
-/turf/open/floor/engine/plasma{
-	initial_gas_mix = "plasma=35000;TEMP=293.15"
-	},
-/area/ruin/space/has_grav/thelizardsgas)
 "RB" = (
 /obj/structure/marker_beacon/burgundy,
 /turf/open/misc/asteroid/airless,
@@ -444,15 +472,6 @@
 /obj/machinery/atmospherics/pipe/smart/simple/yellow/visible,
 /obj/effect/spawner/structure/window/reinforced/plasma,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
-"Ua" = (
-/mob/living/simple_animal/hostile/lizard/space{
-	desc = "How are you ALIVE?!";
-	name = "Blarpo"
-	},
-/turf/open/floor/iron/white/side{
-	dir = 1
-	},
 /area/ruin/space/has_grav/thelizardsgas)
 "Ud" = (
 /obj/machinery/atmospherics/pipe/smart/simple/green/visible{
@@ -484,25 +503,6 @@
 	dir = 5
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/thelizardsgas)
-"Vy" = (
-/obj/machinery/light/directional/west,
-/obj/structure/closet/crate/secure/freezer{
-	desc = "There's a reason why this is behind the counter. Do not sell to minors.";
-	locked = 0;
-	name = "The GOOD Stuff"
-	},
-/obj/machinery/power/apc/auto_name/directional/north{
-	coverlocked = 0;
-	start_charge = 60
-	},
-/obj/effect/mapping_helpers/apc/unlocked,
-/obj/structure/cable,
-/obj/item/paper/fluff/spaceruins/lizardsgas/memorandum,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/obj/effect/spawner/random/contraband/cannabis/lizardsgas,
-/turf/open/floor/iron/dark/smooth_corner,
 /area/ruin/space/has_grav/thelizardsgas)
 "VP" = (
 /obj/structure/table/reinforced,
@@ -678,7 +678,7 @@ CA
 Qg
 Qg
 mR
-Vy
+AZ
 rs
 zz
 JY
@@ -814,7 +814,7 @@ Qg
 LA
 DG
 WY
-QQ
+CU
 rC
 hl
 bp
@@ -927,7 +927,7 @@ mR
 gS
 Zs
 zn
-Ua
+Kh
 uh
 CA
 CA
@@ -951,7 +951,7 @@ LT
 xy
 Kw
 mR
-di
+bN
 Zs
 zn
 UO
@@ -974,7 +974,7 @@ CA
 CA
 Qg
 mR
-KN
+Io
 cm
 Mw
 Cv
