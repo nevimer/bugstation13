@@ -1,6 +1,6 @@
 /obj/item/clothing/under/syndicateoveralls
 	name = "tactical overalls"
-	desc = "A non-descript and slightly suspicious pair of tactical overalls, it comes in an aesthetically pleasing bloodred"
+	desc = "A non-descript and slightly suspicious pair of tactical overalls, it comes in an aesthetically pleasing bloodred."
 	icon_state = "syndicate_overalls"
 	has_sensor = NO_SENSORS
 	armor_type = /datum/armor/under_syndicate
@@ -10,7 +10,7 @@
 
 /obj/item/clothing/under/syndicateoverskirt
 	name = "tactical overallskirt"
-	desc = "A non-descript and slightly suspicious pair of tactical overalls, it comes in an aesthetically pleasing bloodred"
+	desc = "A non-descript and slightly suspicious pair of tactical overalls, it comes in an aesthetically pleasing bloodred."
 	icon_state = "syndicate_overallskirt"
 	has_sensor = NO_SENSORS
 	armor_type = /datum/armor/under_syndicate
@@ -60,7 +60,7 @@
 //The Cargo Order for said items above
 
 /datum/supply_pack/imports/evilfashion
-	name = "Sinister Fashion Crate"
+	name = "Serpent's Kiss Fashion Crate"
 	desc = "A box of the latest in imported fashion, featuring items from Cybersun and Interdyne's joint Serpent's Kiss fashion line."
 	contraband = TRUE
 	cost = CARGO_CRATE_VALUE * 4
@@ -72,4 +72,4 @@
 		/obj/item/clothing/under/syndicateoverskirt,
 		/obj/item/clothing/under/syndicateoveralls,
 	)
-	crate_name = "Sinister Fashion crate"
+	crate_name = "Serpent's Kiss Fashion crate"
