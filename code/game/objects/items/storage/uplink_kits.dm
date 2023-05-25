@@ -16,11 +16,11 @@
 #define KIT_DARK_LORD "darklord"
 #define KIT_WHITE_WHALE_HOLY_GRAIL "white_whale_holy_grail"
 #define KIT_MAD_SCIENTIST "mad_scientist"
-#define KIT_MAID "maid"//ORBSTATION CHANGE
 #define KIT_BEES "bee"
-#define KIT_PYRO "pyro"//ORBSTATION CHANGE
 #define KIT_MR_FREEZE "mr_freeze"
 #define KIT_TRAITOR_2006 "ancient"
+#define KIT_PYRO "pyro"//ORBSTATION CHANGE
+#define KIT_MAID "maid"//ORBSTATION CHANGE
 
 /// last audited december 2022
 /obj/item/storage/box/syndicate
