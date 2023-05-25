@@ -143,11 +143,12 @@
 
 	if(!do_after(user, breakout_time, target = src))
 		return
-		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
-			return
-		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
-		open_machine()
+
+	if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
+		return
+	user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
+		span_notice("You successfully break out of [src]!"))
+	open_machine()
 
 /obj/machinery/self_actualization_device/interact(mob/user)
 	if(state_open)
