@@ -8,3 +8,12 @@
 # trait_name - The name of the Z level trait that will be used to determine what Z level we use.
 # Traits - Station (for station relatied edits), CentCom (for edits on the CC map), Mining (for edits on Lavaland)
 # More can be found in code\__DEFINES\maps.dm
+
+#CENTRAL COMMAND MAP TEMPLATES
+# CC Emergency Wing
+[templates.centcom_emergency_wing]
+map_files = ["centcom_emergency_wing.dmm"]
+directory = "_maps/orbstation/automapper/templates/centcom/"
+required_map = "builtin"
+coordinates = [175, 70, 1]
+trait_name = "CentCom"
