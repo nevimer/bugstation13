@@ -16,7 +16,9 @@
 #define KIT_DARK_LORD "darklord"
 #define KIT_WHITE_WHALE_HOLY_GRAIL "white_whale_holy_grail"
 #define KIT_MAD_SCIENTIST "mad_scientist"
+#define KIT_MAID "maid"//ORBSTATION CHANGE
 #define KIT_BEES "bee"
+#define KIT_PYRO "pyro"//ORBSTATION CHANGE
 #define KIT_MR_FREEZE "mr_freeze"
 #define KIT_TRAITOR_2006 "ancient"
 
@@ -171,9 +173,11 @@
 		KIT_DARK_LORD = 1,
 		KIT_WHITE_WHALE_HOLY_GRAIL = 2,
 		KIT_MAD_SCIENTIST = 2,
+		KIT_MAID = 2,//orb only kit
 		KIT_BEES = 1,
+		KIT_PYRO =2,//orb only kit
 		KIT_MR_FREEZE = 2,
-		KIT_TRAITOR_2006 = 1
+		KIT_TRAITOR_2006 = 1,
 		)))
 		if(KIT_JAMES_BOND)
 			new /obj/item/gun/ballistic/automatic/pistol(src) // 7 tc
@@ -234,6 +238,36 @@
 			new /obj/item/pen/edagger(src) // 2 tc
 			new /obj/item/gun/energy/wormhole_projector/core_inserted(src) // 5 tc easily
 			new /obj/item/gun/energy/decloner/unrestricted(src) // 5 tc at least also
+
+		if(KIT_MAID)//ORBSTATION CHANGE,
+			new /obj/item/clothing/under/syndicatemaid(src)
+			new /obj/item/clothing/gloves/syndiemaid(src)
+			new /obj/item/clothing/accessory/syndiecorset(src)
+			new /obj/item/clothing/shoes/chameleon/noslip(src)
+			new /obj/item/grenade/clusterbuster/soap(src)
+			new /obj/item/grenade/clusterbuster/soap(src)
+			new /obj/item/grenade/chem_grenade/ez_clean(src)
+			new /obj/item/grenade/chem_grenade/ez_clean(src)
+			new /obj/item/grenade/chem_grenade/ez_clean(src)
+			new /obj/item/soap/syndie(src)
+			new /obj/item/storage/belt/chameleon(src)
+			new /obj/item/reagent_containers/spray/syndicate/lube(src)
+			new /obj/item/pushbroom/syndicate(src)
+
+		if(KIT_PYRO)//ORBSTATION CHANGE,
+			new /obj/item/flamethrower/full/tank(src)
+			new /obj/item/tank/internals/plasma(src)
+			new /obj/item/clothing/mask/gas/atmos(src)
+			new /obj/item/clothing/suit/armor/gorlexcoat(src)
+			new /obj/item/clothing/under/syndicateoveralls/fireproof(src)
+			new /obj/item/clothing/gloves/combat(src)
+			new /obj/item/clothing/shoes/combat(src)
+			new /obj/item/gun/ballistic/automatic/pistol(src)
+			new /obj/item/ammo_box/magazine/m9mm/fire(src)
+			new /obj/item/ammo_box/magazine/m9mm/fire(src)
+			new	/obj/item/grenade/chem_grenade/incendiary(src)
+			new	/obj/item/grenade/chem_grenade/incendiary(src)
+			new	/obj/item/grenade/chem_grenade/incendiary(src)
 
 		if(KIT_BEES)
 			new /obj/item/paper/fluff/bee_objectives(src) // 0 tc (motivation)
