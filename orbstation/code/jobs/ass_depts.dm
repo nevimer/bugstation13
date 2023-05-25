@@ -5,26 +5,18 @@
 /// Abstract datum for holding the rest of the assistant departments
 /datum/job/assistant/dept
 	title = "Abstract Departmental Assistant"
-	job_flags = 0 //should not be used in any capacity in-game
+	job_flags = NONE //should not be used in any capacity in-game
 	config_tag = "DEPT_ASSISTANT"
-
-// Override of the proc that determines where these jobs spawn, just to use the normal assistant spawns
-/datum/job/assistant/dept/get_default_roundstart_spawn_point()
-	for(var/obj/effect/landmark/start/spawn_point as anything in GLOB.start_landmarks_list)
-		if(spawn_point.name != JOB_ASSISTANT)
-			continue
-		. = spawn_point
-		if(spawn_point.used) //so we can revert to spawning them on top of eachother if something goes wrong
-			continue
-		spawn_point.used = TRUE
-		break
-	if(!.)
-		log_world("Couldn't find a round start spawn point for [title]")
 
 /// Abstract datum for assistant departments
 /datum/outfit/job/assistant/dept
 	name = "Abstract Departmental Assistant"
 	var/skirt = null
+
+/// Abstract spawn point landmark
+/obj/effect/landmark/start/assistant/dept
+	name = "Abstract Departmental Assistant"
+	icon = 'orbstation/icons/mob/job_landmarks.dmi'
 
 /datum/outfit/job/assistant/dept/give_jumpsuit(mob/living/carbon/human/target)
 	// gives you a jumpskirt based on your preferences if possible
@@ -36,8 +28,8 @@
 	title = JOB_ASSISTANT_SCI
 	description = "Witness the marvels of modern age technology, and be a test subject for them."
 	department_head = list(JOB_RESEARCH_DIRECTOR)
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = SUPERVISOR_RD
 
 	outfit = /datum/outfit/job/assistant/dept/sci
@@ -79,13 +71,17 @@
 		)
 	job = /datum/job/assistant/dept/sci
 
+/obj/effect/landmark/start/assistant/dept/sci
+	name = JOB_ASSISTANT_SCI
+	icon_state = JOB_ASSISTANT_SCI
+
 /// Medical Assistant
 /datum/job/assistant/dept/med
 	title = JOB_ASSISTANT_MED
 	description = "Handle patients coming in and out of medbay, lack a medical license."
 	department_head = list(JOB_CHIEF_MEDICAL_OFFICER)
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = SUPERVISOR_CMO
 
 	outfit = /datum/outfit/job/assistant/dept/med
@@ -127,13 +123,17 @@
 		)
 	job = /datum/job/assistant/dept/med
 
+/obj/effect/landmark/start/assistant/dept/med
+	name = JOB_ASSISTANT_MED
+	icon_state = JOB_ASSISTANT_MED
+
 /// Tech Support
 /datum/job/assistant/dept/eng
 	title = JOB_ASSISTANT_ENG
 	description = "Make your own pet projects, get called away to fix every little thing."
 	department_head = list(JOB_CHIEF_ENGINEER)
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = SUPERVISOR_CE
 
 	outfit = /datum/outfit/job/assistant/dept/eng
@@ -177,13 +177,17 @@
 		)
 	job = /datum/job/assistant/dept/eng
 
+/obj/effect/landmark/start/assistant/dept/eng
+	name = JOB_ASSISTANT_ENG
+	icon_state = JOB_ASSISTANT_ENG
+
 /// Waitron
 /datum/job/assistant/dept/srv
 	title = JOB_ASSISTANT_SRV
 	description = "Bus tables, work for tips."
 	department_head = list(JOB_HEAD_OF_PERSONNEL)
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = SUPERVISOR_HOP
 
 	outfit = /datum/outfit/job/assistant/dept/srv
@@ -218,3 +222,7 @@
 		ACCESS_THEATRE,
 		)
 	job = /datum/job/assistant/dept/srv
+
+/obj/effect/landmark/start/assistant/dept/srv
+	name = JOB_ASSISTANT_SRV
+	icon_state = JOB_ASSISTANT_SRV
