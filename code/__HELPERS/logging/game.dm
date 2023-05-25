@@ -15,9 +15,8 @@
 	logger.Log(LOG_CATEGORY_GAME_OOC, text, data)
 
 /// Orbstation: Logging for messages sent in LOOC
-/proc/log_looc(text)
-	if (CONFIG_GET(flag/log_looc))
-		WRITE_LOG(GLOB.world_game_log, "LOOC: [text]")
+/proc/log_looc(text, list/data)
+	logger.Log(LOG_CATEGORY_GAME_LOOC, text, data)
 
 /// Logging for prayed messages
 /proc/log_prayer(text, list/data)
