@@ -173,7 +173,7 @@
 
 	use_power(500)
 
-/// Ejects the occupant as either their preference character, or as a monke based on emag status.
+/// Ejects the occupant as their preference character
 /obj/machinery/self_actualization_device/proc/eject_new_you()
 	if(state_open || !occupant || !powered())
 		return
