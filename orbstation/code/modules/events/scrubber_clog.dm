@@ -13,7 +13,7 @@
 	var/static/list/mob_list = list(
 		/mob/living/simple_animal/slime/random,
 		/mob/living/simple_animal/hostile/skeleton,
-		/mob/living/simple_animal/hostile/killertomato,
+		/mob/living/basic/killer_tomato,
 		/mob/living/simple_animal/hostile/ooze,
 		/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion,
 	)

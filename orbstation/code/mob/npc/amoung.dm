@@ -98,7 +98,7 @@
 // amoung... surgeon??
 // Can probably be replaced when I do my future 'among us content expansion', if that ever happens
 
-/mob/living/simple_animal/hostile/cat_butcherer/Initialize(mapload)
+/mob/living/basic/cat_butcherer/Initialize(mapload)
 	. = ..()
 	new /mob/living/basic/amoung/surgeon(loc)
 	return INITIALIZE_HINT_QDEL
