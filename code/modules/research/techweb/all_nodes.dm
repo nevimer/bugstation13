@@ -400,6 +400,7 @@
 		"medipen_refiller",
 		"pandemic",
 		"soda_dispenser",
+		"self_actualization_device",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	required_experiments = list(/datum/experiment/dissection/human)
