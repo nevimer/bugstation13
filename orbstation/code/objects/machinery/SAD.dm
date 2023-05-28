@@ -48,7 +48,7 @@
 
 
 /datum/design/board/self_actualization_device
-	name = "Machine Design (Self-Actualization Device)"
+	name = "Self-Actualization Device"
 	desc = "The circuit board for a Self-Actualization Device by Interdyne Pharmaceuticals."
 	id = "self_actualization_device"
 	build_path = /obj/item/circuitboard/machine/self_actualization_device
@@ -56,7 +56,7 @@
 	departmental_flags = DEPARTMENT_BITFLAG_MEDICAL
 
 /obj/item/circuitboard/machine/self_actualization_device
-	name = "Self-Actualization Device (Machine Board)"
+	name = "Self-Actualization Device"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
 	build_path = /obj/machinery/self_actualization_device
 	req_components = list(/datum/stock_part/micro_laser = 1)
@@ -124,7 +124,7 @@
 	if(!powered() || !occupant || state_open)
 		return FALSE
 
-	to_chat(user, "You power on [src].")
+	balloon_alert(user, "You power on [src].")
 	addtimer(CALLBACK(src, PROC_REF(eject_new_you)), processing_time, TIMER_OVERRIDE|TIMER_UNIQUE)
 	processing = TRUE
 	update_appearance()
@@ -134,7 +134,7 @@
 		open_machine()
 		return FALSE
 
-	to_chat(user, span_notice("The emergency release is not responding! You start pushing against the hull!"))
+	balloon_alert(user, span_notice("The emergency release is not responding! You start pushing against the hull!"))
 	user.changeNext_move(CLICK_CD_BREAKOUT)
 	user.last_special = world.time + CLICK_CD_BREAKOUT
 	user.visible_message(span_notice("You see [user] kicking against the door of [src]!"), \
