@@ -9,6 +9,21 @@
 				/obj/item/clothing/head/costume/jester/alt = 1,
 			),
 		),
+		list(
+			"name" = "Other",
+			"products" = list(
+			/obj/item/clothing/neck/mantle =2,
+			/obj/item/clothing/neck/mantle/regal =1,
+			/obj/item/clothing/neck/poncho =2,
+			/obj/item/clothing/neck/cape =2,
+			/obj/item/clothing/neck/cape/black =2,
+			/obj/item/clothing/neck/cape/blue =2,
+			/obj/item/clothing/neck/armplate =2,
+			/obj/item/clothing/neck/armplate/blue =2,
+			/obj/item/clothing/neck/pauldron =2,
+			/obj/item/clothing/neck/pauldron/gilt =2,
+			),
+		),
 	)
 	orb_premium = list(
 		/obj/item/clothing/suit/hooded/wintercoat/cosmic = 1,
