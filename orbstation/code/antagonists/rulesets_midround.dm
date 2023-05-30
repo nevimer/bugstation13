@@ -240,9 +240,9 @@
 	)
 	required_enemies = list(1,1,1,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 4 //weight and cost are duplicated from Obsessed
+	weight = 4
 	cost = 3
-	repeatable = TRUE
+	repeatable = FALSE
 
 /datum/dynamic_ruleset/midround/from_living/contract_killer/trim_candidates()
 	..()
