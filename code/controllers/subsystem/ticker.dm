@@ -66,6 +66,9 @@ SUBSYSTEM_DEF(ticker)
 	/// Why an emergency shuttle was called
 	var/emergency_reason
 
+	//ORBSTATION ADDITIONS
+	var/reboot_time = 0
+
 /datum/controller/subsystem/ticker/Initialize()
 	var/list/byond_sound_formats = list(
 		"mid" = TRUE,
@@ -699,11 +702,13 @@ SUBSYSTEM_DEF(ticker)
 	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
 
 	var/start_wait = world.time
+	reboot_time = start_wait + delay //ORBSTATION ADDITION
 	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2)) //don't wait forever
 	sleep(delay - (world.time - start_wait))
 
 	if(delay_end && !skip_delay)
 		to_chat(world, span_boldannounce("Reboot was cancelled by an admin."))
+		reboot_time = 0 //ORBSTATION ADDITION
 		return
 	if(end_string)
 		end_state = end_string
