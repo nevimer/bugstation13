@@ -88,6 +88,7 @@
 	desc = "An advanced coffin used to keep corpses fresh for extended transport. Once opened, it will permanently stop functioning."
 	icon = 'orbstation/icons/obj/coffin.dmi'
 	icon_state = "stasiscoffin"
+	base_icon_state = "stasiscoffin"
 	resistance_flags = NONE
 	max_integrity = 70
 	material_drop = /obj/item/stack/sheet/iron
