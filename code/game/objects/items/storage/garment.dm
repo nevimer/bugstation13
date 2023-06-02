@@ -60,6 +60,8 @@
 	new /obj/item/clothing/head/hats/caphat/parade(src)
 	new /obj/item/clothing/neck/cloak/cap(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/neck/mantle/capmantle(src)//ORB CHANGE
+	new /obj/item/clothing/neck/pauldron/captain(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/hop/PopulateContents()
 	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
@@ -70,6 +72,7 @@
 	new /obj/item/clothing/head/hats/hopcap(src)
 	new /obj/item/clothing/neck/cloak/hop(src)
 	new /obj/item/clothing/shoes/laceup(src)
+	new /obj/item/clothing/neck/mantle/hopmantle(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/hos/PopulateContents()
 	new /obj/item/clothing/under/rank/security/head_of_security/skirt(src)
@@ -87,6 +90,7 @@
 	new /obj/item/clothing/head/hats/hos/cap(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat(src)
 	new /obj/item/clothing/neck/cloak/hos(src)
+	new /obj/item/clothing/neck/mantle/hosmantle(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/research_director/PopulateContents()
 	new /obj/item/clothing/under/rank/rnd/research_director(src)
@@ -100,6 +104,7 @@
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/clothing/neck/cloak/rd(src)
 	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/neck/mantle/rdmantle(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/chief_medical/PopulateContents()
 	new /obj/item/clothing/under/rank/medical/chief_medical_officer(src)
@@ -112,6 +117,7 @@
 	new /obj/item/clothing/head/utility/surgerycap/cmo(src)
 	new /obj/item/clothing/neck/cloak/cmo(src)
 	new /obj/item/clothing/shoes/sneakers/blue (src)
+	new /obj/item/clothing/neck/mantle/cmomantle(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/engineering_chief/PopulateContents()
 	new /obj/item/clothing/under/rank/engineering/chief_engineer(src)
@@ -123,6 +129,7 @@
 	new /obj/item/clothing/head/utility/hardhat/welding/white(src)
 	new /obj/item/clothing/neck/cloak/ce(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/neck/mantle/cemantle(src)//ORB CHANGE
 
 /obj/item/storage/bag/garment/quartermaster/PopulateContents()
 	new /obj/item/clothing/under/rank/cargo/qm(src)
@@ -134,3 +141,4 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/clothing/neck/cloak/qm(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
+	new /obj/item/clothing/neck/mantle/qm(src)//ORB CHANGE
