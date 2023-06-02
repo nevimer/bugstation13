@@ -219,6 +219,12 @@
 		// the shuttle is missing - no processing
 		set_messages("shutl?","")
 		return PROCESS_KILL
+	//ORBSTATION ADDITION - display round end countdown
+	else if(SSticker.current_state == GAME_STATE_FINISHED)
+		var/time_left = (SSticker.reboot_time - world.time) / 10
+		var/time = time_left > 0 ? "[add_leading(num2text((time_left / 60) % 60), 2, "0")]:[add_leading(num2text(time_left % 60), 2, "0")]" : "00:00"
+		set_messages("- END -", time)
+	//ORBSTATION ADDITION END
 	else if(shuttle.timer)
 		var/line1 = "- [shuttle.getModeStr()] -"
 		var/line2 = shuttle.getTimerStr()
