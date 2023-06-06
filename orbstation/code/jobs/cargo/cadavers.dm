@@ -86,7 +86,7 @@
 /obj/structure/closet/crate/coffin/stasis
 	name = "stasis coffin"
 	desc = "An advanced coffin used to keep corpses fresh for extended transport. Once opened, it will permanently stop functioning."
-	icon = 'orbstation/icons/obj/coffin.dmi'
+	icon = 'orbstation/icons/obj/medical/coffin.dmi'
 	icon_state = "stasiscoffin"
 	base_icon_state = "stasiscoffin"
 	resistance_flags = NONE

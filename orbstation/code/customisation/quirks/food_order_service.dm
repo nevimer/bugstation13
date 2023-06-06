@@ -11,10 +11,10 @@
 	var/datum/component/food_order_sub_quirk/quirk_component
 	/// semi random list of foods for NTGRUB. avoids pizza and desserts as much as it can, to replicate the like, style of like, your Blue Aprons
 	var/static/list/ntgrub_foodlist = list(
-		/obj/item/food/blt,
+		/obj/item/food/sandwich/blt,
 		/obj/item/food/danish_hotdog,
-		/obj/item/food/jellysandwich,
-		/obj/item/food/jellysandwich/slime,
+		/obj/item/food/sandwich/jelly,
+		/obj/item/food/sandwich/jelly/slime,
 		/obj/item/food/patzikula,
 		/obj/item/food/ratatouille,
 		/obj/item/food/fiesta_corn_skillet,
