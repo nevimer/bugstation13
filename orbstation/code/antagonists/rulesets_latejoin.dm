@@ -25,4 +25,4 @@
 	required_candidates = 1
 	weight = 6
 	cost = 3
-	repeatable = TRUE
+	repeatable = FALSE
