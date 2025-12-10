@@ -57,7 +57,7 @@
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, ui_x, ui_y)
 	log_tgui(user,
-		"new [interface]",
+		"new [interface] fancy [user?.client?.prefs.read_preference(/datum/preference/toggle/tgui_fancy)]",
 		src_object = src_object)
 	src.user = user
 	src.src_object = src_object
@@ -98,6 +98,7 @@
 	if(!window.is_ready())
 		window.initialize(
 			strict_mode = TRUE,
+			fancy = user.client.prefs.read_preference(/datum/preference/toggle/tgui_fancy),
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
 			))
@@ -155,7 +156,7 @@
  * public
  *
  * Closes all ByondUI elements, left dangling by a forceful TGUI exit,
- * such as via Alt+F4, closing or terminating the process
+ * such as via Alt+F4, closing in non-fancy mode, or terminating the process
  *
  */
 /datum/tgui/proc/terminate_byondui_elements()
@@ -257,6 +258,7 @@
 		"window" = list(
 			"key" = window_key,
 			"size" = window_size,
+			"fancy" = user.client.prefs.read_preference(/datum/preference/toggle/tgui_fancy),
 			"locked" = user.client.prefs.read_preference(/datum/preference/toggle/tgui_lock),
 			"scale" = user.client.prefs.read_preference(/datum/preference/toggle/ui_scale),
 		),
